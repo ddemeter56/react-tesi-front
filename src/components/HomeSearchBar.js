@@ -1,6 +1,6 @@
 
 import { makeStyles } from '@material-ui/core/styles';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Grid from '@material-ui/core/Grid'
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
@@ -65,13 +65,31 @@ const basicPtSearch = () => {
   )
 }
 
+const detailSearchGym = () => {
+  return (
+    <h1>asd</h1>
+  )
+}
+
+const detailSearchPt = () => {
+  return (
+    <h1>PT</h1>
+  )
+}
+
 const HomeSearchBar = () => {
   const classes = useStyles();
   const [value, setValue] = useState('gym');
+  const [isDetailOpen, setIsDetailOpen] = useState(false);
 
-  const handleChange = (event) => {
+  const handleDetailOpen = () => {
+    setIsDetailOpen(!isDetailOpen);
+  }
+  const handleChangeSearchChange = (event) => {
     setValue(event.target.value);
+    setIsDetailOpen(false);
   };
+
   return(
     <Container>
       <FormControl size="small" fullWidth component="fieldset">
@@ -80,7 +98,7 @@ const HomeSearchBar = () => {
             <FormLabel component="legend">Keresés</FormLabel>
           </Grid>
           <Grid item>
-            <RadioGroup row aria-label="searchSelector" name="searchSelector" value={value} onChange={handleChange}>
+            <RadioGroup row aria-label="searchSelector" name="searchSelector" value={value} onChange={handleChangeSearchChange}>
               <FormControlLabel value="gym" control={<Radio />} label="Terem" />
               <FormControlLabel value="trainer" control={<Radio />} label="Edző" />
             </RadioGroup>
@@ -88,15 +106,20 @@ const HomeSearchBar = () => {
         </Grid>
       </FormControl>
       <Grid container justify="center" alignContent="center" alignItems="center" spacing={2}>
-        {value === 'gym' ? basicGymSearch() : basicPtSearch()}
+        {value === "gym" ? basicGymSearch() : basicPtSearch()}
+        {(isDetailOpen && value === "gym") && detailSearchGym() }
+        {(isDetailOpen && value === 'trainer') &&  detailSearchPt()}
         <Grid item className={classes.button} xs={12} sm={12} lg={4}>
           <Button style={{width: "100%"}} variant="contained" color="primary" size="large">
             Keresés
           </Button>
         </Grid>
         <Tooltip title="Részletes kereső" aria-label="detailed-search"> 
-          <IconButton style={{ textAlign: "center" }} aria-label="delete">
-            <DetailsIcon />
+          <IconButton label="asdasd" style={{ textAlign: "center" }} aria-label="delete" onClick={handleDetailOpen}>
+            <DetailsIcon /> 
+            <div style={{fontSize: 15}}>
+              Részletes kereső
+            </div>
           </IconButton>
         </Tooltip>
       </Grid>
