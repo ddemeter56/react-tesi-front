@@ -1,6 +1,6 @@
 
 import { makeStyles } from '@material-ui/core/styles';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Grid from '@material-ui/core/Grid'
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
@@ -14,7 +14,7 @@ import Container from '@material-ui/core/Container';
 import DetailsIcon from '@material-ui/icons/Details';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import Tooltip from '@material-ui/core/Tooltip';
-
+import BasicGymSearch from './BasicGymSearch';
 const useStyles = makeStyles((theme) => ({
   button: {
     [theme.breakpoints.between('xs', 'lg')] : {
@@ -23,19 +23,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const basicGymSearch = () => {
-  return (
-    <>
-      <Grid item>
-        <TextField id="outlined-basic" label="Város" variant="outlined" size="small" />
-      </Grid>
-      <Grid item>
-        <TextField style={{ width: 100, paddingRight: 5 }} id="outlined-basic" label="Ár -tól" variant="outlined" size="small" />
-        <TextField style={{ width: 100 }} id="outlined-basic" label="Ár -ig" variant="outlined" size="small" />
-      </Grid>
-    </>
-  )
-}
+
 
 const basicPtSearch = () => {
   return (
@@ -65,11 +53,6 @@ const basicPtSearch = () => {
   )
 }
 
-const detailSearchGym = () => {
-  return (
-    <h1>asd</h1>
-  )
-}
 
 const detailSearchPt = () => {
   return (
@@ -79,9 +62,25 @@ const detailSearchPt = () => {
 
 const HomeSearchBar = () => {
   const classes = useStyles();
-  const [value, setValue] = useState('gym');
+  const [searchTypeValue, setValue] = useState('gym');
+
   const [isDetailOpen, setIsDetailOpen] = useState(false);
 
+  const renderForm = (type, isDetailed) => {
+    if(type === 'gym' && !isDetailed) {
+      return <BasicGymSearch isDetailed={false} />
+    }
+    if(type === 'gym' && isDetailed) {
+      return <BasicGymSearch isDetailed/>
+    }
+    if(type === 'trainer' && !isDetailed) {
+      return basicPtSearch()
+    }
+    if(type === 'trainer' && isDetailed) {
+      return detailSearchPt()
+    }
+  }
+ 
   const handleDetailOpen = () => {
     setIsDetailOpen(!isDetailOpen);
   }
@@ -98,7 +97,7 @@ const HomeSearchBar = () => {
             <FormLabel component="legend">Keresés</FormLabel>
           </Grid>
           <Grid item>
-            <RadioGroup row aria-label="searchSelector" name="searchSelector" value={value} onChange={handleChangeSearchChange}>
+            <RadioGroup row aria-label="searchSelector" name="searchSelector" value={searchTypeValue} onChange={handleChangeSearchChange}>
               <FormControlLabel value="gym" control={<Radio />} label="Terem" />
               <FormControlLabel value="trainer" control={<Radio />} label="Edző" />
             </RadioGroup>
@@ -106,9 +105,7 @@ const HomeSearchBar = () => {
         </Grid>
       </FormControl>
       <Grid container justify="center" alignContent="center" alignItems="center" spacing={2}>
-        {value === "gym" ? basicGymSearch() : basicPtSearch()}
-        {(isDetailOpen && value === "gym") && detailSearchGym() }
-        {(isDetailOpen && value === 'trainer') &&  detailSearchPt()}
+        {renderForm(searchTypeValue, isDetailOpen)}
         <Grid item className={classes.button} xs={12} sm={12} lg={4}>
           <Button style={{width: "100%"}} variant="contained" color="primary" size="large">
             Keresés
