@@ -7,6 +7,7 @@ import SideBar from './SideBar';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import LanguageSelector from './LanguageSelector';
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -21,6 +22,12 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "2rem",
     color: "rgb(45, 55, 72)"
   },
+  toolbar: {
+    [theme.breakpoints.between('md', 'xl')] : {
+      width: "60%",
+      margin: "0px auto"
+    }
+  }
 }));
 
 export default function Navigation() {
@@ -31,7 +38,7 @@ export default function Navigation() {
   return (
     <div className={classes.root}>
       <AppBar position="static" style={{ backgroundColor: "white"}}>
-        <Toolbar style={{ margin: "0px auto", width: "60%"}}>
+        <Toolbar className={classes.toolbar}>
           <SideBar />
           <Link className={classes.title} to="/">
             TESI

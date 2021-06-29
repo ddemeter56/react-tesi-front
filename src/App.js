@@ -4,11 +4,7 @@ import {
   Route
 } from "react-router-dom";
 import Navigation from "./components/Navigation";
-
-
-function Home() {
-  return <h2>Home</h2>;
-}
+import Home from './components/Home';
 
 function About() {
   return <h2>About</h2>;
