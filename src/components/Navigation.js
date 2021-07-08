@@ -44,7 +44,7 @@ export default function Navigation() {
             TESI
           </Link>
           <LanguageSelector />
-          <Button color="rgb(45, 55, 72)">{t("login")}</Button>
+          <Button>{t("login")}</Button>
         </Toolbar>
       </AppBar>
     </div>

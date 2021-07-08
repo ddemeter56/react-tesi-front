@@ -1,9 +1,5 @@
-
-import { makeStyles } from '@material-ui/core/styles';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Grid from '@material-ui/core/Grid'
-import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
 import IconButton from '@material-ui/core/IconButton';
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
@@ -11,73 +7,26 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import Container from '@material-ui/core/Container';
-import DetailsIcon from '@material-ui/icons/Details';
-import Autocomplete from '@material-ui/lab/Autocomplete';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import ExpandLessIcon from '@material-ui/icons/ExpandLess';
 import Tooltip from '@material-ui/core/Tooltip';
-import BasicGymSearch from './BasicGymSearch';
-const useStyles = makeStyles((theme) => ({
-  button: {
-    [theme.breakpoints.between('xs', 'lg')] : {
-      textAlign: "center"
-    }
-  }
-}));
+import HomePageGymSearch from './HomePageGymSearch';
+import HomePagePtSearch from './HomePagePtSearch';
+import Divider from '@material-ui/core/Divider';
+import Typography from '@material-ui/core/Typography';
 
-
-
-const basicPtSearch = () => {
-  return (
-    <>
-      <Grid item>
-        <TextField id="outlined-basic" label="Város" variant="outlined" size="small" />
-      </Grid>
-      <Grid item>
-        <Autocomplete
-          multiple
-          id="tags-standard"
-          options={specializations}
-          getOptionLabel={(option) => option.name}
-          defaultValue={[]}
-          style={{width:200}}
-          renderInput={(params) => (
-            <TextField
-              {...params}
-              variant="standard"
-              label="Specializációk"
-              size="small"
-            />
-          )}
-        />
-      </Grid>
-    </>
-  )
-}
-
-
-const detailSearchPt = () => {
-  return (
-    <h1>PT</h1>
-  )
-}
 
 const HomeSearchBar = () => {
-  const classes = useStyles();
   const [searchTypeValue, setValue] = useState('gym');
 
-  const [isDetailOpen, setIsDetailOpen] = useState(false);
+  const [isDetailOpen, setIsDetailOpen] = useState(true);
 
   const renderForm = (type, isDetailed) => {
-    if(type === 'gym' && !isDetailed) {
-      return <BasicGymSearch isDetailed={false} />
+    if(type === 'gym') {
+      return <HomePageGymSearch isDetailed={isDetailed} />
     }
-    if(type === 'gym' && isDetailed) {
-      return <BasicGymSearch isDetailed/>
-    }
-    if(type === 'trainer' && !isDetailed) {
-      return basicPtSearch()
-    }
-    if(type === 'trainer' && isDetailed) {
-      return detailSearchPt()
+    if(type === 'trainer') {
+      return <HomePagePtSearch isDetailed={isDetailed} />
     }
   }
  
@@ -90,246 +39,42 @@ const HomeSearchBar = () => {
   };
 
   return(
-    <Container>
+    <Container fixed style={{ minHeight: 380 }}>
       <FormControl size="small" fullWidth component="fieldset">
-        <Grid container direction="row" alignItems="center" justify="center" spacing={3}>
-          <Grid item>
-            <FormLabel component="legend">Keresés</FormLabel>
+        <div style={{ position: "relative" }}>
+          <Grid container direction="row" alignItems="center" justify="center" spacing={3}>
+            <Grid item>
+              <FormLabel color="secondary" component="legend">Keresés a következőre:</FormLabel>
+            </Grid>
+            <Grid item>
+              <RadioGroup row aria-label="searchSelector" name="searchSelector" value={searchTypeValue} onChange={handleChangeSearchChange}>
+                <FormControlLabel value="gym" control={<Radio />} label="Terem" />
+                <FormControlLabel value="trainer" control={<Radio />} label="Edző" />
+              </RadioGroup>
+            </Grid> 
           </Grid>
-          <Grid item>
-            <RadioGroup row aria-label="searchSelector" name="searchSelector" value={searchTypeValue} onChange={handleChangeSearchChange}>
-              <FormControlLabel value="gym" control={<Radio />} label="Terem" />
-              <FormControlLabel value="trainer" control={<Radio />} label="Edző" />
-            </RadioGroup>
-          </Grid> 
-        </Grid>
+        </div>
       </FormControl>
+      
+      <Divider style={{ marginBottom: 15}}/>
       <Grid container justify="center" alignContent="center" alignItems="center" spacing={2}>
         {renderForm(searchTypeValue, isDetailOpen)}
-        <Grid item className={classes.button} xs={12} sm={12} lg={4}>
-          <Button style={{width: "100%"}} variant="contained" color="primary" size="large">
-            Keresés
-          </Button>
-        </Grid>
         <Tooltip title="Részletes kereső" aria-label="detailed-search"> 
           <IconButton label="asdasd" style={{ textAlign: "center" }} aria-label="delete" onClick={handleDetailOpen}>
-            <DetailsIcon /> 
+            {isDetailOpen ? <ExpandLessIcon /> : <ExpandMoreIcon />}
             <div style={{fontSize: 15}}>
               Részletes kereső
             </div>
           </IconButton>
         </Tooltip>
       </Grid>
+      <Typography style={{ paddingTop: 15, textAlign: "center", color: "#797979" }}variant="body2" display="block" gutterBottom>
+        Keresd az egyes specializációk és létesítmények leírását <a href="asd">itt</a>
+      </Typography>
+      
     </Container>
   )
 }
 
 export default HomeSearchBar;
 
-// It's an API call please use: api/public/codes/specialization
-const specializations = [
-  {
-    "code": 2,
-    "name": "Weight Loss"
-  },
-  {
-    "code": 3,
-    "name": "Corrective Exercise"
-  },
-  {
-    "code": 4,
-    "name": "Mobility and Flexibility"
-  },
-  {
-    "code": 5,
-    "name": "Muscle Hypertrophy"
-  },
-  {
-    "code": 6,
-    "name": "Core Training"
-  },
-  {
-    "code": 7,
-    "name": "Athletic Performance"
-  },
-  {
-    "code": 8,
-    "name": "Functional Fitness"
-  },
-  {
-    "code": 9,
-    "name": "High Intensity Interval Training"
-  },
-  {
-    "code": 10,
-    "name": "CrossFit"
-  },
-  {
-    "code": 11,
-    "name": "Olympic Lifting"
-  },
-  {
-    "code": 12,
-    "name": "TRX Suspension Training"
-  },
-  {
-    "code": 13,
-    "name": "Strength & Conditioning"
-  },
-  {
-    "code": 14,
-    "name": "Powerlifting"
-  },
-  {
-    "code": 15,
-    "name": "Contest preparation"
-  },
-  {
-    "code": 16,
-    "name": "Strength training"
-  },
-  {
-    "code": 17,
-    "name": "Athletic strength and conditioning"
-  },
-  {
-    "code": 18,
-    "name": "Injury prevention"
-  },
-  {
-    "code": 19,
-    "name": "Race Preparation"
-  },
-  {
-    "code": 20,
-    "name": "Athletic Training"
-  },
-  {
-    "code": 21,
-    "name": "Introduction to Fitness"
-  },
-  {
-    "code": 22,
-    "name": "Compensation"
-  },
-  {
-    "code": 23,
-    "name": "Sports Conditioning"
-  },
-  {
-    "code": 24,
-    "name": "TRX Training"
-  },
-  {
-    "code": 25,
-    "name": "Athlete Strength and Conditioning"
-  },
-  {
-    "code": 26,
-    "name": "Olympic Lifting"
-  },
-  {
-    "code": 27,
-    "name": "Plyometric and Agility Training"
-  },
-  {
-    "code": 28,
-    "name": "Triphasic Training"
-  },
-  {
-    "code": 29,
-    "name": "Sand Training"
-  },
-  {
-    "code": 30,
-    "name": "Mobility Stability Training"
-  },
-  {
-    "code": 31,
-    "name": "Speed and Power Development"
-  },
-  {
-    "code": 32,
-    "name": "CrossFit"
-  },
-  {
-    "code": 33,
-    "name": "Olympic Weightlifting"
-  },
-  {
-    "code": 34,
-    "name": "Muscle Building"
-  },
-  {
-    "code": 35,
-    "name": "Weight Loss"
-  },
-  {
-    "code": 36,
-    "name": "Athletic Strength and Conditioning"
-  },
-  {
-    "code": 37,
-    "name": "Body Sculpting and Toning"
-  },
-  {
-    "code": 38,
-    "name": "Posture and mobility specialist"
-  },
-  {
-    "code": 39,
-    "name": "Parkour"
-  },
-  {
-    "code": 40,
-    "name": "Calisthenics"
-  },
-  {
-    "code": 41,
-    "name": "Seniors"
-  },
-  {
-    "code": 42,
-    "name": "Pilates"
-  },
-  {
-    "code": 43,
-    "name": "Yoga"
-  },
-  {
-    "code": 44,
-    "name": "Pre/Post Natal"
-  },
-  {
-    "code": 45,
-    "name": "Post Rehabilitative Fitness"
-  },
-  {
-    "code": 46,
-    "name": "Outdoor trail workouts"
-  },
-  {
-    "code": 47,
-    "name": "Body weight training"
-  },
-  {
-    "code": 48,
-    "name": "Wellness"
-  },
-  {
-    "code": 49,
-    "name": "Fitness for mature adults"
-  },
-  {
-    "code": 50,
-    "name": "Posture Restoration"
-  },
-  {
-    "code": 51,
-    "name": "Lower Back Restoration"
-  },
-  {
-    "code": 52,
-    "name": "Body Composition Improvement"
-  }
-];

@@ -9,7 +9,8 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.between('md', 'xl')] : {
       width: "60%",
       margin: "0px auto"
-    }
+    },
+    borderBottom: "1px solid rgba(0, 0, 0, 0.12);",
   }
 }));
 
@@ -24,7 +25,7 @@ const Home = () => {
         direction="row-reverse"
         justify="center"
         alignItems="center">
-        <Grid item xl={6}>
+        <Grid item xl={6} alignItems="flex-start">
           <LandingSpeech />
         </Grid>
         <Grid item xl={6}>
