@@ -5,6 +5,8 @@ import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import Collapse from '@material-ui/core/Collapse';
+import { useHistory } from 'react-router-dom';
+import { encodeQueryData, encodeMultipleQueryData } from '../utils/urlQuery';
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -29,8 +31,9 @@ const useStyles = makeStyles((theme) => ({
 
 
 const HomePageGymSearch = (isDetailed) => {
+  const history = useHistory();
   const classes = useStyles();
-  
+
   const [formValues, setFormValues] = useState({
     city: '',
     minPrice: undefined,
@@ -55,10 +58,13 @@ const HomePageGymSearch = (isDetailed) => {
     setSelectedFacilities(value);
   }
 
+
+
   const submitForm = (event) => {
     event.preventDefault();
     console.log(formValues);
-    console.log(selectedFacilities);
+    console.log(encodeMultipleQueryData(selectedFacilities));
+    history.push(`/list/gym/${encodeQueryData(formValues)}${encodeMultipleQueryData(selectedFacilities,"facilitiesCodes")}`);
   }
 
   const renderDetails = (isDetailed) => {
@@ -72,7 +78,6 @@ const HomePageGymSearch = (isDetailed) => {
             <Autocomplete
               className={classes.oneLineInput}
               multiple
-              tagSizeSmall
               id="tags-standard"
               options={facilityList}
               getOptionLabel={(option) => option.name}
@@ -125,11 +130,11 @@ const HomePageGymSearch = (isDetailed) => {
   return (
     <>
       <Grid item>
-        <TextField name="city" value={formValues.city} onChange={handleFormValuesChange} id="outlined-basic" label="Város" variant="outlined" size="small" style={{ width: 200 }} />
+        <TextField name="city" value={formValues.city} onChange={handleFormValuesChange} id="city" label="Város" variant="outlined" size="small" style={{ width: 200 }} />
       </Grid>
       <Grid item>
-        <TextField name="minPrice" value={formValues.minPrice} onChange={handleFormValuesChange} type="number" style={{ width: 100, paddingRight: 5 }} id="outlined-basic" label="Ár -tól" variant="outlined" size="small" />
-        <TextField name="maxPrice" value={formValues.maxPrice} onChange={handleFormValuesChange} type="number" style={{ width: 100 }} id="outlined-basic" label="Ár -ig" variant="outlined" size="small" />
+        <TextField name="minPrice" value={formValues.minPrice} onChange={handleFormValuesChange} type="number" style={{ width: 100, paddingRight: 5 }} id="min-price" label="Ár -tól" variant="outlined" size="small" />
+        <TextField name="maxPrice" value={formValues.maxPrice} onChange={handleFormValuesChange} type="number" style={{ width: 100 }} id="max-price" label="Ár -ig" variant="outlined" size="small" />
       </Grid>
       <Grid>
         <Collapse in={isDetailed.isDetailed} timeout="auto" unmountOnExit >   
@@ -139,7 +144,7 @@ const HomePageGymSearch = (isDetailed) => {
         </Collapse>
       </Grid>
       <Grid item className={classes.button} xs={12} sm={12} lg={4}>
-        <Button onClick={submitForm} style={{width: "100%"}} variant="contained" color="primary" size="large">
+        <Button onClick={submitForm} style={{width: 150 }} variant="contained" color="primary" size="large">
           Keresés
         </Button>
       </Grid>

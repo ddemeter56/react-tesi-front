@@ -5,6 +5,10 @@ import {
 } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import Home from './components/Home';
+import Footer from './components/Footer';
+import ResultGym from './components/ResultGym';
+import ResultPt from './components/ResultPt';
+import EntityPage from './components/EntityPage';
 
 function About() {
   return <h2>About</h2>;
@@ -24,26 +28,38 @@ function RegisterPT() {
 
 function App() {
   return (
-    <Router>
-      <Navigation />
-      <Switch>
-        <Route path="/register/gym">
-          <RegisterGYM />
-        </Route>
-        <Route path="/register/professional">
-          <RegisterPT />
-        </Route>
-        <Route path="/about">
-          <About />
-        </Route>
-        <Route path="/contact">
-          <Contact />
-        </Route>
-        <Route path="/">
-          <Home />
-        </Route>
-      </Switch>
-    </Router>
+    <>
+      <Router>
+        <Navigation />
+        <Switch>
+          <Route path="/register/gym">
+            <RegisterGYM />
+          </Route>
+          <Route path="/register/professional">
+            <RegisterPT />
+          </Route>
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/contact">
+            <Contact />
+          </Route>
+          <Route path="/list/gym/:searchParams">
+            <ResultGym />
+          </Route>
+          <Route path="/list/pt/:searchParams">
+            <ResultPt />
+          </Route>
+          <Route path="/:entityPage">
+            <EntityPage />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </Router>
+      <Footer />
+    </>
   );
 }
 

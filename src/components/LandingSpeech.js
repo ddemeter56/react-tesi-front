@@ -2,8 +2,8 @@ import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 const LandingSpeech = () => {
   return (
-    <div style={{ position: "relative"}}>
-      <Typography variant="h2">
+    <div style={{ position: "relative", }}>
+      <Typography variant="h2" fontFamily="monospace">
         Tesi - a mozgás közössége
       </Typography>
       <Divider />

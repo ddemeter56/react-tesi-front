@@ -5,6 +5,8 @@ import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import Collapse from '@material-ui/core/Collapse';
+import { useHistory } from 'react-router-dom';
+import { encodeQueryData, encodeMultipleQueryData } from '../utils/urlQuery';
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -21,6 +23,7 @@ const useStyles = makeStyles((theme) => ({
 
 const HomePagePtSearch = (isDetailed) => {
   const classes = useStyles();
+  const history = useHistory();
 
   const [formValues, setFormValues] = useState({
     city: '',
@@ -49,6 +52,8 @@ const HomePagePtSearch = (isDetailed) => {
     event.preventDefault();
     console.log(formValues);
     console.log(selectedSpecializations);
+    history.push(`/list/pt/${encodeQueryData(formValues)}${encodeMultipleQueryData(selectedSpecializations,"facilitiesCodes")}`);
+  
   }
 
 
@@ -58,11 +63,11 @@ const HomePagePtSearch = (isDetailed) => {
       return(
         <Grid container style={{ paddingTop: 10}} justify="center" alignContent="center" alignItems="center" spacing={2}> 
           <Grid item>
-            <TextField name="country" style={{ width: 200 }} value={formValues.country} onChange={handleFormValuesChange} id="outlined-basic" label="Ország" variant="outlined" size="small" />
+            <TextField name="country" style={{ width: 200 }} value={formValues.country} onChange={handleFormValuesChange} id="country" label="Ország" variant="outlined" size="small" />
           </Grid>
           <Grid item>
-            <TextField name="minPrice" value={formValues.minPrice} onChange={handleFormValuesChange} type="number" style={{ width: 100, paddingRight: 5 }} id="outlined-basic" label="Ár -tól" variant="outlined" size="small" />
-            <TextField name="maxPrice" value={formValues.maxPrice} onChange={handleFormValuesChange} type="number" style={{ width: 100 }} id="outlined-basic" label="Ár -ig" variant="outlined" size="small" />
+            <TextField name="minPrice" value={formValues.minPrice} onChange={handleFormValuesChange} type="number" style={{ width: 100, paddingRight: 5 }} id="min-price" label="Ár -tól" variant="outlined" size="small" />
+            <TextField name="maxPrice" value={formValues.maxPrice} onChange={handleFormValuesChange} type="number" style={{ width: 100 }} id="max-price" label="Ár -ig" variant="outlined" size="small" />
           </Grid>
         </Grid>
       )
@@ -72,7 +77,7 @@ const HomePagePtSearch = (isDetailed) => {
   return (
     <>
       <Grid item>
-        <TextField name="city" style={{ width: 200 }} onChange={handleFormValuesChange} id="outlined-basic" label="Város" variant="outlined" size="small" />
+        <TextField name="city" style={{ width: 200 }} onChange={handleFormValuesChange} id="city" label="Város" variant="outlined" size="small" />
       </Grid>
       <Grid item>
         <Autocomplete
