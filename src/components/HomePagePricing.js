@@ -68,10 +68,10 @@ const HomePagePricing = () => {
 
   return (
     <Container maxWidth="md" component="main">
-      <Typography variant="h4" style={{ textAlign: "center"}}>
+      <Typography variant="h4" style={{ textAlign: "center", paddingBottom: 15}}>
         Let people find You!
       </Typography>
-      <Typography variant="h6" color="textSecondary" style={{ textAlign: "center", paddingBottom: 15 }} >
+      <Typography variant="h6" color="textSecondary" style={{ textAlign: "center", paddingBottom: 25 }} >
         Your personal page will be easily reachable through your link or via our built in search engine.
       </Typography>
       <Grid container spacing={5} alignItems="flex-end">

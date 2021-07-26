@@ -10,7 +10,7 @@ import Typography from '@material-ui/core/Typography';
 
 import { useState } from 'react';
 
-const ResultHeader = ({paginationComponent, found}) => {
+const ResultHeader = ({paginationComponent, found, handleSortProp, handleSortMethod }) => {
   console.log(found);
   // use these params to make api call later
   const [anchorElSort, setAnchorElSort] = useState(null);
@@ -57,8 +57,8 @@ const ResultHeader = ({paginationComponent, found}) => {
           open={Boolean(anchorElSort)}
           onClose={handleClose}
         >
-          <MenuItem onClick={() => {console.log('asd')}}>Ár</MenuItem>
-          <MenuItem onClick={() => {console.log('asd')}}>Név</MenuItem>
+          <MenuItem onClick={() => handleSortProp('avargePrice')}>Ár</MenuItem>
+          <MenuItem onClick={() => handleSortProp('name')}>Név</MenuItem>
           <MenuItem onClick={() => {console.log('asd')}}>Nyitvatartás</MenuItem>
           <MenuItem onClick={() => {console.log('asd')}}>Legközelebbi</MenuItem>
         </Menu>
@@ -72,8 +72,8 @@ const ResultHeader = ({paginationComponent, found}) => {
           open={Boolean(anchorElAsc)}
           onClose={handleClose}
         >
-          <MenuItem onClick={() => {console.log('asd')}}>Növekvő</MenuItem>
-          <MenuItem onClick={() => {console.log('asd')}}>Csökkenő</MenuItem>
+          <MenuItem onClick={() => handleSortMethod('asc')}>Növekvő</MenuItem>
+          <MenuItem onClick={() => handleSortMethod('desc')}>Csökkenő</MenuItem>
         </Menu>
       </Grid>
     </Grid>

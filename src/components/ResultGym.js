@@ -32,12 +32,21 @@ const useStyles = makeStyles((theme) => ({
 
 const ResultGym = () => {
   const ITEM_PER_PAGE = 10;
-  const [ actualPage, setActualPage ] = useState(1); 
+  const [ actualPage, setActualPage ] = useState(1);
+  const [ sortByProperty, setSortByProperty ] = useState('name');
+  const [ sortByMethod, setSortByMethod] = useState('asc');
   const numberOfPages = useRef();
   const { searchParams } = useParams();
-  const { loading, data, error } = useFetch(`${API_PATH.GYM_LIST}gym?pageSize=${ITEM_PER_PAGE}&page=${actualPage}&${searchParams}`);
+  const { loading, data, error } = useFetch(`${API_PATH.GYM_LIST}gym?pageSize=${ITEM_PER_PAGE}&page=${actualPage}&sortByProperty=${sortByProperty}&sortByMethod=${sortByMethod}&${searchParams}`);
   const classes = useStyles();
 
+  function handleSortProperty(value) {
+    setSortByProperty(value);
+  }
+
+  function handleSortMethod(value) { 
+    setSortByMethod('desc');
+  }
   useEffect(() => {
     if(Array.isArray(data) && data.length > 0) {
       numberOfPages.current = getNumberOfPages(data.length, ITEM_PER_PAGE)
@@ -83,7 +92,10 @@ const ResultGym = () => {
         <Grid item  style={{ padding: 30}}> 
           <Pagination onChange={handlePagination} count={numberOfPages.current} variant="outlined" shape="rounded" />
         </Grid>
-      } found={data.length}
+      } 
+      found={data.length}
+      handleSortProp={handleSortProperty}
+      handleSortMethod={handleSortMethod}
       />
       <Grid container
         spacing={3}
