@@ -68,8 +68,8 @@ const ResultGymCard = ({ props }) => {
     {id: webPageUserId, key:"webpage", icon: <WebIcon />}
   ];
 
-  const redirectToGym = () => {
-    console.log('redirect to gym');
+  function redirectToGym() {
+    console.log(`redirect to gym ${referenceCode}`);
     history.push(`/${referenceCode}`);
   }
 

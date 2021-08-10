@@ -149,7 +149,8 @@
         }
       ],
       "images": []
-    },{
+    },
+    {
       "id": "6f774ede-5929-4a1a-a5c1-56cd635d9a72",
       "name": "Gerioo",
       "referenceCode": "geriterme",
@@ -198,7 +199,8 @@
         }
       ],
       "images": []
-    },{
+    },
+    {
       "id": "6f774ede-5929-4a1a-a5c1-56cd635d9a72",
       "name": "Gerioo",
       "referenceCode": "geriterme",
@@ -498,5 +500,886 @@
       ],
       "images": []
     }
-  ]
+  ],
+  "pt": [
+    {
+      "id": "6f774ede-5929-4a1a-a5c1-56cd635d9a72",
+      "name": "PT TESZT",
+      "referenceCode": "geriterme",
+      "addressString": "Hungary, 8200 Veszprém utac1",
+      "shortDescription": "test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum",
+      "facebookUserId": 1,
+      "instagramUserId": 2,
+      "twitterUserId": 3,
+      "youtubeUserId": null,
+      "webPageUserId": null,
+      "minPrice": 3000,
+      "maxPrice": 3000,
+      "averagePrice": 3000,
+      "earliestOpening": "23:59",
+      "latestClosing": "16:00",
+      "facilities": [
+        {
+          "id": 1,
+          "customName": "",
+          "description": "My facility",
+          "facilityCode": {
+            "code": 2,
+            "name": "Cardio zone",
+            "type": "Cardio zone"
+          }
+        },
+        {
+          "id": 2,
+          "customName": "",
+          "description": "Cycling ",
+          "facilityCode": {
+            "code": 3,
+            "name": "Cycling studio",
+            "type": "Cardio zone"
+          }
+        },
+        {
+          "id": 3,
+          "customName": "Kondoi",
+          "description": "Kondi",
+          "facilityCode": {
+            "code": 1,
+            "name": "Empty",
+            "type": "Empty"
+          }
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "6f774ede-5929-4a1a-a5c1-56cd635d9a72",
+      "name": "Gerioo",
+      "referenceCode": "geriterme",
+      "addressString": "Hungary, 8200 Veszprém utac1",
+      "shortDescription": "test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum",
+      "facebookUserId": 1,
+      "instagramUserId": 2,
+      "twitterUserId": 3,
+      "youtubeUserId": null,
+      "webPageUserId": null,
+      "minPrice": 3000,
+      "maxPrice": 3000,
+      "averagePrice": 3000,
+      "earliestOpening": "23:59",
+      "latestClosing": "16:00",
+      "facilities": [
+        {
+          "id": 1,
+          "customName": "",
+          "description": "My facility",
+          "facilityCode": {
+            "code": 2,
+            "name": "Cardio zone",
+            "type": "Cardio zone"
+          }
+        },
+        {
+          "id": 2,
+          "customName": "",
+          "description": "Cycling ",
+          "facilityCode": {
+            "code": 3,
+            "name": "Cycling studio",
+            "type": "Cardio zone"
+          }
+        },
+        {
+          "id": 3,
+          "customName": "Kondoi",
+          "description": "Kondi",
+          "facilityCode": {
+            "code": 1,
+            "name": "Empty",
+            "type": "Empty"
+          }
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "6f774ede-5929-4a1a-a5c1-56cd635d9a72",
+      "name": "Gerioo",
+      "referenceCode": "geriterme",
+      "addressString": "Hungary, 8200 Veszprém utac1",
+      "shortDescription": "test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum",
+      "facebookUserId": 1,
+      "instagramUserId": 2,
+      "twitterUserId": 3,
+      "youtubeUserId": null,
+      "webPageUserId": null,
+      "minPrice": 3000,
+      "maxPrice": 3000,
+      "averagePrice": 3000,
+      "earliestOpening": "23:59",
+      "latestClosing": "16:00",
+      "facilities": [
+        {
+          "id": 1,
+          "customName": "",
+          "description": "My facility",
+          "facilityCode": {
+            "code": 2,
+            "name": "Cardio zone",
+            "type": "Cardio zone"
+          }
+        },
+        {
+          "id": 2,
+          "customName": "",
+          "description": "Cycling ",
+          "facilityCode": {
+            "code": 3,
+            "name": "Cycling studio",
+            "type": "Cardio zone"
+          }
+        },
+        {
+          "id": 3,
+          "customName": "Kondoi",
+          "description": "Kondi",
+          "facilityCode": {
+            "code": 1,
+            "name": "Empty",
+            "type": "Empty"
+          }
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "6f774ede-5929-4a1a-a5c1-56cd635d9a72",
+      "name": "Gerioo",
+      "referenceCode": "geriterme",
+      "addressString": "Hungary, 8200 Veszprém utac1",
+      "shortDescription": "test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum",
+      "facebookUserId": 1,
+      "instagramUserId": 2,
+      "twitterUserId": 3,
+      "youtubeUserId": null,
+      "webPageUserId": null,
+      "minPrice": 3000,
+      "maxPrice": 3000,
+      "averagePrice": 3000,
+      "earliestOpening": "23:59",
+      "latestClosing": "16:00",
+      "facilities": [
+        {
+          "id": 1,
+          "customName": "",
+          "description": "My facility",
+          "facilityCode": {
+            "code": 2,
+            "name": "Cardio zone",
+            "type": "Cardio zone"
+          }
+        },
+        {
+          "id": 2,
+          "customName": "",
+          "description": "Cycling ",
+          "facilityCode": {
+            "code": 3,
+            "name": "Cycling studio",
+            "type": "Cardio zone"
+          }
+        },
+        {
+          "id": 3,
+          "customName": "Kondoi",
+          "description": "Kondi",
+          "facilityCode": {
+            "code": 1,
+            "name": "Empty",
+            "type": "Empty"
+          }
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "6f774ede-5929-4a1a-a5c1-56cd635d9a72",
+      "name": "Gerioo",
+      "referenceCode": "geriterme",
+      "addressString": "Hungary, 8200 Veszprém utac1",
+      "shortDescription": "test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum",
+      "facebookUserId": 1,
+      "instagramUserId": 2,
+      "twitterUserId": 3,
+      "youtubeUserId": null,
+      "webPageUserId": null,
+      "minPrice": 3000,
+      "maxPrice": 3000,
+      "averagePrice": 3000,
+      "earliestOpening": "23:59",
+      "latestClosing": "16:00",
+      "facilities": [
+        {
+          "id": 1,
+          "customName": "",
+          "description": "My facility",
+          "facilityCode": {
+            "code": 2,
+            "name": "Cardio zone",
+            "type": "Cardio zone"
+          }
+        },
+        {
+          "id": 2,
+          "customName": "",
+          "description": "Cycling ",
+          "facilityCode": {
+            "code": 3,
+            "name": "Cycling studio",
+            "type": "Cardio zone"
+          }
+        },
+        {
+          "id": 3,
+          "customName": "Kondoi",
+          "description": "Kondi",
+          "facilityCode": {
+            "code": 1,
+            "name": "Empty",
+            "type": "Empty"
+          }
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "6f774ede-5929-4a1a-a5c1-56cd635d9a72",
+      "name": "Gerioo",
+      "referenceCode": "geriterme",
+      "addressString": "Hungary, 8200 Veszprém utac1",
+      "shortDescription": "test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum",
+      "facebookUserId": 1,
+      "instagramUserId": 2,
+      "twitterUserId": 3,
+      "youtubeUserId": null,
+      "webPageUserId": null,
+      "minPrice": 3000,
+      "maxPrice": 3000,
+      "averagePrice": 3000,
+      "earliestOpening": "23:59",
+      "latestClosing": "16:00",
+      "facilities": [
+        {
+          "id": 1,
+          "customName": "",
+          "description": "My facility",
+          "facilityCode": {
+            "code": 2,
+            "name": "Cardio zone",
+            "type": "Cardio zone"
+          }
+        },
+        {
+          "id": 2,
+          "customName": "",
+          "description": "Cycling ",
+          "facilityCode": {
+            "code": 3,
+            "name": "Cycling studio",
+            "type": "Cardio zone"
+          }
+        },
+        {
+          "id": 3,
+          "customName": "Kondoi",
+          "description": "Kondi",
+          "facilityCode": {
+            "code": 1,
+            "name": "Empty",
+            "type": "Empty"
+          }
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "6f774ede-5929-4a1a-a5c1-56cd635d9a72",
+      "name": "Gerioo",
+      "referenceCode": "geriterme",
+      "addressString": "Hungary, 8200 Veszprém utac1",
+      "shortDescription": "test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum",
+      "facebookUserId": 1,
+      "instagramUserId": 2,
+      "twitterUserId": 3,
+      "youtubeUserId": null,
+      "webPageUserId": null,
+      "minPrice": 3000,
+      "maxPrice": 3000,
+      "averagePrice": 3000,
+      "earliestOpening": "23:59",
+      "latestClosing": "16:00",
+      "facilities": [
+        {
+          "id": 1,
+          "customName": "",
+          "description": "My facility",
+          "facilityCode": {
+            "code": 2,
+            "name": "Cardio zone",
+            "type": "Cardio zone"
+          }
+        },
+        {
+          "id": 2,
+          "customName": "",
+          "description": "Cycling ",
+          "facilityCode": {
+            "code": 3,
+            "name": "Cycling studio",
+            "type": "Cardio zone"
+          }
+        },
+        {
+          "id": 3,
+          "customName": "Kondoi",
+          "description": "Kondi",
+          "facilityCode": {
+            "code": 1,
+            "name": "Empty",
+            "type": "Empty"
+          }
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "6f774ede-5929-4a1a-a5c1-56cd635d9a72",
+      "name": "Gerioo",
+      "referenceCode": "geriterme",
+      "addressString": "Hungary, 8200 Veszprém utac1",
+      "shortDescription": "test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum",
+      "facebookUserId": 1,
+      "instagramUserId": 2,
+      "twitterUserId": 3,
+      "youtubeUserId": null,
+      "webPageUserId": null,
+      "minPrice": 3000,
+      "maxPrice": 3000,
+      "averagePrice": 3000,
+      "earliestOpening": "23:59",
+      "latestClosing": "16:00",
+      "facilities": [
+        {
+          "id": 1,
+          "customName": "",
+          "description": "My facility",
+          "facilityCode": {
+            "code": 2,
+            "name": "Cardio zone",
+            "type": "Cardio zone"
+          }
+        },
+        {
+          "id": 2,
+          "customName": "",
+          "description": "Cycling ",
+          "facilityCode": {
+            "code": 3,
+            "name": "Cycling studio",
+            "type": "Cardio zone"
+          }
+        },
+        {
+          "id": 3,
+          "customName": "Kondoi",
+          "description": "Kondi",
+          "facilityCode": {
+            "code": 1,
+            "name": "Empty",
+            "type": "Empty"
+          }
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "6f774ede-5929-4a1a-a5c1-56cd635d9a72",
+      "name": "Gerioo",
+      "referenceCode": "geriterme",
+      "addressString": "Hungary, 8200 Veszprém utac1",
+      "shortDescription": "test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum",
+      "facebookUserId": 1,
+      "instagramUserId": 2,
+      "twitterUserId": 3,
+      "youtubeUserId": null,
+      "webPageUserId": null,
+      "minPrice": 3000,
+      "maxPrice": 3000,
+      "averagePrice": 3000,
+      "earliestOpening": "23:59",
+      "latestClosing": "16:00",
+      "facilities": [
+        {
+          "id": 1,
+          "customName": "",
+          "description": "My facility",
+          "facilityCode": {
+            "code": 2,
+            "name": "Cardio zone",
+            "type": "Cardio zone"
+          }
+        },
+        {
+          "id": 2,
+          "customName": "",
+          "description": "Cycling ",
+          "facilityCode": {
+            "code": 3,
+            "name": "Cycling studio",
+            "type": "Cardio zone"
+          }
+        },
+        {
+          "id": 3,
+          "customName": "Kondoi",
+          "description": "Kondi",
+          "facilityCode": {
+            "code": 1,
+            "name": "Empty",
+            "type": "Empty"
+          }
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "6f774ede-5929-4a1a-a5c1-56cd635d9a72",
+      "name": "PT TESZT",
+      "referenceCode": "geriterme",
+      "addressString": "Hungary, 8200 Veszprém utac1",
+      "shortDescription": "test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum",
+      "facebookUserId": 1,
+      "instagramUserId": 2,
+      "twitterUserId": 3,
+      "youtubeUserId": null,
+      "webPageUserId": null,
+      "minPrice": 3000,
+      "maxPrice": 3000,
+      "averagePrice": 3000,
+      "earliestOpening": "23:59",
+      "latestClosing": "16:00",
+      "facilities": [
+        {
+          "id": 1,
+          "customName": "",
+          "description": "My facility",
+          "facilityCode": {
+            "code": 2,
+            "name": "Cardio zone",
+            "type": "Cardio zone"
+          }
+        },
+        {
+          "id": 2,
+          "customName": "",
+          "description": "Cycling ",
+          "facilityCode": {
+            "code": 3,
+            "name": "Cycling studio",
+            "type": "Cardio zone"
+          }
+        },
+        {
+          "id": 3,
+          "customName": "Kondoi",
+          "description": "Kondi",
+          "facilityCode": {
+            "code": 1,
+            "name": "Empty",
+            "type": "Empty"
+          }
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "6f774ede-5929-4a1a-a5c1-56cd635d9a72",
+      "name": "Gerioo",
+      "referenceCode": "geriterme",
+      "addressString": "Hungary, 8200 Veszprém utac1",
+      "shortDescription": "test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum",
+      "facebookUserId": 1,
+      "instagramUserId": 2,
+      "twitterUserId": 3,
+      "youtubeUserId": null,
+      "webPageUserId": null,
+      "minPrice": 3000,
+      "maxPrice": 3000,
+      "averagePrice": 3000,
+      "earliestOpening": "23:59",
+      "latestClosing": "16:00",
+      "facilities": [
+        {
+          "id": 1,
+          "customName": "",
+          "description": "My facility",
+          "facilityCode": {
+            "code": 2,
+            "name": "Cardio zone",
+            "type": "Cardio zone"
+          }
+        },
+        {
+          "id": 2,
+          "customName": "",
+          "description": "Cycling ",
+          "facilityCode": {
+            "code": 3,
+            "name": "Cycling studio",
+            "type": "Cardio zone"
+          }
+        },
+        {
+          "id": 3,
+          "customName": "Kondoi",
+          "description": "Kondi",
+          "facilityCode": {
+            "code": 1,
+            "name": "Empty",
+            "type": "Empty"
+          }
+        }
+      ],
+      "images": []
+    }
+  ],
+  "gymPage": {
+    "id": "25f1e582-edd5-41da-ab64-bc28d0097cde",
+    "name": "Viszonylag hosszú GYM név Fitness",
+    "referenceCode": "fullosteszt",
+    "phoneNumber": "012013212012",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam lacus, commodo ut sagittis vel, eleifend et magna. Sed aliquet lectus ex, in sodales massa viverra in. Aliquam venenatis lorem eget nunc iaculis, ac placerat diam ullamcorper. Aliquam ornare et lorem non interdum. Integer vehicula nunc non pellentesque luctus. Curabitur mollis neque sit amet odio convallis, sed pharetra felis semper. Ut tincidunt urna egestas facilisis aliquet. Etiam lacinia semper dapibus. Nunc vel ornare nulla, non mollis mi. Praesent porttitor, turpis quis faucibus sodales, risus nunc dignissim nunc, vitae gravida tellus quam eget ligula. Cras et nisi nisl.",
+    "shortDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam lacus, commodo ut sagittis vel, eleifend et magna. Sed aliquet lectus ex, in sodales",
+    "country": "Magyarország",
+    "postcode": "8900",
+    "city": "Zalaegerszeg",
+    "street": "Hegyalja utca",
+    "streetNum": "12",
+    "floor": "1",
+    "facebookUserId": "www.facebook.com/user",
+    "instagramUserId": "www.instagram.com/user",
+    "twitterUserId": "www.twitter.com/user",
+    "youtubeUserId": "www.youtube.com/user",
+    "webPageUserId": "www.fafafa.com",
+    "pricing": [
+      {
+        "ticketId": 52,
+        "categoryType": "occasional",
+        "ticketType": "21 Alkalmas bérlet",
+        "amount": "21310.00",
+        "currency": "HUF",
+        "validForDays": 21
+      },
+      {
+        "ticketId": 51,
+        "categoryType": "occasional",
+        "ticketType": "12 Alkalmas bérlet",
+        "amount": "12310.00",
+        "currency": "HUF",
+        "validForDays": 12
+      },
+      {
+        "ticketId": 50,
+        "categoryType": "monthly",
+        "ticketType": "12 Havi bérlet",
+        "amount": "180000.00",
+        "currency": "HUF",
+        "validForDays": 365
+      },
+      {
+        "ticketId": 49,
+        "categoryType": "monthly",
+        "ticketType": "6 Havi bérlet",
+        "amount": "10000.00",
+        "currency": "HUF",
+        "validForDays": 180
+      },
+      {
+        "ticketId": 48,
+        "categoryType": "monthly",
+        "ticketType": "3 Havi bérlet",
+        "amount": "55000.00",
+        "currency": "HUF",
+        "validForDays": 90
+      },
+      {
+        "ticketId": 47,
+        "categoryType": "monthly",
+        "ticketType": "1 Havi bérlet",
+        "amount": "20000.00",
+        "currency": "HUF",
+        "validForDays": 30
+      },
+      {
+        "ticketId": 46,
+        "categoryType": "daily",
+        "ticketType": "5 Napi belépő",
+        "amount": "12000.00",
+        "currency": "HUF",
+        "validForDays": 5
+      },
+      {
+        "ticketId": 45,
+        "categoryType": "daily",
+        "ticketType": "7 Napi belépő",
+        "amount": "15000.00",
+        "currency": "HUF",
+        "validForDays": 7
+      },
+      {
+        "ticketId": 44,
+        "categoryType": "daily",
+        "ticketType": "Napi belépő",
+        "amount": "3000.00",
+        "currency": "HUF",
+        "validForDays": 1
+      }
+    ],
+    "opening": [
+      {
+        "id": 11,
+        "mondayFrom": "08:00",
+        "mondayTo": "22:00",
+        "tuesdayFrom": "08:00",
+        "tuesdayTo": "22:00",
+        "wednesdayFrom": "08:00",
+        "wednesdayTo": "22:00",
+        "thursdayFrom": "08:00",
+        "thursdayTo": "22:00",
+        "fridayFrom": "08:00",
+        "fridayTo": "22:00",
+        "saturdayFrom": "08:00",
+        "saturdayTo": "22:00",
+        "sundayFrom": "08:00",
+        "sundayTo": "22:00"
+      }
+    ],
+    "images": [],
+    "facilities": [
+      {
+        "id": 42,
+        "customName": "",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam lacus, commodo ut sagittis vel, el",
+        "facilityCode": {
+          "code": 24,
+          "name": "Sauna",
+          "type": "Associated functions"
+        },
+        "pricing": [
+          {
+            "ticketId": 53,
+            "categoryType": "occasional",
+            "ticketType": "1 Alkalom",
+            "amount": "3000.00",
+            "currency": "HUF",
+            "validForDays": 1
+          },
+          {
+            "ticketId": 54,
+            "categoryType": "occasional",
+            "ticketType": "5 Alkalom",
+            "amount": "13000.00",
+            "currency": "HUF",
+            "validForDays": 5
+          },
+          {
+            "ticketId": 55,
+            "categoryType": "occasional",
+            "ticketType": "12 Alkalom",
+            "amount": "30000.00",
+            "currency": "HUF",
+            "validForDays": 12
+          }
+        ],
+        "opening": [
+          {
+            "id": 12,
+            "mondayFrom": "09:00",
+            "mondayTo": "22:00",
+            "tuesdayFrom": "09:00",
+            "tuesdayTo": "22:00",
+            "wednesdayFrom": "09:00",
+            "wednesdayTo": "22:00",
+            "thursdayFrom": "09:00",
+            "thursdayTo": "22:00",
+            "fridayFrom": "09:00",
+            "fridayTo": "22:00",
+            "saturdayFrom": "09:00",
+            "saturdayTo": "22:00",
+            "sundayFrom": "09:00",
+            "sundayTo": "22:00"
+          }
+        ],
+        "images": []
+      },
+      {
+        "id": 43,
+        "customName": "Custom Facility ",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam lacus, commodo ut sagittis vel, el",
+        "facilityCode": {
+          "code": 1,
+          "name": "Empty",
+          "type": "Empty"
+        },
+        "pricing": [
+          {
+            "ticketId": 56,
+            "categoryType": "occasional",
+            "ticketType": "12 Alkalom",
+            "amount": "30000.00",
+            "currency": "HUF",
+            "validForDays": 12
+          },
+          {
+            "ticketId": 57,
+            "categoryType": "occasional",
+            "ticketType": "312 Alkalom",
+            "amount": "300000.00",
+            "currency": "HUF",
+            "validForDays": 321
+          }
+        ],
+        "opening": [
+          {
+            "id": 13,
+            "mondayFrom": "12:00",
+            "mondayTo": "20:00",
+            "tuesdayFrom": "12:00",
+            "tuesdayTo": "20:00",
+            "wednesdayFrom": "12:00",
+            "wednesdayTo": "20:00",
+            "thursdayFrom": "12:00",
+            "thursdayTo": "20:00",
+            "fridayFrom": "12:00",
+            "fridayTo": "20:00",
+            "saturdayFrom": "12:00",
+            "saturdayTo": "20:00",
+            "sundayFrom": "12:00",
+            "sundayTo": "20:00"
+          }
+        ],
+        "images": []
+      },
+      {
+        "id": 39,
+        "customName": "",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam lacus, commodo ut sagittis vel, el",
+        "facilityCode": {
+          "code": 10,
+          "name": "Skill and Functional Zone",
+          "type": "Skill and Functional Zone"
+        },
+        "pricing": [],
+        "opening": [],
+        "images": []
+      },
+      {
+        "id": 34,
+        "customName": "",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam lacus, commodo ut sagittis vel, el",
+        "facilityCode": {
+          "code": 2,
+          "name": "Cardio zone",
+          "type": "Cardio zone"
+        },
+        "pricing": [],
+        "opening": [],
+        "images": []
+      },
+      {
+        "id": 40,
+        "customName": "",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam lacus, commodo ut sagittis vel, el",
+        "facilityCode": {
+          "code": 11,
+          "name": "Functional Area",
+          "type": "Skill and Functional Zone"
+        },
+        "pricing": [],
+        "opening": [],
+        "images": []
+      },
+      {
+        "id": 37,
+        "customName": "",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam lacus, commodo ut sagittis vel, el",
+        "facilityCode": {
+          "code": 8,
+          "name": "Weight lifting",
+          "type": "Gym zone"
+        },
+        "pricing": [],
+        "opening": [],
+        "images": []
+      },
+      {
+        "id": 38,
+        "customName": "",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam lacus, commodo ut sagittis vel, el",
+        "facilityCode": {
+          "code": 9,
+          "name": "Strength area",
+          "type": "Gym zone"
+        },
+        "pricing": [],
+        "opening": [],
+        "images": []
+      },
+      {
+        "id": 41,
+        "customName": "",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam lacus, commodo ut sagittis vel, el",
+        "facilityCode": {
+          "code": 13,
+          "name": "Crossfit",
+          "type": "Skill and Functional Zone"
+        },
+        "pricing": [],
+        "opening": [],
+        "images": []
+      },
+      {
+        "id": 36,
+        "customName": "",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam lacus, commodo ut sagittis vel, el",
+        "facilityCode": {
+          "code": 7,
+          "name": "Free weights area",
+          "type": "Gym zone"
+        },
+        "pricing": [],
+        "opening": [],
+        "images": []
+      },
+      {
+        "id": 35,
+        "customName": "",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam lacus, commodo ut sagittis vel, el",
+        "facilityCode": {
+          "code": 6,
+          "name": "Gym zone",
+          "type": "Gym zone"
+        },
+        "pricing": [],
+        "opening": [],
+        "images": []
+      }
+    ],
+    "addressString": "Magyarország, 8900 Zalaegerszeg Hegyalja utca 1",
+    "minPrice": 3000,
+    "maxPrice": 180000,
+    "averagePrice": 36513,
+    "earliestOpening": "08:00",
+    "latestClosing": "22:00"
+  }
 }

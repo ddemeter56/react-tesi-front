@@ -1,3 +1,4 @@
 export const API_PATH = {
-  GYM_LIST: 'public/list/',
+  RESULT_LIST: 'public/list/',
+  LIST_PAGE: 'public/list/'
 }

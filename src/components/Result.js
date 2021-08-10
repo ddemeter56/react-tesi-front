@@ -29,15 +29,18 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-
-const ResultGym = () => {
+/**
+ * type: gym or pt as string
+ */
+const Result = ({ type }) => {
+  console.log(type);
   const ITEM_PER_PAGE = 10;
   const [ actualPage, setActualPage ] = useState(1);
   const [ sortByProperty, setSortByProperty ] = useState('name');
   const [ sortByMethod, setSortByMethod] = useState('asc');
   const numberOfPages = useRef();
   const { searchParams } = useParams();
-  const { loading, data, error } = useFetch(`${API_PATH.GYM_LIST}gym?pageSize=${ITEM_PER_PAGE}&page=${actualPage}&sortByProperty=${sortByProperty}&sortByMethod=${sortByMethod}&${searchParams}`);
+  const { loading, data, error } = useFetch(`${API_PATH.RESULT_LIST}${type}?pageSize=${ITEM_PER_PAGE}&page=${actualPage}&sortByProperty=${sortByProperty}&sortByMethod=${sortByMethod}&${searchParams}`);
   const classes = useStyles();
 
   function handleSortProperty(value) {
@@ -108,7 +111,12 @@ const ResultGym = () => {
           data.map((item, index) => {
             return(
               <Grid item key={index}>
-                <ResultGymCard props={item}/>
+                {type === 'gym' 
+                  ? 
+                  <ResultGymCard props={item}/> 
+                  : 
+                  <ResultGymCard props={item}  />
+                }
               </Grid>
             )
           })
@@ -118,4 +126,4 @@ const ResultGym = () => {
   )
 }
 
-export default ResultGym;
+export default Result;

@@ -6,8 +6,7 @@ import {
 import Navigation from "./components/Navigation";
 import Home from './components/Home';
 import Footer from './components/Footer';
-import ResultGym from './components/ResultGym';
-import ResultPt from './components/ResultPt';
+import Result from './components/Result';
 import EntityPage from './components/EntityPage';
 
 function About() {
@@ -45,10 +44,10 @@ function App() {
             <Contact />
           </Route>
           <Route path="/list/gym/:searchParams">
-            <ResultGym />
+            <Result type='gym' />
           </Route>
           <Route path="/list/pt/:searchParams">
-            <ResultPt />
+            <Result type="pt" />
           </Route>
           <Route path="/:entityPage">
             <EntityPage />
