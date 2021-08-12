@@ -3,6 +3,7 @@ import HomeSearchBar from './HomeSearchBar';
 import { makeStyles } from '@material-ui/core/styles';
 import LandingSpeech from './LandingSpeech';
 import HomePagePricing from './HomePagePricing';
+import FlowSection from './FlowSection';
 import Divider from '@material-ui/core/Divider';
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -17,6 +18,7 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: theme.spacing(6),
   },
   midSection: {
+    paddingTop: 50
   }
 }));
 
@@ -41,6 +43,10 @@ const Home = () => {
         </Grid>
         <Divider />
       </div>
+      <div className={classes.flowSection}>
+        <FlowSection />
+      </div>
+      <Divider />
       <div className={classes.midSection}>
         <HomePagePricing />
       </div>
