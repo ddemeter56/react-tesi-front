@@ -14,10 +14,16 @@ import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
-
 import MenuItem from '@material-ui/core/MenuItem';
-
 import Select from '@material-ui/core/Select';
+import AddBoxIcon from '@material-ui/icons/AddBox';
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+import Slider from "react-slick";
+import MapComponent from './MapComponent';
+
 const useStyles = makeStyles((theme) => ({
   container: {
     padding: "15px",
@@ -38,6 +44,24 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
+const settings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 2,
+  slidesToScroll: 2,
+  responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: true,
+        dots: true
+      }
+    }
+  ]
+};
 
 const GymEntityPage = ({ data }) => {
   const classes = useStyles();
@@ -77,6 +101,7 @@ const GymEntityPage = ({ data }) => {
         console.log(item);
         foundFacilityPrice = item;
       }
+      return null;
     })
 
     return generatePriceTableRows(foundFacilityPrice.pricing);
@@ -91,14 +116,14 @@ const GymEntityPage = ({ data }) => {
         alignItems="center">
         <Typography variant="h3" style={{ paddingRight: 15, textAlign: "center"}}>{data.name} <VerifiedUserOutlinedIcon/></Typography>
           
-        <Grid item container direction="row" justify="center" alignItems="center" gap={5} >
+        <Grid item container direction="column" justify="center" alignItems="center" gap={5} >
           <Grid item>
             <Typography variant="h6" ><PlaceOutlinedIcon /> {data.addressString}</Typography>
           </Grid>
           <Grid item>
-            <Typography variant="h7" style={{ paddingLeft: 25}}>{data.earliestOpening} - {data.latestClosing}</Typography>
+            <Typography variant="h6" > Mai nyitvatartás: {data.earliestOpening} - {data.latestClosing}</Typography> 
           </Grid>
-          <Grid item style={{ paddingLeft: 15}}>
+          <Grid item >
             <StarOutlinedIcon />
             <StarOutlinedIcon />
             <StarOutlinedIcon />
@@ -116,11 +141,12 @@ const GymEntityPage = ({ data }) => {
         <Typography variant="body1" style={{padding: 20}}>{data.description}</Typography>
       </Grid>
       <Divider />
-      <Grid container direction="row" justify="flex-start" alignItems="flex-start" style={{ padding: 20 }}>
+
+      <Grid container direction="row" justify="flex-start" alignItems="flex-start" style={{ padding: 20}}>
         <Grid item xl={12}>
           <Typography variant="h5" style={{ textAlign: "center", paddingBottom: 15 }}>Pricing &#38; Facilities</Typography>
         </Grid>
-        <Grid item xl={6} lg={6} md={12} sm={12} xs={12}>
+        <Grid item xl={6} lg={6} md={12} sm={12} xs={12} style={{ height: 450 }}>
           <Select
             labelId="demo-simple-select-helper-label"
             id="demo-simple-select-helper"
@@ -132,7 +158,7 @@ const GymEntityPage = ({ data }) => {
             </MenuItem>
             {data.facilities.map((item, i) => {
               if(Array.isArray(item.pricing) && item.pricing.length > 0 ) {
-                return <MenuItem value={item.facilityCode.code === 1 ? item.customName : item.facilityCode.name }>{item.facilityCode.code === 1 ? item.customName : item.facilityCode.name }</MenuItem>
+                return <MenuItem key={i } value={item.facilityCode.code === 1 ? item.customName : item.facilityCode.name }>{item.facilityCode.code === 1 ? item.customName : item.facilityCode.name }</MenuItem>
               }
               return null;
             })}
@@ -162,13 +188,69 @@ const GymEntityPage = ({ data }) => {
               return (
                 <Grid item style={{ padding: 3}} key={i}>
                   <Tooltip title={item.description}>
-                    <Chip label={generateLabel(item)} color="secondary" clickable onClick/>
+                    <Chip label={generateLabel(item)} color="secondary" clickable deleteIcon={<AddBoxIcon />} onDelete={() =>{}}/>
                   </Tooltip>
                 </Grid>
               )
             })}
           </Grid>
         </Grid>
+      </Grid>
+  
+      <Divider style={{ marginBottom: 15 }} />
+      <Slider {...settings}>
+        <div>
+          <img src="https://www.cutlerzalaegerszeg.hu/index_htm_files/12755.jpg" style={{  display: "block",
+            marginLeft: "auto",
+            marginRight: "auto",
+            width: "90%"  }} alt="gymPic"/>
+        </div>
+        <div>
+          <img src="https://www.cutlerzalaegerszeg.hu/index_htm_files/12752.jpg" style={{  display: "block",
+            marginLeft: "auto",
+            marginRight: "auto",
+            width: "90%"  }} alt="gymPic"/>
+        </div>
+        <div>
+          <img src="https://www.cutlerzalaegerszeg.hu/index_htm_files/12760.jpg" style={{  display: "block",
+            marginLeft: "auto",
+            marginRight: "auto",
+            width: "90%"  }} alt="gymPic"/>
+        
+        </div>
+        <div>
+          <img src="https://www.cutlerzalaegerszeg.hu/index_htm_files/12772.jpg" style={{  display: "block",
+            marginLeft: "auto",
+            marginRight: "auto",
+            width: "90%"  }} alt="gymPic"/>
+        
+        </div>
+        <div>
+          <img src="https://www.cutlerzalaegerszeg.hu/index_htm_files/12785.jpg" style={{  display: "block",
+            marginLeft: "auto",
+            marginRight: "auto",
+            width: "90%"  }} alt="gymPic"/>
+        
+        </div>
+        <div>
+          <img src="https://www.cutlerzalaegerszeg.hu/index_htm_files/12755.jpg" style={{  display: "block",
+            marginLeft: "auto",
+            marginRight: "auto",
+            width: "90%"  }} alt="gymPic"/>
+        
+        </div>
+      </Slider>
+      <Grid item style={{ paddingTop: 35}}>
+        <MapComponent location={ {lat: 46.831438, lng: 16.8354945}  }/>
+      </Grid>
+      <Grid item>
+          Bejegyzések
+      </Grid>
+      <Grid item>
+          Vélemények  
+      </Grid>
+      <Grid item>
+          Személyi edzők
       </Grid>
     </div>
   )
