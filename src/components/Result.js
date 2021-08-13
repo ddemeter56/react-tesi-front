@@ -48,7 +48,7 @@ const Result = ({ type }) => {
   }
 
   function handleSortMethod(value) { 
-    setSortByMethod('DESC');
+    setSortByMethod(value);
   }
   useEffect(() => {
     if(Array.isArray(data) && data.length > 0) {

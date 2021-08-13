@@ -72,8 +72,8 @@ const ResultHeader = ({paginationComponent, found, handleSortProp, handleSortMet
           open={Boolean(anchorElAsc)}
           onClose={handleClose}
         >
-          <MenuItem onClick={() => handleSortMethod('asc')}>Növekvő</MenuItem>
-          <MenuItem onClick={() => handleSortMethod('desc')}>Csökkenő</MenuItem>
+          <MenuItem onClick={() => handleSortMethod('ASC')}>Növekvő</MenuItem>
+          <MenuItem onClick={() => handleSortMethod('DESC')}>Csökkenő</MenuItem>
         </Menu>
       </Grid>
     </Grid>
