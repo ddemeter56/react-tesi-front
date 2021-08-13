@@ -27,6 +27,7 @@ import MapComponent from './MapComponent';
 const useStyles = makeStyles((theme) => ({
   container: {
     padding: "15px",
+    paddingTop: 70,
     [theme.breakpoints.between('md', 'xl')] : {
       width: "60%",
       margin: "0px auto"
