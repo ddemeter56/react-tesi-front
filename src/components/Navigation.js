@@ -37,7 +37,7 @@ export default function Navigation() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" style={{ backgroundColor: "white"}}>
+      <AppBar position="sticky" style={{ backgroundColor: "white", position:"fixed"}}>
         <Toolbar className={classes.toolbar}>
           <SideBar />
           <Link className={classes.title} to="/">

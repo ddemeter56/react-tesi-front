@@ -37,7 +37,7 @@ const Result = ({ type }) => {
   const ITEM_PER_PAGE = 10;
   const [ actualPage, setActualPage ] = useState(1);
   const [ sortByProperty, setSortByProperty ] = useState('name');
-  const [ sortByMethod, setSortByMethod] = useState('asc');
+  const [ sortByMethod, setSortByMethod] = useState('ASC');
   const numberOfPages = useRef();
   const { searchParams } = useParams();
   const { loading, data, error } = useFetch(`${API_PATH.RESULT_LIST}${type}?pageSize=${ITEM_PER_PAGE}&page=${actualPage}&sortByProperty=${sortByProperty}&sortByMethod=${sortByMethod}&${searchParams}`);
@@ -48,7 +48,7 @@ const Result = ({ type }) => {
   }
 
   function handleSortMethod(value) { 
-    setSortByMethod('desc');
+    setSortByMethod('DESC');
   }
   useEffect(() => {
     if(Array.isArray(data) && data.length > 0) {
