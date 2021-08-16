@@ -35,7 +35,7 @@ const HomeSearchBar = () => {
   }
   const handleChangeSearchChange = (event) => {
     setValue(event.target.value);
-    setIsDetailOpen(false);
+    setIsDetailOpen(true);
   };
 
   return(
@@ -60,7 +60,7 @@ const HomeSearchBar = () => {
       <Grid container justify="center" alignContent="center" alignItems="center" spacing={2}>
         {renderForm(searchTypeValue, isDetailOpen)}
         <Tooltip title="Részletes kereső" aria-label="detailed-search"> 
-          <IconButton label="asdasd" style={{ textAlign: "center" }} aria-label="delete" onClick={handleDetailOpen}>
+          <IconButton label="" style={{ textAlign: "center" }} aria-label="delete" onClick={handleDetailOpen}>
             {isDetailOpen ? <ExpandLessIcon /> : <ExpandMoreIcon />}
             <div style={{fontSize: 15}}>
               Részletes kereső

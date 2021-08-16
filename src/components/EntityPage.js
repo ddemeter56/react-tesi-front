@@ -5,6 +5,7 @@ import { API_PATH } from '../utils/apiPaths';
 import { useFetch } from '../hooks/useFetch';
 import GymEntityPage from './GymEntityPage';
 import PtEntityPage from './PtEntityPage';
+import SkeletonEntityPage from './SkeletonEntityPage';
 const EntityPage = () => { 
   const { entityPage } = useParams();
   console.log(entityPage);
@@ -18,7 +19,7 @@ const EntityPage = () => {
   
   if(loading) {
     return(
-      <h1>LOADING</h1>
+      <SkeletonEntityPage />
     )
   }
   if(error) {

@@ -17,7 +17,6 @@ const SkeletonResultHeader = () => {
         <Skeleton animation="wave" height={15} width={150} />
       </Grid>
       <Grid item style={{ padding: 30}}>
-        
         <Skeleton animation="wave" height={25} width={50} />  
         <Skeleton animation="wave" height={40} width={250} />
         <Skeleton animation="wave" height={25} width={50} />
