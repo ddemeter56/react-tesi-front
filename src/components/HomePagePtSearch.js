@@ -7,6 +7,7 @@ import Autocomplete from '@material-ui/lab/Autocomplete';
 import Collapse from '@material-ui/core/Collapse';
 import { useHistory } from 'react-router-dom';
 import { encodeQueryData, encodeMultipleQueryData } from '../utils/urlQuery';
+import { generateDatetimeString } from '../utils/formatDate';
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -29,7 +30,9 @@ const HomePagePtSearch = (isDetailed) => {
     city: '',
     minPrice: undefined,
     maxPrice: undefined,
-    country: 'Magyarország'
+    country: 'Magyarország',
+    appointmentFrom: generateDatetimeString(),
+    appointmentTo: generateDatetimeString()
   })
 
   const [selectedSpecializations, setSelectedSpecializations] = useState([]);
@@ -37,7 +40,6 @@ const HomePagePtSearch = (isDetailed) => {
 
   const handleFormValuesChange = (event) => {
     const value = event.target.value;
-    console.log(event.target.name);
     setFormValues({
       ...formValues, 
       [event.target.name]: value
@@ -68,6 +70,32 @@ const HomePagePtSearch = (isDetailed) => {
           <Grid item>
             <TextField name="minPrice" value={formValues.minPrice} onChange={handleFormValuesChange} type="number" style={{ width: 100, paddingRight: 5 }} id="min-price" label="Ár -tól" variant="outlined" size="small" />
             <TextField name="maxPrice" value={formValues.maxPrice} onChange={handleFormValuesChange} type="number" style={{ width: 100 }} id="max-price" label="Ár -ig" variant="outlined" size="small" />
+          </Grid>
+          <Grid item>
+            <TextField
+              name="appointmentFrom"
+              id="datetime-local"
+              label="Szabad időpont-tól"
+              type="datetime-local"
+              defaultValue={formValues.appointmentFrom}
+              onChange={handleFormValuesChange}
+              InputLabelProps={{
+                shrink: true,
+              }}
+            />  
+          </Grid>
+          <Grid item>
+            <TextField
+              name="appointmentTo"
+              id="datetime-local"
+              label="Szabad időpont-ig"
+              type="datetime-local"
+              onChange={handleFormValuesChange}
+              defaultValue={formValues.appointmentTo}
+              InputLabelProps={{
+                shrink: true,
+              }}
+            />     
           </Grid>
         </Grid>
       )
@@ -103,7 +131,7 @@ const HomePagePtSearch = (isDetailed) => {
         }
       </Collapse>
       <Grid item className={classes.button} xs={12} sm={12} lg={4}>
-        <Button onClick={submitForm} style={{width: "100%"}} variant="contained" color="primary" size="large">
+        <Button onClick={submitForm} style={{width: 150}} variant="contained" color="primary" size="large">
           Keresés
         </Button>
       </Grid>
