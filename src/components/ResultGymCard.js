@@ -104,7 +104,7 @@ const ResultGymCard = ({ props }) => {
               <br /> { earliestOpening } - { latestClosing }
             </Typography>
           </Grid>
-          <Grid item xs={6} sm container>
+          <Grid style={{ padding: 0 }} item xs={6} sm container>
             <Grid item xs container direction="column" spacing={2}>
               <Grid item xs>
                 <Typography style={{ cursor: "pointer" }} gutterBottom variant="button" onClick={redirectToGym}>
