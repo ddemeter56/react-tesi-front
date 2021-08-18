@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.between('md','xl')]: { 
       width: 400,
-      height: 180,
+      height: 200,
     },
   },
   image: {
@@ -48,6 +48,13 @@ const useStyles = makeStyles((theme) => ({
   },
   socialMedia: {
 
+  },
+  address: {
+    display: "-webkit-box",
+    boxOrient: "vertical",
+    lineClamp: 3,
+    wordBreak: "break-all",
+    overflow: "hidden"
   }
 }));
 
@@ -99,7 +106,7 @@ const ResultGymCard = ({ props }) => {
                 <Typography style={{ cursor: "pointer" }} gutterBottom variant="button" onClick={redirectToGym}>
                   { name }
                 </Typography>
-                <Typography variant="caption" gutterBottom>
+                <Typography className={classes.address} variant="caption" gutterBottom>
                   <br />
                   { addressString }
                 </Typography>

@@ -10,7 +10,7 @@ import Result from './components/Result';
 import EntityPage from './components/EntityPage';
 
 function About() {
-  return <h2>About</h2>;
+  return <h2>Lehetne animated scrolling</h2>;
 }
 
 function Contact() {

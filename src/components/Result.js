@@ -50,6 +50,7 @@ const Result = ({ type }) => {
   function handleSortMethod(value) { 
     setSortByMethod(value);
   }
+
   useEffect(() => {
     if(Array.isArray(data) && data.length > 0) {
       numberOfPages.current = getNumberOfPages(data.length, ITEM_PER_PAGE)
@@ -108,7 +109,7 @@ const Result = ({ type }) => {
         justify="space-evenly"
         style={{ textAlign: "center" }} >
         {
-          data.map((item, index) => {
+          data.gyms.map((item, index) => {
             return(
               <Grid item key={index}>
                 {type === 'gym' 

@@ -71,7 +71,7 @@ const HomePagePtSearch = (isDetailed) => {
             <TextField name="minPrice" value={formValues.minPrice} onChange={handleFormValuesChange} type="number" style={{ width: 100, paddingRight: 5 }} id="min-price" label="Ár -tól" variant="outlined" size="small" />
             <TextField name="maxPrice" value={formValues.maxPrice} onChange={handleFormValuesChange} type="number" style={{ width: 100 }} id="max-price" label="Ár -ig" variant="outlined" size="small" />
           </Grid>
-          <Grid item>
+          <Grid item xl={12} lg={12} style={{ textAlign: "center" }}>
             <TextField
               name="appointmentFrom"
               id="datetime-local"
