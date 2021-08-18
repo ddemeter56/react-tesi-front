@@ -57,7 +57,7 @@ const ResultHeader = ({paginationComponent, found, handleSortProp, handleSortMet
           open={Boolean(anchorElSort)}
           onClose={handleClose}
         >
-          <MenuItem onClick={() => handleSortProp('avargePrice')}>Ár</MenuItem>
+          <MenuItem onClick={() => handleSortProp('avaragePrice')}>Ár</MenuItem>
           <MenuItem onClick={() => handleSortProp('name')}>Név</MenuItem>
           <MenuItem onClick={() => {console.log('asd')}}>Nyitvatartás</MenuItem>
           <MenuItem onClick={() => {console.log('asd')}}>Legközelebbi</MenuItem>
