@@ -200,46 +200,18 @@ const GymEntityPage = ({ data }) => {
   
       <Divider style={{ marginBottom: 15 }} />
       <Slider {...settings}>
-        <div>
-          <img src="https://www.cutlerzalaegerszeg.hu/index_htm_files/12755.jpg" style={{  display: "block",
-            marginLeft: "auto",
-            marginRight: "auto",
-            width: "90%"  }} alt="gymPic"/>
-        </div>
-        <div>
-          <img src="https://www.cutlerzalaegerszeg.hu/index_htm_files/12752.jpg" style={{  display: "block",
-            marginLeft: "auto",
-            marginRight: "auto",
-            width: "90%"  }} alt="gymPic"/>
-        </div>
-        <div>
-          <img src="https://www.cutlerzalaegerszeg.hu/index_htm_files/12760.jpg" style={{  display: "block",
-            marginLeft: "auto",
-            marginRight: "auto",
-            width: "90%"  }} alt="gymPic"/>
-        
-        </div>
-        <div>
-          <img src="https://www.cutlerzalaegerszeg.hu/index_htm_files/12772.jpg" style={{  display: "block",
-            marginLeft: "auto",
-            marginRight: "auto",
-            width: "90%"  }} alt="gymPic"/>
-        
-        </div>
-        <div>
-          <img src="https://www.cutlerzalaegerszeg.hu/index_htm_files/12785.jpg" style={{  display: "block",
-            marginLeft: "auto",
-            marginRight: "auto",
-            width: "90%"  }} alt="gymPic"/>
-        
-        </div>
-        <div>
-          <img src="https://www.cutlerzalaegerszeg.hu/index_htm_files/12755.jpg" style={{  display: "block",
-            marginLeft: "auto",
-            marginRight: "auto",
-            width: "90%"  }} alt="gymPic"/>
-        
-        </div>
+        {data.images.map((item) => {
+          return (
+            <div key={item.id}>
+              <img src={`https://api.tesi.life/${item.publicAddress}`} 
+                alt={item.imageType}
+                style={{  display: "block",
+                  marginLeft: "auto",
+                  marginRight: "auto",
+                  width: "90%"  }}/>
+            </div>
+          )
+        })}
       </Slider>
       <Grid item style={{ paddingTop: 35}}>
         <MapComponent location={ {lat: 46.831438, lng: 16.8354945}  }/>

@@ -30,8 +30,7 @@ const useStyles = makeStyles((theme) => ({
   },
   image: {
     width: 128,
-    height: 128,
-    background: "yellow"
+    height: 128
   },
   img: {
     margin: 'auto',
@@ -62,10 +61,15 @@ const ResultGymCard = ({ props }) => {
   const classes = useStyles();
   const history = useHistory();
 
-
   // Display these variables from props
   const { name, addressString, shortDescription, earliestOpening, latestClosing, referenceCode } = props;
   const { facebookUserId, instagramUserId, twitterUserId, youtubeUserId, webPageUserId} = props;
+  const { images } = props;
+
+  let firstImageUrl = '';
+  if(Array.isArray(images) && images.length > 0) {
+    firstImageUrl = images[0].publicAddress;
+  }
 
   const socialMediaArray = [
     {id: facebookUserId, key: "facebook", icon: <FacebookIcon/>, url: `www.facebook.com/${facebookUserId}`},
@@ -94,7 +98,7 @@ const ResultGymCard = ({ props }) => {
           style={{ textAlign: "center" }}  >
           <Grid item xs={6}> 
             <ButtonBase className={classes.image}>
-              <img className={classes.img} alt="complex" src="/static/images/grid/complex.jpg" />
+              <img className={classes.img} alt="complex" src={`https://api.tesi.life${firstImageUrl}`} />
             </ButtonBase>
             <Typography variant="caption">
               <br /> { earliestOpening } - { latestClosing }

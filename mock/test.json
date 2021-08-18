@@ -49,7 +49,36 @@
           }
         }
       ],
-      "images": []
+      "images": [
+        {
+            "id": "0c4a9932-a777-40ea-bc18-e6c351b0f300",
+            "createdAt": "2021-08-17T17:53:42.000Z",
+            "imageType": ".png",
+            "type": "ASSET",
+            "publicAddress": "/storage/images/0c4a9932-a777-40ea-bc18-e6c351b0f300.png"
+        },
+        {
+            "id": "317208a8-a20d-4145-abf4-132fbb429f85",
+            "createdAt": "2021-08-16T16:38:12.000Z",
+            "imageType": ".jpeg",
+            "type": "ASSET",
+            "publicAddress": "/storage/images/317208a8-a20d-4145-abf4-132fbb429f85.jpeg"
+        },
+        {
+            "id": "76ba1940-fa1b-4efb-9b55-00250f80ddea",
+            "createdAt": "2021-08-17T18:09:09.000Z",
+            "imageType": ".jpeg",
+            "type": "ASSET",
+            "publicAddress": "/storage/images/76ba1940-fa1b-4efb-9b55-00250f80ddea.jpeg"
+        },
+        {
+            "id": "d29c2f65-ad0f-4e1b-82bc-790720671f0a",
+            "createdAt": "2021-08-17T18:08:37.000Z",
+            "imageType": ".jpeg",
+            "type": "ASSET",
+            "publicAddress": "/storage/images/d29c2f65-ad0f-4e1b-82bc-790720671f0a.jpeg"
+        }
+    ]
     },
     {
       "id": "6f774ede-5929-4a1a-a5c1-56cd635d9a72",
@@ -1169,7 +1198,36 @@
         "sundayTo": "22:00"
       }
     ],
-    "images": [],
+    "images": [
+      {
+          "id": "76ba1940-fa1b-4efb-9b55-00250f80ddea",
+          "createdAt": "2021-08-17T18:09:09.000Z",
+          "imageType": ".jpeg",
+          "type": "ASSET",
+          "publicAddress": "/storage/images/76ba1940-fa1b-4efb-9b55-00250f80ddea.jpeg"
+      },
+      {
+          "id": "d29c2f65-ad0f-4e1b-82bc-790720671f0a",
+          "createdAt": "2021-08-17T18:08:37.000Z",
+          "imageType": ".jpeg",
+          "type": "ASSET",
+          "publicAddress": "/storage/images/d29c2f65-ad0f-4e1b-82bc-790720671f0a.jpeg"
+      },
+      {
+          "id": "0c4a9932-a777-40ea-bc18-e6c351b0f300",
+          "createdAt": "2021-08-17T17:53:42.000Z",
+          "imageType": ".png",
+          "type": "ASSET",
+          "publicAddress": "/storage/images/0c4a9932-a777-40ea-bc18-e6c351b0f300.png"
+      },
+      {
+          "id": "317208a8-a20d-4145-abf4-132fbb429f85",
+          "createdAt": "2021-08-16T16:38:12.000Z",
+          "imageType": ".jpeg",
+          "type": "ASSET",
+          "publicAddress": "/storage/images/317208a8-a20d-4145-abf4-132fbb429f85.jpeg"
+      }
+  ],
     "facilities": [
       {
         "id": 42,
