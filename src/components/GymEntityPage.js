@@ -144,7 +144,7 @@ const GymEntityPage = ({ data }) => {
       <Divider />
 
       <Grid container direction="row" justify="flex-start" alignItems="flex-start" style={{ padding: 20}}>
-        <Grid item xl={12}>
+        <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
           <Typography variant="h5" style={{ textAlign: "center", paddingBottom: 15 }}>Pricing &#38; Facilities</Typography>
         </Grid>
         <Grid item xl={6} lg={6} md={12} sm={12} xs={12} style={{ height: 450 }}>

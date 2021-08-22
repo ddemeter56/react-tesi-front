@@ -68,7 +68,7 @@ const HomeSearchBar = () => {
           </IconButton>
         </Tooltip>
       </Grid>
-      <Typography style={{ paddingTop: 15, textAlign: "center", color: "#797979" }}variant="body2" display="block" gutterBottom>
+      <Typography style={{ paddingTop: 15, textAlign: "center", color: "#797979" }} variant="body2" display="block" gutterBottom>
         Keresd az egyes specializációk és létesítmények leírását <a href="asd">itt</a>
       </Typography>
       

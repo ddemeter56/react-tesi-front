@@ -109,15 +109,21 @@ const Result = ({ type }) => {
         justify="space-evenly"
         style={{ textAlign: "center" }} >
         {
+          type === 'gym' &&
           data.gyms.map((item, index) => {
             return(
               <Grid item key={index}>
-                {type === 'gym' 
-                  ? 
-                  <ResultGymCard props={item}/> 
-                  : 
-                  <ResultGymCard props={item}  />
-                }
+                <ResultGymCard props={item}/> 
+              </Grid>
+            )
+          })
+        }
+        {
+          type === 'pt' &&
+          data.pts.map((item, index) => {
+            return(
+              <Grid item key={index}>
+                <ResultGymCard props={item}/> 
               </Grid>
             )
           })

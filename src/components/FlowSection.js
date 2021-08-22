@@ -11,12 +11,12 @@ import Grid from '@material-ui/core/Grid';
 
 const useStyles = makeStyles((theme) => ({
   card: {
-    height: 250,
+    height: 300,
     borderRadius: 100,
     padding: 15,
     margin: 15,
     border: "1px solid #eeeeee",
-    
+    minWidth: 200,
     display: "flex",
     justifyContent: "flex-start",
     alignContent: "center",
@@ -62,13 +62,13 @@ const FlowSection = () => {
       <div className={classes.flowSectionText}>
         <Typography  variant="h3">Train with Tesi</Typography>
       </div>
-      <Grid container justify="center"
-        alignContent="space-evenly"
+      <Grid container justify="space-between"
+        alignContent="space-around"
         alignItems="center"
-        flexDirection="row" style={{textAlign: "center", width: "100%"}}>
+        style={{textAlign: "center", width: "100%"}}>
         {cardContent.map((item, i) => {
           return (
-            <Grid xl={2} lg={2} md={4} sm={6} xs={12}  className={classes.card}>
+            <Grid item xl={2} lg={2} md={4} sm={6} xs={12} className={classes.card} key={i}>
               <div className={classes.cardIcon}>
                 {item.icon}
               </div>
