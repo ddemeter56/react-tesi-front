@@ -12,6 +12,7 @@ import SkeletonHeader from './SkeletonResultHeader';
 import { getNumberOfPages } from '../utils/pagination';
 import { useState, useEffect, useRef } from 'react';
 import Pagination from '@material-ui/lab/Pagination';
+import ResultPtCard from './ResultPtCard';
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -123,7 +124,7 @@ const Result = ({ type }) => {
           data.pts.map((item, index) => {
             return(
               <Grid item key={index}>
-                <ResultGymCard props={item}/> 
+                <ResultPtCard props={item}/> 
               </Grid>
             )
           })

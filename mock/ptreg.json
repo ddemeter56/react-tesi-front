@@ -1,0 +1,61 @@
+{
+  "personalTrainer": {
+    "referenceCode": "ptteszt",
+    "firstName": "Personal",
+    "lastName": "Trainerke",
+    "email": "personal.trainer@gmail.com",
+    "phoneNumber": "+36708383198",
+    "languageCodes": [
+      "hu", "en", "de"
+    ],
+    "description": "t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will u",
+    "shortDescription": "t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters",
+    "facebookUserId": "www.facebook.com/1",
+    "instagramUserId": "www.instagram.com/1",
+    "twitterUserId": "www.twitter.com/1",
+    "youtubeUserId": "www.youtube.com/1",
+    "webPageUserId": "www.webPageUser.com/1"
+  },
+  "gymId": "6f774ede-5929-4a1a-a5c1-56cd635d9a72",
+  "specializations": [{
+    "specialization": {
+      "code": 2,
+      "customName": "",
+      "description": "is a long established fact that a reader will be distracted by the readable content of a "
+    },
+    "pricing": [{
+      "categoryType": "daily",
+      "ticketType": "daily",
+      "amount": 3000,
+      "currency": "HUF",
+      "validForDays": 1
+    }]
+  }],
+  "certifications":[ {
+    "code": 4,
+    "customCertification": "",
+    "description": "is a long established fact that a reader will be distracted by the readable content of a "
+  }],
+  "ptPricing":[{
+    "categoryType": "daily",
+    "ticketType": "daily",
+    "amount": 3000,
+    "currency": "HUF",
+    "validForDays": 1
+  },
+  {
+    "categoryType": "daily",
+    "ticketType": "daily",
+    "amount": 3000,
+    "currency": "HUF",
+    "validForDays": 1
+  },
+  {
+    "categoryType": "daily",
+    "ticketType": "daily",
+    "amount": 3000,
+    "currency": "HUF",
+    "validForDays": 1
+  }
+]
+}

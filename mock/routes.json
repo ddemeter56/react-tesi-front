@@ -1,8 +1,5 @@
 {
   "/api/public/list/gym?*": "/gym",
   "/api/public/list/pt?*": "/pt",
-  "/api/public/list/:referenceCode": "/gymPage",
-  "/:resource/:id/show": "/:resource/:id",
-  "/posts/:category": "/posts?category=:category",
-  "/articles\\?id=:id": "/posts/:id"
+  "/api/public/list/:referenceCode": "/gymPage"
 }
