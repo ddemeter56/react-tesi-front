@@ -71,7 +71,7 @@ const HomePageGymSearch = (isDetailed) => {
     if(isDetailed.isDetailed) {
       return (
         <Grid container style={{ paddingTop: 10}} justify="center" alignContent="center" alignItems="center" spacing={2}> 
-          <Grid item style={{ textAlign: "center", paddingTop: 15 }}>
+          <Grid item lg={12} style={{ textAlign: "center", paddingTop: 15 }}>
             <TextField className={classes.oneLineInput} name="country" value={formValues.country} onChange={handleFormValuesChange} id="outlined-basic" label="Ország" variant="outlined" size="small" />
           </Grid>
           <Grid item style={{ textAlign: "center" }}>

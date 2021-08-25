@@ -10,7 +10,6 @@ const EntityPage = () => {
   const { entityPage } = useParams();
   console.log(entityPage);
   const { loading, data, error } = useFetch(`${API_PATH.LIST_PAGE}${entityPage}`);
-  console.log(entityPage);
   let type;
 
   if(data) {

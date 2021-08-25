@@ -85,6 +85,7 @@ const GymEntityPage = ({ data }) => {
             {row.categoryType}
           </TableCell>
           <TableCell align="right">{row.ticketType}</TableCell>
+          <TableCell align="right">{row.validForDays}</TableCell>
           <TableCell align="right">{row.amount}</TableCell>
           <TableCell align="right">{row.currency}</TableCell>
         </TableRow>

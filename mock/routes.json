@@ -1,5 +1,5 @@
 {
   "/api/public/list/gym?*": "/gym",
   "/api/public/list/pt?*": "/pt",
-  "/api/public/list/:referenceCode": "/gymPage"
+  "/api/public/list/:referenceCode": "/ptPage"
 }

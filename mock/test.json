@@ -659,6 +659,7 @@
         "lastName": "Oror",
         "phoneNumber": "+463123103",
         "email": "d@gmail.com",
+        "referenceCode": "asd",
         "languages" : [
           {"id": 1},
           {"id": 2}
@@ -705,6 +706,7 @@
         "lastName": "Oror",
         "phoneNumber": "+463123103",
         "email": "d@gmail.com",
+        "referenceCode": "asd",
         "languages" : [
           {"id": 1},
           {"id": 2}
@@ -751,6 +753,7 @@
         "lastName": "Oror",
         "phoneNumber": "+463123103",
         "email": "d@gmail.com",
+        "referenceCode": "asd",
         "languages" : [
           {"id": 1},
           {"id": 2}
@@ -797,6 +800,7 @@
         "lastName": "Oror",
         "phoneNumber": "+463123103",
         "email": "d@gmail.com",
+        "referenceCode": "asd",
         "languages" : [
           {"id": 1},
           {"id": 2}
@@ -843,6 +847,7 @@
         "lastName": "Oror",
         "phoneNumber": "+463123103",
         "email": "d@gmail.com",
+        "referenceCode": "asd",
         "languages" : [
           {"id": 1},
           {"id": 2}
@@ -889,6 +894,7 @@
         "lastName": "Oror",
         "phoneNumber": "+463123103",
         "email": "d@gmail.com",
+        "referenceCode": "asd",
         "languages" : [
           {"id": 1},
           {"id": 2}
@@ -1291,6 +1297,142 @@
     "latestClosing": "22:00"
   },
   "ptPage": {
-    
+    "id": "eaf8d3b4-3988-4c7b-ae07-75c6db6d7b64",
+    "referenceCode": "ptteszt",
+    "firstName": "Personal",
+    "lastName": "Trainerke",
+    "email": "personal.trainer@gmail.com",
+    "phoneNumber": "+36708383198",
+    "description": "t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will u",
+    "shortDescription": "t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters",
+    "facebookUserId": "www.facebook.com/1",
+    "instagramUserId": "www.instagram.com/1",
+    "twitterUserId": "www.twitter.com/1",
+    "youtubeUserId": "www.youtube.com/1",
+    "webPageUserId": "www.webPageUser.com/1",
+    "language": [
+      {
+        "id": 1,
+        "code": "hu"
+      },
+      {
+        "id": 2,
+        "code": "en"
+      },
+      {
+        "id": 3,
+        "code": "de"
+      }
+    ],
+    "specializations": [
+      {
+        "id": 2,
+        "specializationCode": {
+          "code": 2,
+          "name": "Weight Loss"
+        },
+        "customName": "",
+        "description": "is a long established fact that a reader will be distracted by the readable content of a ",
+        "pricing": {
+          "ticketId": 74,
+          "categoryType": "daily",
+          "ticketType": "daily",
+          "amount": "3000.00",
+          "currency": "HUF",
+          "validForDays": 1
+        }
+      },
+      {
+        "id": 2,
+        "specializationCode": {
+          "code": 2,
+          "name": "Weight Loss"
+        },
+        "customName": "",
+        "description": "is a long established fact that a reader will be distracted by the readable content of a ",
+        "pricing": {
+          "ticketId": 74,
+          "categoryType": "daily",
+          "ticketType": "daily",
+          "amount": "2000.00",
+          "currency": "HUF",
+          "validForDays": 1
+        }
+      },
+      {
+        "id": 2,
+        "specializationCode": {
+          "code": 2,
+          "name": "Weight Loss"
+        },
+        "customName": "",
+        "description": "is a long established fact that a reader will be distracted by the readable content of a ",
+        "pricing": {
+          "ticketId": 74,
+          "categoryType": "daily",
+          "ticketType": "daily",
+          "amount": "7000.00",
+          "currency": "HUF",
+          "validForDays": 1
+        }
+      },
+      {
+        "id": 2,
+        "specializationCode": {
+          "code": 1,
+          "name": "Empty"
+        },
+        "customName": "Egyedi specializációs",
+        "description": "is a long established fact that a reader will be distracted by the readable content of a ",
+        "pricing": {
+          "ticketId": 74,
+          "categoryType": "daily",
+          "ticketType": "daily",
+          "amount": "5000.00",
+          "currency": "HUF",
+          "validForDays": 1
+        }
+      }
+    ],
+    "certifications": [
+      {
+        "id": 2,
+        "customCertification": "",
+        "description": "is a long established fact that a reader will be distracted by the readable content of a ",
+        "certification": {
+          "code": 4,
+          "name": "rekreációs mozgásprogram-vezető",
+          "additional": "aqua tréner",
+          "category": "Ráépülés "
+        }
+      }
+    ],
+    "pricing": [
+      {
+        "ticketId": 74,
+        "categoryType": "daily",
+        "ticketType": "daily",
+        "amount": "3000.00",
+        "currency": "HUF",
+        "validForDays": 1
+      },
+      {
+        "ticketId": 75,
+        "categoryType": "daily",
+        "ticketType": "daily",
+        "amount": "3000.00",
+        "currency": "HUF",
+        "validForDays": 1
+      },
+      {
+        "ticketId": 76,
+        "categoryType": "daily",
+        "ticketType": "daily",
+        "amount": "3000.00",
+        "currency": "HUF",
+        "validForDays": 1
+      }
+    ],
+    "images": []
   }
 }
