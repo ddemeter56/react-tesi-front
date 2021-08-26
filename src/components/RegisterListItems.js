@@ -41,6 +41,11 @@ export default function RegisterListItems() {
               {t('registerPt')}
             </Link>
           </ListItem>
+          <ListItem button>
+            <Link style={{ textDecoration: 'none', width: "100%", height: "100%"}} to="/register/professional">
+              {t('userRegister')}
+            </Link>
+          </ListItem>
         </List>
       </Collapse>
     </>

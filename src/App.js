@@ -8,6 +8,7 @@ import Home from './components/Home';
 import Footer from './components/Footer';
 import Result from './components/Result';
 import EntityPage from './components/EntityPage';
+import RegisterPage from './components/RegisterPage';
 
 function About() {
   return <h2>Lehetne animated scrolling</h2>;
@@ -17,13 +18,6 @@ function Contact() {
   return <h2>Contact</h2>;
 }
 
-function RegisterGYM() {
-  return <h2>Register GYM </h2>;
-}
-
-function RegisterPT() {
-  return <h2>Register PT</h2>;
-}
 
 function App() {
   return (
@@ -32,10 +26,10 @@ function App() {
         <Navigation />
         <Switch>
           <Route path="/register/gym">
-            <RegisterGYM />
+            <RegisterPage type="gym" />
           </Route>
           <Route path="/register/professional">
-            <RegisterPT />
+            <RegisterPage type="pt" />
           </Route>
           <Route path="/about">
             <About />
