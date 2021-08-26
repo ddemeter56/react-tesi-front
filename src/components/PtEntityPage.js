@@ -37,6 +37,10 @@ const useStyles = makeStyles((theme) => ({
   chipContainer: {
     padding: 30
   },
+  ptHeaderContainer: {
+    width: "50%",
+    margin: '0 auto'
+  },
   heading: {
     fontSize: theme.typography.pxToRem(15),
     flexBasis: '33.33%',
@@ -46,6 +50,10 @@ const useStyles = makeStyles((theme) => ({
     fontSize: theme.typography.pxToRem(15),
     color: theme.palette.text.secondary,
   },
+  profilePicture: {
+    width: 250,
+    height: 250
+  }
 }));
 
 
@@ -80,46 +88,71 @@ const PtEntityPage = ({ data }) => {
   }
   return (
     <div className={classes.container}>
-      <Grid
-        container
-        direction="row"
-        justify="center"
-        alignItems="center">
-        <Typography variant="h3" style={{ paddingRight: 15, textAlign: "center"}}>{data.firstName} {data.lastName}</Typography>
-        <Grid item container direction="column" justify="center" alignItems="center" gap={5} >
-          <Grid item>
-            <Typography variant="h6" >{data.phoneNumber}</Typography>
-          </Grid>
-          <Grid item>
-            <Typography variant="h6" >{data.email}</Typography>
-          </Grid>
-          <Grid item >
-            <StarOutlinedIcon />
-            <StarOutlinedIcon />
-            <StarOutlinedIcon />
-            <StarOutlinedIcon />
-            <StarOutlinedIcon />
-          </Grid>
+      <Grid className={classes.ptHeaderContainer} container direction="row" justify="center" alignItems="center">
+        <Grid item xl={6} lg={6}>
+          <img src={`https://api.tesi.life/${data.images[0].publicAddress}`} className={classes.profilePicture} alt="profile_pic"/>
+        </Grid>
+        <Grid item xl={6} lg={6}>
+          <Grid
+            container
+            direction="row"
+            justify="center"
+            alignItems="center">
+            <Typography variant="h3" style={{ paddingRight: 15, textAlign: "center"}}>{data.firstName} {data.lastName}</Typography>
+            <Grid item container direction="column" justify="center" alignItems="center" gap={5} >
+              <Grid item>
+                <Typography variant="h6" >{data.phoneNumber}</Typography>
+              </Grid>
+              <Grid item>
+                <Typography variant="h6" >{data.email}</Typography>
+              </Grid>
+              <Grid item >
+                <StarOutlinedIcon />
+                <StarOutlinedIcon />
+                <StarOutlinedIcon />
+                <StarOutlinedIcon />
+                <StarOutlinedIcon />
+              </Grid>
                                                                                          
-        </Grid>
-      </Grid>
-      <Divider style={{ margin: 20}}/>
-      <Typography>{data.description}</Typography>
-      <Grid container direction="row" justify="flex-start" alignItems="center" alignContent="center" style={{ padding: 20}}>
-        <Grid item>
-          <Typography style={{ textAlign: "center" }} variant="button">Spoken laguages: </Typography>
-        </Grid>
-        {data.language.map((item, index) => {
-          return (
-            <Grid item style={{ padding: 3}} key={item + index}>
-              <Chip label={t(item.code)} color="secondary" clickable/>
             </Grid>
-          )
-        })}
-        <Grid item>
-
+          </Grid>
         </Grid>
       </Grid>
+      
+      <Divider style={{ margin: 20}}/>
+      
+      <Typography>{data.description}</Typography>
+      <Grid container alignItems="center">
+        <Grid item xl={6}>
+          <Grid container direction="row" justify="flex-start" alignItems="center" alignContent="center" style={{ padding: 20}}>
+            <Grid item >
+              <Typography style={{ textAlign: "center" }} variant="button">Spoken laguages: </Typography>
+            </Grid>
+            {data.language.map((item, index) => {
+              return (
+                <Grid item style={{ padding: 3}} key={item + index}>
+                  <Chip label={t(item.language.code)} color="secondary" clickable/>
+                </Grid>
+              )
+            })}
+          </Grid>
+        </Grid>
+        <Grid item xl={6}>
+          <Grid container direction="row" justify="flex-start" alignItems="center" alignContent="center" style={{ padding: 20}}>
+            <Grid item>
+              <Typography style={{ textAlign: "center" }} variant="button">Certifications: </Typography>
+            </Grid>
+            {data.certifications.map((item, index) => {
+              return (
+                <Grid item style={{ padding: 3}} key={item + index}>
+                  <Chip label={item.certification.name} />
+                </Grid>
+              )
+            })}
+          </Grid>
+        </Grid>
+      </Grid>
+      
       
       <Divider style={{ margin: 20}}/>
 
@@ -138,7 +171,7 @@ const PtEntityPage = ({ data }) => {
                   id={`panel${index}bh-header`}
                 >
                   <Typography className={classes.heading}>{generateSpeciLabel(item)}</Typography>
-                  <Typography className={classes.secondaryHeading}>{item.pricing.amount}{item.pricing.currency} / {item.pricing.ticketType.toUpperCase( )}</Typography>
+                  <Typography className={classes.secondaryHeading}>{item.ticketPricing[0].amount}{item.ticketPricing[0].currency} / {item.ticketPricing[0].ticketType.toUpperCase( )}</Typography>
                 </AccordionSummary>
                 <AccordionDetails >
                   <Typography>
@@ -158,7 +191,7 @@ const PtEntityPage = ({ data }) => {
         <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
           <Typography style={{ textAlign: "center", paddingBottom: 15 }} variant="h5">Pricing</Typography>
         </Grid>
-        <Grid item xl={12} justify="center" alignItems="center" alignContent="center">
+        <Grid item xl={12} lg={12} md={12} sm={12} xs={12}justify="center" alignItems="center" alignContent="center">
           <TableContainer className={classes.tableContainer}>
             <Table  stickyHeader aria-label="customized table">
               <TableHead>

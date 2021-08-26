@@ -1313,15 +1313,24 @@
     "language": [
       {
         "id": 1,
-        "code": "hu"
+        "language": {
+          "code": "hu",
+          "name": "Hungarian"
+        }
       },
       {
         "id": 2,
-        "code": "en"
+        "language": {
+          "code": "en",
+          "name": "English"
+        }
       },
       {
         "id": 3,
-        "code": "de"
+        "language": {
+          "code": "de",
+          "name": "German"
+        }
       }
     ],
     "specializations": [
@@ -1333,14 +1342,16 @@
         },
         "customName": "",
         "description": "is a long established fact that a reader will be distracted by the readable content of a ",
-        "pricing": {
-          "ticketId": 74,
-          "categoryType": "daily",
-          "ticketType": "daily",
-          "amount": "3000.00",
-          "currency": "HUF",
-          "validForDays": 1
-        }
+        "ticketPricing": [
+          {
+              "ticketId": 77,
+              "categoryType": "daily",
+              "ticketType": "daily",
+              "amount": "3000.00",
+              "currency": "HUF",
+              "validForDays": 1
+          }
+        ]
       },
       {
         "id": 2,
@@ -1350,14 +1361,16 @@
         },
         "customName": "",
         "description": "is a long established fact that a reader will be distracted by the readable content of a ",
-        "pricing": {
-          "ticketId": 74,
-          "categoryType": "daily",
-          "ticketType": "daily",
-          "amount": "2000.00",
-          "currency": "HUF",
-          "validForDays": 1
-        }
+        "ticketPricing": [
+          {
+              "ticketId": 77,
+              "categoryType": "daily",
+              "ticketType": "daily",
+              "amount": "3000.00",
+              "currency": "HUF",
+              "validForDays": 1
+          }
+        ]
       },
       {
         "id": 2,
@@ -1367,14 +1380,16 @@
         },
         "customName": "",
         "description": "is a long established fact that a reader will be distracted by the readable content of a ",
-        "pricing": {
-          "ticketId": 74,
-          "categoryType": "daily",
-          "ticketType": "daily",
-          "amount": "7000.00",
-          "currency": "HUF",
-          "validForDays": 1
-        }
+        "ticketPricing": [
+          {
+              "ticketId": 77,
+              "categoryType": "daily",
+              "ticketType": "daily",
+              "amount": "3000.00",
+              "currency": "HUF",
+              "validForDays": 1
+          }
+        ]
       },
       {
         "id": 2,
@@ -1384,17 +1399,41 @@
         },
         "customName": "Egyedi specializációs",
         "description": "is a long established fact that a reader will be distracted by the readable content of a ",
-        "pricing": {
-          "ticketId": 74,
-          "categoryType": "daily",
-          "ticketType": "daily",
-          "amount": "5000.00",
-          "currency": "HUF",
-          "validForDays": 1
-        }
+        "ticketPricing": [
+          {
+              "ticketId": 77,
+              "categoryType": "daily",
+              "ticketType": "daily",
+              "amount": "3000.00",
+              "currency": "HUF",
+              "validForDays": 1
+          }
+        ]
       }
     ],
     "certifications": [
+      {
+        "id": 2,
+        "customCertification": "",
+        "description": "is a long established fact that a reader will be distracted by the readable content of a ",
+        "certification": {
+          "code": 4,
+          "name": "rekreációs mozgásprogram-vezető",
+          "additional": "aqua tréner",
+          "category": "Ráépülés "
+        }
+      },
+      {
+        "id": 2,
+        "customCertification": "",
+        "description": "is a long established fact that a reader will be distracted by the readable content of a ",
+        "certification": {
+          "code": 4,
+          "name": "rekreációs mozgásprogram-vezető",
+          "additional": "aqua tréner",
+          "category": "Ráépülés "
+        }
+      },
       {
         "id": 2,
         "customCertification": "",
@@ -1433,6 +1472,14 @@
         "validForDays": 1
       }
     ],
-    "images": []
+    "images": [
+      {
+        "id": "0c4a9932-a777-40ea-bc18-e6c351b0f300",
+        "createdAt": "2021-08-17T17:53:42.000Z",
+        "imageType": ".png",
+        "type": "ASSET",
+        "publicAddress": "/storage/images/0c4a9932-a777-40ea-bc18-e6c351b0f300.png"
+      }
+    ]
   }
 }
