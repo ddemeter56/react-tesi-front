@@ -24,6 +24,6 @@ export function useFetch(uri) {
 }
 
 /** if production fetch api */
-function getEnvironment() {
+export function getEnvironment() {
   return window.location.hostname === 'localhost' ? 'http://localhost:3004/api/' : 'https://api.tesi.life/api/'; // if we had mock server
 }

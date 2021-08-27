@@ -10,6 +10,7 @@ import Result from './components/Result';
 import EntityPage from './components/EntityPage';
 import RegisterPage from './components/RegisterPage';
 
+
 function About() {
   return <h2>Lehetne animated scrolling</h2>;
 }
@@ -25,12 +26,6 @@ function App() {
       <Router>
         <Navigation />
         <Switch>
-          <Route path="/register/gym">
-            <RegisterPage type="gym" />
-          </Route>
-          <Route path="/register/professional">
-            <RegisterPage type="pt" />
-          </Route>
           <Route path="/about">
             <About />
           </Route>

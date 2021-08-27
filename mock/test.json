@@ -1481,5 +1481,14 @@
         "publicAddress": "/storage/images/0c4a9932-a777-40ea-bc18-e6c351b0f300.png"
       }
     ]
+  },
+  "userRegPt": {
+    "message": "Personal trainer user successfully registered"
+  },
+  "userRegGymOwner": {
+    "message": "Gym owner successfully registered"
+  },
+  "userRegGymManager": {
+    "message": "Gym manager successfully registered"
   }
 }

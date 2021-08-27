@@ -1,5 +1,8 @@
 {
   "/api/public/list/gym?*": "/gym",
   "/api/public/list/pt?*": "/pt",
-  "/api/public/list/:referenceCode": "/ptPage"
+  "/api/public/list/:referenceCode": "/ptPage",
+  "/api/user-registration/pt": "/userRegPt",
+  "/api/user-registration/gym-owner": "/userRegGymOwner",
+  "/api/user-registration/gym-manager": "/userRegGymManager"
 }
