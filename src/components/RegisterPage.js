@@ -12,8 +12,10 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import { getEnvironment } from '../hooks/useFetch';
-
+import CheckCircleIcon from '@material-ui/icons/CheckCircle';
+import HighlightOffIcon from '@material-ui/icons/HighlightOff';
 import { API_PATH } from '../utils/apiPaths';
+
 const useStyles = makeStyles((theme) => ({
   paper: {
     marginTop: theme.spacing(1),
@@ -27,12 +29,42 @@ const useStyles = makeStyles((theme) => ({
   },
   form: {
     width: '100%', // Fix IE 11 issue.
+    minHeight: 400,
     marginTop: theme.spacing(3),
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
   },
 }));
+
+const renderIcon = (responseData) => {
+  if(!responseData) return <LockOutlinedIcon />;
+
+  if(responseData.statusCode === 400) 
+  { return < HighlightOffIcon/> } else 
+  { return <CheckCircleIcon  />}
+}
+
+const renderText = (responseData) => {
+  if(!responseData) return (
+    <Typography component="h1" variant="h5">
+      Sign up 
+    </Typography>
+  );
+
+  
+  if(responseData.statusCode === 400) 
+  { return (
+    <Typography component="h1" variant="h5" style={{ color: "red" }}>
+      Hiba a regisztráció során 
+    </Typography>
+  )} else 
+  { return (
+    <Typography component="h1" variant="h5" style={{ color: "green" }}>
+      Sikeres regisztráció
+    </Typography>
+  )}
+}
 
 /** types can be: pt, gym-owner, gym-manager */
 export default function RegisterPage({ type }) {
@@ -44,18 +76,83 @@ export default function RegisterPage({ type }) {
     email: '',
     password: ''
   });
-  
+  const [responseData, setResponse] = useState(null);
+
   const handleFormChange = (event) => {
     setFormValues({
       ...formValues,
       [event.target.name]: event.target.value, })
   }
 
+  const renderButton = (responseData) => {
+    if(!responseData) return (
+      <>
+        <Button
+          fullWidth
+          variant="contained"
+          color="primary"
+          className={classes.submit}
+          onClick={submitForm}
+        >
+        Regisztrálás
+        </Button>
+        <Grid container justifyContent="flex-end">
+          <Grid item>
+            <Link href="#" variant="body2">
+              Van már fiókod? Jelentkezz be
+            </Link>
+          </Grid>
+        </Grid>
+      </>
+    );
+  
+    
+    if(responseData.statusCode === 400) 
+    { return (
+      <>
+        <Button
+          fullWidth
+          variant="contained"
+          color="primary"
+          className={classes.submit}
+          onClick={submitForm}
+        >
+        Regisztrálás
+        </Button>
+        <Grid container justifyContent="flex-end">
+          <Grid item>
+            <Link href="#" variant="body2">
+              Van már fiókod? Jelentkezz be
+            </Link>
+          </Grid>
+        </Grid>
+      </>
+    )} else 
+    { return (
+      <Button
+        fullWidth
+        variant="contained"
+        color="primary"
+        className={classes.submit}
+        onClick={submitForm}
+      >
+        Bejelentkezés
+      </Button>
+    )}
+  }
 
   const submitForm = () => {
     if(termsAccepted) {
-      fetch(`${getEnvironment()}${API_PATH.USER_REGISTER}${type}`)
-        .then(data => {data.json(); console.log(data)});
+      fetch(`${getEnvironment()}${API_PATH.USER_REGISTER}${type}`, {
+        headers: new Headers({'content-type': 'application/json'}),
+        method: "POST",
+        body: JSON.stringify(formValues)
+        
+      })
+        .then(response => response.json())
+        .then(data => setResponse(data));
+      console.log(responseData)
+      // Kene message melle code: pl: statusCode: 200, OK, 400 Nem ok
     } else {
       setShowAcceptError(true)
     }
@@ -69,14 +166,18 @@ export default function RegisterPage({ type }) {
   }
   return (
     <Container component="main" maxWidth="xs">
+      
       <CssBaseline />
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>
-          <LockOutlinedIcon />
+          {
+            renderIcon(responseData)
+          }
+          
         </Avatar>
-        <Typography component="h1" variant="h5">
-          Sign up - {type.toUpperCase()}
-        </Typography>
+        {
+          renderText(responseData)
+        }
         <form className={classes.form} noValidate>
           <Grid container spacing={2}>
             <Grid item xs={12}>
@@ -127,22 +228,9 @@ export default function RegisterPage({ type }) {
               <p style={{ color: showAcceptError ? "red" : "black" }}>A használati feltételeket elolvastam és elfogadom</p>
             </Grid>
           </Grid>
-          <Button
-            fullWidth
-            variant="contained"
-            color="primary"
-            className={classes.submit}
-            onClick={submitForm}
-          >
-           Regisztrálás
-          </Button>
-          <Grid container justifyContent="flex-end">
-            <Grid item>
-              <Link href="#" variant="body2">
-                Van már fiókod? Jelentkezz be
-              </Link>
-            </Grid>
-          </Grid>
+          { 
+            renderButton(responseData)
+          }
         </form>
       </div>
     </Container>

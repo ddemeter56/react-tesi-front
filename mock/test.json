@@ -1,6 +1,6 @@
 {
   "gym": {
-    "gyms" : [
+    "gyms": [
       {
         "id": "25f1e582-edd5-41da-ab64-bc28d0097cde",
         "name": "Viszonylag hosszú GYM név Fitness",
@@ -18,638 +18,638 @@
         "earliestOpening": "08:00",
         "latestClosing": "22:00",
         "facilities": [
-            {
-                "id": 34,
-                "customName": "",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam lacus, commodo ut sagittis vel, el",
-                "facilityCode": {
-                    "code": 2,
-                    "name": "Cardio zone",
-                    "type": "Cardio zone"
-                }
-            },
-            {
-                "id": 35,
-                "customName": "",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam lacus, commodo ut sagittis vel, el",
-                "facilityCode": {
-                    "code": 6,
-                    "name": "Gym zone",
-                    "type": "Gym zone"
-                }
-            },
-            {
-                "id": 36,
-                "customName": "",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam lacus, commodo ut sagittis vel, el",
-                "facilityCode": {
-                    "code": 7,
-                    "name": "Free weights area",
-                    "type": "Gym zone"
-                }
-            },
-            {
-                "id": 37,
-                "customName": "",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam lacus, commodo ut sagittis vel, el",
-                "facilityCode": {
-                    "code": 8,
-                    "name": "Weight lifting",
-                    "type": "Gym zone"
-                }
-            },
-            {
-                "id": 38,
-                "customName": "",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam lacus, commodo ut sagittis vel, el",
-                "facilityCode": {
-                    "code": 9,
-                    "name": "Strength area",
-                    "type": "Gym zone"
-                }
-            },
-            {
-                "id": 39,
-                "customName": "",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam lacus, commodo ut sagittis vel, el",
-                "facilityCode": {
-                    "code": 10,
-                    "name": "Skill and Functional Zone",
-                    "type": "Skill and Functional Zone"
-                }
-            },
-            {
-                "id": 40,
-                "customName": "",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam lacus, commodo ut sagittis vel, el",
-                "facilityCode": {
-                    "code": 11,
-                    "name": "Functional Area",
-                    "type": "Skill and Functional Zone"
-                }
-            },
-            {
-                "id": 41,
-                "customName": "",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam lacus, commodo ut sagittis vel, el",
-                "facilityCode": {
-                    "code": 13,
-                    "name": "Crossfit",
-                    "type": "Skill and Functional Zone"
-                }
-            },
-            {
-                "id": 42,
-                "customName": "",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam lacus, commodo ut sagittis vel, el",
-                "facilityCode": {
-                    "code": 24,
-                    "name": "Sauna",
-                    "type": "Associated functions"
-                }
-            },
-            {
-                "id": 43,
-                "customName": "Custom Facility ",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam lacus, commodo ut sagittis vel, el",
-                "facilityCode": {
-                    "code": 1,
-                    "name": "Empty",
-                    "type": "Empty"
-                }
+          {
+            "id": 34,
+            "customName": "",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam lacus, commodo ut sagittis vel, el",
+            "facilityCode": {
+              "code": 2,
+              "name": "Cardio zone",
+              "type": "Cardio zone"
             }
+          },
+          {
+            "id": 35,
+            "customName": "",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam lacus, commodo ut sagittis vel, el",
+            "facilityCode": {
+              "code": 6,
+              "name": "Gym zone",
+              "type": "Gym zone"
+            }
+          },
+          {
+            "id": 36,
+            "customName": "",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam lacus, commodo ut sagittis vel, el",
+            "facilityCode": {
+              "code": 7,
+              "name": "Free weights area",
+              "type": "Gym zone"
+            }
+          },
+          {
+            "id": 37,
+            "customName": "",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam lacus, commodo ut sagittis vel, el",
+            "facilityCode": {
+              "code": 8,
+              "name": "Weight lifting",
+              "type": "Gym zone"
+            }
+          },
+          {
+            "id": 38,
+            "customName": "",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam lacus, commodo ut sagittis vel, el",
+            "facilityCode": {
+              "code": 9,
+              "name": "Strength area",
+              "type": "Gym zone"
+            }
+          },
+          {
+            "id": 39,
+            "customName": "",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam lacus, commodo ut sagittis vel, el",
+            "facilityCode": {
+              "code": 10,
+              "name": "Skill and Functional Zone",
+              "type": "Skill and Functional Zone"
+            }
+          },
+          {
+            "id": 40,
+            "customName": "",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam lacus, commodo ut sagittis vel, el",
+            "facilityCode": {
+              "code": 11,
+              "name": "Functional Area",
+              "type": "Skill and Functional Zone"
+            }
+          },
+          {
+            "id": 41,
+            "customName": "",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam lacus, commodo ut sagittis vel, el",
+            "facilityCode": {
+              "code": 13,
+              "name": "Crossfit",
+              "type": "Skill and Functional Zone"
+            }
+          },
+          {
+            "id": 42,
+            "customName": "",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam lacus, commodo ut sagittis vel, el",
+            "facilityCode": {
+              "code": 24,
+              "name": "Sauna",
+              "type": "Associated functions"
+            }
+          },
+          {
+            "id": 43,
+            "customName": "Custom Facility ",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam lacus, commodo ut sagittis vel, el",
+            "facilityCode": {
+              "code": 1,
+              "name": "Empty",
+              "type": "Empty"
+            }
+          }
         ],
         "images": []
-    },
-    {
-      "id": "6f774ede-5929-4a1a-a5c1-56cd635d9a72",
-      "name": "Viszonylag hosszú gym name és fitnes",
-      "referenceCode": "geriterme",
-      "addressString": "Hungary, 8200 Veszprém utac1",
-      "shortDescription": "test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum",
-      "facebookUserId": 1,
-      "instagramUserId": 2,
-      "twitterUserId": 3,
-      "youtubeUserId": null,
-      "webPageUserId": null,
-      "minPrice": 3000,
-      "maxPrice": 3000,
-      "averagePrice": 3000,
-      "earliestOpening": "23:59",
-      "latestClosing": "16:00",
-      "facilities": [
-        {
-          "id": 1,
-          "customName": "",
-          "description": "My facility",
-          "facilityCode": {
-            "code": 2,
-            "name": "Cardio zone",
-            "type": "Cardio zone"
+      },
+      {
+        "id": "6f774ede-5929-4a1a-a5c1-56cd635d9a72",
+        "name": "Viszonylag hosszú gym name és fitnes",
+        "referenceCode": "geriterme",
+        "addressString": "Hungary, 8200 Veszprém utac1",
+        "shortDescription": "test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum",
+        "facebookUserId": 1,
+        "instagramUserId": 2,
+        "twitterUserId": 3,
+        "youtubeUserId": null,
+        "webPageUserId": null,
+        "minPrice": 3000,
+        "maxPrice": 3000,
+        "averagePrice": 3000,
+        "earliestOpening": "23:59",
+        "latestClosing": "16:00",
+        "facilities": [
+          {
+            "id": 1,
+            "customName": "",
+            "description": "My facility",
+            "facilityCode": {
+              "code": 2,
+              "name": "Cardio zone",
+              "type": "Cardio zone"
+            }
+          },
+          {
+            "id": 2,
+            "customName": "",
+            "description": "Cycling ",
+            "facilityCode": {
+              "code": 3,
+              "name": "Cycling studio",
+              "type": "Cardio zone"
+            }
+          },
+          {
+            "id": 3,
+            "customName": "Kondoi",
+            "description": "Kondi",
+            "facilityCode": {
+              "code": 1,
+              "name": "Empty",
+              "type": "Empty"
+            }
           }
-        },
-        {
-          "id": 2,
-          "customName": "",
-          "description": "Cycling ",
-          "facilityCode": {
-            "code": 3,
-            "name": "Cycling studio",
-            "type": "Cardio zone"
-          }
-        },
-        {
-          "id": 3,
-          "customName": "Kondoi",
-          "description": "Kondi",
-          "facilityCode": {
-            "code": 1,
-            "name": "Empty",
-            "type": "Empty"
-          }
-        }
-      ],
-      "images": [
-        {
+        ],
+        "images": [
+          {
             "id": "0c4a9932-a777-40ea-bc18-e6c351b0f300",
             "createdAt": "2021-08-17T17:53:42.000Z",
             "imageType": ".png",
             "type": "ASSET",
             "publicAddress": "/storage/images/0c4a9932-a777-40ea-bc18-e6c351b0f300.png"
-        },
-        {
+          },
+          {
             "id": "317208a8-a20d-4145-abf4-132fbb429f85",
             "createdAt": "2021-08-16T16:38:12.000Z",
             "imageType": ".jpeg",
             "type": "ASSET",
             "publicAddress": "/storage/images/317208a8-a20d-4145-abf4-132fbb429f85.jpeg"
-        },
-        {
+          },
+          {
             "id": "76ba1940-fa1b-4efb-9b55-00250f80ddea",
             "createdAt": "2021-08-17T18:09:09.000Z",
             "imageType": ".jpeg",
             "type": "ASSET",
             "publicAddress": "/storage/images/76ba1940-fa1b-4efb-9b55-00250f80ddea.jpeg"
-        },
-        {
+          },
+          {
             "id": "d29c2f65-ad0f-4e1b-82bc-790720671f0a",
             "createdAt": "2021-08-17T18:08:37.000Z",
             "imageType": ".jpeg",
             "type": "ASSET",
             "publicAddress": "/storage/images/d29c2f65-ad0f-4e1b-82bc-790720671f0a.jpeg"
-        }
-    ]
-    },
-    {
-      "id": "6f774ede-5929-4a1a-a5c1-56cd635d9a72",
-      "name": "Gerioo",
-      "referenceCode": "geriterme",
-      "addressString": "Hungary, 8200 Veszprém utac1",
-      "shortDescription": "test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum",
-      "facebookUserId": 1,
-      "instagramUserId": 2,
-      "twitterUserId": 3,
-      "youtubeUserId": null,
-      "webPageUserId": null,
-      "minPrice": 3000,
-      "maxPrice": 3000,
-      "averagePrice": 3000,
-      "earliestOpening": "23:59",
-      "latestClosing": "16:00",
-      "facilities": [
-        {
-          "id": 1,
-          "customName": "",
-          "description": "My facility",
-          "facilityCode": {
-            "code": 2,
-            "name": "Cardio zone",
-            "type": "Cardio zone"
           }
-        },
-        {
-          "id": 2,
-          "customName": "",
-          "description": "Cycling ",
-          "facilityCode": {
-            "code": 3,
-            "name": "Cycling studio",
-            "type": "Cardio zone"
+        ]
+      },
+      {
+        "id": "6f774ede-5929-4a1a-a5c1-56cd635d9a72",
+        "name": "Gerioo",
+        "referenceCode": "geriterme",
+        "addressString": "Hungary, 8200 Veszprém utac1",
+        "shortDescription": "test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum",
+        "facebookUserId": 1,
+        "instagramUserId": 2,
+        "twitterUserId": 3,
+        "youtubeUserId": null,
+        "webPageUserId": null,
+        "minPrice": 3000,
+        "maxPrice": 3000,
+        "averagePrice": 3000,
+        "earliestOpening": "23:59",
+        "latestClosing": "16:00",
+        "facilities": [
+          {
+            "id": 1,
+            "customName": "",
+            "description": "My facility",
+            "facilityCode": {
+              "code": 2,
+              "name": "Cardio zone",
+              "type": "Cardio zone"
+            }
+          },
+          {
+            "id": 2,
+            "customName": "",
+            "description": "Cycling ",
+            "facilityCode": {
+              "code": 3,
+              "name": "Cycling studio",
+              "type": "Cardio zone"
+            }
+          },
+          {
+            "id": 3,
+            "customName": "Kondoi",
+            "description": "Kondi",
+            "facilityCode": {
+              "code": 1,
+              "name": "Empty",
+              "type": "Empty"
+            }
           }
-        },
-        {
-          "id": 3,
-          "customName": "Kondoi",
-          "description": "Kondi",
-          "facilityCode": {
-            "code": 1,
-            "name": "Empty",
-            "type": "Empty"
+        ],
+        "images": []
+      },
+      {
+        "id": "6f774ede-5929-4a1a-a5c1-56cd635d9a72",
+        "name": "Gerioo",
+        "referenceCode": "geriterme",
+        "addressString": "Hungary, 8200 Veszprém utac1",
+        "shortDescription": "test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum",
+        "facebookUserId": 1,
+        "instagramUserId": 2,
+        "twitterUserId": 3,
+        "youtubeUserId": null,
+        "webPageUserId": null,
+        "minPrice": 3000,
+        "maxPrice": 3000,
+        "averagePrice": 3000,
+        "earliestOpening": "23:59",
+        "latestClosing": "16:00",
+        "facilities": [
+          {
+            "id": 1,
+            "customName": "",
+            "description": "My facility",
+            "facilityCode": {
+              "code": 2,
+              "name": "Cardio zone",
+              "type": "Cardio zone"
+            }
+          },
+          {
+            "id": 2,
+            "customName": "",
+            "description": "Cycling ",
+            "facilityCode": {
+              "code": 3,
+              "name": "Cycling studio",
+              "type": "Cardio zone"
+            }
+          },
+          {
+            "id": 3,
+            "customName": "Kondoi",
+            "description": "Kondi",
+            "facilityCode": {
+              "code": 1,
+              "name": "Empty",
+              "type": "Empty"
+            }
           }
-        }
-      ],
-      "images": []
-    },
-    {
-      "id": "6f774ede-5929-4a1a-a5c1-56cd635d9a72",
-      "name": "Gerioo",
-      "referenceCode": "geriterme",
-      "addressString": "Hungary, 8200 Veszprém utac1",
-      "shortDescription": "test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum",
-      "facebookUserId": 1,
-      "instagramUserId": 2,
-      "twitterUserId": 3,
-      "youtubeUserId": null,
-      "webPageUserId": null,
-      "minPrice": 3000,
-      "maxPrice": 3000,
-      "averagePrice": 3000,
-      "earliestOpening": "23:59",
-      "latestClosing": "16:00",
-      "facilities": [
-        {
-          "id": 1,
-          "customName": "",
-          "description": "My facility",
-          "facilityCode": {
-            "code": 2,
-            "name": "Cardio zone",
-            "type": "Cardio zone"
+        ],
+        "images": []
+      },
+      {
+        "id": "6f774ede-5929-4a1a-a5c1-56cd635d9a72",
+        "name": "Gerioo",
+        "referenceCode": "geriterme",
+        "addressString": "Hungary, 8200 Veszprém utac1",
+        "shortDescription": "test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum",
+        "facebookUserId": 1,
+        "instagramUserId": 2,
+        "twitterUserId": 3,
+        "youtubeUserId": null,
+        "webPageUserId": null,
+        "minPrice": 3000,
+        "maxPrice": 3000,
+        "averagePrice": 3000,
+        "earliestOpening": "23:59",
+        "latestClosing": "16:00",
+        "facilities": [
+          {
+            "id": 1,
+            "customName": "",
+            "description": "My facility",
+            "facilityCode": {
+              "code": 2,
+              "name": "Cardio zone",
+              "type": "Cardio zone"
+            }
+          },
+          {
+            "id": 2,
+            "customName": "",
+            "description": "Cycling ",
+            "facilityCode": {
+              "code": 3,
+              "name": "Cycling studio",
+              "type": "Cardio zone"
+            }
+          },
+          {
+            "id": 3,
+            "customName": "Kondoi",
+            "description": "Kondi",
+            "facilityCode": {
+              "code": 1,
+              "name": "Empty",
+              "type": "Empty"
+            }
           }
-        },
-        {
-          "id": 2,
-          "customName": "",
-          "description": "Cycling ",
-          "facilityCode": {
-            "code": 3,
-            "name": "Cycling studio",
-            "type": "Cardio zone"
+        ],
+        "images": []
+      },
+      {
+        "id": "6f774ede-5929-4a1a-a5c1-56cd635d9a72",
+        "name": "Gerioo",
+        "referenceCode": "geriterme",
+        "addressString": "Hungary, 8200 Veszprém utac1",
+        "shortDescription": "test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum",
+        "facebookUserId": 1,
+        "instagramUserId": 2,
+        "twitterUserId": 3,
+        "youtubeUserId": null,
+        "webPageUserId": null,
+        "minPrice": 3000,
+        "maxPrice": 3000,
+        "averagePrice": 3000,
+        "earliestOpening": "23:59",
+        "latestClosing": "16:00",
+        "facilities": [
+          {
+            "id": 1,
+            "customName": "",
+            "description": "My facility",
+            "facilityCode": {
+              "code": 2,
+              "name": "Cardio zone",
+              "type": "Cardio zone"
+            }
+          },
+          {
+            "id": 2,
+            "customName": "",
+            "description": "Cycling ",
+            "facilityCode": {
+              "code": 3,
+              "name": "Cycling studio",
+              "type": "Cardio zone"
+            }
+          },
+          {
+            "id": 3,
+            "customName": "Kondoi",
+            "description": "Kondi",
+            "facilityCode": {
+              "code": 1,
+              "name": "Empty",
+              "type": "Empty"
+            }
           }
-        },
-        {
-          "id": 3,
-          "customName": "Kondoi",
-          "description": "Kondi",
-          "facilityCode": {
-            "code": 1,
-            "name": "Empty",
-            "type": "Empty"
+        ],
+        "images": []
+      },
+      {
+        "id": "6f774ede-5929-4a1a-a5c1-56cd635d9a72",
+        "name": "Gerioo",
+        "referenceCode": "geriterme",
+        "addressString": "Hungary, 8200 Veszprém utac1",
+        "shortDescription": "test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum",
+        "facebookUserId": 1,
+        "instagramUserId": 2,
+        "twitterUserId": 3,
+        "youtubeUserId": null,
+        "webPageUserId": null,
+        "minPrice": 3000,
+        "maxPrice": 3000,
+        "averagePrice": 3000,
+        "earliestOpening": "23:59",
+        "latestClosing": "16:00",
+        "facilities": [
+          {
+            "id": 1,
+            "customName": "",
+            "description": "My facility",
+            "facilityCode": {
+              "code": 2,
+              "name": "Cardio zone",
+              "type": "Cardio zone"
+            }
+          },
+          {
+            "id": 2,
+            "customName": "",
+            "description": "Cycling ",
+            "facilityCode": {
+              "code": 3,
+              "name": "Cycling studio",
+              "type": "Cardio zone"
+            }
+          },
+          {
+            "id": 3,
+            "customName": "Kondoi",
+            "description": "Kondi",
+            "facilityCode": {
+              "code": 1,
+              "name": "Empty",
+              "type": "Empty"
+            }
           }
-        }
-      ],
-      "images": []
-    },
-    {
-      "id": "6f774ede-5929-4a1a-a5c1-56cd635d9a72",
-      "name": "Gerioo",
-      "referenceCode": "geriterme",
-      "addressString": "Hungary, 8200 Veszprém utac1",
-      "shortDescription": "test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum",
-      "facebookUserId": 1,
-      "instagramUserId": 2,
-      "twitterUserId": 3,
-      "youtubeUserId": null,
-      "webPageUserId": null,
-      "minPrice": 3000,
-      "maxPrice": 3000,
-      "averagePrice": 3000,
-      "earliestOpening": "23:59",
-      "latestClosing": "16:00",
-      "facilities": [
-        {
-          "id": 1,
-          "customName": "",
-          "description": "My facility",
-          "facilityCode": {
-            "code": 2,
-            "name": "Cardio zone",
-            "type": "Cardio zone"
+        ],
+        "images": []
+      },
+      {
+        "id": "6f774ede-5929-4a1a-a5c1-56cd635d9a72",
+        "name": "Gerioo",
+        "referenceCode": "geriterme",
+        "addressString": "Hungary, 8200 Veszprém utac1",
+        "shortDescription": "test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum",
+        "facebookUserId": 1,
+        "instagramUserId": 2,
+        "twitterUserId": 3,
+        "youtubeUserId": null,
+        "webPageUserId": null,
+        "minPrice": 3000,
+        "maxPrice": 3000,
+        "averagePrice": 3000,
+        "earliestOpening": "23:59",
+        "latestClosing": "16:00",
+        "facilities": [
+          {
+            "id": 1,
+            "customName": "",
+            "description": "My facility",
+            "facilityCode": {
+              "code": 2,
+              "name": "Cardio zone",
+              "type": "Cardio zone"
+            }
+          },
+          {
+            "id": 2,
+            "customName": "",
+            "description": "Cycling ",
+            "facilityCode": {
+              "code": 3,
+              "name": "Cycling studio",
+              "type": "Cardio zone"
+            }
+          },
+          {
+            "id": 3,
+            "customName": "Kondoi",
+            "description": "Kondi",
+            "facilityCode": {
+              "code": 1,
+              "name": "Empty",
+              "type": "Empty"
+            }
           }
-        },
-        {
-          "id": 2,
-          "customName": "",
-          "description": "Cycling ",
-          "facilityCode": {
-            "code": 3,
-            "name": "Cycling studio",
-            "type": "Cardio zone"
+        ],
+        "images": []
+      },
+      {
+        "id": "6f774ede-5929-4a1a-a5c1-56cd635d9a72",
+        "name": "Gerioo",
+        "referenceCode": "geriterme",
+        "addressString": "Hungary, 8200 Veszprém utac1",
+        "shortDescription": "test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum",
+        "facebookUserId": 1,
+        "instagramUserId": 2,
+        "twitterUserId": 3,
+        "youtubeUserId": null,
+        "webPageUserId": null,
+        "minPrice": 3000,
+        "maxPrice": 3000,
+        "averagePrice": 3000,
+        "earliestOpening": "23:59",
+        "latestClosing": "16:00",
+        "facilities": [
+          {
+            "id": 1,
+            "customName": "",
+            "description": "My facility",
+            "facilityCode": {
+              "code": 2,
+              "name": "Cardio zone",
+              "type": "Cardio zone"
+            }
+          },
+          {
+            "id": 2,
+            "customName": "",
+            "description": "Cycling ",
+            "facilityCode": {
+              "code": 3,
+              "name": "Cycling studio",
+              "type": "Cardio zone"
+            }
+          },
+          {
+            "id": 3,
+            "customName": "Kondoi",
+            "description": "Kondi",
+            "facilityCode": {
+              "code": 1,
+              "name": "Empty",
+              "type": "Empty"
+            }
           }
-        },
-        {
-          "id": 3,
-          "customName": "Kondoi",
-          "description": "Kondi",
-          "facilityCode": {
-            "code": 1,
-            "name": "Empty",
-            "type": "Empty"
+        ],
+        "images": []
+      },
+      {
+        "id": "6f774ede-5929-4a1a-a5c1-56cd635d9a72",
+        "name": "Gerioo",
+        "referenceCode": "geriterme",
+        "addressString": "Hungary, 8200 Veszprém utac1",
+        "shortDescription": "test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum",
+        "facebookUserId": 1,
+        "instagramUserId": 2,
+        "twitterUserId": 3,
+        "youtubeUserId": null,
+        "webPageUserId": null,
+        "minPrice": 3000,
+        "maxPrice": 3000,
+        "averagePrice": 3000,
+        "earliestOpening": "23:59",
+        "latestClosing": "16:00",
+        "facilities": [
+          {
+            "id": 1,
+            "customName": "",
+            "description": "My facility",
+            "facilityCode": {
+              "code": 2,
+              "name": "Cardio zone",
+              "type": "Cardio zone"
+            }
+          },
+          {
+            "id": 2,
+            "customName": "",
+            "description": "Cycling ",
+            "facilityCode": {
+              "code": 3,
+              "name": "Cycling studio",
+              "type": "Cardio zone"
+            }
+          },
+          {
+            "id": 3,
+            "customName": "Kondoi",
+            "description": "Kondi",
+            "facilityCode": {
+              "code": 1,
+              "name": "Empty",
+              "type": "Empty"
+            }
           }
-        }
-      ],
-      "images": []
-    },
-    {
-      "id": "6f774ede-5929-4a1a-a5c1-56cd635d9a72",
-      "name": "Gerioo",
-      "referenceCode": "geriterme",
-      "addressString": "Hungary, 8200 Veszprém utac1",
-      "shortDescription": "test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum",
-      "facebookUserId": 1,
-      "instagramUserId": 2,
-      "twitterUserId": 3,
-      "youtubeUserId": null,
-      "webPageUserId": null,
-      "minPrice": 3000,
-      "maxPrice": 3000,
-      "averagePrice": 3000,
-      "earliestOpening": "23:59",
-      "latestClosing": "16:00",
-      "facilities": [
-        {
-          "id": 1,
-          "customName": "",
-          "description": "My facility",
-          "facilityCode": {
-            "code": 2,
-            "name": "Cardio zone",
-            "type": "Cardio zone"
+        ],
+        "images": []
+      },
+      {
+        "id": "6f774ede-5929-4a1a-a5c1-56cd635d9a72",
+        "name": "Gerioo",
+        "referenceCode": "geriterme",
+        "addressString": "Hungary, 8200 Veszprém utac1",
+        "shortDescription": "test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum",
+        "facebookUserId": 1,
+        "instagramUserId": 2,
+        "twitterUserId": 3,
+        "youtubeUserId": null,
+        "webPageUserId": null,
+        "minPrice": 3000,
+        "maxPrice": 3000,
+        "averagePrice": 3000,
+        "earliestOpening": "23:59",
+        "latestClosing": "16:00",
+        "facilities": [
+          {
+            "id": 1,
+            "customName": "",
+            "description": "My facility",
+            "facilityCode": {
+              "code": 2,
+              "name": "Cardio zone",
+              "type": "Cardio zone"
+            }
+          },
+          {
+            "id": 2,
+            "customName": "",
+            "description": "Cycling ",
+            "facilityCode": {
+              "code": 3,
+              "name": "Cycling studio",
+              "type": "Cardio zone"
+            }
+          },
+          {
+            "id": 3,
+            "customName": "Kondoi",
+            "description": "Kondi",
+            "facilityCode": {
+              "code": 1,
+              "name": "Empty",
+              "type": "Empty"
+            }
           }
-        },
-        {
-          "id": 2,
-          "customName": "",
-          "description": "Cycling ",
-          "facilityCode": {
-            "code": 3,
-            "name": "Cycling studio",
-            "type": "Cardio zone"
-          }
-        },
-        {
-          "id": 3,
-          "customName": "Kondoi",
-          "description": "Kondi",
-          "facilityCode": {
-            "code": 1,
-            "name": "Empty",
-            "type": "Empty"
-          }
-        }
-      ],
-      "images": []
-    },
-    {
-      "id": "6f774ede-5929-4a1a-a5c1-56cd635d9a72",
-      "name": "Gerioo",
-      "referenceCode": "geriterme",
-      "addressString": "Hungary, 8200 Veszprém utac1",
-      "shortDescription": "test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum",
-      "facebookUserId": 1,
-      "instagramUserId": 2,
-      "twitterUserId": 3,
-      "youtubeUserId": null,
-      "webPageUserId": null,
-      "minPrice": 3000,
-      "maxPrice": 3000,
-      "averagePrice": 3000,
-      "earliestOpening": "23:59",
-      "latestClosing": "16:00",
-      "facilities": [
-        {
-          "id": 1,
-          "customName": "",
-          "description": "My facility",
-          "facilityCode": {
-            "code": 2,
-            "name": "Cardio zone",
-            "type": "Cardio zone"
-          }
-        },
-        {
-          "id": 2,
-          "customName": "",
-          "description": "Cycling ",
-          "facilityCode": {
-            "code": 3,
-            "name": "Cycling studio",
-            "type": "Cardio zone"
-          }
-        },
-        {
-          "id": 3,
-          "customName": "Kondoi",
-          "description": "Kondi",
-          "facilityCode": {
-            "code": 1,
-            "name": "Empty",
-            "type": "Empty"
-          }
-        }
-      ],
-      "images": []
-    },
-    {
-      "id": "6f774ede-5929-4a1a-a5c1-56cd635d9a72",
-      "name": "Gerioo",
-      "referenceCode": "geriterme",
-      "addressString": "Hungary, 8200 Veszprém utac1",
-      "shortDescription": "test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum",
-      "facebookUserId": 1,
-      "instagramUserId": 2,
-      "twitterUserId": 3,
-      "youtubeUserId": null,
-      "webPageUserId": null,
-      "minPrice": 3000,
-      "maxPrice": 3000,
-      "averagePrice": 3000,
-      "earliestOpening": "23:59",
-      "latestClosing": "16:00",
-      "facilities": [
-        {
-          "id": 1,
-          "customName": "",
-          "description": "My facility",
-          "facilityCode": {
-            "code": 2,
-            "name": "Cardio zone",
-            "type": "Cardio zone"
-          }
-        },
-        {
-          "id": 2,
-          "customName": "",
-          "description": "Cycling ",
-          "facilityCode": {
-            "code": 3,
-            "name": "Cycling studio",
-            "type": "Cardio zone"
-          }
-        },
-        {
-          "id": 3,
-          "customName": "Kondoi",
-          "description": "Kondi",
-          "facilityCode": {
-            "code": 1,
-            "name": "Empty",
-            "type": "Empty"
-          }
-        }
-      ],
-      "images": []
-    },
-    {
-      "id": "6f774ede-5929-4a1a-a5c1-56cd635d9a72",
-      "name": "Gerioo",
-      "referenceCode": "geriterme",
-      "addressString": "Hungary, 8200 Veszprém utac1",
-      "shortDescription": "test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum",
-      "facebookUserId": 1,
-      "instagramUserId": 2,
-      "twitterUserId": 3,
-      "youtubeUserId": null,
-      "webPageUserId": null,
-      "minPrice": 3000,
-      "maxPrice": 3000,
-      "averagePrice": 3000,
-      "earliestOpening": "23:59",
-      "latestClosing": "16:00",
-      "facilities": [
-        {
-          "id": 1,
-          "customName": "",
-          "description": "My facility",
-          "facilityCode": {
-            "code": 2,
-            "name": "Cardio zone",
-            "type": "Cardio zone"
-          }
-        },
-        {
-          "id": 2,
-          "customName": "",
-          "description": "Cycling ",
-          "facilityCode": {
-            "code": 3,
-            "name": "Cycling studio",
-            "type": "Cardio zone"
-          }
-        },
-        {
-          "id": 3,
-          "customName": "Kondoi",
-          "description": "Kondi",
-          "facilityCode": {
-            "code": 1,
-            "name": "Empty",
-            "type": "Empty"
-          }
-        }
-      ],
-      "images": []
-    },
-    {
-      "id": "6f774ede-5929-4a1a-a5c1-56cd635d9a72",
-      "name": "Gerioo",
-      "referenceCode": "geriterme",
-      "addressString": "Hungary, 8200 Veszprém utac1",
-      "shortDescription": "test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum",
-      "facebookUserId": 1,
-      "instagramUserId": 2,
-      "twitterUserId": 3,
-      "youtubeUserId": null,
-      "webPageUserId": null,
-      "minPrice": 3000,
-      "maxPrice": 3000,
-      "averagePrice": 3000,
-      "earliestOpening": "23:59",
-      "latestClosing": "16:00",
-      "facilities": [
-        {
-          "id": 1,
-          "customName": "",
-          "description": "My facility",
-          "facilityCode": {
-            "code": 2,
-            "name": "Cardio zone",
-            "type": "Cardio zone"
-          }
-        },
-        {
-          "id": 2,
-          "customName": "",
-          "description": "Cycling ",
-          "facilityCode": {
-            "code": 3,
-            "name": "Cycling studio",
-            "type": "Cardio zone"
-          }
-        },
-        {
-          "id": 3,
-          "customName": "Kondoi",
-          "description": "Kondi",
-          "facilityCode": {
-            "code": 1,
-            "name": "Empty",
-            "type": "Empty"
-          }
-        }
-      ],
-      "images": []
-    },
-    {
-      "id": "6f774ede-5929-4a1a-a5c1-56cd635d9a72",
-      "name": "Gerioo",
-      "referenceCode": "geriterme",
-      "addressString": "Hungary, 8200 Veszprém utac1",
-      "shortDescription": "test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum test gym lorem ipsum faszscsum",
-      "facebookUserId": 1,
-      "instagramUserId": 2,
-      "twitterUserId": 3,
-      "youtubeUserId": null,
-      "webPageUserId": null,
-      "minPrice": 3000,
-      "maxPrice": 3000,
-      "averagePrice": 3000,
-      "earliestOpening": "23:59",
-      "latestClosing": "16:00",
-      "facilities": [
-        {
-          "id": 1,
-          "customName": "",
-          "description": "My facility",
-          "facilityCode": {
-            "code": 2,
-            "name": "Cardio zone",
-            "type": "Cardio zone"
-          }
-        },
-        {
-          "id": 2,
-          "customName": "",
-          "description": "Cycling ",
-          "facilityCode": {
-            "code": 3,
-            "name": "Cycling studio",
-            "type": "Cardio zone"
-          }
-        },
-        {
-          "id": 3,
-          "customName": "Kondoi",
-          "description": "Kondi",
-          "facilityCode": {
-            "code": 1,
-            "name": "Empty",
-            "type": "Empty"
-          }
-        }
-      ],
-      "images": []
-    }
+        ],
+        "images": []
+      }
     ]
   },
   "pt": {
@@ -660,9 +660,13 @@
         "phoneNumber": "+463123103",
         "email": "d@gmail.com",
         "referenceCode": "asd",
-        "languages" : [
-          {"id": 1},
-          {"id": 2}
+        "languages": [
+          {
+            "id": 1
+          },
+          {
+            "id": 2
+          }
         ],
         "shortDescription": "Lorem ipsum dolor sit amet, consectetur adid et magna. Sed aliquet lectus ex, in sodales massa viverra in. Aliquam venenatis lorem eget nunc iaculis, ac placerat diam ullamcorper.sl.",
         "facebookUserId": "www.facebook.com/user",
@@ -672,32 +676,32 @@
         "webPageUserId": "www.fafafa.com",
         "images": [
           {
-              "id": "0c4a9932-a777-40ea-bc18-e6c351b0f300",
-              "createdAt": "2021-08-17T17:53:42.000Z",
-              "imageType": ".png",
-              "type": "ASSET",
-              "publicAddress": "/storage/images/0c4a9932-a777-40ea-bc18-e6c351b0f300.png"
+            "id": "0c4a9932-a777-40ea-bc18-e6c351b0f300",
+            "createdAt": "2021-08-17T17:53:42.000Z",
+            "imageType": ".png",
+            "type": "ASSET",
+            "publicAddress": "/storage/images/0c4a9932-a777-40ea-bc18-e6c351b0f300.png"
           },
           {
-              "id": "317208a8-a20d-4145-abf4-132fbb429f85",
-              "createdAt": "2021-08-16T16:38:12.000Z",
-              "imageType": ".jpeg",
-              "type": "ASSET",
-              "publicAddress": "/storage/images/317208a8-a20d-4145-abf4-132fbb429f85.jpeg"
+            "id": "317208a8-a20d-4145-abf4-132fbb429f85",
+            "createdAt": "2021-08-16T16:38:12.000Z",
+            "imageType": ".jpeg",
+            "type": "ASSET",
+            "publicAddress": "/storage/images/317208a8-a20d-4145-abf4-132fbb429f85.jpeg"
           },
           {
-              "id": "76ba1940-fa1b-4efb-9b55-00250f80ddea",
-              "createdAt": "2021-08-17T18:09:09.000Z",
-              "imageType": ".jpeg",
-              "type": "ASSET",
-              "publicAddress": "/storage/images/76ba1940-fa1b-4efb-9b55-00250f80ddea.jpeg"
+            "id": "76ba1940-fa1b-4efb-9b55-00250f80ddea",
+            "createdAt": "2021-08-17T18:09:09.000Z",
+            "imageType": ".jpeg",
+            "type": "ASSET",
+            "publicAddress": "/storage/images/76ba1940-fa1b-4efb-9b55-00250f80ddea.jpeg"
           },
           {
-              "id": "d29c2f65-ad0f-4e1b-82bc-790720671f0a",
-              "createdAt": "2021-08-17T18:08:37.000Z",
-              "imageType": ".jpeg",
-              "type": "ASSET",
-              "publicAddress": "/storage/images/d29c2f65-ad0f-4e1b-82bc-790720671f0a.jpeg"
+            "id": "d29c2f65-ad0f-4e1b-82bc-790720671f0a",
+            "createdAt": "2021-08-17T18:08:37.000Z",
+            "imageType": ".jpeg",
+            "type": "ASSET",
+            "publicAddress": "/storage/images/d29c2f65-ad0f-4e1b-82bc-790720671f0a.jpeg"
           }
         ]
       },
@@ -707,9 +711,13 @@
         "phoneNumber": "+463123103",
         "email": "d@gmail.com",
         "referenceCode": "asd",
-        "languages" : [
-          {"id": 1},
-          {"id": 2}
+        "languages": [
+          {
+            "id": 1
+          },
+          {
+            "id": 2
+          }
         ],
         "shortDescription": "Lorem ipsum dolor sit amet, consectetur adid et magna. Sed aliquet lectus ex, in sodales massa viverra in. Aliquam venenatis lorem eget nunc iaculis, ac placerat diam ullamcorper.sl.",
         "facebookUserId": "www.facebook.com/user",
@@ -719,32 +727,32 @@
         "webPageUserId": "www.fafafa.com",
         "images": [
           {
-              "id": "0c4a9932-a777-40ea-bc18-e6c351b0f300",
-              "createdAt": "2021-08-17T17:53:42.000Z",
-              "imageType": ".png",
-              "type": "ASSET",
-              "publicAddress": "/storage/images/0c4a9932-a777-40ea-bc18-e6c351b0f300.png"
+            "id": "0c4a9932-a777-40ea-bc18-e6c351b0f300",
+            "createdAt": "2021-08-17T17:53:42.000Z",
+            "imageType": ".png",
+            "type": "ASSET",
+            "publicAddress": "/storage/images/0c4a9932-a777-40ea-bc18-e6c351b0f300.png"
           },
           {
-              "id": "317208a8-a20d-4145-abf4-132fbb429f85",
-              "createdAt": "2021-08-16T16:38:12.000Z",
-              "imageType": ".jpeg",
-              "type": "ASSET",
-              "publicAddress": "/storage/images/317208a8-a20d-4145-abf4-132fbb429f85.jpeg"
+            "id": "317208a8-a20d-4145-abf4-132fbb429f85",
+            "createdAt": "2021-08-16T16:38:12.000Z",
+            "imageType": ".jpeg",
+            "type": "ASSET",
+            "publicAddress": "/storage/images/317208a8-a20d-4145-abf4-132fbb429f85.jpeg"
           },
           {
-              "id": "76ba1940-fa1b-4efb-9b55-00250f80ddea",
-              "createdAt": "2021-08-17T18:09:09.000Z",
-              "imageType": ".jpeg",
-              "type": "ASSET",
-              "publicAddress": "/storage/images/76ba1940-fa1b-4efb-9b55-00250f80ddea.jpeg"
+            "id": "76ba1940-fa1b-4efb-9b55-00250f80ddea",
+            "createdAt": "2021-08-17T18:09:09.000Z",
+            "imageType": ".jpeg",
+            "type": "ASSET",
+            "publicAddress": "/storage/images/76ba1940-fa1b-4efb-9b55-00250f80ddea.jpeg"
           },
           {
-              "id": "d29c2f65-ad0f-4e1b-82bc-790720671f0a",
-              "createdAt": "2021-08-17T18:08:37.000Z",
-              "imageType": ".jpeg",
-              "type": "ASSET",
-              "publicAddress": "/storage/images/d29c2f65-ad0f-4e1b-82bc-790720671f0a.jpeg"
+            "id": "d29c2f65-ad0f-4e1b-82bc-790720671f0a",
+            "createdAt": "2021-08-17T18:08:37.000Z",
+            "imageType": ".jpeg",
+            "type": "ASSET",
+            "publicAddress": "/storage/images/d29c2f65-ad0f-4e1b-82bc-790720671f0a.jpeg"
           }
         ]
       },
@@ -754,9 +762,13 @@
         "phoneNumber": "+463123103",
         "email": "d@gmail.com",
         "referenceCode": "asd",
-        "languages" : [
-          {"id": 1},
-          {"id": 2}
+        "languages": [
+          {
+            "id": 1
+          },
+          {
+            "id": 2
+          }
         ],
         "shortDescription": "Lorem ipsum dolor sit amet, consectetur adid et magna. Sed aliquet lectus ex, in sodales massa viverra in. Aliquam venenatis lorem eget nunc iaculis, ac placerat diam ullamcorper.sl.",
         "facebookUserId": "www.facebook.com/user",
@@ -766,32 +778,32 @@
         "webPageUserId": "www.fafafa.com",
         "images": [
           {
-              "id": "0c4a9932-a777-40ea-bc18-e6c351b0f300",
-              "createdAt": "2021-08-17T17:53:42.000Z",
-              "imageType": ".png",
-              "type": "ASSET",
-              "publicAddress": "/storage/images/0c4a9932-a777-40ea-bc18-e6c351b0f300.png"
+            "id": "0c4a9932-a777-40ea-bc18-e6c351b0f300",
+            "createdAt": "2021-08-17T17:53:42.000Z",
+            "imageType": ".png",
+            "type": "ASSET",
+            "publicAddress": "/storage/images/0c4a9932-a777-40ea-bc18-e6c351b0f300.png"
           },
           {
-              "id": "317208a8-a20d-4145-abf4-132fbb429f85",
-              "createdAt": "2021-08-16T16:38:12.000Z",
-              "imageType": ".jpeg",
-              "type": "ASSET",
-              "publicAddress": "/storage/images/317208a8-a20d-4145-abf4-132fbb429f85.jpeg"
+            "id": "317208a8-a20d-4145-abf4-132fbb429f85",
+            "createdAt": "2021-08-16T16:38:12.000Z",
+            "imageType": ".jpeg",
+            "type": "ASSET",
+            "publicAddress": "/storage/images/317208a8-a20d-4145-abf4-132fbb429f85.jpeg"
           },
           {
-              "id": "76ba1940-fa1b-4efb-9b55-00250f80ddea",
-              "createdAt": "2021-08-17T18:09:09.000Z",
-              "imageType": ".jpeg",
-              "type": "ASSET",
-              "publicAddress": "/storage/images/76ba1940-fa1b-4efb-9b55-00250f80ddea.jpeg"
+            "id": "76ba1940-fa1b-4efb-9b55-00250f80ddea",
+            "createdAt": "2021-08-17T18:09:09.000Z",
+            "imageType": ".jpeg",
+            "type": "ASSET",
+            "publicAddress": "/storage/images/76ba1940-fa1b-4efb-9b55-00250f80ddea.jpeg"
           },
           {
-              "id": "d29c2f65-ad0f-4e1b-82bc-790720671f0a",
-              "createdAt": "2021-08-17T18:08:37.000Z",
-              "imageType": ".jpeg",
-              "type": "ASSET",
-              "publicAddress": "/storage/images/d29c2f65-ad0f-4e1b-82bc-790720671f0a.jpeg"
+            "id": "d29c2f65-ad0f-4e1b-82bc-790720671f0a",
+            "createdAt": "2021-08-17T18:08:37.000Z",
+            "imageType": ".jpeg",
+            "type": "ASSET",
+            "publicAddress": "/storage/images/d29c2f65-ad0f-4e1b-82bc-790720671f0a.jpeg"
           }
         ]
       },
@@ -801,9 +813,13 @@
         "phoneNumber": "+463123103",
         "email": "d@gmail.com",
         "referenceCode": "asd",
-        "languages" : [
-          {"id": 1},
-          {"id": 2}
+        "languages": [
+          {
+            "id": 1
+          },
+          {
+            "id": 2
+          }
         ],
         "shortDescription": "Lorem ipsum dolor sit amet, consectetur adid et magna. Sed aliquet lectus ex, in sodales massa viverra in. Aliquam venenatis lorem eget nunc iaculis, ac placerat diam ullamcorper.sl.",
         "facebookUserId": "www.facebook.com/user",
@@ -813,32 +829,32 @@
         "webPageUserId": "www.fafafa.com",
         "images": [
           {
-              "id": "0c4a9932-a777-40ea-bc18-e6c351b0f300",
-              "createdAt": "2021-08-17T17:53:42.000Z",
-              "imageType": ".png",
-              "type": "ASSET",
-              "publicAddress": "/storage/images/0c4a9932-a777-40ea-bc18-e6c351b0f300.png"
+            "id": "0c4a9932-a777-40ea-bc18-e6c351b0f300",
+            "createdAt": "2021-08-17T17:53:42.000Z",
+            "imageType": ".png",
+            "type": "ASSET",
+            "publicAddress": "/storage/images/0c4a9932-a777-40ea-bc18-e6c351b0f300.png"
           },
           {
-              "id": "317208a8-a20d-4145-abf4-132fbb429f85",
-              "createdAt": "2021-08-16T16:38:12.000Z",
-              "imageType": ".jpeg",
-              "type": "ASSET",
-              "publicAddress": "/storage/images/317208a8-a20d-4145-abf4-132fbb429f85.jpeg"
+            "id": "317208a8-a20d-4145-abf4-132fbb429f85",
+            "createdAt": "2021-08-16T16:38:12.000Z",
+            "imageType": ".jpeg",
+            "type": "ASSET",
+            "publicAddress": "/storage/images/317208a8-a20d-4145-abf4-132fbb429f85.jpeg"
           },
           {
-              "id": "76ba1940-fa1b-4efb-9b55-00250f80ddea",
-              "createdAt": "2021-08-17T18:09:09.000Z",
-              "imageType": ".jpeg",
-              "type": "ASSET",
-              "publicAddress": "/storage/images/76ba1940-fa1b-4efb-9b55-00250f80ddea.jpeg"
+            "id": "76ba1940-fa1b-4efb-9b55-00250f80ddea",
+            "createdAt": "2021-08-17T18:09:09.000Z",
+            "imageType": ".jpeg",
+            "type": "ASSET",
+            "publicAddress": "/storage/images/76ba1940-fa1b-4efb-9b55-00250f80ddea.jpeg"
           },
           {
-              "id": "d29c2f65-ad0f-4e1b-82bc-790720671f0a",
-              "createdAt": "2021-08-17T18:08:37.000Z",
-              "imageType": ".jpeg",
-              "type": "ASSET",
-              "publicAddress": "/storage/images/d29c2f65-ad0f-4e1b-82bc-790720671f0a.jpeg"
+            "id": "d29c2f65-ad0f-4e1b-82bc-790720671f0a",
+            "createdAt": "2021-08-17T18:08:37.000Z",
+            "imageType": ".jpeg",
+            "type": "ASSET",
+            "publicAddress": "/storage/images/d29c2f65-ad0f-4e1b-82bc-790720671f0a.jpeg"
           }
         ]
       },
@@ -848,9 +864,13 @@
         "phoneNumber": "+463123103",
         "email": "d@gmail.com",
         "referenceCode": "asd",
-        "languages" : [
-          {"id": 1},
-          {"id": 2}
+        "languages": [
+          {
+            "id": 1
+          },
+          {
+            "id": 2
+          }
         ],
         "shortDescription": "Lorem ipsum dolor sit amet, consectetur adid et magna. Sed aliquet lectus ex, in sodales massa viverra in. Aliquam venenatis lorem eget nunc iaculis, ac placerat diam ullamcorper.sl.",
         "facebookUserId": "www.facebook.com/user",
@@ -860,32 +880,32 @@
         "webPageUserId": "www.fafafa.com",
         "images": [
           {
-              "id": "0c4a9932-a777-40ea-bc18-e6c351b0f300",
-              "createdAt": "2021-08-17T17:53:42.000Z",
-              "imageType": ".png",
-              "type": "ASSET",
-              "publicAddress": "/storage/images/0c4a9932-a777-40ea-bc18-e6c351b0f300.png"
+            "id": "0c4a9932-a777-40ea-bc18-e6c351b0f300",
+            "createdAt": "2021-08-17T17:53:42.000Z",
+            "imageType": ".png",
+            "type": "ASSET",
+            "publicAddress": "/storage/images/0c4a9932-a777-40ea-bc18-e6c351b0f300.png"
           },
           {
-              "id": "317208a8-a20d-4145-abf4-132fbb429f85",
-              "createdAt": "2021-08-16T16:38:12.000Z",
-              "imageType": ".jpeg",
-              "type": "ASSET",
-              "publicAddress": "/storage/images/317208a8-a20d-4145-abf4-132fbb429f85.jpeg"
+            "id": "317208a8-a20d-4145-abf4-132fbb429f85",
+            "createdAt": "2021-08-16T16:38:12.000Z",
+            "imageType": ".jpeg",
+            "type": "ASSET",
+            "publicAddress": "/storage/images/317208a8-a20d-4145-abf4-132fbb429f85.jpeg"
           },
           {
-              "id": "76ba1940-fa1b-4efb-9b55-00250f80ddea",
-              "createdAt": "2021-08-17T18:09:09.000Z",
-              "imageType": ".jpeg",
-              "type": "ASSET",
-              "publicAddress": "/storage/images/76ba1940-fa1b-4efb-9b55-00250f80ddea.jpeg"
+            "id": "76ba1940-fa1b-4efb-9b55-00250f80ddea",
+            "createdAt": "2021-08-17T18:09:09.000Z",
+            "imageType": ".jpeg",
+            "type": "ASSET",
+            "publicAddress": "/storage/images/76ba1940-fa1b-4efb-9b55-00250f80ddea.jpeg"
           },
           {
-              "id": "d29c2f65-ad0f-4e1b-82bc-790720671f0a",
-              "createdAt": "2021-08-17T18:08:37.000Z",
-              "imageType": ".jpeg",
-              "type": "ASSET",
-              "publicAddress": "/storage/images/d29c2f65-ad0f-4e1b-82bc-790720671f0a.jpeg"
+            "id": "d29c2f65-ad0f-4e1b-82bc-790720671f0a",
+            "createdAt": "2021-08-17T18:08:37.000Z",
+            "imageType": ".jpeg",
+            "type": "ASSET",
+            "publicAddress": "/storage/images/d29c2f65-ad0f-4e1b-82bc-790720671f0a.jpeg"
           }
         ]
       },
@@ -895,9 +915,13 @@
         "phoneNumber": "+463123103",
         "email": "d@gmail.com",
         "referenceCode": "asd",
-        "languages" : [
-          {"id": 1},
-          {"id": 2}
+        "languages": [
+          {
+            "id": 1
+          },
+          {
+            "id": 2
+          }
         ],
         "shortDescription": "Lorem ipsum dolor sit amet, consectetur adid et magna. Sed aliquet lectus ex, in sodales massa viverra in. Aliquam venenatis lorem eget nunc iaculis, ac placerat diam ullamcorper.sl.",
         "facebookUserId": "www.facebook.com/user",
@@ -907,32 +931,32 @@
         "webPageUserId": "www.fafafa.com",
         "images": [
           {
-              "id": "0c4a9932-a777-40ea-bc18-e6c351b0f300",
-              "createdAt": "2021-08-17T17:53:42.000Z",
-              "imageType": ".png",
-              "type": "ASSET",
-              "publicAddress": "/storage/images/0c4a9932-a777-40ea-bc18-e6c351b0f300.png"
+            "id": "0c4a9932-a777-40ea-bc18-e6c351b0f300",
+            "createdAt": "2021-08-17T17:53:42.000Z",
+            "imageType": ".png",
+            "type": "ASSET",
+            "publicAddress": "/storage/images/0c4a9932-a777-40ea-bc18-e6c351b0f300.png"
           },
           {
-              "id": "317208a8-a20d-4145-abf4-132fbb429f85",
-              "createdAt": "2021-08-16T16:38:12.000Z",
-              "imageType": ".jpeg",
-              "type": "ASSET",
-              "publicAddress": "/storage/images/317208a8-a20d-4145-abf4-132fbb429f85.jpeg"
+            "id": "317208a8-a20d-4145-abf4-132fbb429f85",
+            "createdAt": "2021-08-16T16:38:12.000Z",
+            "imageType": ".jpeg",
+            "type": "ASSET",
+            "publicAddress": "/storage/images/317208a8-a20d-4145-abf4-132fbb429f85.jpeg"
           },
           {
-              "id": "76ba1940-fa1b-4efb-9b55-00250f80ddea",
-              "createdAt": "2021-08-17T18:09:09.000Z",
-              "imageType": ".jpeg",
-              "type": "ASSET",
-              "publicAddress": "/storage/images/76ba1940-fa1b-4efb-9b55-00250f80ddea.jpeg"
+            "id": "76ba1940-fa1b-4efb-9b55-00250f80ddea",
+            "createdAt": "2021-08-17T18:09:09.000Z",
+            "imageType": ".jpeg",
+            "type": "ASSET",
+            "publicAddress": "/storage/images/76ba1940-fa1b-4efb-9b55-00250f80ddea.jpeg"
           },
           {
-              "id": "d29c2f65-ad0f-4e1b-82bc-790720671f0a",
-              "createdAt": "2021-08-17T18:08:37.000Z",
-              "imageType": ".jpeg",
-              "type": "ASSET",
-              "publicAddress": "/storage/images/d29c2f65-ad0f-4e1b-82bc-790720671f0a.jpeg"
+            "id": "d29c2f65-ad0f-4e1b-82bc-790720671f0a",
+            "createdAt": "2021-08-17T18:08:37.000Z",
+            "imageType": ".jpeg",
+            "type": "ASSET",
+            "publicAddress": "/storage/images/d29c2f65-ad0f-4e1b-82bc-790720671f0a.jpeg"
           }
         ]
       }
@@ -1051,34 +1075,34 @@
     ],
     "images": [
       {
-          "id": "76ba1940-fa1b-4efb-9b55-00250f80ddea",
-          "createdAt": "2021-08-17T18:09:09.000Z",
-          "imageType": ".jpeg",
-          "type": "ASSET",
-          "publicAddress": "/storage/images/76ba1940-fa1b-4efb-9b55-00250f80ddea.jpeg"
+        "id": "76ba1940-fa1b-4efb-9b55-00250f80ddea",
+        "createdAt": "2021-08-17T18:09:09.000Z",
+        "imageType": ".jpeg",
+        "type": "ASSET",
+        "publicAddress": "/storage/images/76ba1940-fa1b-4efb-9b55-00250f80ddea.jpeg"
       },
       {
-          "id": "d29c2f65-ad0f-4e1b-82bc-790720671f0a",
-          "createdAt": "2021-08-17T18:08:37.000Z",
-          "imageType": ".jpeg",
-          "type": "ASSET",
-          "publicAddress": "/storage/images/d29c2f65-ad0f-4e1b-82bc-790720671f0a.jpeg"
+        "id": "d29c2f65-ad0f-4e1b-82bc-790720671f0a",
+        "createdAt": "2021-08-17T18:08:37.000Z",
+        "imageType": ".jpeg",
+        "type": "ASSET",
+        "publicAddress": "/storage/images/d29c2f65-ad0f-4e1b-82bc-790720671f0a.jpeg"
       },
       {
-          "id": "0c4a9932-a777-40ea-bc18-e6c351b0f300",
-          "createdAt": "2021-08-17T17:53:42.000Z",
-          "imageType": ".png",
-          "type": "ASSET",
-          "publicAddress": "/storage/images/0c4a9932-a777-40ea-bc18-e6c351b0f300.png"
+        "id": "0c4a9932-a777-40ea-bc18-e6c351b0f300",
+        "createdAt": "2021-08-17T17:53:42.000Z",
+        "imageType": ".png",
+        "type": "ASSET",
+        "publicAddress": "/storage/images/0c4a9932-a777-40ea-bc18-e6c351b0f300.png"
       },
       {
-          "id": "317208a8-a20d-4145-abf4-132fbb429f85",
-          "createdAt": "2021-08-16T16:38:12.000Z",
-          "imageType": ".jpeg",
-          "type": "ASSET",
-          "publicAddress": "/storage/images/317208a8-a20d-4145-abf4-132fbb429f85.jpeg"
+        "id": "317208a8-a20d-4145-abf4-132fbb429f85",
+        "createdAt": "2021-08-16T16:38:12.000Z",
+        "imageType": ".jpeg",
+        "type": "ASSET",
+        "publicAddress": "/storage/images/317208a8-a20d-4145-abf4-132fbb429f85.jpeg"
       }
-  ],
+    ],
     "facilities": [
       {
         "id": 42,
@@ -1344,12 +1368,12 @@
         "description": "is a long established fact that a reader will be distracted by the readable content of a ",
         "ticketPricing": [
           {
-              "ticketId": 77,
-              "categoryType": "daily",
-              "ticketType": "daily",
-              "amount": "3000.00",
-              "currency": "HUF",
-              "validForDays": 1
+            "ticketId": 77,
+            "categoryType": "daily",
+            "ticketType": "daily",
+            "amount": "3000.00",
+            "currency": "HUF",
+            "validForDays": 1
           }
         ]
       },
@@ -1363,12 +1387,12 @@
         "description": "is a long established fact that a reader will be distracted by the readable content of a ",
         "ticketPricing": [
           {
-              "ticketId": 77,
-              "categoryType": "daily",
-              "ticketType": "daily",
-              "amount": "3000.00",
-              "currency": "HUF",
-              "validForDays": 1
+            "ticketId": 77,
+            "categoryType": "daily",
+            "ticketType": "daily",
+            "amount": "3000.00",
+            "currency": "HUF",
+            "validForDays": 1
           }
         ]
       },
@@ -1382,12 +1406,12 @@
         "description": "is a long established fact that a reader will be distracted by the readable content of a ",
         "ticketPricing": [
           {
-              "ticketId": 77,
-              "categoryType": "daily",
-              "ticketType": "daily",
-              "amount": "3000.00",
-              "currency": "HUF",
-              "validForDays": 1
+            "ticketId": 77,
+            "categoryType": "daily",
+            "ticketType": "daily",
+            "amount": "3000.00",
+            "currency": "HUF",
+            "validForDays": 1
           }
         ]
       },
@@ -1401,12 +1425,12 @@
         "description": "is a long established fact that a reader will be distracted by the readable content of a ",
         "ticketPricing": [
           {
-              "ticketId": 77,
-              "categoryType": "daily",
-              "ticketType": "daily",
-              "amount": "3000.00",
-              "currency": "HUF",
-              "validForDays": 1
+            "ticketId": 77,
+            "categoryType": "daily",
+            "ticketType": "daily",
+            "amount": "3000.00",
+            "currency": "HUF",
+            "validForDays": 1
           }
         ]
       }
@@ -1483,10 +1507,19 @@
     ]
   },
   "userRegPt": {
-    "message": "Personal trainer user successfully registered"
+    "username": "a",
+    "email": "",
+    "password": ""
   },
   "userRegGymOwner": {
-    "message": "Gym owner successfully registered"
+    "username": "a",
+    "email": "",
+    "password": ""
+  },
+  "errorReg": {
+    "statusCode": 400,
+    "message": "Could not register personal trainer user",
+    "error": "Request failed with status code 409"
   },
   "userRegGymManager": {
     "message": "Gym manager successfully registered"
