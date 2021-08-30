@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import AuthContext from '../context/auth.context';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -7,7 +8,7 @@ import SideBar from './SideBar';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import LanguageSelector from './LanguageSelector';
-
+import { rest } from 'lodash';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -30,10 +31,23 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
+const url = window.location.host === 'tesi.life' ? { apiUrl:'https://api.tesi.life', keycloakUrl: 'https://tesi.life'} : { apiUrl: 'http://localhost', keycloakUrl: 'http://localhost:8080' };
+	
+
 export default function Navigation() {
   const classes = useStyles();
   const { t } = useTranslation();
+  const { userDetails, setUserDetails } = useContext(AuthContext);
+  console.log(userDetails);
 
+
+  const redirectToLogin = () => {
+    setUserDetails({...userDetails, type: 'gym' })
+    /*
+    window.location.href =
+    `${url.keycloakUrl}/auth/realms/Tesi/protocol/openid-connect/auth?response_type=token&client_id=browser-login&redirect_uri=${url.apiUrl}/index.html&login=true&scope=openid&nonce=${Date.now()}`;
+    */
+  }
 
   return (
     <div className={classes.root}>
@@ -44,7 +58,9 @@ export default function Navigation() {
             TESI
           </Link>
           <LanguageSelector />
-          <Button>{t("login")}</Button>
+          <Button onClick={redirectToLogin}>
+            {t("login")}
+          </Button>
         </Toolbar>
       </AppBar>
     </div>

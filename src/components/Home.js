@@ -1,3 +1,5 @@
+import { useContext } from 'react';
+import AuthContext from '../context/auth.context';
 import Grid from '@material-ui/core/Grid';
 import HomeSearchBar from './HomeSearchBar';
 import { makeStyles } from '@material-ui/core/styles';
@@ -23,12 +25,13 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Home = () => {
-
+  const { userDetails, setUserDetails } = useContext(AuthContext);
   const classes = useStyles();
-
+  console.log(userDetails);
   return(
     <div className={classes.container}>
       <div className={classes.topSection}>
+        {userDetails.type}
         <Grid 
           container
           direction="row-reverse"
