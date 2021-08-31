@@ -12,20 +12,23 @@ const EntityPage = () => {
   const { loading, data, error } = useFetch(`${API_PATH.LIST_PAGE}${entityPage}`);
   let type;
 
+  console.log(error);
+  
   if(data) {
     type = Array.isArray(data.facilities) ? 'gym' : 'pt';
   }
   
-  if(loading) {
-    return(
-      <SkeletonEntityPage />
-    )
-  }
   if(error) {
     return(
       <h2>
         ERROR
       </h2>
+    )
+  }
+  
+  if(loading) {
+    return(
+      <SkeletonEntityPage />
     )
   }
   

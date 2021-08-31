@@ -10,6 +10,7 @@ import Home from './components/Home';
 import Footer from './components/Footer';
 import Result from './components/Result';
 import EntityPage from './components/EntityPage';
+import AdminPage from './components/AdminPage';
 
 function About() {
   return <h2>Lehetne animated scrolling</h2>;
@@ -40,6 +41,9 @@ function App() {
           </Route>
           <Route path="/contact">
             <Contact />
+          </Route>
+          <Route path="/admin/:referenceCode">
+            <AdminPage />
           </Route>
           <Route path="/list/gym/:searchParams">
             <Result type='gym' />

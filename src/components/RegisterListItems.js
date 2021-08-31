@@ -56,7 +56,7 @@ export default function RegisterListItems() {
   console.log('RENDERED REGISTER LIST ITEMS');
   const { t } = useTranslation();
 
-  const [registerOpen, setRegisterOpen] = useState(false);
+  const [registerOpen, setRegisterOpen] = useState(true);
   const [open, setOpen] = useState(false);
   const [registerType, setRegisterType] = useState(null);
 

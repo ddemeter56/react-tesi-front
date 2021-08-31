@@ -35,7 +35,7 @@ export default function SideBarItems(anchor) {
         role="presentation"
       >
         <Divider />
-        <List>
+        <List style={{ position: "absolute", bottom: 0, width: "100%"}}>
           {[{ name: t('about'), to: "/about", icon: <InfoIcon /> }, { name: t('contact'), to: "/contact", icon: <InboxIcon /> }].map((item, index) => (
             <ListItem button key={item.name}>
               <ListItemIcon>{item.icon}</ListItemIcon>

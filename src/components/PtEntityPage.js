@@ -89,9 +89,12 @@ const PtEntityPage = ({ data }) => {
   return (
     <div className={classes.container}>
       <Grid className={classes.ptHeaderContainer} container direction="row" justify="center" alignItems="center">
-        <Grid item xl={6} lg={6}>
-          <img src={`https://api.tesi.life/${data.images[0].publicAddress}`} className={classes.profilePicture} alt="profile_pic"/>
-        </Grid>
+        {
+          data.images[0].publicAddress &&
+          <Grid item xl={6} lg={6}>
+            <img src={`https://api.tesi.life/${data.images[0].publicAddress}`} className={classes.profilePicture} alt="profile_pic"/>
+          </Grid>
+        }
         <Grid item xl={6} lg={6}>
           <Grid
             container

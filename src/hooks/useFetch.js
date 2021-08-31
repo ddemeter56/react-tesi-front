@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 export function useFetch(uri) {
   const [ data, setData ] = useState();
   const [ loading, setLoading ] = useState(true);
-  const [ error, setError ] = useState();
+  const [ error, setError ] = useState(false);
 
   const env = getEnvironment();
   
@@ -13,9 +13,12 @@ export function useFetch(uri) {
       .then(data => data.json())
       .then(setData)
       .then(() => setLoading(false))
-      .then(setError);
+      .catch(setError);
   }, [uri, env ]);
   
+  console.log(loading);
+  console.log(error);
+  console.log(data);
   return {
     loading,
     data,
