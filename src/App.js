@@ -11,6 +11,7 @@ import Footer from './components/Footer';
 import Result from './components/Result';
 import EntityPage from './components/EntityPage';
 import AdminPage from './components/AdminPage';
+import { processUrlParams } from './utils/auth';
 
 function About() {
   return <h2>Lehetne animated scrolling</h2>;
@@ -22,13 +23,17 @@ function Contact() {
 
 
 function App() {
-  const [ userDetails, setUserDetails ] = useState({  
+  const authInit = processUrlParams();
+
+  const initUserDetails = authInit ? authInit : {  
     isLoggedIn: false, // logged in or not
-    expiresIn: null, //When the token expires
-    token: null, // keycloak token
-    type: null, // user, pt, gym-owner, gym-manager
-    relatedPages: [] // referenceCodes, 
-  })
+    accessToken: null, // keycloak token
+    tokenRequestedAt: null, 
+    tokenValidity: null,
+    tokenType: null
+  };
+
+  const [ userDetails, setUserDetails ] = useState(initUserDetails)
 
   const value = { userDetails, setUserDetails };
   return (

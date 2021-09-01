@@ -2,6 +2,7 @@
   "translation": {
     "lang": "Language settings",
     "login": "Login",
+    "logout": "Log out",
     "registerGYM": "Register GYM",
     "registerPt": "Register as Professional",
     "userRegister": "Register user",

@@ -8,7 +8,8 @@ import SideBar from './SideBar';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import LanguageSelector from './LanguageSelector';
-import { rest } from 'lodash';
+import { redirectoToLogout, redirectToLogin } from '../utils/auth';
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -31,24 +32,13 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const url = window.location.host === 'tesi.life' ? { apiUrl:'https://api.tesi.life', keycloakUrl: 'https://tesi.life'} : { apiUrl: 'http://localhost', keycloakUrl: 'http://localhost:8080' };
-	
 
 export default function Navigation() {
   const classes = useStyles();
   const { t } = useTranslation();
   const { userDetails, setUserDetails } = useContext(AuthContext);
+  
   console.log(userDetails);
-
-
-  const redirectToLogin = () => {
-    setUserDetails({...userDetails, type: 'gym' })
-    /*
-    window.location.href =
-    `${url.keycloakUrl}/auth/realms/Tesi/protocol/openid-connect/auth?response_type=token&client_id=browser-login&redirect_uri=${url.apiUrl}/index.html&login=true&scope=openid&nonce=${Date.now()}`;
-    */
-  }
-
   return (
     <div className={classes.root}>
       <AppBar position="sticky" style={{ backgroundColor: "white", position:"fixed"}}>
@@ -58,9 +48,16 @@ export default function Navigation() {
             TESI
           </Link>
           <LanguageSelector />
-          <Button onClick={redirectToLogin}>
-            {t("login")}
-          </Button>
+          { userDetails.isLoggedIn ?
+            <Button onClick={redirectoToLogout}>
+              {t("logout")}
+            </Button> 
+            :
+            <Button onClick={redirectToLogin}>
+              {t("login")}
+            </Button>
+          }
+          
         </Toolbar>
       </AppBar>
     </div>

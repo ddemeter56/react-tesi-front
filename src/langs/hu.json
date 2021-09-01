@@ -2,6 +2,7 @@
   "translation": {
     "lang": "Nyelvi beállítások",
     "login": "Bejelentkezés",
+    "logout": "Kijelentkezés",
     "registerGYM": "Terem regisztrálása",
     "registerPt": "Regisztrálás edzőként",
     "userRegister": "Felhasználó regisztrálása",
