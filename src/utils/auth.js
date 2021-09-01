@@ -29,7 +29,7 @@ export function processUrlParams() {
     });
     
     return {
-      isLoggedIn: (now - tokenRequestedAt) >= tokenValidity ? false : true,
+      isLoggedIn: true,
       accesToken: urlParsedParams.access_token,
       tokenRequestedAt: window.localStorage.getItem('token_requested_at'),
       tokenValidity: 900 * 1000,

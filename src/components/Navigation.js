@@ -8,6 +8,8 @@ import SideBar from './SideBar';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import LanguageSelector from './LanguageSelector';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import IconButton from '@material-ui/core/IconButton';
 import { redirectoToLogout, redirectToLogin } from '../utils/auth';
 
 const useStyles = makeStyles((theme) => ({
@@ -49,9 +51,9 @@ export default function Navigation() {
           </Link>
           <LanguageSelector />
           { userDetails.isLoggedIn ?
-            <Button onClick={redirectoToLogout}>
-              {t("logout")}
-            </Button> 
+            <IconButton onClick={redirectoToLogout}>
+              <ExitToAppIcon />
+            </IconButton>
             :
             <Button onClick={redirectToLogin}>
               {t("login")}
