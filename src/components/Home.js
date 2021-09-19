@@ -1,23 +1,26 @@
-import { useContext } from 'react';
-import AuthContext from '../context/auth.context';
-import Grid from '@material-ui/core/Grid';
+import Grid from '@mui/material/Grid';
 import HomeSearchBar from './HomeSearchBar';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import LandingSpeech from './LandingSpeech';
 import HomePagePricing from './HomePagePricing';
 import FlowSection from './FlowSection';
-import Divider from '@material-ui/core/Divider';
+import Divider from '@mui/material/Divider';
 const useStyles = makeStyles((theme) => ({
   container: {
-    padding: "15px",
-    [theme.breakpoints.between('md', 'xl')] : {
+    paddingTop: "20px",
+    boxSizing: "content-box",
+    [theme.breakpoints.up('sm')] : {
+      width: "80%",
+      margin: "0px auto"
+    },
+    [theme.breakpoints.up('lg')] : {
       width: "60%",
       margin: "0px auto"
     }
   },
   topSection: {
-    paddingTop: theme.spacing(6),
-    paddingBottom: theme.spacing(6),
+    paddingTop: '66px',
+    paddingBottom: '36px'
   },
   midSection: {
     paddingTop: 50
@@ -25,26 +28,23 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Home = () => {
-  const { userDetails, setUserDetails } = useContext(AuthContext);
   const classes = useStyles();
-  console.log(userDetails);
   return(
     <div className={classes.container}>
       <div className={classes.topSection}>
-        {userDetails.type}
         <Grid 
           container
           direction="row-reverse"
           justify="center"
-          alignItems="center">
-          <Grid item xl={6}>
+          alignItems="center"
+          style={{ minHeight: 450}}>
+          <Grid item xl={6} style={{ minHeight: 450, textAlign: "center", padding: "55px 0px"}}>
             <LandingSpeech />
           </Grid>
-          <Grid item xl={6}>
+          <Grid item xl={6} style={{ minHeight: 450 }}>
             <HomeSearchBar />
           </Grid>  
         </Grid>
-        <Divider />
       </div>
       <div className={classes.flowSection}>
         <FlowSection />

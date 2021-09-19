@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import Grid from '@material-ui/core/Grid';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
-import { makeStyles } from '@material-ui/core/styles';
-import Autocomplete from '@material-ui/lab/Autocomplete';
-import Collapse from '@material-ui/core/Collapse';
+import Grid from '@mui/material/Grid';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
+import { makeStyles } from '@mui/styles';
+import Autocomplete from '@mui/lab/Autocomplete';
+import Collapse from '@mui/material/Collapse';
 import { useHistory } from 'react-router-dom';
 import { encodeQueryData, encodeMultipleQueryData } from '../utils/urlQuery';
 import { generateDatetimeString } from '../utils/formatDate';
@@ -16,13 +16,13 @@ const useStyles = makeStyles((theme) => ({
     }
   },
   timePicker: {
-    marginLeft: theme.spacing(1),
-    marginRight: theme.spacing(1),
+    marginLeft: '6px',
+    marginRight: '6px',
     width: 200,
   },
 }));
 
-const HomePagePtSearch = (isDetailed) => {
+const HomePagePtSearch = ({ isDetailed }) => {
   const classes = useStyles();
   const history = useHistory();
 
@@ -58,20 +58,18 @@ const HomePagePtSearch = (isDetailed) => {
   
   }
 
-
-
-  const renderDetails = (isDetailed) => {
-    if(isDetailed.isDetailed) {
+  const Details = () => {
+    if(isDetailed) {
       return(
-        <Grid container style={{ paddingTop: 10}} justify="center" alignContent="center" alignItems="center" spacing={2}> 
-          <Grid item>
+        <Grid container style={{ paddingTop: 10}} justifyContent="center" alignContent="center" alignItems="center" spacing={1}> 
+          <Grid item style={{ paddingLeft: 20}}>
             <TextField name="country" style={{ width: 200 }} value={formValues.country} onChange={handleFormValuesChange} id="country" label="Ország" variant="outlined" size="small" />
           </Grid>
           <Grid item>
             <TextField name="minPrice" value={formValues.minPrice} onChange={handleFormValuesChange} type="number" style={{ width: 100, paddingRight: 5 }} id="min-price" label="Ár -tól" variant="outlined" size="small" />
             <TextField name="maxPrice" value={formValues.maxPrice} onChange={handleFormValuesChange} type="number" style={{ width: 100 }} id="max-price" label="Ár -ig" variant="outlined" size="small" />
           </Grid>
-          <Grid item xl={12} lg={12} style={{ textAlign: "center" }}>
+          <Grid item xl={12} lg={12} style={{ textAlign: "center", paddingTop: 15 }}>
             <TextField
               name="appointmentFrom"
               id="datetime-local"
@@ -100,10 +98,11 @@ const HomePagePtSearch = (isDetailed) => {
         </Grid>
       )
     }
+    return <></>
   } 
 
   return (
-    <>
+    <Grid container style={{ paddingTop: "15px", paddingLeft: "15px" }} justifyContent="center" alignContent="center" alignItems="center" spacing={1}>
       <Grid item>
         <TextField name="city" style={{ width: 200 }} onChange={handleFormValuesChange} id="city" label="Város" variant="outlined" size="small" />
       </Grid>
@@ -125,17 +124,15 @@ const HomePagePtSearch = (isDetailed) => {
           )}
         />
       </Grid>
-      <Collapse in={isDetailed.isDetailed} timeout="auto" unmountOnExit >   
-        {
-          renderDetails(isDetailed)
-        }
+      <Collapse in={isDetailed} timeout="auto" unmountOnExit >   
+        <Details />
       </Collapse>
       <Grid item className={classes.button} xs={12} sm={12} lg={4}>
         <Button onClick={submitForm} style={{width: 150}} variant="contained" color="primary" size="large">
           Keresés
         </Button>
       </Grid>
-    </>
+    </Grid>
   )
 }
 

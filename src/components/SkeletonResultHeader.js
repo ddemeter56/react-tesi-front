@@ -1,6 +1,6 @@
 
-import Grid from '@material-ui/core/Grid';
-import Skeleton from '@material-ui/lab/Skeleton';
+import Grid from '@mui/material/Grid';
+import Skeleton from '@mui/lab/Skeleton';
 
 const SkeletonResultHeader = () => {
   // use these params to make api call later

@@ -1,14 +1,94 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
-const AdminPage = () => {
-  const { referenceCode } = useParams();
-  console.log(referenceCode);
+import React, { useContext,useState, useEffect } from 'react';
+import AuthContext from '../context/auth.context';
+import { redirectToLogin } from '../utils/auth';
+import { makeStyles } from '@mui/styles';
+import { fetchData } from '../utils/urlQuery';
+import AdminPageGym from './AdminPageGym';
+import AdminPagePt from './AdminPagePt';
 
-  // 
+const useStyles = makeStyles((theme) => ({
+  container: {
+    padding: "15px",
+    paddingTop: 70,
+    [theme.breakpoints.between('md', 'xl')] : {
+      width: "60%",
+      margin: "0px auto"
+    }
+  },
+  tableContainer: {
+    maxHeight: 400,
+    [theme.breakpoints.between('md', 'xl')] : {
+      width: "100%",
+    }
+  }, 
+  chipContainer: {
+    padding: 30
+  }
+}));
+
+
+const AdminPage = () => {
+  const classes = useStyles();
+  const { userDetails, setUserDetails } = useContext(AuthContext);
+  const [ responseData, setResponseData ] = useState(''); 
+
+  const renderAdminPage = (rolesArray) => {
+    console.log(rolesArray)
+
+    if(rolesArray?.includes("gym_owner")) {
+      return (
+        <AdminPageGym type="owner" />
+      )
+    }
+    
+    if(rolesArray?.includes("personal_trainer")) {
+      return (
+        <AdminPagePt />
+      )
+    }
+    
+    if(rolesArray?.includes("gym_manager")) {
+      return (
+        <AdminPageGym type="manager" />
+      )
+    }
+  }
+
+  useEffect(() => {
+    if(!userDetails.isLoggedIn) {
+      console.log('ADMIN PAGE USER NOT LOGGED IN')
+      redirectToLogin();
+    } else {
+      fetchData('/user-management/role-check', {
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${userDetails.accessToken}` 
+        }
+      })
+        .then(data => {
+          console.log(data);
+          setResponseData(data);
+        })
+        .catch((error) => {
+          setResponseData(JSON.stringify(error))
+        });
+
+    }  
+  }, [userDetails.isLoggedIn, setResponseData, userDetails.accessToken]);
+  
   return (
-    <>
-      <h1>ADMIN PAGE {referenceCode}</h1>
-    </>
+    <div className={classes.container}>
+      {responseData.statusCode === 403 ? 
+        <>
+          <code>{responseData.message}</code>
+        </> 
+        : 
+        <>
+          {renderAdminPage(responseData.roles)}
+        </>
+      }
+      user logged in: {userDetails.isLoggedIn.toString()}
+    </div>
   )
 }
 

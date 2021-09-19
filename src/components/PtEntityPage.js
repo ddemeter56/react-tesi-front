@@ -1,23 +1,23 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import { useState } from 'react';
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
-import Divider from '@material-ui/core/Divider';
-import StarOutlinedIcon from '@material-ui/icons/StarOutlined';
+import Grid from '@mui/material/Grid';
+import Typography from '@mui/material/Typography';
+import Divider from '@mui/material/Divider';
+import StarOutlinedIcon from '@mui/icons-material/StarOutlined';
 import { useTranslation } from 'react-i18next';
-import Chip from '@material-ui/core/Chip';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import Accordion from '@material-ui/core/Accordion';
-import AccordionDetails from '@material-ui/core/AccordionDetails';
-import AccordionSummary from '@material-ui/core/AccordionSummary';
+import Chip from '@mui/material/Chip';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Accordion from '@mui/material/Accordion';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import AccordionSummary from '@mui/material/AccordionSummary';
 
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -68,6 +68,10 @@ const PtEntityPage = ({ data }) => {
     setExpanded(isExpanded ? panel : false);
   };
 
+  const setProfilePicture = () => {
+    if(data.images[0]) return `https://api.tesi.life/${data.images[0].publicAddress}`;
+    return '';
+  }
   const generatePriceTableRows = (array) => {
     return (
       array.map((row) => (
@@ -90,9 +94,8 @@ const PtEntityPage = ({ data }) => {
     <div className={classes.container}>
       <Grid className={classes.ptHeaderContainer} container direction="row" justify="center" alignItems="center">
         {
-          data.images[0].publicAddress &&
           <Grid item xl={6} lg={6}>
-            <img src={`https://api.tesi.life/${data.images[0].publicAddress}`} className={classes.profilePicture} alt="profile_pic"/>
+            <img src={`${setProfilePicture()}`} className={classes.profilePicture} alt="profile_pic"/>
           </Grid>
         }
         <Grid item xl={6} lg={6}>

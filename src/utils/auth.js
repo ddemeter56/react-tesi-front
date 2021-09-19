@@ -19,9 +19,6 @@ export function processUrlParams() {
     });
 
   if (urlParsedParams.access_token) {
-    const tokenRequestedAt = window.localStorage.getItem('token_requested_at');
-    const tokenValidity = 900 * 1000;
-    const now = Date.now();
     window.localStorage.setItem('token_requested_at', String(Date.now()));
 
     Object.keys(urlParsedParams).forEach((urlParamKey) => {
@@ -30,7 +27,7 @@ export function processUrlParams() {
     
     return {
       isLoggedIn: true,
-      accesToken: urlParsedParams.access_token,
+      accessToken: urlParsedParams.access_token,
       tokenRequestedAt: window.localStorage.getItem('token_requested_at'),
       tokenValidity: 900 * 1000,
       tokenType: urlParsedParams.token_type
@@ -42,7 +39,7 @@ export function processUrlParams() {
       const now = Date.now();
       const objectOfParams = {
         isLoggedIn: (now - tokenRequestedAt) >= tokenValidity ? false : true,
-        accesToken: window.localStorage.getItem('access_token'),
+        accessToken: window.localStorage.getItem('access_token'),
         tokenRequestedAt,
         tokenValidity,
         tokenType: window.localStorage.getItem('token_type'),

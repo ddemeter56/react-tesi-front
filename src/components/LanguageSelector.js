@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import Button from '@material-ui/core/Button';
-import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
-import ExpandMore from '@material-ui/icons/ExpandMore';
-import LanguageIcon from '@material-ui/icons/Language';
+import Button from '@mui/material/Button';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import ExpandMore from '@mui/icons-material/ExpandMore';
+import LanguageIcon from '@mui/icons-material/Language';
 import { useTranslation } from 'react-i18next';
 import i18next from 'i18next';
 

@@ -5,7 +5,7 @@ import {
   Marker,
   InfoWindow,
 } from "@react-google-maps/api";
-import LocationOnIcon from '@material-ui/icons/LocationOn';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
 const libraries = ["places"];
 
 const mapContainerStyle = {

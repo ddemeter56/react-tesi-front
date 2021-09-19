@@ -1,8 +1,8 @@
-import Typography from '@material-ui/core/Typography';
-import Divider from '@material-ui/core/Divider';
+import Typography from '@mui/material/Typography';
+import Divider from '@mui/material/Divider';
 const LandingSpeech = () => {
   return (
-    <div style={{ position: "relative", }}>
+    <div style={{ boxSizing: "content-box"}}>
       <Typography variant="h2" fontFamily="monospace">
         Tesi - a mozgás közössége
       </Typography>

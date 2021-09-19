@@ -1,13 +1,13 @@
 import React from 'react';
-import SearchIcon from '@material-ui/icons/Search';
-import DateRangeIcon from '@material-ui/icons/DateRange';
-import FitnessCenterIcon from '@material-ui/icons/FitnessCenter';
-import TrendingUpIcon from '@material-ui/icons/TrendingUp';
-import Typography from '@material-ui/core/Typography';
-import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
-import Tooltip from '@material-ui/core/Tooltip';
-import { makeStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
+import SearchIcon from '@mui/icons-material/Search';
+import DateRangeIcon from '@mui/icons-material/DateRange';
+import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
+import TrendingUpIcon from '@mui/icons-material/TrendingUp';
+import Typography from '@mui/material/Typography';
+import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
+import Tooltip from '@mui/material/Tooltip';
+import { makeStyles } from '@mui/styles';
+import Grid from '@mui/material/Grid';
 
 const useStyles = makeStyles((theme) => ({
   card: {

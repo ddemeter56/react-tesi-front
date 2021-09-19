@@ -1,3 +1,6 @@
+
+const url = window.location.host === 'tesi.life' ? 'https://api.tesi.life/api' : 'http://localhost/api';
+
 export const encodeQueryData = (data) => {
   const ret = [];
   for (let d in data) {
@@ -17,3 +20,13 @@ export const encodeMultipleQueryData = (array, keyName) => {
   const codeValues = array.map((item) => item.code);
   return `&${keyName}=${encodeURIComponent(codeValues.join(','))}`;
 }
+
+
+export const fetchData = async (service, options) => {
+  const response = await fetch(`${url}${service}`, {
+    ...options,
+    cache: 'no-cache',
+  })
+  console.log(response);
+  return response.json();
+}  

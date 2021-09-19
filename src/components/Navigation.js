@@ -1,16 +1,19 @@
 import React, { useContext } from 'react';
 import AuthContext from '../context/auth.context';
-import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Button from '@material-ui/core/Button';
+import { makeStyles } from '@mui/styles';
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import Button from '@mui/material/Button';
 import SideBar from './SideBar';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
-import LanguageSelector from './LanguageSelector';
-import ExitToAppIcon from '@material-ui/icons/ExitToApp';
-import IconButton from '@material-ui/core/IconButton';
+import { Link, useHistory } from 'react-router-dom';
+import ExitToAppIcon from '@mui/icons-material/ExitToApp';
+import IconButton from '@mui/material/IconButton';
+import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
 import { redirectoToLogout, redirectToLogin } from '../utils/auth';
+import PersonIcon from '@mui/icons-material/Person';
+
+import Badge from '@mui/material/Badge';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -18,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "white"
   },
   menuButton: {
-    marginRight: theme.spacing(2),
+    marginRight: '12px',
   },
   title: {
     flexGrow: 1,
@@ -27,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
     color: "rgb(45, 55, 72)"
   },
   toolbar: {
-    [theme.breakpoints.between('md', 'xl')] : {
+    [theme.breakpoints.up('md')] : {
       width: "60%",
       margin: "0px auto"
     }
@@ -37,10 +40,15 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Navigation() {
   const classes = useStyles();
+  const history = useHistory();
   const { t } = useTranslation();
   const { userDetails, setUserDetails } = useContext(AuthContext);
   
   console.log(userDetails);
+
+  const redirectToAdminPage = () => {
+    history.push(`/admin`);
+  }
   return (
     <div className={classes.root}>
       <AppBar position="sticky" style={{ backgroundColor: "white", position:"fixed"}}>
@@ -49,17 +57,25 @@ export default function Navigation() {
           <Link className={classes.title} to="/">
             TESI
           </Link>
-          <LanguageSelector />
           { userDetails.isLoggedIn ?
-            <IconButton onClick={redirectoToLogout}>
-              <ExitToAppIcon />
-            </IconButton>
+            <>
+              <IconButton>
+                <Badge  color="secondary" variant="dot" invisible={false}>
+                  <NotificationsActiveIcon />
+                </Badge >
+              </IconButton>
+              <IconButton onClick={redirectToAdminPage}>
+                <PersonIcon />
+              </IconButton>
+              <IconButton onClick={redirectoToLogout}>
+                <ExitToAppIcon />
+              </IconButton>
+            </>
             :
             <Button onClick={redirectToLogin}>
               {t("login")}
             </Button>
           }
-          
         </Toolbar>
       </AppBar>
     </div>

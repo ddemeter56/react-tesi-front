@@ -1,10 +1,10 @@
 import { 
   useParams
 } from 'react-router-dom';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import ResultHeader from './ResultHeader';
 import ResultGymCard from './ResultGymCard';
-import Grid from '@material-ui/core/Grid';
+import Grid from '@mui/material/Grid';
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -15,8 +15,8 @@ const useStyles = makeStyles((theme) => ({
     }
   },
   topSection: {
-    paddingTop: theme.spacing(6),
-    paddingBottom: theme.spacing(6),
+    paddingTop: '36px',
+    paddingBottom: '36px',
   },
   midSection: {
   }

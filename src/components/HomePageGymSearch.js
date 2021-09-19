@@ -1,22 +1,21 @@
-import { useState } from 'react';
-import Grid from '@material-ui/core/Grid';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
-import { makeStyles } from '@material-ui/core/styles';
-import Autocomplete from '@material-ui/lab/Autocomplete';
-import Collapse from '@material-ui/core/Collapse';
+import { forwardRef, useState } from 'react';
+import Grid from '@mui/material/Grid';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
+import { makeStyles } from '@mui/styles';
+import Autocomplete from '@mui/lab/Autocomplete';
+import Collapse from '@mui/material/Collapse';
 import { useHistory } from 'react-router-dom';
 import { encodeQueryData, encodeMultipleQueryData } from '../utils/urlQuery';
 
 const useStyles = makeStyles((theme) => ({
   button: {
-    [theme.breakpoints.between('xs', 'lg')] : {
-      textAlign: "center"
-    }
+    textAlign: "center",
+    paddingTop: "5px"
   },
   timePicker: {
-    marginLeft: theme.spacing(1),
-    marginRight: theme.spacing(1),
+    marginLeft: '6px',
+    marginRight: '6px',
     width: 200,
   },
   oneLineInput: {
@@ -30,7 +29,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-const HomePageGymSearch = (isDetailed) => {
+const HomePageGymSearch = ({ isDetailed }) => {
+  console.log(isDetailed)
   const history = useHistory();
   const classes = useStyles();
 
@@ -67,10 +67,18 @@ const HomePageGymSearch = (isDetailed) => {
     history.push(`/list/gym/${encodeQueryData(formValues)}${encodeMultipleQueryData(selectedFacilities,"facilitiesCodes")}`);
   }
 
-  const renderDetails = (isDetailed) => {
-    if(isDetailed.isDetailed) {
+  const CollapseContainer = forwardRef((props, ref) => {
+    return (
+      <div ref={ref} {...props}>
+        <Details />
+      </div>
+    )
+  })
+
+  const Details = () => {
+    if(isDetailed) {
       return (
-        <Grid container style={{ paddingTop: 10}} justify="center" alignContent="center" alignItems="center" spacing={2}> 
+        <Grid container style={{ paddingTop: 10}} justifyContent="center" alignContent="center" alignItems="center" spacing={2}> 
           <Grid item lg={12} style={{ textAlign: "center", paddingTop: 15 }}>
             <TextField className={classes.oneLineInput} name="country" value={formValues.country} onChange={handleFormValuesChange} id="outlined-basic" label="Ország" variant="outlined" size="small" />
           </Grid>
@@ -94,7 +102,7 @@ const HomePageGymSearch = (isDetailed) => {
               )}
             />
           </Grid>
-          <Grid item xl={12} lg={12} md={12} sm={12} style={{ textAlign: "center" }}>
+          <Grid item xl={12} lg={12} md={12} sm={12} style={{ textAlign: "center" }} spacing={2}>
             <TextField
               id="time"
               name="openFrom"
@@ -106,7 +114,7 @@ const HomePageGymSearch = (isDetailed) => {
               InputLabelProps={{
                 shrink: true,
               }}
-              style={{ width:200 }}
+              style={{ width:200, padding: "8px" }}
             />
             <TextField
               id="time"
@@ -119,34 +127,37 @@ const HomePageGymSearch = (isDetailed) => {
               InputLabelProps={{
                 shrink: true,
               }}
-              style={{ width:200 }}
+              style={{ width:200, padding: "8px",  }}
             />
           </Grid>
         </Grid>
       )
     }
+    return <></>
   }
 
   return (
     <>
-      <Grid item>
-        <TextField name="city" value={formValues.city} onChange={handleFormValuesChange} id="city" label="Város" variant="outlined" size="small" style={{ width: 200 }} />
+      <Grid container style={{ paddingTop: "15px", paddingLeft: "15px" }} justifyContent="center" alignContent="center" alignItems="center" spacing={1}>
+        <Grid item>
+          <TextField name="city" value={formValues.city} onChange={handleFormValuesChange} id="city" label="Város" variant="outlined" size="small" style={{ width: 200 }} />
+        </Grid>
+        <Grid item>
+          <TextField name="minPrice" value={formValues.minPrice} onChange={handleFormValuesChange} type="number" style={{ width: 98, paddingRight: 5 }} id="min-price" label="Ár -tól" variant="outlined" size="small" />
+          <TextField name="maxPrice" value={formValues.maxPrice} onChange={handleFormValuesChange} type="number" style={{ width: 98 }} id="max-price" label="Ár -ig" variant="outlined" size="small" />
+        </Grid>
       </Grid>
       <Grid item>
-        <TextField name="minPrice" value={formValues.minPrice} onChange={handleFormValuesChange} type="number" style={{ width: 100, paddingRight: 5 }} id="min-price" label="Ár -tól" variant="outlined" size="small" />
-        <TextField name="maxPrice" value={formValues.maxPrice} onChange={handleFormValuesChange} type="number" style={{ width: 100 }} id="max-price" label="Ár -ig" variant="outlined" size="small" />
-      </Grid>
-      <Grid>
-        <Collapse in={isDetailed.isDetailed} timeout="auto" unmountOnExit >   
-          {
-            renderDetails(isDetailed)
-          }
+        <Collapse in={isDetailed} timeout="auto" unmountOnExit >   
+          <CollapseContainer />
         </Collapse>
       </Grid>
-      <Grid item className={classes.button} xs={12} sm={12} lg={4}>
-        <Button onClick={submitForm} style={{width: 150 }} variant="contained" color="primary" size="large">
-          Keresés
-        </Button>
+      <Grid container justifyContent="center">
+        <Grid item className={classes.button} xs={12} sm={12} lg={4}>
+          <Button onClick={submitForm} style={{ width: 150 }} variant="contained" color="primary" size="large">
+            Keresés
+          </Button>
+        </Grid>
       </Grid>
     </>
   )
