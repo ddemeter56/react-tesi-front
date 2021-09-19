@@ -14,7 +14,7 @@ const useStyles = makeStyles({
     width: 'auto',
   },
   menuButton: {
-    color: "rgb(45, 55, 72)"
+    color: "black"
   },
   drawerHeader: {
     display: 'flex',
@@ -43,7 +43,7 @@ export default function TemporaryDrawer() {
     <div>
       {['left'].map((anchor) => (
         <React.Fragment key={anchor}>
-          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu" onClick={toggleDrawer(anchor, true)}>
+          <IconButton edge="start" className={classes.menuButton} aria-label="menu" onClick={toggleDrawer(anchor, true)}>
             <MenuIcon />
           </IconButton>
           <SwipeableDrawer 

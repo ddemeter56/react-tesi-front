@@ -19,7 +19,6 @@ const useStyles = makeStyles((theme) => ({
     }
   },
   topSection: {
-    paddingTop: '66px',
     paddingBottom: '36px'
   },
   midSection: {
@@ -37,11 +36,11 @@ const Home = () => {
           direction="row-reverse"
           justify="center"
           alignItems="center"
-          style={{ minHeight: 450}}>
-          <Grid item xl={6} style={{ minHeight: 450, textAlign: "center", padding: "55px 0px"}}>
+          style={{ minHeight: 460}}>
+          <Grid item xl={6} style={{ minHeight: 460, textAlign: "center", padding: "55px 0px", boxSizing: "content-box"}}>
             <LandingSpeech />
           </Grid>
-          <Grid item xl={6} style={{ minHeight: 450 }}>
+          <Grid item xl={6} style={{ minHeight: 460 }}>
             <HomeSearchBar />
           </Grid>  
         </Grid>

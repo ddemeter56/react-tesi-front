@@ -140,7 +140,7 @@ const HomePageGymSearch = ({ isDetailed }) => {
     <>
       <Grid container style={{ paddingTop: "15px", paddingLeft: "15px" }} justifyContent="center" alignContent="center" alignItems="center" spacing={1}>
         <Grid item>
-          <TextField name="city" value={formValues.city} onChange={handleFormValuesChange} id="city" label="Város" variant="outlined" size="small" style={{ width: 200 }} />
+          <TextField name="city" value={formValues.city} onChange={handleFormValuesChange} id="city" label="Város" variant="outlined" size="small" style={{ width: 210 }} />
         </Grid>
         <Grid item>
           <TextField name="minPrice" value={formValues.minPrice} onChange={handleFormValuesChange} type="number" style={{ width: 98, paddingRight: 5 }} id="min-price" label="Ár -tól" variant="outlined" size="small" />
