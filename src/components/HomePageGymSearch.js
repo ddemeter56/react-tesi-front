@@ -16,21 +16,22 @@ const useStyles = makeStyles((theme) => ({
   timePicker: {
     marginLeft: '6px',
     marginRight: '6px',
-    width: 200,
+    width: 203,
   },
   oneLineInput: {
-    [theme.breakpoints.between('xs', 'md')] : {
-      width: 200
-    },
-    [theme.breakpoints.up('md')]: {
-      width: 420
+    maxWidth: 420,
+    width: "85%"
+  },
+  inputGrid: {
+    textAlign: "center",
+    [theme.breakpoints.down('sm')]: {
+      margin: 30
     }
   }
 }));
 
 
-const HomePageGymSearch = ({ isDetailed }) => {
-  console.log(isDetailed)
+const HomePageGymSearch = () => {
   const history = useHistory();
   const classes = useStyles();
 
@@ -67,90 +68,95 @@ const HomePageGymSearch = ({ isDetailed }) => {
     history.push(`/list/gym/${encodeQueryData(formValues)}${encodeMultipleQueryData(selectedFacilities,"facilitiesCodes")}`);
   }
 
-  const CollapseContainer = forwardRef((props, ref) => {
-    return (
-      <div ref={ref} {...props}>
-        <Details />
-      </div>
-    )
-  })
-
-  const Details = () => {
-    if(isDetailed) {
-      return (
-        <Grid container style={{ paddingTop: 10}} justifyContent="center" alignContent="center" alignItems="center" spacing={2}> 
-          <Grid item lg={12} style={{ textAlign: "center", paddingTop: 15 }}>
-            <TextField className={classes.oneLineInput} name="country" value={formValues.country} onChange={handleFormValuesChange} id="outlined-basic" label="Ország" variant="outlined" size="small" />
-          </Grid>
-          <Grid item style={{ textAlign: "center" }}>
-            <Autocomplete
-              className={classes.oneLineInput}
-              multiple
-              id="tags-standard"
-              options={facilityList}
-              getOptionLabel={(option) => option.name}
-              onChange={handleFacilitySelect}
-              value={selectedFacilities}
-              limitTags={3}
-              renderInput={(params) => (
-                <TextField
-                  {...params}
-                  variant="standard"
-                  label="Létesítmények"
-                  size="small"
-                />
-              )}
-            />
-          </Grid>
-          <Grid item xl={12} lg={12} md={12} sm={12} style={{ textAlign: "center" }} spacing={2}>
-            <TextField
-              id="time"
-              name="openFrom"
-              label="Nyitvatartás -tól"
-              type="time"
-              defaultValue={formValues.openFrom}
-              className={classes.timePicker}
-              onChange={handleFormValuesChange}
-              InputLabelProps={{
-                shrink: true,
-              }}
-              style={{ width:200, padding: "8px" }}
-            />
-            <TextField
-              id="time"
-              name="openTo"
-              label="Nyitvatartás -ig"
-              type="time"
-              defaultValue={formValues.openTo}
-              className={classes.timePicker}  
-              onChange={handleFormValuesChange}
-              InputLabelProps={{
-                shrink: true,
-              }}
-              style={{ width:200, padding: "8px",  }}
-            />
-          </Grid>
-        </Grid>
-      )
-    }
-    return <></>
-  }
 
   return (
     <>
-      <Grid container style={{ paddingTop: "15px", paddingLeft: "15px" }} justifyContent="center" alignContent="center" alignItems="center" spacing={1}>
-        <Grid item>
-          <TextField name="city" value={formValues.city} onChange={handleFormValuesChange} id="city" label="Város" variant="outlined" size="small" style={{ width: 210 }} />
+      <Grid container style={{ paddingTop: "15px", paddingLeft: "15px" }} justifyContent="center" alignContent="center" alignItems="center" spacing={4}>
+        <Grid item className={classes.inputGrid} lg={12} md={12} sm={12} xs={12}>
+          <TextField 
+            className={classes.oneLineInput} 
+            name="city" value={formValues.city} 
+            onChange={handleFormValuesChange} 
+            id="city" 
+            label="Város" 
+            variant="outlined" 
+            size="small" />
         </Grid>
-        <Grid item>
-          <TextField name="minPrice" value={formValues.minPrice} onChange={handleFormValuesChange} type="number" style={{ width: 98, paddingRight: 5 }} id="min-price" label="Ár -tól" variant="outlined" size="small" />
-          <TextField name="maxPrice" value={formValues.maxPrice} onChange={handleFormValuesChange} type="number" style={{ width: 98 }} id="max-price" label="Ár -ig" variant="outlined" size="small" />
+        <Grid item className={classes.inputGrid} xl={12} lg={12} md={12} sm={12}>
+          <TextField 
+            className={classes.timePicker}
+            name="minPrice" 
+            value={formValues.minPrice} 
+            onChange={handleFormValuesChange} 
+            type="number" 
+            style={ {padding: 8 }} 
+            id="min-price" label="Ár -tól" 
+            variant="outlined" size="small" />
+          <TextField 
+            className={classes.timePicker}
+            name="maxPrice" 
+            value={formValues.maxPrice} 
+            onChange={handleFormValuesChange} 
+            type="number" 
+            style={{ padding: 8 }} 
+            id="max-price" 
+            label="Ár -ig" 
+            variant="outlined" 
+            size="small" />
         </Grid>
-      </Grid>
-      <Grid item>
-        <Collapse in={isDetailed} timeout="auto" unmountOnExit >   
-          <CollapseContainer />
-        </Collapse>
+        <Grid item className={classes.inputGrid} lg={12} md={12} sm={12} xs={12}>
+          <TextField className={classes.oneLineInput} name="country" value={formValues.country} onChange={handleFormValuesChange} id="outlined-basic" label="Ország" variant="outlined" size="small" />
+        </Grid>
+        <Grid item className={classes.inputGrid} lg={12} md={12} sm={12} xs={12}>
+          <Autocomplete
+            multiple
+            className={classes.oneLineInput}
+            style={{ margin: "0 auto"}}
+            id="tags-standard"
+            options={facilityList}
+            getOptionLabel={(option) => option.name}
+            onChange={handleFacilitySelect}
+            value={selectedFacilities}
+            limitTags={3}
+            renderInput={(params) => (
+              <TextField
+                {...params}
+                className={classes.oneLineInput}
+                variant="standard"
+                label="Létesítmények"
+                size="small"
+              />
+            )}
+          />
+        </Grid>
+        <Grid className={classes.inputGrid} item xl={12} lg={12} md={12} sm={12}>
+          <TextField
+            id="time"
+            name="openFrom"
+            label="Nyitvatartás -tól"
+            type="time"
+            defaultValue={formValues.openFrom}
+            className={classes.timePicker}
+            onChange={handleFormValuesChange}
+            InputLabelProps={{
+              shrink: true,
+            }}
+            style={{ padding: 8 }}
+          />
+          <TextField
+            id="time"
+            name="openTo"
+            label="Nyitvatartás -ig"
+            type="time"
+            defaultValue={formValues.openTo}
+            className={classes.timePicker}  
+            onChange={handleFormValuesChange}
+            InputLabelProps={{
+              shrink: true,
+            }}
+            style={{ padding: 8 }}
+          />
+        </Grid>
       </Grid>
       <Grid container justifyContent="center">
         <Grid item className={classes.button} xs={12} sm={12} lg={4}>

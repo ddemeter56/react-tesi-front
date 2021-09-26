@@ -59,9 +59,6 @@ const FlowSection = () => {
 
   return (
     <div>
-      <div className={classes.flowSectionText}>
-        <Typography  variant="h3">Train with Tesi</Typography>
-      </div>
       <Grid container justify="space-between"
         alignContent="space-around"
         alignItems="center"

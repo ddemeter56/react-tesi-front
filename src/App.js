@@ -15,7 +15,9 @@ import AdminPage from './components/AdminPage';
 import { processUrlParams } from './utils/auth';
 
 const theme = createTheme({
-  
+  typography: {
+    "fontFamily": `"titilliumRegular","titilliumBlack", "titilliumLight", "titilliumExtraLight"` 
+  }
 })
 
 function About() {

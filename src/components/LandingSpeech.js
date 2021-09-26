@@ -25,22 +25,22 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const LandingSpeech = () => {
+const LandingSpeech = ({ onSearchClick }) => {
   const classes = useStyles();
   return (
     <div className={classes.landingPageSpeech}>
-      <Typography variant="h1" className={`typography`}>
+      <Typography variant="h1" fontFamily="titilliumBlack">
         Tesi
       </Typography>
-      <Typography variant="h2">
+      <Typography variant="h2" fontFamily="titilliumExtraLight">
         A mozgás közössége
       </Typography>
       <Divider />
-      <Typography display="inline" variant="h5" color="textSecondary">
+      <Typography display="inline" variant="h5" color="textSecondary" fontFamily="titilliumLight">
         <u>Találj</u> edzőt, vagy termet. <u>Foglalj</u> időpontot. <u>Kövesd a változást</u>. 
       </Typography>
       <Typography variant="h6" color="textSecondary">
-        <i>Ha pedig <strong>edző</strong> vagy, vagy termed van</i>
+        <i>Ha pedig <strong>edző</strong> vagy, vagy <strong>termed</strong> van</i>
       </Typography>
       <Typography variant="h5" color="textSecondary">
         Kezeld vendégeid edzéstervét egy helyen, osszd meg a szabad időpontjad és <strong>szerezz új vendégeket!</strong> 
@@ -48,7 +48,7 @@ const LandingSpeech = () => {
       
       <Grid container direction="row" spacing={3} style={{paddingTop: 15}}>
         <Grid item xl={6} lg={6} md={12} sm={12} xs={12}>
-          <Button variant="contained" className={classes.buttonFirst}>
+          <Button variant="contained" className={classes.buttonFirst} onClick={() => onSearchClick()}>
             <Typography variant="h5" className={`typography`}>
               Keresés
             </Typography>

@@ -1,13 +1,30 @@
 @font-face {
+	font-family: titilliumRegular;
+	src: url(./fonts/Titillium_Web/TitilliumWeb-Regular.ttf);
+}
+@font-face {
 	font-family: titilliumBlack;
 	src: url(./fonts/Titillium_Web/TitilliumWeb-Black.ttf);
 }
-.typography {
-	font-family: titilliumBlack;
+@font-face {
+	font-family: titilliumLight;
+	src: url(./fonts/Titillium_Web/TitilliumWeb-Light.ttf);
+}
+
+@font-face {
+	font-family: titilliumExtraLight;
+	src: url(./fonts/Titillium_Web/TitilliumWeb-ExtraLight.ttf);
+}
+html {
+	scroll-behavior: smooth;
 }
 
 
 .home-search-bar {
+	padding-top: 10%;
+	box-sizing: border-box;
+	min-height: 500px;
+
 }
 
 .background-fancy {
