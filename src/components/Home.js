@@ -38,7 +38,13 @@ const useStyles = makeStyles((theme) => ({
   flowSection: {
     height: "90vh",
     minHeight: 750,
-    paddingTop: 60,
+    paddingTop: 100, // need to add padding because of fixed navbar
+    [theme.breakpoints.between('xs', 'sm')]: {
+      clipPath: 'polygon(52% 2%, 95% 4%, 100% 26%, 100% 79%, 88% 100%, 50% 100%, 14% 100%, 0 80%, 0 35%, 4% 4%)'
+    },
+    clipPath: "polygon(50% 0, 80% 10%, 100% 25%, 97% 73%, 80% 90%, 50% 100%, 20% 90%, 3% 70%, 0 35%, 14% 6%)"
+
+
   },
   midSection: {
     paddingTop: 50
@@ -69,10 +75,7 @@ const Home = () => {
         </Grid>
       </div>
       {}
-      <div ref={searchRef} className={classes.flowSection}>
-        <Typography style={{ textAlign: "center", paddingBottom: 25}} variant="h4" fontFamily="titilliumBlack">
-          Begin your journey with <u>Tesi</u>
-        </Typography>
+      <div ref={searchRef} className={`${classes.flowSection} background-fancy`}>
         <Grid container direction="row" justifyContent="center" alignItems="center" style={{ boxSizing: "border-box"}}>
           <Grid item xl={6}>  
             <HomeSearchBar />

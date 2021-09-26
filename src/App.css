@@ -19,20 +19,21 @@ html {
 	scroll-behavior: smooth;
 }
 
-
 .home-search-bar {
-	padding-top: 10%;
-	box-sizing: border-box;
-	min-height: 500px;
-
+	background-color: indianred;
 }
-
 .background-fancy {
 	background: linear-gradient(-45deg, #ffe7e0, #ffdbe9, #eefcfb, #d9f8f1);
 	background-size: 400% 400%;
 	animation: gradient 15s ease infinite;
 	height: 100vh;
 }
+
+
+.shadow {
+	box-shadow: 0 1px 1px rgb(0 0 0 / 11%), 0 2px 2px rgb(0 0 0 / 11%), 0 4px 4px rgb(0 0 0 / 11%), 0 8px 8px rgb(0 0 0 / 11%), 0 16px 16px rgb(0 0 0 / 11%), 0 32px 32px rgb(0 0 0 / 11%);
+}
+
 
 @keyframes slideInFromRight {
   0% {
