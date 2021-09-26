@@ -19,10 +19,10 @@ const HomeSearchBar = () => {
       return <HomePageGymSearch />
     }
     if(type === 'trainer') {
-      return <HomePagePtSearch isDetailed={isDetailed} />
+      return <HomePagePtSearch />
     }
   }
-  
+
   const handleChangeSearchChange = (event) => {
     setValue(event.target.value);
   };

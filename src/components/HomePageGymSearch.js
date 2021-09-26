@@ -82,6 +82,9 @@ const HomePageGymSearch = () => {
             variant="outlined" 
             size="small" />
         </Grid>
+        <Grid item className={classes.inputGrid} lg={12} md={12} sm={12} xs={12}>
+          <TextField className={classes.oneLineInput} name="country" value={formValues.country} onChange={handleFormValuesChange} id="outlined-basic" label="Ország" variant="outlined" size="small" />
+        </Grid>
         <Grid item className={classes.inputGrid} xl={12} lg={12} md={12} sm={12}>
           <TextField 
             className={classes.timePicker}
@@ -103,9 +106,6 @@ const HomePageGymSearch = () => {
             label="Ár -ig" 
             variant="outlined" 
             size="small" />
-        </Grid>
-        <Grid item className={classes.inputGrid} lg={12} md={12} sm={12} xs={12}>
-          <TextField className={classes.oneLineInput} name="country" value={formValues.country} onChange={handleFormValuesChange} id="outlined-basic" label="Ország" variant="outlined" size="small" />
         </Grid>
         <Grid item className={classes.inputGrid} lg={12} md={12} sm={12} xs={12}>
           <Autocomplete
