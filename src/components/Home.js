@@ -23,7 +23,15 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: "35px",
     height: "100vh",
     minHeight: 750,
+    [theme.breakpoints.between('xs', 'sm')]: {
+      clipPath: 'none'
+    },
     clipPath: "polygon(0 0, 32% 20%, 60% 0, 85% 0%, 100% 0, 100% 15%, 100% 85%, 100% 100%, 60% 100%, 32% 80%, 0 100%, 0 49%)"
+  },
+  topSectionImg: {
+    [theme.breakpoints.between('xs', 'sm')]: {
+      display: 'none'
+    },
   },
   midSection: {
     paddingTop: 50
@@ -41,7 +49,7 @@ const Home = () => {
           justifyContent="flex-end"
           alignItems="flex-start">
           <Grid item xl={6} lg={6} md={6} sm={6}>
-            <img src={img} alt="img" />
+            <img className={classes.topSectionImg} src={img} alt="img" />
           </Grid>
           <Grid item xl={6} lg={6} md={6} sm={6} xs={12}>
             <LandingSpeech />

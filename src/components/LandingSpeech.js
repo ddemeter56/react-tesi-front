@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: "20%",
     [theme.breakpoints.between('xs', 'sm')]: {
       width: "100%",
-      textAlign: "center",
+      textAlign: "center"
     },
   },
   buttonFirst: {
