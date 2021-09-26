@@ -7,7 +7,8 @@ import HomePagePricing from './HomePagePricing';
 import FlowSection from './FlowSection';
 import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
-import img from '../media/runner.png';
+import runnerImg from '../media/runner.png';
+import searchImg from '../media/homepage-search.png'
 import "../App.css";
 
 const floatingButtons = [
@@ -67,7 +68,7 @@ const Home = () => {
           justifyContent="flex-end"
           alignItems="flex-start">
           <Grid item xl={6} lg={6} md={6} sm={6}>
-            <img className={classes.topSectionImg} src={img} alt="img" />
+            <img className={classes.topSectionImg} src={runnerImg} alt="img" />
           </Grid>
           <Grid item xl={6} lg={6} md={6} sm={6} >
             <LandingSpeech onSearchClick={scrollToSearch} />
@@ -81,7 +82,7 @@ const Home = () => {
             <HomeSearchBar />
           </Grid>
           <Grid item xl={6}>  
-            <FlowSection />
+            <img className={classes.topSectionImg} src={searchImg} alt="search" />
           </Grid>
         </Grid>
       </div>
