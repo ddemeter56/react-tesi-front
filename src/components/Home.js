@@ -5,21 +5,25 @@ import LandingSpeech from './LandingSpeech';
 import HomePagePricing from './HomePagePricing';
 import FlowSection from './FlowSection';
 import Divider from '@mui/material/Divider';
+import gif2 from '../media/gif2.gif';
+import img from '../media/runner.png';
+import "../App.css";
+
+const floatingButtons = [
+  { label: "label", onClick: () => {}}
+];
+
 const useStyles = makeStyles((theme) => ({
   container: {
     paddingTop: "20px",
     boxSizing: "content-box",
-    [theme.breakpoints.up('sm')] : {
-      width: "80%",
-      margin: "0px auto"
-    },
-    [theme.breakpoints.up('lg')] : {
-      width: "60%",
-      margin: "0px auto"
-    }
   },
   topSection: {
-    paddingBottom: '36px'
+    paddingBottom: '36px',
+    paddingTop: "35px",
+    height: "100vh",
+    minHeight: 750,
+    clipPath: "polygon(0 0, 32% 20%, 60% 0, 85% 0%, 100% 0, 100% 15%, 100% 85%, 100% 100%, 60% 100%, 32% 80%, 0 100%, 0 49%)"
   },
   midSection: {
     paddingTop: 50
@@ -29,22 +33,22 @@ const useStyles = makeStyles((theme) => ({
 const Home = () => {
   const classes = useStyles();
   return(
-    <div className={classes.container}>
-      <div className={classes.topSection}>
+    <div className={`${classes.container} `}>
+      <div className={`${classes.topSection} background-fancy`}>
         <Grid 
           container
-          direction="row-reverse"
-          justify="center"
-          alignItems="center"
-          style={{ minHeight: 460}}>
-          <Grid item xl={6} style={{ minHeight: 460, textAlign: "center", padding: "55px 0px", boxSizing: "content-box"}}>
+          direction="row"
+          justifyContent="flex-end"
+          alignItems="flex-start">
+          <Grid item xl={6} lg={6} md={6} sm={6}>
+            <img src={img} alt="img" />
+          </Grid>
+          <Grid item xl={6} lg={6} md={6} sm={6} xs={12}>
             <LandingSpeech />
           </Grid>
-          <Grid item xl={6} style={{ minHeight: 460 }}>
-            <HomeSearchBar />
-          </Grid>  
         </Grid>
       </div>
+      {}
       <div className={classes.flowSection}>
         <FlowSection />
       </div>
