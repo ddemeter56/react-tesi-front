@@ -60,7 +60,7 @@ const HomeSearchBar = () => {
     <div className={`${classes.outterHomeSearchBar} `}>
       <div  ref={outterRef} className={`${classes.innerHomeSearchBar} ${isVisible && 'animated animatedFadeInUp fadeInUp'} `}>
         <Typography style={{ textAlign: "center", paddingBottom: 30}} variant="h4">
-          Begin your journey with <u>Tesi</u>
+          Próbáld ki a <u>Tesit</u>
         </Typography>
         <FormControl size="small" fullWidth component="fieldset">
           <div style={{ position: "relative", textAlign: "center" }}>

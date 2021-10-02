@@ -19,9 +19,6 @@ const useStyles = makeStyles((theme) => ({
     opacity: 0,
     textAlign: "center",
     margin: 15,
-    [theme.breakpoints.only('xs')]: {
-      width: "100%"
-    }
   },
   iconContainer: {
     maxWidth: 55,
@@ -85,6 +82,10 @@ const HomeDetailedCards = () => {
       <Button style={{ marginTop: 40 }} variant="outlined" onClick={() => setIsShowGym(!isShowGym)}>
         <Typography variant="h5">{isShowGym ? 'Szakember vagy? ' : 'Edzőtermed van?'}</Typography>
       </Button>
+      <Button style={{ marginTop: 40 }} variant="text" color="secondary" onClick={() => alert('Implement redirect to about')}>
+        <Typography variant="h5">Részletesebben...</Typography>
+      </Button>
+      
     </>
   )
 }

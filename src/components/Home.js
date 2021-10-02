@@ -75,7 +75,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   descriptionCards: {
-    minHeight: 700,
+    minHeight: 550,
     paddingTop: 35, 
     [theme.breakpoints.between('xs', 'sm')] : {
       borderTop: "2px solid #c3c3c3"
@@ -134,6 +134,7 @@ const Home = () => {
           <HomeDetailedCards />
         </Grid>
       </div>
+      <Divider />
       <div className={classes.midSection}>
         <HomePagePricing />
       </div>
