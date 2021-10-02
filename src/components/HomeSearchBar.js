@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import '../App.css';
+import React, { useState, useRef } from 'react';
+import useOnScreen from '../hooks/useOnScreen';
 import { makeStyles } from '@mui/styles';
 import Grid from '@mui/material/Grid'
 import Radio from '@mui/material/Radio';
@@ -11,6 +11,7 @@ import HomePageGymSearch from './HomePageGymSearch';
 import HomePagePtSearch from './HomePagePtSearch';
 import Typography from '@mui/material/Typography';
 
+import '../App.css';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -20,7 +21,17 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.between('xs', 'sm')]: {
       width: "100%",
     },
-    
+    [theme.breakpoints.up('sm')]: {
+      boxShadow: "0 1px 1px rgb(0 0 0 / 11%), 0 2px 2px rgb(0 0 0 / 11%), 0 4px 4px rgb(0 0 0 / 11%), 0 8px 8px rgb(0 0 0 / 11%), 0 16px 16px rgb(0 0 0 / 11%), 0 32px 32px rgb(0 0 0 / 11%)"
+    },
+    [theme.breakpoints.up('lg')]: {
+      paddingBottom: "15%",
+    },
+    borderRadius: 5,
+    opacity: 0
+  },
+  hideinnerHomeSearchBar: {
+    display: "none"
   }
 }));
 
@@ -28,7 +39,11 @@ const HomeSearchBar = () => {
   const classes = useStyles();
   const [searchTypeValue, setValue] = useState('gym');
 
-  const renderForm = (type, isDetailed) => {
+  const outterRef = useRef();
+  const isVisible = useOnScreen(outterRef)
+
+
+  const renderForm = (type) => {
     if(type === 'gym') {
       return <HomePageGymSearch />
     }
@@ -42,9 +57,9 @@ const HomeSearchBar = () => {
   };
 
   return(
-    <div className={classes.outterHomeSearchBar}>
-      <div  className={`${classes.innerHomeSearchBar} shadow`}>
-        <Typography style={{ textAlign: "center", paddingBottom: 30}} variant="h4" fontFamily="titilliumBlack">
+    <div className={`${classes.outterHomeSearchBar} `}>
+      <div  ref={outterRef} className={`${classes.innerHomeSearchBar} ${isVisible && 'animated animatedFadeInUp fadeInUp'} `}>
+        <Typography style={{ textAlign: "center", paddingBottom: 30}} variant="h4">
           Begin your journey with <u>Tesi</u>
         </Typography>
         <FormControl size="small" fullWidth component="fieldset">
@@ -69,7 +84,6 @@ const HomeSearchBar = () => {
           Keresd az egyes specializációk és létesítmények leírását <a href="asd">itt</a>
         </Typography>
       </div>
-
     </div>
   )
 }

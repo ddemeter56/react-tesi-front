@@ -22,6 +22,7 @@ html {
 .home-search-bar {
 	background-color: indianred;
 }
+
 .background-fancy {
 	background: linear-gradient(-45deg, #ffe7e0, #ffdbe9, #eefcfb, #d9f8f1);
 	background-size: 400% 400%;
@@ -29,11 +30,26 @@ html {
 	height: 100vh;
 }
 
-
 .shadow {
 	box-shadow: 0 1px 1px rgb(0 0 0 / 11%), 0 2px 2px rgb(0 0 0 / 11%), 0 4px 4px rgb(0 0 0 / 11%), 0 8px 8px rgb(0 0 0 / 11%), 0 16px 16px rgb(0 0 0 / 11%), 0 32px 32px rgb(0 0 0 / 11%);
 }
 
+
+.animated {
+	animation-duration: 1s;
+	animation-fill-mode: both;
+	-webkit-animation-duration: 1s;
+	-webkit-animation-fill-mode: both
+}
+
+
+.fadeInUp {
+	opacity: 0;
+	display: block;
+	animation-name: fadeInUp;
+	animation-duration: 2s;
+	-webkit-animation-name: fadeInUp;
+}
 
 @keyframes slideInFromRight {
   0% {
@@ -42,6 +58,37 @@ html {
   100% {
     transform: translateX(0);
   }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+	from {
+			transform: translate3d(0,40px,0)
+	}
+
+	to {
+			transform: translate3d(0,0,0);
+			opacity: 1
+	}
+}
+
+@-webkit-keyframes fadeInUp {
+	from {
+			transform: translate3d(0,40px,0)
+	}
+
+	to {
+			transform: translate3d(0,0,0);
+			opacity: 1
+	}
 }
 
 @keyframes gradient {
