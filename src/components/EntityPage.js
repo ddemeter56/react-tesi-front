@@ -18,13 +18,6 @@ const EntityPage = () => {
     type = Array.isArray(data.facilities) ? 'gym' : 'pt';
   }
   
-  if(error) {
-    return(
-      <h2>
-        ERROR
-      </h2>
-    )
-  }
   
   if(loading) {
     return(
@@ -32,6 +25,13 @@ const EntityPage = () => {
     )
   }
   
+  if(error) {
+    return(
+      <h2>
+        ERROR
+      </h2>
+    )
+  }
   return(
     (type === 'gym' ? <GymEntityPage data={data} /> : <PtEntityPage data={data} /> )
   )

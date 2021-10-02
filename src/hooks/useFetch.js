@@ -10,15 +10,20 @@ export function useFetch(uri) {
   useEffect(() => {
     if(!uri) return;
     fetch(`${env}${uri}`)
-      .then(data => data.json())
+      .then(data => {
+        if (!data.ok) {
+          throw new Error(`Network response error: ${data.status} - ${data.statusText}`);
+        }
+        return data.json()
+      })
       .then(setData)
       .then(() => setLoading(false))
-      .catch(setError);
+      .catch(error => { 
+        setError(error)
+        //setLoading(false);
+      });
   }, [uri, env ]);
   
-  console.log(loading);
-  console.log(error);
-  console.log(data);
   return {
     loading,
     data,

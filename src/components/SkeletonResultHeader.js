@@ -11,7 +11,7 @@ const SkeletonResultHeader = () => {
       direction="row"
       alignItems="center"
       alignContent="center"
-      justify="space-around"
+      justifyContent="space-around"
       style={{ textAlign: "center" }}>
       <Grid item>
         <Skeleton animation="wave" height={15} width={150} />

@@ -13,14 +13,10 @@ import { getNumberOfPages } from '../utils/pagination';
 import { useState, useEffect, useRef } from 'react';
 import Pagination from '@mui/lab/Pagination';
 import ResultPtCard from './ResultPtCard';
-
+import ErrorPage from './ErrorPage';
 const useStyles = makeStyles((theme) => ({
   container: {
     padding: "15px",
-    [theme.breakpoints.between('md', 'xl')] : {
-      width: "60%",
-      margin: "0px auto"
-    }
   },
   topSection: {
     paddingTop: '36px',
@@ -66,19 +62,19 @@ const Result = ({ type }) => {
   /**Show skeleton if loading */
   if(loading) {
     return (
-      <div className={classes.container}> 
+      <div className={`${classes.container} background-fancy`}> 
         <SkeletonHeader />
         <Grid container
           spacing={3}
           direction="row"
           alignItems="center"
           alignContent="center"
-          justify="space-evenly"
+          justifyContent="space-evenly"
           style={{ textAlign: "center" }} >
           {
-            [1,2,3,4,5,6,7,8,9,10].map((index) => {
+            [1,2,3,4,5,6].map((index) => {
               return(
-                <Grid item key={index}>
+                <Grid item key={index} xl={6} lg={6} md={6} sm={12}>
                   <SkeletonCard />
                 </Grid>
               )
@@ -88,9 +84,13 @@ const Result = ({ type }) => {
       </div>
     )
   }
+
   if(error) {
-    return (<p>Error</p>)
+    return (
+      <ErrorPage type="ERROR" message={error} />
+    )
   }
+
   return (
     <div className={classes.container}> 
       <ResultHeader paginationComponent={

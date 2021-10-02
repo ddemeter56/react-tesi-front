@@ -12,15 +12,19 @@ const useStyles = makeStyles((theme) => ({
     padding: '12px',
     marginBottom: '12px',
     margin: 'auto',
-    [theme.breakpoints.between('xs','sm')]: { 
-      minWidth: 350,
+    [theme.breakpoints.between('xs','md')]: { 
+      minWidth: 280,
       maxWidth: "100%",
       height: 180,
     },
-    [theme.breakpoints.between('md','xl')]: { 
+    [theme.breakpoints.up('md')]: { 
       width: 400,
       height: 180,
     },
+    [theme.breakpoints.only('xl')]: {
+      width: 600,
+      height: 180
+    }
   },
   image: {
     width: 128,
@@ -69,8 +73,8 @@ const SkeletonCard = (key) => {
           direction="row"
           alignItems="center"
           alignContent="center"
-          justify="flex-start"
-          style={{ textAlign: "center", paddingLeft: 35 }}  >
+          justifyContent="flex-start"
+          style={{ textAlign: "center", paddingLeft: 35, paddingTop: 25 }}  >
           {[1,2,3,4,5].map((item, index) => {
             return (
               <Skeleton key={index} animation="wave" style={{margin: 5}} height={30} width={30} />
