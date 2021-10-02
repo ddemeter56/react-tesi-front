@@ -11,7 +11,7 @@ import Typography from '@mui/material/Typography';
 import { useState } from 'react';
 
 const ResultHeader = ({paginationComponent, found, handleSortProp, handleSortMethod }) => {
-  console.log(found);
+  console.log("found" + found);
   // use these params to make api call later
   const [anchorElSort, setAnchorElSort] = useState(null);
   const [anchorElAsc, setAnchorElAsc] = useState(null);
@@ -36,7 +36,7 @@ const ResultHeader = ({paginationComponent, found, handleSortProp, handleSortMet
       direction="row"
       alignItems="center"
       alignContent="center"
-      justify="space-around"
+      justifyContent="center"
       style={{ textAlign: "center" }}>
       <Grid item>
         <Typography variant="subtitle2">

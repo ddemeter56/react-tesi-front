@@ -62,7 +62,7 @@ const Result = ({ type }) => {
   /**Show skeleton if loading */
   if(loading) {
     return (
-      <div className={`${classes.container} background-fancy`}> 
+      <div className={`${classes.container}`}> 
         <SkeletonHeader />
         <Grid container
           spacing={3}
@@ -98,7 +98,7 @@ const Result = ({ type }) => {
           <Pagination onChange={handlePagination} count={numberOfPages.current} variant="outlined" shape="rounded" />
         </Grid>
       } 
-      found={data.length}
+      found={data?.gyms.length || data?.pts.length}
       handleSortProp={handleSortProperty}
       handleSortMethod={handleSortMethod}
       />
@@ -107,7 +107,7 @@ const Result = ({ type }) => {
         direction="row"
         alignItems="center"
         alignContent="center"
-        justify="space-evenly"
+        justifyContent="space-evenly"
         style={{ textAlign: "center" }} >
         {
           type === 'gym' &&

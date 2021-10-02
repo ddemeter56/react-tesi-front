@@ -19,14 +19,19 @@ const useStyles = makeStyles((theme) => ({
     padding: '12px',
     marginBottom: '12px',
     margin: 'auto',
-    [theme.breakpoints.between('xs','sm')]: { 
-      width: "95%",
+    [theme.breakpoints.between('xs','md')]: { 
+      minWidth: 280,
+      maxWidth: "100%",
       height: 200,
     },
-    [theme.breakpoints.between('md','xl')]: { 
+    [theme.breakpoints.up('md')]: { 
       width: 400,
-      height: 200,
+      height: 230,
     },
+    [theme.breakpoints.only('xl')]: {
+      width: 600,
+      height: 200
+    }
   },
   image: {
     width: 128,
@@ -49,6 +54,7 @@ const useStyles = makeStyles((theme) => ({
 
   },
   address: {
+    padding: 0,
     display: "-webkit-box",
     boxOrient: "vertical",
     lineClamp: 3,
@@ -88,15 +94,15 @@ const ResultGymCard = ({ props }) => {
   console.log(socialMediaArray);
   return (
     <div className={classes.root}>
-      <Paper className={classes.paper}>
+      <Paper className={`${classes.paper} background-fancy`}>
         <Grid container
           spacing={3}
           direction="row"
           alignItems="center"
           alignContent="center"
-          justify="space-evenly"
+          justifyContent="center"
           style={{ textAlign: "center" }}  >
-          <Grid item xs={6}> 
+          <Grid item xs={6} style={{ paddingTop: 0, borderRight: "1px solid #c3c3c3"}}> 
             <ButtonBase className={classes.image}>
               <img className={classes.img} alt="complex" src={`https://api.tesi.life${firstImageUrl}`} />
             </ButtonBase>
@@ -104,17 +110,17 @@ const ResultGymCard = ({ props }) => {
               <br /> { earliestOpening } - { latestClosing }
             </Typography>
           </Grid>
-          <Grid style={{ padding: 0 }} item xs={6} sm container>
+          <Grid style={{ paddingTop: 20 }} item xs={6} sm container>
             <Grid item xs container direction="column" spacing={2}>
-              <Grid item xs>
-                <Typography style={{ cursor: "pointer" }} gutterBottom variant="button" onClick={redirectToGym}>
+              <Grid item>
+                <Typography style={{ cursor: "pointer" }} gutterBottom variant="subtitle1" fontFamily="titilliumBlack" onClick={redirectToGym}>
                   { name }
                 </Typography>
-                <Typography className={classes.address} variant="caption" gutterBottom>
+                <Typography className={classes.address} variant="caption" fontFamily="titilliumLight" gutterBottom>
                   <br />
                   { addressString }
                 </Typography>
-                <Typography className={classes.description} variant="body2" color="textSecondary" >
+                <Typography className={classes.description} variant="body" color="textSecondary" >
                   { shortDescription }
                 </Typography>
               </Grid>
@@ -127,7 +133,7 @@ const ResultGymCard = ({ props }) => {
           alignItems="center"
           alignContent="center"
           justify="flex-start"
-          style={{ textAlign: "center", paddingLeft: 35 }}  >
+          style={{ textAlign: "center", paddingLeft: 35, paddingTop: 25 }}  >
           {socialMediaArray.map((item, index) => {
             if(item.id) {
               return (

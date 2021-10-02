@@ -42,7 +42,7 @@ const SkeletonCard = (key) => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      <Paper className={classes.paper}>
+      <Paper className={`${classes.paper} background-fancy`}>
         <Grid container
           spacing={3}
           direction="row"
