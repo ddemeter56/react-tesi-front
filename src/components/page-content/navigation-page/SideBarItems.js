@@ -11,7 +11,7 @@ import InfoIcon from '@mui/icons-material/Info';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
-import LanguageSelector from './LanguageSelector';
+import LanguageSelector from '../../commons/language-selector/LanguageSelector';
 const useStyles = makeStyles({
   list: {
     width: 250,

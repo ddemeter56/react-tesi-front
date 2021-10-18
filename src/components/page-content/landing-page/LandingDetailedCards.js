@@ -1,5 +1,5 @@
 import React, { useState, useRef} from 'react';
-import useOnScreen from '../hooks/useOnScreen';
+import useOnScreen from '../../../hooks/useOnScreen';
 import Button from '@mui/material/Button';
 import { makeStyles } from '@mui/styles';
 import Grid from '@mui/material/Grid';

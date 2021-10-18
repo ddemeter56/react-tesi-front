@@ -20,7 +20,7 @@ export function useFetch(uri) {
       .then(() => setLoading(false))
       .catch(error => { 
         setError(error)
-        //setLoading(false);
+        setLoading(false);
       });
   }, [uri, env ]);
   

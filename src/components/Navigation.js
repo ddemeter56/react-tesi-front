@@ -4,7 +4,7 @@ import { makeStyles } from '@mui/styles';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
-import SideBar from './SideBar';
+import SideBar from './page-content/navigation-page/SideBar';
 import { useTranslation } from 'react-i18next';
 import { Link, useHistory } from 'react-router-dom';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';

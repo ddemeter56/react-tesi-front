@@ -1,9 +1,7 @@
-import { 
-  useParams
-} from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { makeStyles } from '@mui/styles';
 import ResultHeader from './ResultHeader';
-import ResultGymCard from './ResultGymCard';
+import ResultGymCard from '../gym/ResultGymCard';
 import Grid from '@mui/material/Grid';
 
 const useStyles = makeStyles((theme) => ({

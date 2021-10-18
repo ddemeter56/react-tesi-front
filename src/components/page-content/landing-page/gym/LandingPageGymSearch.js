@@ -6,7 +6,7 @@ import { makeStyles } from '@mui/styles';
 import Autocomplete from '@mui/lab/Autocomplete';
 import Collapse from '@mui/material/Collapse';
 import { useHistory } from 'react-router-dom';
-import { encodeQueryData, encodeMultipleQueryData } from '../utils/urlQuery';
+import { encodeQueryData, encodeMultipleQueryData } from '../../../../utils/urlQuery';
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -65,7 +65,7 @@ const HomePageGymSearch = () => {
     event.preventDefault();
     console.log(formValues);
     console.log(encodeMultipleQueryData(selectedFacilities));
-    history.push(`/list/gym/${encodeQueryData(formValues)}${encodeMultipleQueryData(selectedFacilities,"facilitiesCodes")}`);
+    history.push(`/list/gym/${encodeQueryData(formValues)}${encodeMultipleQueryData(selectedFacilities,"facilityCodes")}`);
   }
 
 

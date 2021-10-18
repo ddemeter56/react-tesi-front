@@ -22,7 +22,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import Slider from "react-slick";
-import MapComponent from './MapComponent';
+import MapComponent from '../../../commons/map/MapComponent';
 
 const useStyles = makeStyles((theme) => ({
   container: {

@@ -1,19 +1,18 @@
-import { 
-  useParams
-} from 'react-router-dom';
+import React, { useState, useEffect, useRef } from 'react';
+import { useParams } from 'react-router-dom';
 import { makeStyles } from '@mui/styles';
 import ResultHeader from './ResultHeader';
-import ResultGymCard from './ResultGymCard';
+import ResultGymCard from './gym/ResultGymCard';
 import Grid from '@mui/material/Grid';
-import { useFetch } from '../hooks/useFetch';
-import { API_PATH } from '../utils/apiPaths';
-import SkeletonCard from './SkeletonResultCard';
-import SkeletonHeader from './SkeletonResultHeader';
-import { getNumberOfPages } from '../utils/pagination';
-import { useState, useEffect, useRef } from 'react';
+import { useFetch } from '../../../hooks/useFetch';
+import { API_PATH } from '../../../utils/apiPaths';
+import SkeletonCard from '../../commons/skeleton/SkeletonResultCard';
+import SkeletonHeader from '../../commons/skeleton/SkeletonResultHeader';
+import { getNumberOfPages } from '../../../utils/pagination';
 import Pagination from '@mui/lab/Pagination';
-import ResultPtCard from './ResultPtCard';
-import ErrorPage from './ErrorPage';
+import ResultPtCard from './pt/ResultPtCard';
+import ErrorPage from '../../commons/error/ErrorPage';
+
 const useStyles = makeStyles((theme) => ({
   container: {
     padding: "15px",
@@ -47,7 +46,7 @@ const Result = ({ type }) => {
   function handleSortMethod(value) { 
     setSortByMethod(value);
   }
-
+  
   useEffect(() => {
     if(Array.isArray(data) && data.length > 0) {
       numberOfPages.current = getNumberOfPages(data.length, ITEM_PER_PAGE)

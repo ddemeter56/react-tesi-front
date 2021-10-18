@@ -9,9 +9,9 @@ import AuthContext from './context/auth.context';
 import Navigation from "./components/Navigation";
 import Home from './components/Home';
 import Footer from './components/Footer';
-import Result from './components/Result';
-import EntityPage from './components/EntityPage';
-import AdminPage from './components/AdminPage';
+import Result from './components/page-content/result-page/Result';
+import EntityPage from './components/page-content/entity-page/EntityPage';
+import AdminPage from './components/page-content/admin-page/AdminPage';
 import { processUrlParams } from './utils/auth';
 
 const theme = createTheme({

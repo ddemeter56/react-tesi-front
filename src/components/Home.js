@@ -1,10 +1,10 @@
 import React, { useRef } from 'react';
 import { makeStyles } from '@mui/styles';
 
-import LandingSpeech from './LandingSpeech';
-import HomeSearchBar from './HomeSearchBar';
-import HomePagePricing from './HomePagePricing';
-import HomeDetailedCards from './HomeDetailedCards.js';
+import LandingSpeech from './page-content/landing-page/LandingSpeech';
+import LandingSearchBar from './page-content/landing-page/LandingSearchBar';
+import LandingPagePricing from './page-content/landing-page/LandingPagePricing';
+import LandingDetailedCards from './page-content/landing-page/LandingDetailedCards.js';
 import Grid from '@mui/material/Grid';
 import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
@@ -121,7 +121,7 @@ const Home = () => {
         <Typography variant="h3" style={{ paddingTop: "2%", textAlign: "center"}}><strong>Keress előfizetőink között!</strong></Typography>
         <Grid container direction="row" justifyContent="center" alignItems="center" style={{ boxSizing: "border-box"}}>
           <Grid item xl={6}>  
-            <HomeSearchBar />
+            <LandingSearchBar />
           </Grid>
           <Grid item xl={6}>  
             <img className={classes.searchSectionImg} src={searchImg} alt="search" />
@@ -131,12 +131,12 @@ const Home = () => {
       <div ref={descriptionRef} className={`${classes.descriptionCards} `}>
         <Grid container justifyContent="center">
           <Typography variant="h3" style={{ textAlign: "center" }}>Szakember vagy? <br /><strong>Válaszd a Tesi-t!</strong></Typography>
-          <HomeDetailedCards />
+          <LandingDetailedCards />
         </Grid>
       </div>
       <Divider />
       <div className={classes.midSection}>
-        <HomePagePricing />
+        <LandingPagePricing />
       </div>
     </div>
   )

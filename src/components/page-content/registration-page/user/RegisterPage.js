@@ -11,11 +11,11 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { makeStyles } from '@mui/styles';
 import Container from '@mui/material/Container';
-import { getEnvironment } from '../hooks/useFetch';
+import { getEnvironment } from '../../../../hooks/useFetch';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
-import { API_PATH } from '../utils/apiPaths';
-import { redirectToLogin } from '../utils/auth';
+import { API_PATH } from '../../../../utils/apiPaths';
+import { redirectToLogin } from '../../../../utils/auth';
 
 const useStyles = makeStyles((theme) => ({
   paper: {

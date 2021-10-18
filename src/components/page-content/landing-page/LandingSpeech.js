@@ -3,7 +3,6 @@ import Divider from '@mui/material/Divider';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 import { makeStyles } from '@mui/styles';
-import "../App.css";
 
 const useStyles = makeStyles((theme) => ({
   landingPageSpeech: {

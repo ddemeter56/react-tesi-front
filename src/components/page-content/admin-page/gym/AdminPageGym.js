@@ -1,4 +1,3 @@
-import AdminBoxMetrics from './AdminBoxMetrics';
 
 const AdminPageGym = ({type}) => {
   return (

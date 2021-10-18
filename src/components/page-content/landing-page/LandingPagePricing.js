@@ -9,7 +9,7 @@ import StarIcon from '@mui/icons-material/Star';
 import Typography from '@mui/material/Typography';
 import { makeStyles } from '@mui/styles';
 import Container from '@mui/material/Container';
-import useOnScreen from '../hooks/useOnScreen';
+import useOnScreen from '../../../hooks/useOnScreen';
 
 const useStyles = makeStyles((theme) => ({
   cardHeader: {

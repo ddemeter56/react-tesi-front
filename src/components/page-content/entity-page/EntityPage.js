@@ -1,11 +1,12 @@
-import {
-  useParams
-} from 'react-router-dom';
-import { API_PATH } from '../utils/apiPaths';
-import { useFetch } from '../hooks/useFetch';
-import GymEntityPage from './GymEntityPage';
-import PtEntityPage from './PtEntityPage';
-import SkeletonEntityPage from './SkeletonEntityPage';
+import React from 'react';
+import { useParams } from 'react-router-dom';
+import { API_PATH } from '../../../utils/apiPaths';
+import { useFetch } from '../../../hooks/useFetch';
+import GymEntityPage from './gym/GymEntityPage';
+import PtEntityPage from './pt/PtEntityPage';
+import SkeletonEntityPage from '../../commons/skeleton/SkeletonEntityPage';
+
+
 const EntityPage = () => { 
   const { entityPage } = useParams();
   console.log(entityPage);

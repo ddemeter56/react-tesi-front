@@ -5,8 +5,8 @@ import Button from '@mui/material/Button';
 import { makeStyles } from '@mui/styles';
 import Autocomplete from '@mui/lab/Autocomplete';
 import { useHistory } from 'react-router-dom';
-import { encodeQueryData, encodeMultipleQueryData } from '../utils/urlQuery';
-import { generateDatetimeString } from '../utils/formatDate';
+import { encodeQueryData, encodeMultipleQueryData } from '../../../../utils/urlQuery';
+import { generateDatetimeString } from '../../../../utils/formatDate';
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -62,7 +62,7 @@ const HomePagePtSearch = () => {
     event.preventDefault();
     console.log(formValues);
     console.log(selectedSpecializations);
-    history.push(`/list/pt/${encodeQueryData(formValues)}${encodeMultipleQueryData(selectedSpecializations,"facilitiesCodes")}`);
+    history.push(`/list/pt/${encodeQueryData(formValues)}${encodeMultipleQueryData(selectedSpecializations,"specializationCodes")}`);
   
   }
 

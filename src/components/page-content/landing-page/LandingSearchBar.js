@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import useOnScreen from '../hooks/useOnScreen';
+import useOnScreen from '../../../hooks/useOnScreen';
 import { makeStyles } from '@mui/styles';
 import Grid from '@mui/material/Grid'
 import Radio from '@mui/material/Radio';
@@ -7,11 +7,11 @@ import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
-import HomePageGymSearch from './HomePageGymSearch';
-import HomePagePtSearch from './HomePagePtSearch';
+import LandingPageGymSearch from './gym/LandingPageGymSearch';
+import LandingPagePtSearch from './pt/LandingPagePtSearch';
 import Typography from '@mui/material/Typography';
 
-import '../App.css';
+import '../../../App.css';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -45,10 +45,10 @@ const HomeSearchBar = () => {
 
   const renderForm = (type) => {
     if(type === 'gym') {
-      return <HomePageGymSearch />
+      return <LandingPageGymSearch />
     }
     if(type === 'trainer') {
-      return <HomePagePtSearch />
+      return <LandingPagePtSearch />
     }
   }
 

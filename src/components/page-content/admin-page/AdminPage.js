@@ -1,17 +1,17 @@
 import React, { useContext,useState, useEffect } from 'react';
-import AuthContext from '../context/auth.context';
-import { redirectToLogin } from '../utils/auth';
+import AuthContext from '../../../context/auth.context';
+import { redirectToLogin } from '../../../utils/auth';
 import { makeStyles } from '@mui/styles';
-import { fetchData } from '../utils/urlQuery';
-import AdminPageGym from './AdminPageGym';
-import AdminPagePt from './AdminPagePt';
+import { fetchData } from '../../../utils/urlQuery';
+import AdminPageGym from './gym/AdminPageGym';
+import AdminPagePt from './pt/AdminPagePt';
 
 const useStyles = makeStyles((theme) => ({
   container: {
     padding: "15px",
     paddingTop: 70,
     [theme.breakpoints.between('md', 'xl')] : {
-      width: "60%",
+      width: "80%",
       margin: "0px auto"
     }
   },
