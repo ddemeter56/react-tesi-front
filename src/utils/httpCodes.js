@@ -1,0 +1,1 @@
+export const HTTP_SUCCESS_CODES = [200, 201, 202, 203, 204];

@@ -16,6 +16,7 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import { API_PATH } from '../../../../utils/apiPaths';
 import { redirectToLogin } from '../../../../utils/auth';
+import { HTTP_SUCCESS_CODES } from '../../../../utils/httpCodes';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -41,9 +42,9 @@ const useStyles = makeStyles((theme) => ({
 const renderIcon = (responseData) => {
   if(!responseData) return <LockOutlinedIcon />;
 
-  if(responseData.statusCode === 400) 
-  { return < HighlightOffIcon/> } else 
-  { return <CheckCircleIcon  />}
+  if(HTTP_SUCCESS_CODES.includes(responseData)) 
+  { return <CheckCircleIcon/> } else 
+  { return <HighlightOffIcon  />}
 }
 
 const renderText = (responseData) => {
@@ -54,17 +55,18 @@ const renderText = (responseData) => {
   );
 
   
-  if(responseData.statusCode === 400) 
-  { return (
-    <Typography component="h1" variant="h5" style={{ color: "red" }}>
-      Hiba a regisztráció során 
-    </Typography>
-  )} else 
-  { return (
-    <Typography component="h1" variant="h5" style={{ color: "green" }}>
-      Sikeres regisztráció
-    </Typography>
-  )}
+  if(HTTP_SUCCESS_CODES.includes(responseData)) { 
+    return (
+      <Typography component="h1" variant="h5" style={{ color: "green" }}>
+        Sikeres regisztráció
+      </Typography>
+    )} else { 
+    return (
+      <Typography component="h1" variant="h5" style={{ color: "red" }}>
+        Hiba a regisztráció során 
+      </Typography>
+    )
+  }
 }
 
 /** types can be: pt, gym-owner, gym-manager */
@@ -82,78 +84,78 @@ export default function RegisterPage({ type }) {
   const handleFormChange = (event) => {
     setFormValues({
       ...formValues,
-      [event.target.name]: event.target.value, })
+      [event.target.name]: event.target.value, 
+    })
   }
 
   const renderButton = (responseData) => {
-    if(!responseData) return (
-      <>
-        <Button
-          fullWidth
-          variant="contained"
-          color="primary"
-          className={classes.submit}
-          onClick={submitForm}
-        >
-        Regisztrálás
-        </Button>
-        <Grid container justifyContent="flex-end">
-          <Grid item>
-            <Link href="#" variant="body2">
-              Van már fiókod? Jelentkezz be
-            </Link>
+    if(!responseData) 
+      return (
+        <>
+          <Button
+            fullWidth
+            variant="contained"
+            color="primary"
+            className={classes.submit}
+            onClick={submitForm}
+          >
+          Regisztrálás
+          </Button>
+          <Grid container justifyContent="flex-end">
+            <Grid item>
+              <Link href="#" variant="body2">
+                Van már fiókod? Jelentkezz be
+              </Link>
+            </Grid>
           </Grid>
-        </Grid>
-      </>
-    );
+        </>
+      );
   
     
-    if(responseData.statusCode === 400) 
-    { return (
-      <>
+    if(HTTP_SUCCESS_CODES.includes(responseData)) { 
+      return (
         <Button
           fullWidth
           variant="contained"
           color="primary"
           className={classes.submit}
-          onClick={submitForm}
+          onClick={redirectToLogin}
         >
-        Regisztrálás
+          Bejelentkezés
         </Button>
-        <Grid container justifyContent="flex-end">
-          <Grid item>
-            <Link href="#" variant="body2">
-              Van már fiókod? Jelentkezz be
-            </Link>
+      )} 
+    else { 
+      return (
+        <>
+          <Button
+            fullWidth
+            variant="contained"
+            color="primary"
+            className={classes.submit}
+            onClick={submitForm}
+          >
+          Regisztrálás
+          </Button>
+          <Grid container justifyContent="flex-end">
+            <Grid item>
+              <Link href="#" variant="body2">
+                Van már fiókod? Jelentkezz be
+              </Link>
+            </Grid>
           </Grid>
-        </Grid>
-      </>
-    )} else 
-    { return (
-      <Button
-        fullWidth
-        variant="contained"
-        color="primary"
-        className={classes.submit}
-        onClick={redirectToLogin}
-      >
-        Bejelentkezés
-      </Button>
-    )}
+        </>
+      )}
+    
   }
-
+  console.log(responseData);
   const submitForm = () => {
     if(termsAccepted) {
       fetch(`${getEnvironment()}${API_PATH.USER_REGISTER}${type}`, {
         headers: new Headers({'content-type': 'application/json'}),
         method: "POST",
         body: JSON.stringify(formValues)
-        
       })
-        .then(response => response.json())
-        .then(data => setResponse(data));
-      console.log(responseData)
-      // Kene message melle code: pl: statusCode: 200, OK, 400 Nem ok
+        .then(response => setResponse(response.status))
     } else {
       setShowAcceptError(true)
     }
@@ -167,18 +169,12 @@ export default function RegisterPage({ type }) {
   }
   return (
     <Container component="main" maxWidth="xs">
-      
       <CssBaseline />
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>
-          {
-            renderIcon(responseData)
-          }
-          
+          {renderIcon(responseData)}
         </Avatar>
-        {
-          renderText(responseData)
-        }
+        {renderText(responseData)}
         <form className={classes.form} noValidate>
           <Grid container spacing={2}>
             <Grid item xs={12}>
