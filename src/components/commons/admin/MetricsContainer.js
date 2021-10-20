@@ -12,7 +12,9 @@ import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
-    width: 300,
+    [theme.breakpoints.up('sm')] : {
+      width: 300
+    },
     padding: "15px 0px 0px 15px",
     position: "relative"
   }
@@ -42,6 +44,8 @@ const MetricsContainer = ({ data, title, forwardButtonText }) => {
 
   return (
     <Paper className={classes.paper}>
+      <div style={{ width: 50, height: 50, background: "red", margin: 15, top: 0, right: 0, position: "absolute" }}>
+      </div>
       <Typography variant="h5">{title}</Typography>
       <Grid container alignItems="strech" justifyContent="space-around" spacing={2}>
         <Grid item>

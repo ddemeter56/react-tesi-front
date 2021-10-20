@@ -13,10 +13,10 @@ const AdminBoxMetrics = ({title, description, numbers }) => {
   const classes = useStyles();
   return (
     <React.Fragment>
-      <Typography component="h2" variant="h6" color="primary" gutterBottom>
+      <Typography variant="h6" color="secondary" gutterBottom>
         {title}
       </Typography>
-      <Typography component="p" variant="h4">
+      <Typography variant="h4">
         {numbers}
       </Typography>
       <Typography color="textSecondary" className={classes.depositContext}>
