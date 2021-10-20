@@ -52,7 +52,7 @@ const keepTrackData = [
     key: "allKeepTrackClients", 
     title: "Keep track users",
     numbers: 125,
-    description: "Number of your clients who using Keep Track"
+    description: "Clients using Keep Track"
   },
   {
     key: "waitingForPlan",

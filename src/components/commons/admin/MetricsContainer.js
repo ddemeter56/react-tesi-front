@@ -9,6 +9,9 @@ import { useTheme } from '@mui/material/styles';
 import MobileStepper from '@mui/material/MobileStepper';
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
+import ForwardIcon from '@mui/icons-material/Forward';
+import IconButton from '@mui/material/IconButton';
+
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -19,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
     position: "relative"
   }
 }));
-const MetricsContainer = ({ data, title, forwardButtonText }) => {
+const MetricsContainer = ({ data, title, forwardCallback }) => {
   const theme = useTheme();
   const classes = useStyles();
   const [activeStep, setActiveStep] = useState(0);
@@ -44,7 +47,10 @@ const MetricsContainer = ({ data, title, forwardButtonText }) => {
 
   return (
     <Paper className={classes.paper}>
-      <div style={{ width: 50, height: 50, background: "red", margin: 15, top: 0, right: 0, position: "absolute" }}>
+      <div style={{ width: 50, height: 50, margin: 15, top: 0, right: 0, position: "absolute" }}>
+        <IconButton color="primary" onClick={forwardCallback}>
+          <ForwardIcon />
+        </IconButton>
       </div>
       <Typography variant="h5">{title}</Typography>
       <Grid container alignItems="strech" justifyContent="space-around" spacing={2}>
@@ -62,7 +68,6 @@ const MetricsContainer = ({ data, title, forwardButtonText }) => {
         sx={{ maxWidth: 400, flexGrow: 1 }}
         nextButton={
           <Button size="small" onClick={handleNext} disabled={activeStep === data.length -1}>
-          Next
             {theme.direction === 'rtl' ? (
               <KeyboardArrowLeft />
             ) : (
@@ -77,7 +82,6 @@ const MetricsContainer = ({ data, title, forwardButtonText }) => {
             ) : (
               <KeyboardArrowLeft />
             )}
-          Back
           </Button>
         }
       />

@@ -3,7 +3,7 @@ import MetricsContainer from '../../../commons/admin/MetricsContainer';
 
 const MetricsAppointments = ({ data }) => {
   return (
-    <MetricsContainer data={data} title='Appointments' forwardButtonText='to appointments' /> 
+    <MetricsContainer data={data} title='Appointments' forwardCallback={() => alert('implement redirect')} /> 
   )
 }
 
