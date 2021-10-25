@@ -5,6 +5,7 @@ import { useFetch } from '../../../hooks/useFetch';
 import GymEntityPage from './gym/GymEntityPage';
 import PtEntityPage from './pt/PtEntityPage';
 import SkeletonEntityPage from '../../commons/skeleton/SkeletonEntityPage';
+import ErrorPage from '../../commons/error/ErrorPage';
 
 
 const EntityPage = () => { 
@@ -28,9 +29,7 @@ const EntityPage = () => {
   
   if(error) {
     return(
-      <h2>
-        ERROR
-      </h2>
+      <ErrorPage type="ERROR" message={error} />
     )
   }
   return(

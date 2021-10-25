@@ -18,10 +18,11 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('sm')] : {
       width: 300
     },
-    padding: "15px 0px 0px 15px",
+    padding: "15px 15px 0px 15px",
     position: "relative"
   }
 }));
+
 const MetricsContainer = ({ data, title, forwardCallback }) => {
   const theme = useTheme();
   const classes = useStyles();

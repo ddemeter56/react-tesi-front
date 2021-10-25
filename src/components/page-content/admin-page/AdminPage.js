@@ -87,7 +87,6 @@ const AdminPage = () => {
           {renderAdminPage(responseData.roles)}
         </>
       }
-      user logged in: {userDetails.isLoggedIn.toString()}
     </div>
   )
 }
