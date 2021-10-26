@@ -41,7 +41,7 @@ const AdminPagePt = () => {
   return (
     <div className={classes.adminPageContainer}>
       <DashboardHeader />
-      <Grid container justifyContent="space-between" spacing={5}>
+      <Grid container justifyContent="space-around" spacing={5}>
         <Grid item>
           <Grid container direction="column" spacing={4}>
             <Grid item>
