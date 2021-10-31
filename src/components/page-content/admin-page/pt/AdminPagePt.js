@@ -36,11 +36,12 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const AdminPagePt = () => {
+const AdminPagePt = ({ userDetails }) => {
   const classes = useStyles();
+  console.log(userDetails);
   return (
     <div className={classes.adminPageContainer}>
-      <DashboardHeader />
+      <DashboardHeader isRegistered={userDetails.isRegistered} />
       <Grid container justifyContent="space-around" spacing={5}>
         <Grid item>
           <Grid container direction="column" spacing={4}>

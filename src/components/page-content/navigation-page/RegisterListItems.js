@@ -18,7 +18,7 @@ import DialogContent from '@mui/material/DialogContent';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 
-import RegisterPage from '../registration-page/user/RegisterPage';
+import RegisterPage from '../registration-page/RegisterPage';
 
 const styles = (theme) => ({
   root: {

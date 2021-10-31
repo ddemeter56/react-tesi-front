@@ -8,14 +8,14 @@ import Button from '@mui/material/Button';
 const useStyles = makeStyles((theme) => ({
   headerContainer: {
     padding: "15px 15px 0px 15px"
-  }
+  },
 }));
 
-const DashboardHeader = () => {
+const DashboardHeader = ({ type, isRegistered }) => {
   const classes = useStyles();
 
   return (
-    <Grid container justifyContent="space-between" className={`${classes.headerContainer}`}>
+    <Grid container justifyContent="space-between" className={`${classes.headerContainer} `}>
       <Grid item>
         <Typography variant="h4">Dashboard</Typography>
       </Grid>
@@ -23,7 +23,11 @@ const DashboardHeader = () => {
         <SearchBox />
       </Grid>
       <Grid item>
-        <Button variant="outlined">Modify profile</Button>
+        { isRegistered ? 
+          <Button variant="outlined">Modify profile</Button> 
+          : 
+          <Button variant="outlined" className={`pulse`}>Make your first register</Button>
+        }
       </Grid>
     </Grid>
   );

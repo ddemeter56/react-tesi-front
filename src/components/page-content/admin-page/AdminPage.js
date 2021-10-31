@@ -37,13 +37,15 @@ const AdminPage = () => {
 
     if(rolesArray?.includes("gym_owner")) {
       return (
-        <AdminPageGym type="owner" />
+        //TODO UserDetails because of isRegistered 
+        <AdminPageGym type="owner" userDetails={rolesArray} />
       )
     }
     
     if(rolesArray?.includes("personal_trainer")) {
       return (
-        <AdminPagePt />
+        //TODO UserDetails because of isRegistered 
+        <AdminPagePt userDetails={rolesArray}/>
       )
     }
     

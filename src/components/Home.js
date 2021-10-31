@@ -130,7 +130,7 @@ const Home = () => {
       </div>
       <div ref={descriptionRef} className={`${classes.descriptionCards} `}>
         <Grid container justifyContent="center">
-          <Typography variant="h3" style={{ textAlign: "center" }}>Szakember vagy? <br /><strong>Válaszd a Tesi-t!</strong></Typography>
+          <Typography variant="h3" style={{ textAlign: "center" }}><strong>Szakember vagy?</strong> <br />Válaszd a Tesi-t!</Typography>
           <LandingDetailedCards />
         </Grid>
       </div>

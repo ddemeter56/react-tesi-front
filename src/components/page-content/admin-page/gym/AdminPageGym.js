@@ -1,5 +1,5 @@
 
-const AdminPageGym = ({type}) => {
+const AdminPageGym = ({ type, userDetails }) => {
   return (
     <>
       {type}
