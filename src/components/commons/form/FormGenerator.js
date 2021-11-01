@@ -19,13 +19,14 @@ const updateLocalStorage = (identifier, formValues ) => {
   localStorage.setItem(identifier, JSON.stringify(formValues));
 }
 
+
 const FormGenerator = ({ formData, localStorageIdentifier }) => {
   const [ formValues, setFormValues ] = useState(initFormValues(formData, localStorageIdentifier));
   
 
   useEffect(() => {
     updateLocalStorage(localStorageIdentifier, formValues)
-  }, [formValues]);
+  }, [formValues, localStorageIdentifier]);
 
 
   const handleFormChange = (e) => {
