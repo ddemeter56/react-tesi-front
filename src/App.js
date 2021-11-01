@@ -13,6 +13,7 @@ import Result from './components/page-content/result-page/Result';
 import EntityPage from './components/page-content/entity-page/EntityPage';
 import AdminPage from './components/page-content/admin-page/AdminPage';
 import { processUrlParams } from './utils/auth';
+import GymRegisterPage from './components/page-content/registration-page/gym/GymRegisterPage';
 
 const theme = createTheme({
   typography: {
@@ -63,6 +64,11 @@ function App() {
             </Route>
             <Route path="/list/pt/:searchParams">
               <Result type="pt" />
+            </Route>
+            <Route path="/register/gym">
+              <GymRegisterPage />
+            </Route>
+            <Route path="register/trainer">
             </Route>
             <Route path="/:entityPage">
               <EntityPage />

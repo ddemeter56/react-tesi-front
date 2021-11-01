@@ -1,4 +1,5 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import { makeStyles } from '@mui/styles';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
@@ -13,7 +14,19 @@ const useStyles = makeStyles((theme) => ({
 
 const DashboardHeader = ({ type, isRegistered }) => {
   const classes = useStyles();
+  const history = useHistory();
 
+  console.log(type);
+  const redirectToRegisterPage = () => {
+    let registerPage;
+    // if(type === 'personal_trainer') {
+    //   registerPage = 'trainer';
+    // }
+    //if (type === 'owner') {
+    registerPage = 'gym';
+    //}
+    history.push(`/register/${registerPage}`);
+  };
   return (
     <Grid container justifyContent="space-between" className={`${classes.headerContainer} `}>
       <Grid item>
@@ -26,7 +39,7 @@ const DashboardHeader = ({ type, isRegistered }) => {
         { isRegistered ? 
           <Button variant="outlined">Modify profile</Button> 
           : 
-          <Button variant="outlined" className={`pulse`}>Make your first register</Button>
+          <Button variant="outlined" className={`pulse`} onClick={redirectToRegisterPage}>Make your first register</Button>
         }
       </Grid>
     </Grid>

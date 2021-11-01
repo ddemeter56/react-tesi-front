@@ -41,7 +41,7 @@ const AdminPagePt = ({ userDetails }) => {
   console.log(userDetails);
   return (
     <div className={classes.adminPageContainer}>
-      <DashboardHeader isRegistered={userDetails.isRegistered} />
+      <DashboardHeader type={userDetails[0]} isRegistered={userDetails.isRegistered} />
       <Grid container justifyContent="space-around" spacing={5}>
         <Grid item>
           <Grid container direction="column" spacing={4}>

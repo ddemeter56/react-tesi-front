@@ -1,10 +1,11 @@
 import React from 'react';
-import Stepper from '../stepper/Stepper';
+import HorizontalLinearStepper from '../stepper/HorizontalLinearStepper';
 
 const RegisterPageContainer = ({ type, formData, steps, onSubmit }) => {
+  console.log(steps);
   return (
-    <Stepper steps={steps}> 
-    </Stepper>
+    <HorizontalLinearStepper steps={steps}> 
+    </HorizontalLinearStepper>
   );
 }
 

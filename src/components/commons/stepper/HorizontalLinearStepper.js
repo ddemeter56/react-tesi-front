@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { makeStyles } from '@mui/styles';
 import Box from '@mui/material/Box';
 import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
@@ -6,10 +7,21 @@ import StepLabel from '@mui/material/StepLabel';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
+import Grid from '@mui/material/Grid';
+import FormGenerator from '../form/FormGenerator';
+
+const useStyles = makeStyles({
+  stepperContainer: {
+    paddingTop: "150px", width: '70%'
+  }
+});
+
 const HorizontalLinearStepper = ({ steps }) => {
   const [activeStep, setActiveStep] = useState(0);
   const [skipped, setSkipped] = useState(new Set());
 
+  console.log(steps)
+  const classes = useStyles();
   const isStepOptional = (optional) => {
     return optional === true;
   };
@@ -53,7 +65,7 @@ const HorizontalLinearStepper = ({ steps }) => {
   };
 
   return (
-    <Box sx={{ width: '100%' }}>
+    <Box className={classes.stepperContainer}>
       <Stepper activeStep={activeStep}>
         {steps.map((step, index) => {
           const stepProps = {};
@@ -68,7 +80,7 @@ const HorizontalLinearStepper = ({ steps }) => {
           }
           return (
             <Step key={step.label} {...stepProps}>
-              <StepLabel {...labelProps}>{step.label}</StepLabel>
+              <StepLabel {...labelProps}>{step.label}</StepLabel>       
             </Step>
           );
         })}
@@ -85,7 +97,11 @@ const HorizontalLinearStepper = ({ steps }) => {
         </>
       ) : (
         <>
-          <Typography sx={{ mt: 2, mb: 1 }}>Step {activeStep + 1}</Typography>
+          <Grid container direction="column">
+            {steps.map((step, index )=> {
+              return activeStep === index && <FormGenerator formData={step.data} localStorageIdentifier={step.identifier} />
+            })}
+          </Grid>
           <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
             <Button
               color="inherit"
