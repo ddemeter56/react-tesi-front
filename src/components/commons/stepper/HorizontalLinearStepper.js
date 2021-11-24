@@ -9,12 +9,28 @@ import Typography from '@mui/material/Typography';
 
 import Grid from '@mui/material/Grid';
 import FormGenerator from '../form/FormGenerator';
+import SelectorAndDetails from '../form/SelectorAndDetails';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   stepperContainer: {
-    paddingTop: "150px", width: '70%'
+    paddingTop: 90,
+    width: "60%",
+    margin: "0 auto",
+    [theme.breakpoints.between('xs', 'sm')]: {
+      width: "100%",
+    },
+  },
+  formContainer: {
+    width: 300,
+    height: 600,
+    margin: "0 auto",
   }
-});
+}));
+
+const generateStepContent = (step) => {
+  if (step.type === "FormGenerator" ) return <FormGenerator formData={step.data} localStorageIdentifier={step.identifier} />
+  if (step.type === "SelectorAndDetails" ) return <SelectorAndDetails list={step.data} listName={step.selectorTitle} />
+}
 
 const HorizontalLinearStepper = ({ steps }) => {
   const [activeStep, setActiveStep] = useState(0);
@@ -97,9 +113,10 @@ const HorizontalLinearStepper = ({ steps }) => {
         </>
       ) : (
         <>
-          <Grid container direction="column">
+          <Grid container direction="column" spacing={2} className={classes.formContainer} justifyContent="center" alignItems="center" >
             {steps.map((step, index )=> {
-              return activeStep === index && <FormGenerator formData={step.data} localStorageIdentifier={step.identifier} />
+              return activeStep === index && 
+                generateStepContent(step);
             })}
           </Grid>
           <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>

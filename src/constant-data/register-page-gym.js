@@ -5,7 +5,7 @@ export const GYM_BASIC_INFORMATION = [
     "maxLength":75,
     "required":true,
     "label":"Reference Code",
-    "type":"C",
+    "type": "text",
   },
   {   
     "name":"name",
@@ -13,7 +13,7 @@ export const GYM_BASIC_INFORMATION = [
     "maxLength":75,
     "required":true,
     "label":"Name",
-    "type":"C",
+    "type": "text",
   },
   {
     "name":"country",
@@ -21,7 +21,7 @@ export const GYM_BASIC_INFORMATION = [
     "maxLength":75,
     "required":true,
     "label":"Country",
-    "type":"C"
+    "type": "text"
   },
   {
     "name":"postcode",
@@ -29,7 +29,7 @@ export const GYM_BASIC_INFORMATION = [
     "maxLength":15,
     "required":true,
     "label":"Postcode",
-    "type":"C"
+    "type": "text"
   },
   {
     "name":"city",
@@ -37,7 +37,7 @@ export const GYM_BASIC_INFORMATION = [
     "maxLength":100,
     "required":true,
     "label":"City",
-    "type":"C"
+    "type": "text"
   },
   {
     "name":"street",
@@ -45,7 +45,7 @@ export const GYM_BASIC_INFORMATION = [
     "maxLength":75,
     "required":true,
     "label":"Street",
-    "type":"C"
+    "type": "text"
   },
   {
     "name":"streetNum",
@@ -53,7 +53,7 @@ export const GYM_BASIC_INFORMATION = [
     "maxLength":10,
     "required":true,
     "label":"Street Number",
-    "type":"C"
+    "type": "text"
   },
   {
     "name":"floor",
@@ -61,7 +61,7 @@ export const GYM_BASIC_INFORMATION = [
     "maxLength":10,
     "required":false,
     "label":"Floor",
-    "type":"C"
+    "type": "text"
   },
   {
     "name":"phoneNumber",
@@ -69,7 +69,7 @@ export const GYM_BASIC_INFORMATION = [
     "maxLength":25,
     "required":true,
     "label":"Phone",
-    "type":"P"
+    "type": "text"
   },
 
   {
@@ -78,7 +78,7 @@ export const GYM_BASIC_INFORMATION = [
     "maxLength":3500,
     "required":true,
     "label":"Description",
-    "type":"C"
+    "type": "text"
   },
   {
     "name":"shortDescription",
@@ -86,7 +86,7 @@ export const GYM_BASIC_INFORMATION = [
     "maxLength":150,
     "required":true,
     "label":"Short Description",
-    "type":"C"
+    "type": "text"
   },
   {
     "name":"facebookUserId",
@@ -94,7 +94,7 @@ export const GYM_BASIC_INFORMATION = [
     "maxLength":75,
     "required":false,
     "label":"Facebook",
-    "type":"C"
+    "type": "text"
   },
   {
     "name":"instagramUserId",
@@ -102,7 +102,7 @@ export const GYM_BASIC_INFORMATION = [
     "maxLength":75,
     "required":false,
     "label":"Instagram",
-    "type":"C"
+    "type": "text"
   },
   {
     "name":"youtubeUserId",
@@ -110,7 +110,7 @@ export const GYM_BASIC_INFORMATION = [
     "maxLength":75,
     "required":false,
     "label":"Youtube",
-    "type":"C"
+    "type": "text"
   },
   {
     "name":"twitterUserId",
@@ -118,7 +118,7 @@ export const GYM_BASIC_INFORMATION = [
     "maxLength":75,
     "required":false,
     "label":"Twitter",
-    "type":"C"
+    "type": "text"
   },
   {
     "name":"webPageUserId",
@@ -126,7 +126,7 @@ export const GYM_BASIC_INFORMATION = [
     "maxLength":75,
     "required":false,
     "label":"Website",
-    "type":"C"
+    "type": "text"
   },
 ];
 
@@ -134,15 +134,16 @@ export const GYM_OPENING_INFORMATION = [
   {
     "name":"mondayFrom",
     "inputType":"Number",
-    "type":"T",
+    "type": "time",
     "maxLength" : 5,
     "required":true,
     "label":"Monday from"
+    
   },
   {
     "name":"mondayTo",
     "inputType":"Number",
-    "type":"T",
+    "type": "time",
     "maxLength" : 5,
     "required":true,
     "label":"Monday to",
@@ -150,7 +151,7 @@ export const GYM_OPENING_INFORMATION = [
   {
     "name":"tuesdayFrom",
     "inputType":"Number",
-    "type":"T",
+    "type": "time",
     "maxLength" : 5,
     "required":true,
     "label":"Tuesday from",
@@ -158,7 +159,7 @@ export const GYM_OPENING_INFORMATION = [
   {
     "name":"tuesdayTo",
     "inputType":"Number",
-    "type":"T",
+    "type": "time",
     "maxLength" : 5,
     "required":true,
     "label":"Tuesday to",
@@ -166,7 +167,7 @@ export const GYM_OPENING_INFORMATION = [
   {
     "name":"wednesdayFrom",
     "inputType":"Number",
-    "type":"T",
+    "type": "time",
     "maxLength" : 5,
     "required":true,
     "label":"Wednesday from",
@@ -174,7 +175,7 @@ export const GYM_OPENING_INFORMATION = [
   {
     "name":"wednesdayTo",
     "inputType":"Number",
-    "type":"T",
+    "type": "time",
     "maxLength" : 5,
     "required":true,
     "label":"Wednesday to",
@@ -182,7 +183,7 @@ export const GYM_OPENING_INFORMATION = [
   {
     "name":"thursdayFrom",
     "inputType":"Number",
-    "type":"T",
+    "type": "time",
     "maxLength" : 5,
     "required":true,
     "label":"Thursday from",
@@ -190,7 +191,7 @@ export const GYM_OPENING_INFORMATION = [
   {
     "name":"thursdayTo",
     "inputType":"Number",
-    "type":"T",
+    "type": "time",
     "maxLength" : 5,
     "required":true,
     "label":"Thursday to",
@@ -198,7 +199,7 @@ export const GYM_OPENING_INFORMATION = [
   {
     "name":"fridayFrom",
     "inputType":"Number",
-    "type":"T",
+    "type": "time",
     "maxLength" : 5,
     "required":true,
     "label":"Friday from",
@@ -206,7 +207,7 @@ export const GYM_OPENING_INFORMATION = [
   {
     "name":"fridayTo",
     "inputType":"Number",
-    "type":"T",
+    "type": "time",
     "maxLength" : 5,
     "required":true,
     "label":"Friday to",
@@ -214,7 +215,7 @@ export const GYM_OPENING_INFORMATION = [
   {
     "name":"saturdayFrom",
     "inputType":"Number",
-    "type":"T",
+    "type": "time",
     "maxLength" : 5,
     "required":true,
     "label":"Saturday from",
@@ -222,7 +223,7 @@ export const GYM_OPENING_INFORMATION = [
   {
     "name":"saturdayTo",
     "inputType":"Number",
-    "type":"T",
+    "type": "time",
     "maxLength" : 5,
     "required":true,
     "label":"Saturday to",
@@ -230,7 +231,7 @@ export const GYM_OPENING_INFORMATION = [
   {
     "name":"sundayFrom",
     "inputType":"Number",
-    "type":"T",
+    "type": "time",
     "maxLength" : 5,
     "required":true,
     "label":"Sunday from",
@@ -238,7 +239,7 @@ export const GYM_OPENING_INFORMATION = [
   {
     "name":"sundayTo",
     "inputType":"Number",
-    "type":"T",
+    "type": "time",
     "maxLength" : 5,
     "required":true,
     "label":"Sunday to",
