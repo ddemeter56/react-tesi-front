@@ -4,12 +4,14 @@ import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import changeObjectProperties from '../../../utils/changeObjectProperties';
 import Grid from '@mui/material/Grid';
+import Typography from '@mui/material/Typography';
 
 const useStyles = makeStyles((theme) => ({
   selectorAndDetailsContainer: {
     width: "100%",
     height: "90%",
-    position: "relative"
+    position: "relative",
+    padding: 25
   },
   listContainer: {
   },
@@ -19,17 +21,16 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   selectedOptionsContainer: {
-    margin: "auto",
     [theme.breakpoints.up('lg')]: {
-      height: 575
+      height: 550
     },
     [theme.breakpoints.between('sm', 'lg')]: {
+      paddingTop: 25,
       height: 450,
     },
     [theme.breakpoints.between('xs','sm')]: {
       height: 350,
     },
-    overflowY: "scroll"
   },
   optionDescriptionTextField: {
     width: 320
@@ -37,10 +38,14 @@ const useStyles = makeStyles((theme) => ({
   outterOptionDescriptionTextField: {
     padding: 15, 
     textAlign: "center"
+  },
+  selectorDescription: {
+    paddingBottom: 15
   }
 }));
 
 const SelectorAndDetails = ({ list, listName }) => {
+  //TODO: CUSTOM OPTION-T FELVETEL, + GOMB, NEVET MEGADJA NEKI IGY LEHET FELVENNI
   const [ selectedOptions, setSelectedOptions ] = useState([]);
 
   const classes = useStyles();
@@ -58,7 +63,7 @@ const SelectorAndDetails = ({ list, listName }) => {
   return (
     <Grid container className={classes.selectorAndDetailsContainer} direction="row">
       <Grid item xl={6} lg={6} md={12} sm={12} xs={12}>
-        Sometext to describe what should be happening here
+        <Typography variant="h5" className={classes.selectorDescription}>{listName}</Typography>
         <Autocomplete
           onChange={handleChange}
           value={selectedOptions}
@@ -71,7 +76,7 @@ const SelectorAndDetails = ({ list, listName }) => {
           renderInput={(params) => <TextField {...params} className={classes.textfieldInAutocomplete} label="Facilities" />}
         />
       </Grid>
-      <Grid item xl={6} className={classes.selectedOptionsContainer}>
+      <Grid item xl={6} className={classes.selectedOptionsContainer} style={{ overflowY: selectedOptions.length > 0 && "scroll", margin: "0 auto"}}>
         {selectedOptions.map((option) => {
           return <div className={classes.outterOptionDescriptionTextField}>
             <TextField
