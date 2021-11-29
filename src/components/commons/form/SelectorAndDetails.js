@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { makeStyles } from '@mui/styles';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import changeObjectProperties from '../../../utils/changeObjectProperties';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
+import Context from '../../../context/register.context';
 
 const useStyles = makeStyles((theme) => ({
   selectorAndDetailsContainer: {
@@ -44,9 +45,10 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const SelectorAndDetails = ({ list, listName }) => {
+const SelectorAndDetails = ({ list, listName, stateIdentifier }) => {
   //TODO: CUSTOM OPTION-T FELVETEL, + GOMB, NEVET MEGADJA NEKI IGY LEHET FELVENNI
-  const [ selectedOptions, setSelectedOptions ] = useState([]);
+  //TODO: Descriptiont adja hozza az optionhoz
+  const { state, handleSelectedValues } = useContext(Context);
 
   const classes = useStyles();
   const listForAutocomplete = changeObjectProperties(list);
@@ -56,8 +58,7 @@ const SelectorAndDetails = ({ list, listName }) => {
 
     value.map(x => unique.filter(a => a.code === x.code).length > 0 ? null : unique.push(x));
     
-    console.log(unique);
-    setSelectedOptions(unique);
+    handleSelectedValues(unique, stateIdentifier.reducer)
   };
 
   return (
@@ -66,7 +67,7 @@ const SelectorAndDetails = ({ list, listName }) => {
         <Typography variant="h5" className={classes.selectorDescription}>{listName}</Typography>
         <Autocomplete
           onChange={handleChange}
-          value={selectedOptions}
+          value={state[stateIdentifier.state]}
           groupBy={(option) => option.type}
           multiple
           limitTags={4}
@@ -76,8 +77,8 @@ const SelectorAndDetails = ({ list, listName }) => {
           renderInput={(params) => <TextField {...params} className={classes.textfieldInAutocomplete} label="Facilities" />}
         />
       </Grid>
-      <Grid item xl={6} className={classes.selectedOptionsContainer} style={{ overflowY: selectedOptions.length > 0 && "scroll", margin: "0 auto"}}>
-        {selectedOptions.map((option) => {
+      <Grid item xl={6} className={classes.selectedOptionsContainer} style={{ overflowY: state[stateIdentifier.state].length > 0 && "scroll", margin: "0 auto"}}>
+        {state[stateIdentifier.state].map((option) => {
           return <div className={classes.outterOptionDescriptionTextField}>
             <TextField
               multiline

@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { makeStyles } from '@mui/styles';
 import TextField from "@mui/material/TextField";
 import Grid from '@mui/material/Grid';
+import Context from '../../../context/register.context';
 
 const useStyles = makeStyles((theme) => ({
   textField: {
@@ -31,48 +32,22 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const initFormValues = (formData, identifier ) => {
-  if(isFormStoredInLocalStorage(identifier)) {
-    return JSON.parse(localStorage.getItem(identifier));
-  }
-  const formStructure = formData.reduce((prev, current) => { return {...prev, [current.name]: ''} }, {})
-  localStorage.setItem(identifier, JSON.stringify(formStructure));
-  return formStructure;
-};
-
-const isFormStoredInLocalStorage = (identifier) => {
-  return localStorage.getItem(identifier);
-}
-
-const updateLocalStorage = (identifier, formValues ) => {
-  localStorage.setItem(identifier, JSON.stringify(formValues));
-}
-
-
-
-const FormGenerator = ({ formData, localStorageIdentifier }) => {
+const FormGenerator = ({ formData, stateIdentifier }) => {
   const classes = useStyles();
-  const [ formValues, setFormValues ] = useState(initFormValues(formData, localStorageIdentifier));
+  const { state, handleFormValues } = useContext(Context);
 
-  useEffect(() => {
-    updateLocalStorage(localStorageIdentifier, formValues)
-  }, [formValues, localStorageIdentifier]);
-
-
-  const handleFormChange = (e) => {
-    setFormValues({...formValues, [e.target.name]: e.target.value });
-    console.log(formValues);
-  };
-
-
+  function _handleFormValues(event) {
+    handleFormValues(event, stateIdentifier.reducer);
+  }
+  console.log(state); 
   return (
     formData.map((item, index) => {
       return (
         <Grid item>
           <TextField
             className={classes.textField}
-            value={formValues[item.name]}
-            onChange={handleFormChange}
+            value={state[stateIdentifier.state][item.name]}
+            onChange={_handleFormValues}
             inputProps={{ maxLength: item.maxLength }}
             InputLabelProps={ item.type === "time" && {
               shrink: true,

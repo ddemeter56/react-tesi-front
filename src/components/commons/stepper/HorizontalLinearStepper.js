@@ -28,8 +28,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const generateStepContent = (step) => {
-  if (step.type === "FormGenerator" ) return <FormGenerator formData={step.data} localStorageIdentifier={step.identifier} />
-  if (step.type === "SelectorAndDetails" ) return <SelectorAndDetails list={step.data} listName={step.selectorTitle} />
+  if (step.type === "FormGenerator" ) return <FormGenerator formData={step.data} stateIdentifier={step.stateIdentifier} />
+  if (step.type === "SelectorAndDetails" ) return <SelectorAndDetails list={step.data} listName={step.selectorTitle} stateIdentifier={step.stateIdentifier} />
 }
 
 const HorizontalLinearStepper = ({ steps }) => {
