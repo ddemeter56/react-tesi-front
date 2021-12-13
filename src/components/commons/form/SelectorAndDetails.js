@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react';
+import Button from '@mui/material/Button';
 import { makeStyles } from '@mui/styles';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
@@ -17,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
   listContainer: {
   },
   textfieldInAutocomplete: {
-    [theme.breakpoints.up('lg')]: {
+    [theme.breakpoints.up('xl')]: {
       minHeight: 300
     },
   },
@@ -57,10 +58,19 @@ const SelectorAndDetails = ({ list, listName, stateIdentifier }) => {
     const unique = [];
 
     value.map(x => unique.filter(a => a.code === x.code).length > 0 ? null : unique.push(x));
-    
-    handleSelectedValues(unique, stateIdentifier.reducer)
+
+    handleSelectedValues(stateIdentifier.reducer, unique)
   };
 
+  const handleDescriptionChange = (event, item) => {
+    state[stateIdentifier.state].forEach((i) => {
+      if(i.code === item.code) {
+        i.description = event.target.value;
+      }
+    })
+    console.log(state[stateIdentifier.state]);
+  };
+ 
   return (
     <Grid container className={classes.selectorAndDetailsContainer} direction="row">
       <Grid item xl={6} lg={6} md={12} sm={12} xs={12}>
@@ -81,12 +91,15 @@ const SelectorAndDetails = ({ list, listName, stateIdentifier }) => {
         {state[stateIdentifier.state].map((option) => {
           return <div className={classes.outterOptionDescriptionTextField}>
             <TextField
+              key={option.label}
               multiline
               InputLabelProps={{
                 shrink: true,
               }}
               label={option.label}
               className={classes.optionDescriptionTextField}
+              value={option.description}
+              onBlur={(event) => handleDescriptionChange(event, option)}
             />
           </div>
         })}

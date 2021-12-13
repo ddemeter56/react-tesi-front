@@ -90,7 +90,7 @@ export const Provider = ({ children }) => {
         payload: event.target.value
       })
     },
-    handleSelectedValues: (selectedArray, type) => {
+    handleSelectedValues: (type, selectedArray) => {
       dispatch({
         type,
         selectedArray
