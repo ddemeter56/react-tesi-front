@@ -23,12 +23,13 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   selectedOptionsContainer: {
+    width: "100%",
     [theme.breakpoints.up('lg')]: {
       height: 550
     },
     [theme.breakpoints.between('sm', 'lg')]: {
       paddingTop: 25,
-      height: 450,
+      height: 400,
     },
     [theme.breakpoints.between('xs','sm')]: {
       height: 350,
@@ -62,13 +63,11 @@ const SelectorAndDetails = ({ list, listName, stateIdentifier }) => {
     handleSelectedValues(stateIdentifier.reducer, unique)
   };
 
-  const handleDescriptionChange = (event, item) => {
-    state[stateIdentifier.state].forEach((i) => {
-      if(i.code === item.code) {
-        i.description = event.target.value;
-      }
-    })
-    console.log(state[stateIdentifier.state]);
+  const handleDescriptionChange = (event, item, index) => {
+    const newList = state[stateIdentifier.state];
+
+    newList[index].description = event.target.value;
+    handleSelectedValues(stateIdentifier.reducer, newList);
   };
  
   return (
@@ -88,7 +87,7 @@ const SelectorAndDetails = ({ list, listName, stateIdentifier }) => {
         />
       </Grid>
       <Grid item xl={6} className={classes.selectedOptionsContainer} style={{ overflowY: state[stateIdentifier.state].length > 0 && "scroll", margin: "0 auto"}}>
-        {state[stateIdentifier.state].map((option) => {
+        {state[stateIdentifier.state].map((option, index) => {
           return <div className={classes.outterOptionDescriptionTextField}>
             <TextField
               key={option.label}
@@ -96,10 +95,11 @@ const SelectorAndDetails = ({ list, listName, stateIdentifier }) => {
               InputLabelProps={{
                 shrink: true,
               }}
+              inputProps={{ maxLength: 50 }}
               label={option.label}
               className={classes.optionDescriptionTextField}
               value={option.description}
-              onBlur={(event) => handleDescriptionChange(event, option)}
+              onChange={(event) => handleDescriptionChange(event, option, index)}
             />
           </div>
         })}
