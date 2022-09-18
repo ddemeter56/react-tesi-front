@@ -1,5 +1,5 @@
-
-const url = window.location.host === 'tesi.life' ? 'https://api.tesi.life/api' : 'http://localhost/api';
+const url = 'https://api.tesi.life/api' ;
+//const url = window.location.host === 'tesi.life' ? 'https://api.tesi.life/api' : 'http://localhost/api';
 
 export const encodeQueryData = (data) => {
   const ret = [];
