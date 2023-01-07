@@ -7,8 +7,11 @@ import { API_PATH } from '../../../../utils/apiPaths';
 import { GYM_BASIC_INFORMATION, GYM_OPENING_INFORMATION } from '../../../../constant-data/register-page-gym';
 import { Provider } from '../../../../context/register.context';
 
-const GymRegisterPage = () => {
+const GymRegisterPage = ({shouldGuardPage}) => {
   const { loading, data, error } = useFetch(`${API_PATH.FACILITY_CODES}`);
+  if(shouldGuardPage) {
+    return <ErrorPage type="Unauthorized" message="You have to log in to reach this page"/>
+  }
   if(loading) {
     return(
       <SkeletonEntityPage />

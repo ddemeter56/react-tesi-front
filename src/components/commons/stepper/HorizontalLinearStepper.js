@@ -47,6 +47,7 @@ const HorizontalLinearStepper = ({ steps }) => {
   };
 
   const handleNext = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     let newSkipped = skipped;
     if (isStepSkipped(activeStep)) {
       newSkipped = new Set(newSkipped.values());
@@ -58,6 +59,7 @@ const HorizontalLinearStepper = ({ steps }) => {
   };
 
   const handleBack = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
 
