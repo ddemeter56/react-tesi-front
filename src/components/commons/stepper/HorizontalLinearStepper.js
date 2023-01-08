@@ -30,6 +30,8 @@ const useStyles = makeStyles((theme) => ({
 const generateStepContent = (step) => {
   if (step.type === "FormGenerator" ) return <FormGenerator formData={step.data} stateIdentifier={step.stateIdentifier} />
   if (step.type === "SelectorAndDetails" ) return <SelectorAndDetails list={step.data} listName={step.selectorTitle} stateIdentifier={step.stateIdentifier} />
+  if (step.type === "InputsWithTable" ) return <>add component heere</>
+
 }
 
 const HorizontalLinearStepper = ({ steps }) => {

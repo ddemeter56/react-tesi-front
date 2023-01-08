@@ -138,7 +138,6 @@ export const GYM_OPENING_INFORMATION = [
     "maxLength" : 5,
     "required":true,
     "label":"Monday from"
-    
   },
   {
     "name":"mondayTo",
@@ -244,4 +243,47 @@ export const GYM_OPENING_INFORMATION = [
     "required":true,
     "label":"Sunday to",
   },
+]
+
+export const GYM_PRICING_INFORMATION = [
+  {
+    "name":"categoryType",
+    "inputType":"Input",
+    "maxLength":100,
+    "required":false,
+    "label":"Category Type",
+    "type": "text"
+  },  
+  {
+    "name":"ticketType",
+    "inputType":"Input",
+    "maxLength":100,
+    "required":false,
+    "label":"Ticket Type",
+    "type": "text"
+  },  
+  {
+    "name":"amount",
+    "inputType":"Input",
+    "maxLength":10,
+    "required":false,
+    "label":"Amount",
+    "type": "number"
+  },  
+  {
+    "name":"currency",
+    "inputType":"Input",
+    "maxLength":3,
+    "required":false,
+    "label":"Currency",
+    "type": "text"
+  }, 
+  {
+    "name":"validForDays",
+    "inputType":"Input",
+    "maxLength":3,
+    "required":false,
+    "label":"Valid for days",
+    "type": "number"
+  }, 
 ]
