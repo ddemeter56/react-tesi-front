@@ -43,6 +43,7 @@ const actions = {
   ADD_GYM_GENERAL: "ADD_GYM_GENERAL",
   ADD_GYM_FACILITIES: "ADD_GYM_FACILITIES",
   ADD_GYM_OPENING: "ADD_GYM_OPENING",
+  ADD_GYM_PRICING: "ADD_GYM_PRICING"
 }
 
 const reducer = (state, action) => {
@@ -70,8 +71,16 @@ const reducer = (state, action) => {
       ...state,
       facilities: [
         ...action.selectedArray
+        // ez müxik igy? Nem kell action.field minmt fent?
       ]
     };
+  case actions.ADD_GYM_PRICING:
+    return {
+      ...state,
+      pricing: [
+        
+      ]
+    }
   default: return state;
   }
 }

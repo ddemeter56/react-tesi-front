@@ -10,6 +10,7 @@ import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import FormGenerator from '../form/FormGenerator';
 import SelectorAndDetails from '../form/SelectorAndDetails';
+import InputsWithTable from '../form/InputsWithTable'
 
 const useStyles = makeStyles((theme) => ({
   stepperContainer: {
@@ -30,8 +31,7 @@ const useStyles = makeStyles((theme) => ({
 const generateStepContent = (step) => {
   if (step.type === "FormGenerator" ) return <FormGenerator formData={step.data} stateIdentifier={step.stateIdentifier} />
   if (step.type === "SelectorAndDetails" ) return <SelectorAndDetails list={step.data} listName={step.selectorTitle} stateIdentifier={step.stateIdentifier} />
-  if (step.type === "InputsWithTable" ) return <>add component heere</>
-
+  if (step.type === "InputsWithTable" ) return <InputsWithTable formData={step.data} stateIdentifier={step.stateIdentifier} />
 }
 
 const HorizontalLinearStepper = ({ steps }) => {
