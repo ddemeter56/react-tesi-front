@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { makeStyles } from '@mui/styles';
 import TextField from "@mui/material/TextField";
 import Button from '@mui/material/Button';
@@ -27,13 +27,34 @@ const useStyles = makeStyles((theme) => ({
 const InputsWithTable = ({ formData, stateIdentifier }) => {
   const classes = useStyles();
   const { state, handleFormValues } = useContext(Context);
+  const [ inputCollection, setInputCollection ] = useState(createInitCollection)
   console.log(formData)
-  console.log(stateIdentifier)
+  console.log(inputCollection)
+  function createInitCollection() {
 
-  function _handleFormValues(event) {
-    handleFormValues(event, stateIdentifier.reducer);
+    let objectWithFormKeys = {}
+    formData.map(i => {
+      objectWithFormKeys = {...objectWithFormKeys, [i.name]: defineTypeOfInputField(i)}
+    })
+    console.log(objectWithFormKeys)
+    return objectWithFormKeys
   }
 
+  function defineTypeOfInputField(field) {
+    if(field.type === 'text') return ''
+    if(field.type === 'number') return undefined
+  }
+  function _handleFormValues(event) {
+    const { value, name } = event.target
+    setInputCollection({...inputCollection, [name]: value})
+    console.log(inputCollection)
+    // handleFormValues(event, stateIdentifier.reducer);
+  }
+
+  function addToTableAndForm(openingObject) {
+    console.log('addToTableAndForm has been clicked')
+    console.log(inputCollection)
+  }
   return (
 
     <Grid container spacing={4}>
@@ -53,7 +74,7 @@ const InputsWithTable = ({ formData, stateIdentifier }) => {
           </Grid>
         );
       })}
-      <Button style={{paddingTop: "32px", paddingLeft: "32px"}} onClick={() => {console.log('On button click add it to reducer, consider saving storing the values in the input fields')}}>
+      <Button style={{paddingTop: "32px", paddingLeft: "32px"}} onClick={addToTableAndForm}>
         Add to table
       </Button>
     </Grid>

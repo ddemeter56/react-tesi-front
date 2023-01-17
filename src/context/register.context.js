@@ -48,6 +48,7 @@ const actions = {
 
 const reducer = (state, action) => {
   console.log(action)
+  console.log(state)
   switch(action.type) {
   
   case actions.ADD_GYM_GENERAL:
@@ -77,8 +78,8 @@ const reducer = (state, action) => {
   case actions.ADD_GYM_PRICING:
     return {
       ...state,
-      pricing: [
-        
+      pricing: [ 
+        // Only keep the added values.
       ]
     }
   default: return state;
