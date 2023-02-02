@@ -94,35 +94,6 @@ const InputsWithTable = ({ formData, stateIdentifier }) => {
         </Button>
       </Grid>
       <EnhancedTable formData={formData} rows={dataRow}/>
-      <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 650 }} aria-label="simple table">
-          <TableHead>
-            <TableRow>
-              {formData.map(i => {
-                // Use i.name as key for i18n later
-                return <TableCell align="right" key="i.name">{i.label}</TableCell>
-              })}
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {dataRow.map((row) => (
-              <TableRow
-                key={row.name}
-                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-              >
-                {formDataNames.map((name, index) => {
-                  if(index === 0) {
-                    return <TableCell component="th" scope="row">{row[name]}</TableCell>
-                  }
-                  else {
-                    return <TableCell align="right">{row[name]}</TableCell>} 
-                  
-                })}
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
     </>
   )
 }

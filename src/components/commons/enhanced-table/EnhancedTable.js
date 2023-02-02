@@ -114,11 +114,8 @@ const headCells = [
 ];
 
 function EnhancedTableHead(props) {
-  const { onSelectAllClick, order, orderBy, numSelected, rowCount, onRequestSort, headers } =
+  const { onSelectAllClick, order, orderBy, numSelected, rowCount, headers } =
     props;
-  const createSortHandler = (property) => (event) => {
-    onRequestSort(event, property);
-  };
 
   return (
     <TableHead>
@@ -142,18 +139,7 @@ function EnhancedTableHead(props) {
               padding={headCell.disablePadding ? 'none' : 'normal'}
               sortDirection={orderBy === headCell.id ? order : false}
             >
-              <TableSortLabel
-                active={orderBy === headCell.id}
-                direction={orderBy === headCell.id ? order : 'asc'}
-                onClick={createSortHandler(headCell.id)}
-              >
-                {headCell.label}
-                {orderBy === headCell.id ? (
-                  <Box component="span" sx={visuallyHidden}>
-                    {order === 'desc' ? 'sorted descending' : 'sorted ascending'}
-                  </Box>
-                ) : null}
-              </TableSortLabel>
+              {headCell.label}
             </TableCell>
           ))}
       </TableRow>
@@ -163,7 +149,6 @@ function EnhancedTableHead(props) {
 
 EnhancedTableHead.propTypes = {
   numSelected: PropTypes.number.isRequired,
-  onRequestSort: PropTypes.func.isRequired,
   onSelectAllClick: PropTypes.func.isRequired,
   order: PropTypes.oneOf(['asc', 'desc']).isRequired,
   orderBy: PropTypes.string.isRequired,
@@ -230,9 +215,9 @@ export default function EnhancedTable({ formData, rows }) {
   const [orderBy, setOrderBy] = React.useState('calories');
   const [selected, setSelected] = React.useState([]);
   const [page, setPage] = React.useState(0);
-  const [dense, setDense] = React.useState(false);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
 
+  const dense = true;
   console.log(rows)
   const headers = formData.map(i => ({
     id: i.name,
@@ -256,13 +241,14 @@ export default function EnhancedTable({ formData, rows }) {
     setSelected([]);
   };
 
-  const handleClick = (event, name) => {
+  const handleClick = (event, name, index) => {
     console.log(name)
-    const selectedIndex = selected.indexOf(name);
+    const key = name + index;
+    const selectedIndex = selected.indexOf(key);
     let newSelected = [];
 
     if (selectedIndex === -1) {
-      newSelected = newSelected.concat(selected, name);
+      newSelected = newSelected.concat(selected, key);
     } else if (selectedIndex === 0) {
       newSelected = newSelected.concat(selected.slice(1));
     } else if (selectedIndex === selected.length - 1) {
@@ -286,11 +272,8 @@ export default function EnhancedTable({ formData, rows }) {
     setPage(0);
   };
 
-  const handleChangeDense = (event) => {
-    setDense(event.target.checked);
-  };
 
-  const isSelected = (name) => selected.indexOf(name) !== -1;
+  const isSelected = (name, index) => selected.indexOf(name + index) !== -1;
 
   // Avoid a layout jump when reaching the last page with empty rows.
   const emptyRows =
@@ -308,10 +291,7 @@ export default function EnhancedTable({ formData, rows }) {
           >
             <EnhancedTableHead
               numSelected={selected.length}
-              order={order}
-              orderBy={orderBy}
               onSelectAllClick={handleSelectAllClick}
-              onRequestSort={handleRequestSort}
               rowCount={rows.length}
               headers={headers}
             />
@@ -319,13 +299,13 @@ export default function EnhancedTable({ formData, rows }) {
               {stableSort(rows, getComparator(order, orderBy))
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((row, index) => {
-                  const isItemSelected = isSelected(row.categoryType);
+                  const isItemSelected = isSelected(row.categoryType, index);
                   const labelId = `enhanced-table-checkbox-${index}`;
 
                   return (
                     <TableRow
                       hover
-                      onClick={(event) => handleClick(event, row.categoryType)}
+                      onClick={(event) => handleClick(event, row.categoryType, index)}
                       role="checkbox"
                       aria-checked={isItemSelected}
                       tabIndex={-1}
@@ -347,7 +327,8 @@ export default function EnhancedTable({ formData, rows }) {
                           return <TableCell component="th" scope="row" padding="none">{row[name]}</TableCell>
                         }
                         else {
-                          return <TableCell align="right">{row[name]}</TableCell>}
+                          return <TableCell align="right">{row[name]}</TableCell>
+                        }
                       })}
                     </TableRow>
                   );
@@ -374,10 +355,7 @@ export default function EnhancedTable({ formData, rows }) {
           onRowsPerPageChange={handleChangeRowsPerPage}
         />
       </Paper>
-      <FormControlLabel
-        control={<Switch checked={dense} onChange={handleChangeDense} />}
-        label="Dense padding"
-      />
+
     </Box>
   );
 }
