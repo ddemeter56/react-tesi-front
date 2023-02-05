@@ -127,7 +127,7 @@ function EnhancedTableHead(props) {
             checked={rowCount > 0 && numSelected === rowCount}
             onChange={onSelectAllClick}
             inputProps={{
-              'aria-label': 'select all desserts',
+              'aria-label': 'select all',
             }}
           />
         </TableCell>
@@ -158,6 +158,9 @@ EnhancedTableHead.propTypes = {
 function EnhancedTableToolbar(props) {
   const { numSelected } = props;
 
+  function deleteSelected() {
+
+  }
   return (
     <Toolbar
       sx={{
@@ -189,16 +192,10 @@ function EnhancedTableToolbar(props) {
         </Typography>
       )}
 
-      {numSelected > 0 ? (
+      {numSelected && (
         <Tooltip title="Delete">
           <IconButton>
-            <DeleteIcon />
-          </IconButton>
-        </Tooltip>
-      ) : (
-        <Tooltip title="Filter list">
-          <IconButton>
-            <FilterListIcon />
+            <DeleteIcon onClick={() => deleteSelected()}/>
           </IconButton>
         </Tooltip>
       )}
@@ -219,13 +216,16 @@ export default function EnhancedTable({ formData, rows }) {
 
   const dense = true;
   console.log(rows)
+
   const headers = formData.map(i => ({
     id: i.name,
     numeric: i.type === 'number',
     disablePadding: false,
     label: i.label
   }));
+
   const formDataNames = formData.map(item => item.name);
+
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === 'asc';
     setOrder(isAsc ? 'desc' : 'asc');
@@ -234,16 +234,18 @@ export default function EnhancedTable({ formData, rows }) {
 
   const handleSelectAllClick = (event) => {
     if (event.target.checked) {
-      const newSelected = rows.map((n) => n.name);
+      console.log(rows)
+      const newSelected = rows.map((n) => n.name + page);
       setSelected(newSelected);
       return;
     }
     setSelected([]);
   };
 
-  const handleClick = (event, name, index) => {
-    console.log(name)
-    const key = name + index;
+  const handleClick = (event, name, page) => {
+    const key = name + page;
+    console.log(key)
+
     const selectedIndex = selected.indexOf(key);
     let newSelected = [];
 
@@ -273,7 +275,7 @@ export default function EnhancedTable({ formData, rows }) {
   };
 
 
-  const isSelected = (name, index) => selected.indexOf(name + index) !== -1;
+  const isSelected = (name, page) => selected.indexOf(name + page) !== -1;
 
   // Avoid a layout jump when reaching the last page with empty rows.
   const emptyRows =
@@ -299,13 +301,13 @@ export default function EnhancedTable({ formData, rows }) {
               {stableSort(rows, getComparator(order, orderBy))
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((row, index) => {
-                  const isItemSelected = isSelected(row.categoryType, index);
+                  const isItemSelected = isSelected(row.categoryType, page);
                   const labelId = `enhanced-table-checkbox-${index}`;
 
                   return (
                     <TableRow
                       hover
-                      onClick={(event) => handleClick(event, row.categoryType, index)}
+                      onClick={(event) => handleClick(event, row.categoryType, page)}
                       role="checkbox"
                       aria-checked={isItemSelected}
                       tabIndex={-1}

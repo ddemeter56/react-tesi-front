@@ -70,6 +70,10 @@ const InputsWithTable = ({ formData, stateIdentifier }) => {
     console.log(dataRow)
   }
 
+  function checkForDuplicates() {
+    
+  }
+
   return (
     <>
       <Grid container spacing={4}>
