@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-const InputsWithTable = ({ formData, stateIdentifier }) => {
+const InputsWithTable = ({ formData, stateIdentifier, type = 'gymPrice' }) => {
   const classes = useStyles();
   const { state, handleFormValues } = useContext(Context);
   const [inputCollection, setInputCollection] = useState(createInitCollection)
@@ -66,12 +66,21 @@ const InputsWithTable = ({ formData, stateIdentifier }) => {
   function addToTableAndForm(openingObject) {
     console.log('addToTableAndForm has been clicked')
     console.log(inputCollection)
-    setDataRow(dataRow => [...dataRow, inputCollection])
+    if(!isDuplicate(inputCollection, dataRow)) {
+      setDataRow(dataRow => [...dataRow, inputCollection])
+    } else
+    {
+      alert('vot mar ilyen batya')
+    }
+  
+    console.log(isDuplicate(inputCollection, dataRow))
     console.log(dataRow)
   }
 
-  function checkForDuplicates() {
-    
+  function isDuplicate(act, arr) {
+    if (type === 'gymPrice') {
+      return arr.filter(i => i.categoryType === act.categoryType && i.ticketType === act.ticketType).length > 0
+    }
   }
 
   return (
@@ -87,7 +96,7 @@ const InputsWithTable = ({ formData, stateIdentifier }) => {
                 inputProps={{ maxLength: item.maxLength }}
                 InputLabelProps={item.type === "time" && {
                   shrink: true,
-                }}
+                }} 
                 {...item}
               />
             </Grid>

@@ -235,16 +235,15 @@ export default function EnhancedTable({ formData, rows }) {
   const handleSelectAllClick = (event) => {
     if (event.target.checked) {
       console.log(rows)
-      const newSelected = rows.map((n) => n.name + page);
+      const newSelected = rows.map((n) => n.categoryType + n.ticketType);
       setSelected(newSelected);
       return;
     }
     setSelected([]);
   };
 
-  const handleClick = (event, name, page) => {
-    const key = name + page;
-    console.log(key)
+  const handleClick = (event, name) => {
+    const key = name;
 
     const selectedIndex = selected.indexOf(key);
     let newSelected = [];
@@ -275,7 +274,7 @@ export default function EnhancedTable({ formData, rows }) {
   };
 
 
-  const isSelected = (name, page) => selected.indexOf(name + page) !== -1;
+  const isSelected = (name) => selected.indexOf(name) !== -1;
 
   // Avoid a layout jump when reaching the last page with empty rows.
   const emptyRows =
@@ -301,13 +300,14 @@ export default function EnhancedTable({ formData, rows }) {
               {stableSort(rows, getComparator(order, orderBy))
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((row, index) => {
-                  const isItemSelected = isSelected(row.categoryType, page);
+                  const isItemSelected = isSelected(row.categoryType + row.ticketType);
                   const labelId = `enhanced-table-checkbox-${index}`;
 
                   return (
                     <TableRow
                       hover
-                      onClick={(event) => handleClick(event, row.categoryType, page)}
+                      // Change these in the feature if we want to use it in general, not pricing only
+                      onClick={(event) => handleClick(event, row.categoryType + row.ticketType)}
                       role="checkbox"
                       aria-checked={isItemSelected}
                       tabIndex={-1}
