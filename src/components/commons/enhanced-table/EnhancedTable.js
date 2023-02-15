@@ -156,10 +156,11 @@ EnhancedTableHead.propTypes = {
 };
 
 function EnhancedTableToolbar(props) {
-  const { numSelected } = props;
+  const { numSelected, selected, setSelected, onRowDelete } = props;
 
-  function deleteSelected() {
-
+  function handleOnDeleteRow() {
+    onRowDelete(selected)
+    setSelected([])
   }
   return (
     <Toolbar
@@ -195,7 +196,7 @@ function EnhancedTableToolbar(props) {
       {numSelected && (
         <Tooltip title="Delete">
           <IconButton>
-            <DeleteIcon onClick={() => deleteSelected()}/>
+            <DeleteIcon onClick={() => handleOnDeleteRow()}/>
           </IconButton>
         </Tooltip>
       )}
@@ -207,7 +208,7 @@ EnhancedTableToolbar.propTypes = {
   numSelected: PropTypes.number.isRequired,
 };
 
-export default function EnhancedTable({ formData, rows }) {
+export default function EnhancedTable({ formData, rows, onRowDelete }) {
   const [order, setOrder] = React.useState('asc');
   const [orderBy, setOrderBy] = React.useState('calories');
   const [selected, setSelected] = React.useState([]);
@@ -216,7 +217,7 @@ export default function EnhancedTable({ formData, rows }) {
 
   const dense = true;
   console.log(rows)
-
+  console.log(selected)
   const headers = formData.map(i => ({
     id: i.name,
     numeric: i.type === 'number',
@@ -283,7 +284,7 @@ export default function EnhancedTable({ formData, rows }) {
   return (
     <Box sx={{ width: '100%' }}>
       <Paper sx={{ width: '100%', mb: 2 }}>
-        <EnhancedTableToolbar numSelected={selected.length} />
+        <EnhancedTableToolbar numSelected={selected.length} selected={selected} setSelected={setSelected} onRowDelete={onRowDelete}/>
         <TableContainer>
           <Table
             sx={{ minWidth: 750 }}

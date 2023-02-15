@@ -66,10 +66,9 @@ const InputsWithTable = ({ formData, stateIdentifier, type = 'gymPrice' }) => {
   function addToTableAndForm(openingObject) {
     console.log('addToTableAndForm has been clicked')
     console.log(inputCollection)
-    if(!isDuplicate(inputCollection, dataRow)) {
+    if (!isDuplicate(inputCollection, dataRow)) {
       setDataRow(dataRow => [...dataRow, inputCollection])
-    } else
-    {
+    } else {
       alert('vot mar ilyen batya')
     }
   
@@ -80,6 +79,21 @@ const InputsWithTable = ({ formData, stateIdentifier, type = 'gymPrice' }) => {
   function isDuplicate(act, arr) {
     if (type === 'gymPrice') {
       return arr.filter(i => i.categoryType === act.categoryType && i.ticketType === act.ticketType).length > 0
+    }
+  }
+
+  function onRowDelete(rowsToDelete) {
+    console.log(rowsToDelete)
+    if(rowsToDelete.length === 0) {
+      alert('COME ON MAN THATS TOO EASY')
+    }
+    if(rowsToDelete.length === 1) {
+      setDataRow((current) => current.filter(row => (row.categoryType + row.ticketType) !== rowsToDelete[0]))
+    } else {
+      console.log('Multiple items selected for delete')
+      rowsToDelete.map(rowToDelete => {
+        setDataRow((current) => current.filter(row => (row.categoryType + row.ticketType) !== rowToDelete))
+      })
     }
   }
 
@@ -106,7 +120,7 @@ const InputsWithTable = ({ formData, stateIdentifier, type = 'gymPrice' }) => {
           Add to table
         </Button>
       </Grid>
-      <EnhancedTable formData={formData} rows={dataRow}/>
+      <EnhancedTable formData={formData} rows={dataRow} onRowDelete={onRowDelete}/>
     </>
   )
 }
