@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { makeStyles } from '@mui/styles';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -34,7 +34,11 @@ const useStyles = makeStyles((theme) => ({
 
 const InputsWithTable = ({ formData, stateIdentifier, type = 'gymPrice' }) => {
   const classes = useStyles();
-  const { state, handleFormValues } = useContext(Context);
+  const { state, handleInputsWithTable } = useContext(Context);
+  console.log('__________________')
+  console.log(state)
+  console.log(stateIdentifier)
+  console.log(state[stateIdentifier.state])
   const [inputCollection, setInputCollection] = useState(createInitCollection)
   const [dataRow, setDataRow] = useState([])
 
@@ -76,6 +80,10 @@ const InputsWithTable = ({ formData, stateIdentifier, type = 'gymPrice' }) => {
     console.log(dataRow)
   }
 
+  useEffect(() => {
+    handleInputsWithTable(stateIdentifier.reducer, dataRow)
+  }, [dataRow])
+  
   function isDuplicate(act, arr) {
     if (type === 'gymPrice') {
       return arr.filter(i => i.categoryType === act.categoryType && i.ticketType === act.ticketType).length > 0
@@ -120,7 +128,7 @@ const InputsWithTable = ({ formData, stateIdentifier, type = 'gymPrice' }) => {
           Add to table
         </Button>
       </Grid>
-      <EnhancedTable formData={formData} rows={dataRow} onRowDelete={onRowDelete}/>
+      <EnhancedTable formData={formData} rows={state[stateIdentifier.state]} onRowDelete={onRowDelete}/>
     </>
   )
 }

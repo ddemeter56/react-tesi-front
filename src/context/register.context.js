@@ -20,7 +20,7 @@ const gymInitialState = {
     webPageUserId: ""
   },
   facilities: [],
-  pricing: {},
+  pricing: [],
   opening: {
     mondayFrom: "",
     mondayTo: "",
@@ -79,6 +79,7 @@ const reducer = (state, action) => {
     return {
       ...state,
       pricing: [ 
+        ...action.priceArray
         // Only keep the added values.
       ]
     }
@@ -104,6 +105,12 @@ export const Provider = ({ children }) => {
       dispatch({
         type,
         selectedArray
+      })
+    },
+    handleInputsWithTable: (type, priceArray) => {
+      dispatch({
+        type,
+        priceArray
       })
     }
   }
