@@ -25,10 +25,10 @@ const GymRegisterPage = ({shouldGuardPage}) => {
   }
 
   const steps = [
-    { label: "Basic informations", optional: false, identifier: "GYM_BASIC_INFORMATION", data: GYM_BASIC_INFORMATION, type: "FormGenerator", stateIdentifier: { state: "gymGeneralData", reducer: "ADD_GYM_GENERAL"} },
-    { label: "Facilities", optional: false, identifier: "GYM_FACILITY_INFORMATION", data: data.facilities, type: "SelectorAndDetails", selectorTitle: "facilities", stateIdentifier: { state: "facilities", reducer: "ADD_GYM_FACILITIES"} },
-    { label: "Pricing", optional: false, identifier: "GYM_PRICING_INFORMATION", data: GYM_PRICING_INFORMATION, type: "InputsWithTable", selectorTitle: "pricing", stateIdentifier: { state: "pricing", reducer: "ADD_GYM_PRICING"}},
-    { label: "Opening", optional: false, identifier: "GYM_OPENING_INFORMATION", data: GYM_OPENING_INFORMATION, type: "FormGenerator", stateIdentifier: { state: "opening", reducer: "ADD_GYM_OPENING"} },
+    { label: "Basic informations", optional: false, identifier: "GYM_BASIC_INFORMATION", data: GYM_BASIC_INFORMATION, type: "FormGenerator", stateIdentifier: { state: "gym", reducer: "ADD_GYM_GENERAL"} },
+    { label: "Facilities", optional: false, identifier: "GYM_FACILITY_INFORMATION", data: data.facilities, type: "SelectorAndDetails", selectorTitle: "Facilities", stateIdentifier: { state: "facilities", reducer: "ADD_GYM_FACILITIES"} },
+    { label: "Pricing", optional: false, identifier: "GYM_PRICING_INFORMATION", data: GYM_PRICING_INFORMATION, type: "InputsWithTable", selectorTitle: "gymPricing", stateIdentifier: { state: "gymPricing", reducer: "ADD_GYM_PRICING"}},
+    { label: "Opening", optional: false, identifier: "GYM_OPENING_INFORMATION", data: GYM_OPENING_INFORMATION, type: "FormGenerator", stateIdentifier: { state: "gymOpening", reducer: "ADD_GYM_OPENING"} },
   ]
 
   return (

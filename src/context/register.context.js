@@ -1,7 +1,7 @@
 import React from 'react';
 
 const gymInitialState = {
-  gymGeneralData: {
+  gym: {
     referenceCode: "",
     name: "",
     country: "",
@@ -20,8 +20,8 @@ const gymInitialState = {
     webPageUserId: ""
   },
   facilities: [],
-  pricing: [],
-  opening: {
+  gymPricing: [],
+  gymOpening: {
     mondayFrom: "",
     mondayTo: "",
     tuesdayFrom: "",
@@ -54,16 +54,16 @@ const reducer = (state, action) => {
   case actions.ADD_GYM_GENERAL:
     return {
       ...state,
-      gymGeneralData: {
-        ...state.gymGeneralData,
+      gym: {
+        ...state.gym,
         [action.field]: action.payload
       }
     };
   case actions.ADD_GYM_OPENING: 
     return {
       ...state,
-      opening:{
-        ...state.opening,
+      gymOpening:{
+        ...state.gymOpening,
         [action.field]: action.payload
       }
     };
@@ -78,7 +78,7 @@ const reducer = (state, action) => {
   case actions.ADD_GYM_PRICING:
     return {
       ...state,
-      pricing: [ 
+      gymPricing: [ 
         ...action.priceArray
         // Only keep the added values.
       ]

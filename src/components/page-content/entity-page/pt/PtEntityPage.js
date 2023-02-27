@@ -210,7 +210,7 @@ const PtEntityPage = ({ data }) => {
                 </TableRow>
               </TableHead>
               <TableBody>
-                {generatePriceTableRows(data.pricing)}
+                {generatePriceTableRows(data.gymPricing)}
               </TableBody>
             </Table>
           </TableContainer>

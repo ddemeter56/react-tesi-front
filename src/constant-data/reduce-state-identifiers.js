@@ -3,7 +3,7 @@ export default {
   GYM: {
     general: "gymGeneral",
     facilities: "gymFacilities",
-    opening: "gymOpening",
-    pricing: "gymPricing",
+    gymOpening: "gymOpening",
+    gymPricing: "gymPricing",
   },
 }

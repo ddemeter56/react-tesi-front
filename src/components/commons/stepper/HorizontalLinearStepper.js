@@ -60,6 +60,10 @@ const HorizontalLinearStepper = ({ steps }) => {
     setSkipped(newSkipped);
   };
 
+  const handleFinish = () => {
+    alert('Finish has been clicked')
+  }
+
   const handleBack = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
@@ -139,7 +143,7 @@ const HorizontalLinearStepper = ({ steps }) => {
               </Button>
             )}
 
-            <Button onClick={handleNext}>
+            <Button onClick={activeStep === steps.length - 1 ? handleFinish : handleNext}>
               {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
             </Button>
           </Box>

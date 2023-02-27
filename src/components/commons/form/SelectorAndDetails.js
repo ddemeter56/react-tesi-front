@@ -13,7 +13,8 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     height: "90%",
     position: "relative",
-    padding: 25
+    padding: 25,
+    justifyContent: "center"
   },
   listContainer: {
   },
@@ -25,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
   selectedOptionsContainer: {
     width: "100%",
     [theme.breakpoints.up('lg')]: {
-      height: 550
+      height: 380
     },
     [theme.breakpoints.between('sm', 'lg')]: {
       paddingTop: 25,
@@ -72,7 +73,7 @@ const SelectorAndDetails = ({ list, listName, stateIdentifier }) => {
  
   return (
     <Grid container className={classes.selectorAndDetailsContainer} direction="row">
-      <Grid item xl={6} lg={6} md={12} sm={12} xs={12}>
+      <Grid justifyContent={'center'} item xl={6} lg={6} md={12} sm={12} xs={12}>
         <Typography variant="h5" className={classes.selectorDescription}>{listName}</Typography>
         <Autocomplete
           onChange={handleChange}

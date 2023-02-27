@@ -40,7 +40,7 @@ const InputsWithTable = ({ formData, stateIdentifier, type = 'gymPrice' }) => {
   console.log(stateIdentifier)
   console.log(state[stateIdentifier.state])
   const [inputCollection, setInputCollection] = useState(createInitCollection)
-  const [dataRow, setDataRow] = useState([])
+  const [dataRow, setDataRow] = useState(state[stateIdentifier.state])
 
   const formDataNames = formData.map(item => item.name)
 
@@ -70,8 +70,9 @@ const InputsWithTable = ({ formData, stateIdentifier, type = 'gymPrice' }) => {
   function addToTableAndForm(openingObject) {
     console.log('addToTableAndForm has been clicked')
     console.log(inputCollection)
-    if (!isDuplicate(inputCollection, dataRow)) {
-      setDataRow(dataRow => [...dataRow, inputCollection])
+    if (!isDuplicate(inputCollection, state[stateIdentifier.state])) {
+      // setDataRow(dataRow => [...dataRow, inputCollection])
+      handleInputsWithTable(stateIdentifier.reducer, [...state[stateIdentifier.state], inputCollection])
     } else {
       alert('vot mar ilyen batya')
     }
@@ -81,6 +82,7 @@ const InputsWithTable = ({ formData, stateIdentifier, type = 'gymPrice' }) => {
   }
 
   useEffect(() => {
+    console.log('USEEFFECT HAS BEEN RUN')
     handleInputsWithTable(stateIdentifier.reducer, dataRow)
   }, [dataRow])
   
@@ -96,12 +98,19 @@ const InputsWithTable = ({ formData, stateIdentifier, type = 'gymPrice' }) => {
       alert('COME ON MAN THATS TOO EASY')
     }
     if(rowsToDelete.length === 1) {
-      setDataRow((current) => current.filter(row => (row.categoryType + row.ticketType) !== rowsToDelete[0]))
+      const listWithoutItem = state[stateIdentifier.state].filter(row => (row.categoryType + row.ticketType) !== rowsToDelete[0])
+      // setDataRow((current) => current.filter(row => (row.categoryType + row.ticketType) !== rowsToDelete[0]))
+      handleInputsWithTable(stateIdentifier.reducer, listWithoutItem)
     } else {
+      let listWithoutItems = state[stateIdentifier.state]
       console.log('Multiple items selected for delete')
       rowsToDelete.map(rowToDelete => {
-        setDataRow((current) => current.filter(row => (row.categoryType + row.ticketType) !== rowToDelete))
+        // setDataRow((current) => current.filter(row => (row.categoryType + row.ticketType) !== rowToDelete))
+        listWithoutItems = listWithoutItems.filter(row => (row.categoryType + row.ticketType) !== rowToDelete)
       })
+      console.log('ÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁ')
+      console.log(listWithoutItems)
+      handleInputsWithTable(stateIdentifier.reducer, listWithoutItems)
     }
   }
 
