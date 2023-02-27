@@ -59,15 +59,16 @@ const SelectorAndDetails = ({ list, listName, stateIdentifier }) => {
   const handleChange = (event, value) => {
     const unique = [];
 
-    value.map(x => unique.filter(a => a.code === x.code).length > 0 ? null : unique.push(x));
+    value.map(x => unique.filter(a => a.code === x.code).length > 0 ? null : unique.push({"facility": x, ticketPricing: [], opening: {}}));
 
+    console.log(unique)
     handleSelectedValues(stateIdentifier.reducer, unique)
   };
 
   const handleDescriptionChange = (event, item, index) => {
     const newList = state[stateIdentifier.state];
 
-    newList[index].description = event.target.value;
+    newList[index].facility.description = event.target.value;
     handleSelectedValues(stateIdentifier.reducer, newList);
   };
  
@@ -77,7 +78,7 @@ const SelectorAndDetails = ({ list, listName, stateIdentifier }) => {
         <Typography variant="h5" className={classes.selectorDescription}>{listName}</Typography>
         <Autocomplete
           onChange={handleChange}
-          value={state[stateIdentifier.state]}
+          value={state[stateIdentifier.state].facility}
           groupBy={(option) => option.type}
           multiple
           limitTags={4}
@@ -91,15 +92,15 @@ const SelectorAndDetails = ({ list, listName, stateIdentifier }) => {
         {state[stateIdentifier.state].map((option, index) => {
           return <div className={classes.outterOptionDescriptionTextField}>
             <TextField
-              key={option.label}
+              key={option.facility.label}
               multiline
               InputLabelProps={{
                 shrink: true,
               }}
               inputProps={{ maxLength: 50 }}
-              label={option.label}
+              label={option.facility.label}
               className={classes.optionDescriptionTextField}
-              value={option.description}
+              value={option.facility.description}
               onChange={(event) => handleDescriptionChange(event, option, index)}
             />
           </div>
