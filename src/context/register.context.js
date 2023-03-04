@@ -4,6 +4,8 @@ const gymInitialState = {
   gym: {
     referenceCode: "",
     name: "",
+    // Change this to by az input field!!
+    languageCode: "hu",
     country: "",
     postcode: "",
     city: "",

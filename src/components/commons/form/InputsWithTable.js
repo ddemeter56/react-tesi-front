@@ -67,12 +67,21 @@ const InputsWithTable = ({ formData, stateIdentifier, type = 'gymPrice' }) => {
     // handleFormValues(event, stateIdentifier.reducer);
   }
 
+  function convertFieldValuesOf(inputCollection) {
+    const newInputCollection = inputCollection;
+
+    newInputCollection['amount'] =  +inputCollection['amount'];
+    newInputCollection['validForDays'] = +inputCollection['validForDays'];
+
+    return newInputCollection;
+  }
+
   function addToTableAndForm(openingObject) {
     console.log('addToTableAndForm has been clicked')
     console.log(inputCollection)
     if (!isDuplicate(inputCollection, state[stateIdentifier.state])) {
       // setDataRow(dataRow => [...dataRow, inputCollection])
-      handleInputsWithTable(stateIdentifier.reducer, [...state[stateIdentifier.state], inputCollection])
+      handleInputsWithTable(stateIdentifier.reducer, [...state[stateIdentifier.state], convertFieldValuesOf(inputCollection)])
     } else {
       alert('vot mar ilyen batya')
     }
