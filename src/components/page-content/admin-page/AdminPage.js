@@ -73,7 +73,7 @@ const AdminPage = () => {
         })
         .catch((error) => {
           setResponseData(JSON.stringify(error))
-        });
+        }); 
 
     }  
   }, [userDetails.isLoggedIn, setResponseData, userDetails.accessToken]);
