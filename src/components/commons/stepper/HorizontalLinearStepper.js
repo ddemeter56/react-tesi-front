@@ -77,6 +77,19 @@ const HorizontalLinearStepper = ({ steps }) => {
     })
       .then(data => {
         console.log(data);
+        if(data.statusCode === 400) {
+          alert(data.message + '\n' + data.error)
+        }
+        if (data.statusCode === 403) {
+          alert(data.message + '\n' + data.error)
+        } else if (data.statusCode === 500) {
+          alert(data.message + '\n' + data.error)
+        } else if (data.statusCode === 400) {
+          const alertMessage = data.message.map(i => i)
+          alert(alertMessage.join('\n'))
+        } else if (data.message === 'Gym successfully registered') {
+          alert('Gym successfully registered')
+        }
       })
       .catch((error) => {
         console.log(JSON.stringify(error))

@@ -55,13 +55,11 @@ const SelectorAndDetails = ({ list, listName, stateIdentifier }) => {
 
   const classes = useStyles();
   const listForAutocomplete = changeObjectProperties(list);
-
   const handleChange = (event, value) => {
     const unique = [];
 
-    value.map(x => unique.filter(a => a.code === x.code).length > 0 ? null : unique.push({"facility": x, ticketPricing: [], opening: {}}));
+    value.map(x => unique.filter(a => a.facility.code === x.code).length > 0 ? null : unique.push({"facility": x, ticketPricing: [], opening: {}}));
 
-    console.log(unique)
     handleSelectedValues(stateIdentifier.reducer, unique)
   };
 
@@ -78,12 +76,13 @@ const SelectorAndDetails = ({ list, listName, stateIdentifier }) => {
         <Typography variant="h5" className={classes.selectorDescription}>{listName}</Typography>
         <Autocomplete
           onChange={handleChange}
-          value={state[stateIdentifier.state].facility}
+          value={state[stateIdentifier.state].map(i => i.facility)}
+          filterSelectedOptions
           groupBy={(option) => option.type}
           multiple
           limitTags={4}
           id="combo-box-demo"
-          options={listForAutocomplete}
+          options={listForAutocomplete.map(i => i.facility)}
           sx={{ minWidth: "100%" }}
           renderInput={(params) => <TextField {...params} className={classes.textfieldInAutocomplete} label="Facilities" />}
         />
@@ -98,6 +97,7 @@ const SelectorAndDetails = ({ list, listName, stateIdentifier }) => {
                 shrink: true,
               }}
               inputProps={{ maxLength: 50 }}
+              required={true}
               label={option.facility.label}
               className={classes.optionDescriptionTextField}
               value={option.facility.description}

@@ -32,26 +32,25 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
+/**
+ * TODO, Do not let user add empty or not fully completed record
+ * @param {*} param0 
+ * @returns 
+ */
 const InputsWithTable = ({ formData, stateIdentifier, type = 'gymPrice' }) => {
   const classes = useStyles();
   const { state, handleInputsWithTable } = useContext(Context);
-  console.log('__________________')
-  console.log(state)
-  console.log(stateIdentifier)
-  console.log(state[stateIdentifier.state])
   const [inputCollection, setInputCollection] = useState(createInitCollection)
   const [dataRow, setDataRow] = useState(state[stateIdentifier.state])
 
   const formDataNames = formData.map(item => item.name)
 
   
-  console.log(inputCollection)
   function createInitCollection() {
     let objectWithFormKeys = {}
     formData.map(i => {
       objectWithFormKeys = { ...objectWithFormKeys, [i.name]: defineTypeOfInputField(i) }
     })
-    console.log(objectWithFormKeys)
     return objectWithFormKeys
   }
 
@@ -77,21 +76,15 @@ const InputsWithTable = ({ formData, stateIdentifier, type = 'gymPrice' }) => {
   }
 
   function addToTableAndForm(openingObject) {
-    console.log('addToTableAndForm has been clicked')
-    console.log(inputCollection)
     if (!isDuplicate(inputCollection, state[stateIdentifier.state])) {
       // setDataRow(dataRow => [...dataRow, inputCollection])
       handleInputsWithTable(stateIdentifier.reducer, [...state[stateIdentifier.state], convertFieldValuesOf(inputCollection)])
     } else {
-      alert('vot mar ilyen batya')
+      alert('Already existing')
     }
-  
-    console.log(isDuplicate(inputCollection, dataRow))
-    console.log(dataRow)
   }
 
   useEffect(() => {
-    console.log('USEEFFECT HAS BEEN RUN')
     handleInputsWithTable(stateIdentifier.reducer, dataRow)
   }, [dataRow])
   
@@ -102,23 +95,18 @@ const InputsWithTable = ({ formData, stateIdentifier, type = 'gymPrice' }) => {
   }
 
   function onRowDelete(rowsToDelete) {
-    console.log(rowsToDelete)
     if(rowsToDelete.length === 0) {
-      alert('COME ON MAN THATS TOO EASY')
+      alert('Nothing to delete')
     }
     if(rowsToDelete.length === 1) {
       const listWithoutItem = state[stateIdentifier.state].filter(row => (row.categoryType + row.ticketType) !== rowsToDelete[0])
-      // setDataRow((current) => current.filter(row => (row.categoryType + row.ticketType) !== rowsToDelete[0]))
       handleInputsWithTable(stateIdentifier.reducer, listWithoutItem)
     } else {
       let listWithoutItems = state[stateIdentifier.state]
-      console.log('Multiple items selected for delete')
       rowsToDelete.map(rowToDelete => {
         // setDataRow((current) => current.filter(row => (row.categoryType + row.ticketType) !== rowToDelete))
         listWithoutItems = listWithoutItems.filter(row => (row.categoryType + row.ticketType) !== rowToDelete)
       })
-      console.log('ÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁ')
-      console.log(listWithoutItems)
       handleInputsWithTable(stateIdentifier.reducer, listWithoutItems)
     }
   }
@@ -142,9 +130,11 @@ const InputsWithTable = ({ formData, stateIdentifier, type = 'gymPrice' }) => {
             </Grid>
           );
         })}
-        <Button style={{ paddingTop: "32px", paddingLeft: "32px" }} onClick={addToTableAndForm}>
-          Add to table
-        </Button>
+        <Grid item>
+          <Button onClick={addToTableAndForm}>
+            Add to table
+          </Button>
+        </Grid>
       </Grid>
       <EnhancedTable formData={formData} rows={state[stateIdentifier.state]} onRowDelete={onRowDelete}/>
     </>

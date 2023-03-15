@@ -135,7 +135,7 @@ function EnhancedTableHead(props) {
           headers.map((headCell) => (
             <TableCell
               key={headCell.id}
-              align={headCell.numeric ? 'right' : 'left'}
+              align='left'
               padding={headCell.disablePadding ? 'none' : 'normal'}
               sortDirection={orderBy === headCell.id ? order : false}
             >
@@ -330,7 +330,7 @@ export default function EnhancedTable({ formData, rows, onRowDelete }) {
                           return <TableCell component="th" scope="row" padding="none">{row[name]}</TableCell>
                         }
                         else {
-                          return <TableCell align="right">{row[name]}</TableCell>
+                          return <TableCell>{row[name]}</TableCell>
                         }
                       })}
                     </TableRow>

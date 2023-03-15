@@ -267,7 +267,7 @@ export const GYM_PRICING_INFORMATION = [
     "inputType":"Input",
     "maxLength":10,
     "required":false,
-    "label":"Amount",
+    "label":"Price",
     "type": "number"
   },  
   {
