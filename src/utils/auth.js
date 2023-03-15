@@ -1,4 +1,5 @@
-const url = window.location.host === 'tesi.life' ? { url: 'https://tesi.life', keycloak: 'https://auth.tesi.life'} : {url: 'http://localhost:3000', keycloak: 'http://localhost:8080'};
+const url = { url: 'https://tesi.life', keycloak: 'https://auth.tesi.life'};
+
 export function redirectToLogin() {
   window.location.href =
     `${url.keycloak}/auth/realms/Tesi/protocol/openid-connect/auth?response_type=token&client_id=browser-login&redirect_uri=${url.url}&login=true&scope=openid&nonce=${Date.now()}`;  

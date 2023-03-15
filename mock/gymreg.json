@@ -1,1 +1,271 @@
-{"gym":{"languageCode":"hu","webPageUserId":"www.fafafa.com","twitterUserId":"www.twitter.com/user","youtubeUserId":"www.youtube.com/user","instagramUserId":"www.instagram.com/user","facebookUserId":"www.facebook.com/user","shortDescription":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam lacus, commodo ut sagittis vel, eleifend et magna. Sed aliquet lectus ex, in sodales","description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam lacus, commodo ut sagittis vel, eleifend et magna. Sed aliquet lectus ex, in sodales massa viverra in. Aliquam venenatis lorem eget nunc iaculis, ac placerat diam ullamcorper. Aliquam ornare et lorem non interdum. Integer vehicula nunc non pellentesque luctus. Curabitur mollis neque sit amet odio convallis, sed pharetra felis semper. Ut tincidunt urna egestas facilisis aliquet. Etiam lacinia semper dapibus. Nunc vel ornare nulla, non mollis mi. Praesent porttitor, turpis quis faucibus sodales, risus nunc dignissim nunc, vitae gravida tellus quam eget ligula. Cras et nisi nisl.","phoneNumber":"012013212012","floor":"1","streetNum":"12","street":"Hegyalja utca","city":"Zalaegerszeg","postcode":"8900","country":"Magyarország","name":"Viszonylag hosszú GYM név Fitness","referenceCode":"fullosteszt"},"gymOpening":{"fridayFrom":"08:00","fridayTo":"22:00","mondayFrom":"08:00","mondayTo":"22:00","saturdayFrom":"08:00","saturdayTo":"22:00","sundayFrom":"08:00","sundayTo":"22:00","thursdayFrom":"08:00","thursdayTo":"22:00","tuesdayFrom":"08:00","tuesdayTo":"22:00","wednesdayFrom":"08:00","wednesdayTo":"22:00"},"gymPricing":[{"validForDays":1,"currency":"HUF","amount":3000,"ticketType":"Napi belépő","categoryType":"daily","selectedFacility":"generalPricing"},{"validForDays":7,"currency":"HUF","amount":15000,"ticketType":"7 Napi belépő","categoryType":"daily","selectedFacility":"generalPricing"},{"validForDays":5,"currency":"HUF","amount":12000,"ticketType":"5 Napi belépő","categoryType":"daily","selectedFacility":"generalPricing"},{"validForDays":30,"currency":"HUF","amount":20000,"ticketType":"1 Havi bérlet","categoryType":"monthly","selectedFacility":"generalPricing"},{"validForDays":90,"currency":"HUF","amount":55000,"ticketType":"3 Havi bérlet","categoryType":"monthly","selectedFacility":"generalPricing"},{"validForDays":180,"currency":"HUF","amount":10000,"ticketType":"6 Havi bérlet","categoryType":"monthly","selectedFacility":"generalPricing"},{"validForDays":365,"currency":"HUF","amount":180000,"ticketType":"12 Havi bérlet","categoryType":"monthly","selectedFacility":"generalPricing"},{"validForDays":12,"currency":"HUF","amount":12310,"ticketType":"12 Alkalmas bérlet","categoryType":"occasional","selectedFacility":"generalPricing"},{"validForDays":21,"currency":"HUF","amount":21310,"ticketType":"21 Alkalmas bérlet","categoryType":"occasional","selectedFacility":"generalPricing"}],"facilities":[{"facility":{"name":"Cardio zone","type":"Cardio zone","description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam lacus, commodo ut sagittis vel, el","code":2},"ticketPricing":[]},{"facility":{"name":"Gym zone","type":"Gym zone","description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam lacus, commodo ut sagittis vel, el","code":6},"ticketPricing":[]},{"facility":{"name":"Free weights area","type":"Gym zone","description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam lacus, commodo ut sagittis vel, el","code":7},"ticketPricing":[]},{"facility":{"name":"Weight lifting","type":"Gym zone","description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam lacus, commodo ut sagittis vel, el","code":8},"ticketPricing":[]},{"facility":{"name":"Strength area","type":"Gym zone","description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam lacus, commodo ut sagittis vel, el","code":9},"ticketPricing":[]},{"facility":{"name":"Skill and Functional Zone","type":"Skill and Functional Zone","description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam lacus, commodo ut sagittis vel, el","code":10},"ticketPricing":[]},{"facility":{"name":"Functional Area","type":"Skill and Functional Zone","description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam lacus, commodo ut sagittis vel, el","code":11},"ticketPricing":[]},{"facility":{"name":"Crossfit","type":"Skill and Functional Zone","description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam lacus, commodo ut sagittis vel, el","code":13},"ticketPricing":[]},{"facility":{"name":"Sauna","type":"Associated functions","description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam lacus, commodo ut sagittis vel, el","code":24},"ticketPricing":[{"validForDays":1,"currency":"HUF","amount":3000,"ticketType":"1 Alkalom","categoryType":"occasional"},{"validForDays":5,"currency":"HUF","amount":13000,"ticketType":"5 Alkalom","categoryType":"occasional"},{"validForDays":12,"currency":"HUF","amount":30000,"ticketType":"12 Alkalom","categoryType":"occasional"}],"opening":{"mondayFrom":"09:00","mondayTo":"22:00","tuesdayFrom":"09:00","tuesdayTo":"22:00","wednesdayFrom":"09:00","wednesdayTo":"22:00","thursdayFrom":"09:00","thursdayTo":"22:00","fridayFrom":"09:00","fridayTo":"22:00","saturdayFrom":"09:00","saturdayTo":"22:00","sundayFrom":"09:00","sundayTo":"22:00"}},{"facility":{"facility_cd":1,"customName":"Custom Facility ","description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam lacus, commodo ut sagittis vel, el"},"ticketPricing":[{"validForDays":12,"currency":"HUF","amount":30000,"ticketType":"12 Alkalom","categoryType":"occasional"},{"validForDays":321,"currency":"HUF","amount":300000,"ticketType":"312 Alkalom","categoryType":"occasional"}],"opening":{"mondayFrom":"12:00","mondayTo":"20:00","tuesdayFrom":"12:00","tuesdayTo":"20:00","wednesdayFrom":"12:00","wednesdayTo":"20:00","thursdayFrom":"12:00","thursdayTo":"20:00","fridayFrom":"12:00","fridayTo":"20:00","saturdayFrom":"12:00","saturdayTo":"20:00","sundayFrom":"12:00","sundayTo":"20:00"}}]}
+{
+    "gym": {
+        "languageCode": "hu",
+        "webPageUserId": "www.fafafa.com",
+        "twitterUserId": "www.twitter.com/user",
+        "youtubeUserId": "www.youtube.com/user",
+        "instagramUserId": "www.instagram.com/user",
+        "facebookUserId": "www.facebook.com/user",
+        "shortDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam lacus, commodo ut sagittis vel, eleifend et magna. Sed aliquet lectus ex, in sodales",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam lacus, commodo ut sagittis vel, eleifend et magna. Sed aliquet lectus ex, in sodales massa viverra in. Aliquam venenatis lorem eget nunc iaculis, ac placerat diam ullamcorper. Aliquam ornare et lorem non interdum. Integer vehicula nunc non pellentesque luctus. Curabitur mollis neque sit amet odio convallis, sed pharetra felis semper. Ut tincidunt urna egestas facilisis aliquet. Etiam lacinia semper dapibus. Nunc vel ornare nulla, non mollis mi. Praesent porttitor, turpis quis faucibus sodales, risus nunc dignissim nunc, vitae gravida tellus quam eget ligula. Cras et nisi nisl.",
+        "phoneNumber": "012013212012",
+        "floor": "1",
+        "streetNum": "12",
+        "street": "Hegyalja utca",
+        "city": "Zalaegerszeg",
+        "postcode": "8900",
+        "country": "Magyarország",
+        "name": "Viszonylag hosszú GYM név Fitness",
+        "referenceCode": "fullosteszt"
+    },
+    "gymOpening": {
+        "fridayFrom": "08:00",
+        "fridayTo": "22:00",
+        "mondayFrom": "08:00",
+        "mondayTo": "22:00",
+        "saturdayFrom": "08:00",
+        "saturdayTo": "22:00",
+        "sundayFrom": "08:00",
+        "sundayTo": "22:00",
+        "thursdayFrom": "08:00",
+        "thursdayTo": "22:00",
+        "tuesdayFrom": "08:00",
+        "tuesdayTo": "22:00",
+        "wednesdayFrom": "08:00",
+        "wednesdayTo": "22:00"
+    },
+    "gymPricing": [
+        {
+            "validForDays": 1,
+            "currency": "HUF",
+            "amount": 3000,
+            "ticketType": "Napi belépő",
+            "categoryType": "daily",
+            "selectedFacility": "generalPricing"
+        },
+        {
+            "validForDays": 7,
+            "currency": "HUF",
+            "amount": 15000,
+            "ticketType": "7 Napi belépő",
+            "categoryType": "daily",
+            "selectedFacility": "generalPricing"
+        },
+        {
+            "validForDays": 5,
+            "currency": "HUF",
+            "amount": 12000,
+            "ticketType": "5 Napi belépő",
+            "categoryType": "daily",
+            "selectedFacility": "generalPricing"
+        },
+        {
+            "validForDays": 30,
+            "currency": "HUF",
+            "amount": 20000,
+            "ticketType": "1 Havi bérlet",
+            "categoryType": "monthly",
+            "selectedFacility": "generalPricing"
+        },
+        {
+            "validForDays": 90,
+            "currency": "HUF",
+            "amount": 55000,
+            "ticketType": "3 Havi bérlet",
+            "categoryType": "monthly",
+            "selectedFacility": "generalPricing"
+        },
+        {
+            "validForDays": 180,
+            "currency": "HUF",
+            "amount": 10000,
+            "ticketType": "6 Havi bérlet",
+            "categoryType": "monthly",
+            "selectedFacility": "generalPricing"
+        },
+        {
+            "validForDays": 365,
+            "currency": "HUF",
+            "amount": 180000,
+            "ticketType": "12 Havi bérlet",
+            "categoryType": "monthly",
+            "selectedFacility": "generalPricing"
+        },
+        {
+            "validForDays": 12,
+            "currency": "HUF",
+            "amount": 12310,
+            "ticketType": "12 Alkalmas bérlet",
+            "categoryType": "occasional",
+            "selectedFacility": "generalPricing"
+        },
+        {
+            "validForDays": 21,
+            "currency": "HUF",
+            "amount": 21310,
+            "ticketType": "21 Alkalmas bérlet",
+            "categoryType": "occasional",
+            "selectedFacility": "generalPricing"
+        }
+    ],
+    "facilities": [
+        {
+            "facility": {
+                "name": "Cardio zone",
+                "type": "Cardio zone",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam lacus, commodo ut sagittis vel, el",
+                "code": 2
+            },
+            "ticketPricing": []
+        },
+        {
+            "facility": {
+                "name": "Gym zone",
+                "type": "Gym zone",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam lacus, commodo ut sagittis vel, el",
+                "code": 6
+            },
+            "ticketPricing": []
+        },
+        {
+            "facility": {
+                "name": "Free weights area",
+                "type": "Gym zone",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam lacus, commodo ut sagittis vel, el",
+                "code": 7
+            },
+            "ticketPricing": []
+        },
+        {
+            "facility": {
+                "name": "Weight lifting",
+                "type": "Gym zone",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam lacus, commodo ut sagittis vel, el",
+                "code": 8
+            },
+            "ticketPricing": []
+        },
+        {
+            "facility": {
+                "name": "Strength area",
+                "type": "Gym zone",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam lacus, commodo ut sagittis vel, el",
+                "code": 9
+            },
+            "ticketPricing": []
+        },
+        {
+            "facility": {
+                "name": "Skill and Functional Zone",
+                "type": "Skill and Functional Zone",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam lacus, commodo ut sagittis vel, el",
+                "code": 10
+            },
+            "ticketPricing": []
+        },
+        {
+            "facility": {
+                "name": "Functional Area",
+                "type": "Skill and Functional Zone",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam lacus, commodo ut sagittis vel, el",
+                "code": 11
+            },
+            "ticketPricing": []
+        },
+        {
+            "facility": {
+                "name": "Crossfit",
+                "type": "Skill and Functional Zone",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam lacus, commodo ut sagittis vel, el",
+                "code": 13
+            },
+            "ticketPricing": []
+        },
+        {
+            "facility": {
+                "name": "Sauna",
+                "type": "Associated functions",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam lacus, commodo ut sagittis vel, el",
+                "code": 24
+            },
+            "ticketPricing": [
+                {
+                    "validForDays": 1,
+                    "currency": "HUF",
+                    "amount": 3000,
+                    "ticketType": "1 Alkalom",
+                    "categoryType": "occasional"
+                },
+                {
+                    "validForDays": 5,
+                    "currency": "HUF",
+                    "amount": 13000,
+                    "ticketType": "5 Alkalom",
+                    "categoryType": "occasional"
+                },
+                {
+                    "validForDays": 12,
+                    "currency": "HUF",
+                    "amount": 30000,
+                    "ticketType": "12 Alkalom",
+                    "categoryType": "occasional"
+                }
+            ],
+            "opening": {
+                "mondayFrom": "09:00",
+                "mondayTo": "22:00",
+                "tuesdayFrom": "09:00",
+                "tuesdayTo": "22:00",
+                "wednesdayFrom": "09:00",
+                "wednesdayTo": "22:00",
+                "thursdayFrom": "09:00",
+                "thursdayTo": "22:00",
+                "fridayFrom": "09:00",
+                "fridayTo": "22:00",
+                "saturdayFrom": "09:00",
+                "saturdayTo": "22:00",
+                "sundayFrom": "09:00",
+                "sundayTo": "22:00"
+            }
+        },
+        {
+            "facility": {
+                "facility_cd": 1,
+                "customName": "Custom Facility ",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam lacus, commodo ut sagittis vel, el"
+            },
+            "ticketPricing": [
+                {
+                    "validForDays": 12,
+                    "currency": "HUF",
+                    "amount": 30000,
+                    "ticketType": "12 Alkalom",
+                    "categoryType": "occasional"
+                },
+                {
+                    "validForDays": 321,
+                    "currency": "HUF",
+                    "amount": 300000,
+                    "ticketType": "312 Alkalom",
+                    "categoryType": "occasional"
+                }
+            ],
+            "opening": {
+                "mondayFrom": "12:00",
+                "mondayTo": "20:00",
+                "tuesdayFrom": "12:00",
+                "tuesdayTo": "20:00",
+                "wednesdayFrom": "12:00",
+                "wednesdayTo": "20:00",
+                "thursdayFrom": "12:00",
+                "thursdayTo": "20:00",
+                "fridayFrom": "12:00",
+                "fridayTo": "20:00",
+                "saturdayFrom": "12:00",
+                "saturdayTo": "20:00",
+                "sundayFrom": "12:00",
+                "sundayTo": "20:00"
+            }
+        }
+    ]
+}

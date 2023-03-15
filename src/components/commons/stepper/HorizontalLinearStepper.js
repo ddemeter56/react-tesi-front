@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { makeStyles } from '@mui/styles';
 import Box from '@mui/material/Box';
 import Stepper from '@mui/material/Stepper';
@@ -10,6 +10,11 @@ import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import FormGenerator from '../form/FormGenerator';
 import SelectorAndDetails from '../form/SelectorAndDetails';
+import InputsWithTable from '../form/InputsWithTable'
+import { fetchData } from '../../../utils/urlQuery';
+import AuthContext from '../../../context/auth.context';
+import Context from '../../../context/register.context';
+import CustomizedSnackbars from '../snackbar/CustomizedSnackbar';
 
 const useStyles = makeStyles((theme) => ({
   stepperContainer: {
@@ -28,13 +33,16 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const generateStepContent = (step) => {
-  if (step.type === "FormGenerator" ) return <FormGenerator formData={step.data} localStorageIdentifier={step.identifier} />
-  if (step.type === "SelectorAndDetails" ) return <SelectorAndDetails list={step.data} listName={step.selectorTitle} />
+  if (step.type === "FormGenerator") return <FormGenerator formData={step.data} stateIdentifier={step.stateIdentifier} />
+  if (step.type === "SelectorAndDetails") return <SelectorAndDetails list={step.data} listName={step.selectorTitle} stateIdentifier={step.stateIdentifier} />
+  if (step.type === "InputsWithTable") return <InputsWithTable formData={step.data} stateIdentifier={step.stateIdentifier} />
 }
 
 const HorizontalLinearStepper = ({ steps }) => {
   const [activeStep, setActiveStep] = useState(0);
   const [skipped, setSkipped] = useState(new Set());
+  const { userDetails, setUserDetails } = useContext(AuthContext);
+  const { state } = useContext(Context);
 
   console.log(steps)
   const classes = useStyles();
@@ -47,6 +55,7 @@ const HorizontalLinearStepper = ({ steps }) => {
   };
 
   const handleNext = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     let newSkipped = skipped;
     if (isStepSkipped(activeStep)) {
       newSkipped = new Set(newSkipped.values());
@@ -57,7 +66,38 @@ const HorizontalLinearStepper = ({ steps }) => {
     setSkipped(newSkipped);
   };
 
+  const handleFinish = () => {
+    fetchData('/register/gym', {
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${userDetails.accessToken}`
+      },
+      method: 'POST',
+      body: JSON.stringify(state)
+    })
+      .then(data => {
+        console.log(data);
+        if(data.statusCode === 400) {
+          alert(data.message + '\n' + data.error)
+        }
+        if (data.statusCode === 403) {
+          alert(data.message + '\n' + data.error)
+        } else if (data.statusCode === 500) {
+          alert(data.message + '\n' + data.error)
+        } else if (data.statusCode === 400) {
+          const alertMessage = data.message.map(i => i)
+          alert(alertMessage.join('\n'))
+        } else if (data.message === 'Gym successfully registered') {
+          alert('Gym successfully registered')
+        }
+      })
+      .catch((error) => {
+        console.log(JSON.stringify(error))
+      });
+  }
+
   const handleBack = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
 
@@ -82,6 +122,7 @@ const HorizontalLinearStepper = ({ steps }) => {
 
   return (
     <Box className={classes.stepperContainer}>
+      <CustomizedSnackbars type="succes" open={true} message="asd"/>
       <Stepper activeStep={activeStep}>
         {steps.map((step, index) => {
           const stepProps = {};
@@ -96,7 +137,7 @@ const HorizontalLinearStepper = ({ steps }) => {
           }
           return (
             <Step key={step.label} {...stepProps}>
-              <StepLabel {...labelProps}>{step.label}</StepLabel>       
+              <StepLabel {...labelProps}>{step.label}</StepLabel>
             </Step>
           );
         })}
@@ -114,8 +155,8 @@ const HorizontalLinearStepper = ({ steps }) => {
       ) : (
         <>
           <Grid container direction="column" spacing={2} className={classes.formContainer} justifyContent="center" alignItems="center" >
-            {steps.map((step, index )=> {
-              return activeStep === index && 
+            {steps.map((step, index) => {
+              return activeStep === index &&
                 generateStepContent(step);
             })}
           </Grid>
@@ -135,7 +176,7 @@ const HorizontalLinearStepper = ({ steps }) => {
               </Button>
             )}
 
-            <Button onClick={handleNext}>
+            <Button onClick={activeStep === steps.length - 1 ? handleFinish : handleNext}>
               {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
             </Button>
           </Box>
