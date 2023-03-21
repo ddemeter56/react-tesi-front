@@ -39,10 +39,16 @@ const useStyles = makeStyles((theme) => ({
     overflow: 'hidden',
     position: 'relative',
     [theme.breakpoints.down('sm')]: {
-      width: '100%',
+      width: '90%',
+      marginTop: 30,
     },
   },
   description: {
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    whiteSpace: 'nowrap',
+  },
+  title: {
     overflow: 'hidden',
     textOverflow: 'ellipsis',
     whiteSpace: 'nowrap',
@@ -61,7 +67,9 @@ const useStyles = makeStyles((theme) => ({
       position: 'static',
       display: 'block',
       textAlign: 'center',
-      margin: '10px 0',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
     },
   },
   editButton: {
@@ -70,6 +78,10 @@ const useStyles = makeStyles((theme) => ({
       top: '5px',
       right: '5px',
     },
+    [theme.breakpoints.down('sm')]: {
+      position: 'relative',
+      float: 'right',
+    }
   },
 }));
 
@@ -89,7 +101,7 @@ const ResponsiveCard = ({
     <Card className={classes.cardContainer}>
       <Box className={classes.mediaContainer}>
         <CardMedia className={classes.media} component="img" image={imageUrl} title={title} />
-        <Button className={classes.mediaButton} variant="contained" color="secondary">
+        <Button className={classes.mediaButton} variant="outlined" color="secondary">
           View
         </Button>
       </Box>
@@ -99,17 +111,17 @@ const ResponsiveCard = ({
             <Edit />
           </Button>
         </Box>
-        <Typography gutterBottom variant="h5" component="h2">
+        <Typography gutterBottom variant="h5" component="h2" className={classes.title}>
           {title}
         </Typography>
         <Typography variant="body2" color="text.secondary" component="p" className={classes.description}>
           {description}
         </Typography>
         <div className={classes.buttonContainer}>
-          <Button className={classes.buttonMargin} variant="contained" onClick={button1OnClick}>
+          <Button className={classes.buttonMargin} variant="outlined" onClick={button1OnClick}>
             {button1Text}
           </Button>
-          <Button className={classes.buttonMargin} variant="contained" color="error" onClick={button2OnClick}>
+          <Button className={classes.buttonMargin} variant="outlined" onClick={button2OnClick}>
             {button2Text}
           </Button>
         </div>

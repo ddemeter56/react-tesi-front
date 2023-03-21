@@ -21,7 +21,7 @@ const ExampleCard = () => {
       <div style={{ height: '400px', overflow: 'scroll', overflowX: 'hidden', boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.5)" }}>
         <ResponsiveCard
           imageUrl="https://picsum.photos/300/200"
-          title="Sample Card Title"
+          title="Sample Card Title but longer longer longer"
           description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a nibh dolor. Nam malesuada placerat mauris a ullamcorper."
           button1Text="Button 1"
           button1OnClick={() => console.log('Button 1 clicked!')}
