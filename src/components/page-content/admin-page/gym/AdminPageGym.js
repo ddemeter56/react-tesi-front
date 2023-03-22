@@ -1,7 +1,9 @@
 import React from 'react';
 import { makeStyles } from '@mui/styles';
 import Grid from '@mui/material/Grid';
-import ExampleCard from './gym-listing/GymListContainer';
+import GymListContainer from './gym-listing/GymListContainer';
+import { useFetch } from '../../../../hooks/useFetch';
+import { API_PATH } from '../../../../utils/apiPaths';
 
 const useStyles = makeStyles((theme) => ({
   adminPageContainer: {
@@ -35,9 +37,17 @@ const AdminPageGym = ({ type, userDetails }) => {
   console.log(type)
   console.log(userDetails)
   const classes = useStyles();
+  const { loading, data, error } = useFetch(`${API_PATH.ADMIN_OWNED_GYMS}`,
+    {
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${userDetails.accessToken}`
+      }
+    });
+  console.log(data)
   return (
     <div className={classes.adminPageContainer}>
-      <ExampleCard />
+      <GymListContainer gymList={data} />
     </div>
   )
 }

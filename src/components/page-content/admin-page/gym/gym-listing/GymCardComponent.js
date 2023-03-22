@@ -102,7 +102,7 @@ const ResponsiveCard = ({
       <Box className={classes.mediaContainer}>
         <CardMedia className={classes.media} component="img" image={imageUrl} title={title} />
         <Button className={classes.mediaButton} variant="outlined" color="secondary">
-          View
+          Manage images
         </Button>
       </Box>
       <CardContent className={classes.content}>

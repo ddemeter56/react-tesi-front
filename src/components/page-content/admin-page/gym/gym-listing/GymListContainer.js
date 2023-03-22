@@ -1,8 +1,15 @@
 import React from 'react';
+import { makeStyles } from '@mui/styles';
 import { ResponsiveCard } from './GymCardComponent';
 import { Typography } from '@mui/material';
+import Divider from '@mui/material/Divider';
+import Chip from '@mui/material/Chip';
 
-const ExampleCard = () => {
+const useStyles = makeStyles((theme) => ({
+}));
+
+const GymListContainer = ({ gymList }) => {
+  console.log(gymList)
   const imageUrl = 'https://source.unsplash.com/random';
   const title = 'Example Card';
   const description =
@@ -11,55 +18,29 @@ const ExampleCard = () => {
   const button1OnClick = () => alert('Button 1 clicked');
   const button2Text = 'Button 2';
   const button2OnClick = () => alert('Button 2 clicked');
+  const classes = useStyles();
 
   return (
     <>
-
       <Typography gutterBottom variant="h5" component="h2">
-        Your GYM's
+        Your GYM's ({gymList?.count})
       </Typography>
-      <div style={{ height: '400px', overflow: 'scroll', overflowX: 'hidden', boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.5)" }}>
-        <ResponsiveCard
-          imageUrl="https://picsum.photos/300/200"
-          title="Sample Card Title but longer longer longer"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a nibh dolor. Nam malesuada placerat mauris a ullamcorper."
-          button1Text="Button 1"
-          button1OnClick={() => console.log('Button 1 clicked!')}
-          button2Text="Button 2"
-          button2OnClick={() => console.log('Button 2 clicked!')}
-        />
-        <ResponsiveCard
-          imageUrl="https://picsum.photos/300/200"
-          title="Another Sample Card Title"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a nibh dolor. Nam malesuada placerat mauris a ullamcorper."
-          button1Text="Button 1"
-          button1OnClick={() => console.log('Button 1 clicked!')}
-          button2Text="Button 2"
-          button2OnClick={() => console.log('Button 2 clicked!')}
-        />
-
-        <ResponsiveCard
-          imageUrl="https://picsum.photos/300/200"
-          title="Another Sample Card Title"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a nibh dolor. Nam malesuada placerat mauris a ullamcorper."
-          button1Text="Button 1"
-          button1OnClick={() => console.log('Button 1 clicked!')}
-          button2Text="Button 2"
-          button2OnClick={() => console.log('Button 2 clicked!')}
-        />
-
-        <ResponsiveCard
-          imageUrl="https://picsum.photos/300/200"
-          title="Another Sample Card Title"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a nibh dolor. Nam malesuada placerat mauris a ullamcorper."
-          button1Text="Button 1"
-          button1OnClick={() => console.log('Button 1 clicked!')}
-          button2Text="Button 2"
-          button2OnClick={() => console.log('Button 2 clicked!')}
-        />
+      <div style={{ height: '400px', overflow: 'scroll', overflowX: 'hidden', boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.1)" }}>
+        {gymList?.gyms.map((gymItem) => 
+          <ResponsiveCard
+            imageUrl="https://picsum.photos/300/200"
+            title={gymItem.addressString}
+            description={gymItem.shortDescription}
+            button1Text="Trainers"
+            button1OnClick={() => console.log(gymItem.referenceCode)}
+            button2Text="Access management"
+            button2OnClick={() => console.log(gymItem.id)}
+            onEditClick={() => console.log(gymItem.id)}
+          />
+        )}
       </div>
     </>
   );
 };
 
-export default ExampleCard;
+export default GymListContainer;
