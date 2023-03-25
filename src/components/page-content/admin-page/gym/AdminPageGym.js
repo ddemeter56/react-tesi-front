@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@mui/styles';
 import Grid from '@mui/material/Grid';
 import GymListContainer from './gym-listing/GymListContainer';
 import { useFetch } from '../../../../hooks/useFetch';
 import { API_PATH } from '../../../../utils/apiPaths';
+import { SkeletonGymAdminPageCard } from '../../../commons/skeleton/SkeletonGymAdminPageCard';
 
 const useStyles = makeStyles((theme) => ({
   adminPageContainer: {
@@ -37,6 +38,7 @@ const AdminPageGym = ({ type, userDetails }) => {
   console.log(type)
   console.log(userDetails)
   const classes = useStyles();
+  const [ activeSection, setActiveSection ] = useState('yourGym');
   const { loading, data, error } = useFetch(`${API_PATH.ADMIN_OWNED_GYMS}`,
     {
       headers: {
@@ -44,10 +46,10 @@ const AdminPageGym = ({ type, userDetails }) => {
         'Authorization': `Bearer ${userDetails.accessToken}`
       }
     });
-  console.log(data)
+
   return (
     <div className={classes.adminPageContainer}>
-      <GymListContainer gymList={data} />
+      <GymListContainer gymList={data} isGymLoading={loading} />
     </div>
   )
 }

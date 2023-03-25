@@ -4,11 +4,12 @@ import { ResponsiveCard } from './GymCardComponent';
 import { Typography } from '@mui/material';
 import Divider from '@mui/material/Divider';
 import Chip from '@mui/material/Chip';
+import { SkeletonGymAdminPageCard } from '../../../../commons/skeleton/SkeletonGymAdminPageCard';
 
 const useStyles = makeStyles((theme) => ({
 }));
 
-const GymListContainer = ({ gymList }) => {
+const GymListContainer = ({ gymList, isGymLoading }) => {
   console.log(gymList)
   const imageUrl = 'https://source.unsplash.com/random';
   const title = 'Example Card';
@@ -20,24 +21,31 @@ const GymListContainer = ({ gymList }) => {
   const button2OnClick = () => alert('Button 2 clicked');
   const classes = useStyles();
 
+  if (isGymLoading) {
+    <SkeletonGymAdminPageCard />
+  }
   return (
     <>
       <Typography gutterBottom variant="h5" component="h2">
         Your GYM's ({gymList?.count})
       </Typography>
       <div style={{ height: '400px', overflow: 'scroll', overflowX: 'hidden', boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.1)" }}>
-        {gymList?.gyms.map((gymItem) => 
-          <ResponsiveCard
-            imageUrl="https://picsum.photos/300/200"
-            title={gymItem.addressString}
-            description={gymItem.shortDescription}
-            button1Text="Trainers"
-            button1OnClick={() => console.log(gymItem.referenceCode)}
-            button2Text="Access management"
-            button2OnClick={() => console.log(gymItem.id)}
-            onEditClick={() => console.log(gymItem.id)}
-          />
-        )}
+        {isGymLoading ?
+          [0, 1, 2, 3].map(index =>
+            <SkeletonGymAdminPageCard />
+          ) :
+          gymList?.gyms.map((gymItem) =>
+            <ResponsiveCard
+              imageUrl="https://picsum.photos/300/200"
+              title={gymItem.addressString}
+              description={gymItem.shortDescription}
+              button1Text="Trainers"
+              button1OnClick={() => console.log(gymItem.referenceCode)}
+              button2Text="Access management"
+              button2OnClick={() => console.log(gymItem.id)}
+              onEditClick={() => console.log(gymItem.id)}
+            />
+          )}
       </div>
     </>
   );
