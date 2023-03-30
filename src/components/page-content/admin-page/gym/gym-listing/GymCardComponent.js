@@ -94,6 +94,7 @@ const ResponsiveCard = ({
   button2Text,
   button2OnClick,
   onEditClick,
+  onMediaUpdateClick
 }) => {
   const classes = useStyles();
 
@@ -101,7 +102,7 @@ const ResponsiveCard = ({
     <Card className={classes.cardContainer}>
       <Box className={classes.mediaContainer}>
         <CardMedia className={classes.media} component="img" image={imageUrl} title={title} />
-        <Button className={classes.mediaButton} variant="outlined" color="secondary">
+        <Button className={classes.mediaButton} variant="outlined" color="secondary" onClick={onMediaUpdateClick}>
           Manage images
         </Button>
       </Box>

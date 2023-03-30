@@ -38,7 +38,7 @@ const AdminPageGym = ({ type, userDetails }) => {
   console.log(type)
   console.log(userDetails)
   const classes = useStyles();
-  const [ activeSection, setActiveSection ] = useState('yourGym');
+  const [activeSection, setActiveSection] = useState('yourGym');
   const { loading, data, error } = useFetch(`${API_PATH.ADMIN_OWNED_GYMS}`,
     {
       headers: {
@@ -48,9 +48,13 @@ const AdminPageGym = ({ type, userDetails }) => {
     });
 
   return (
-    <div className={classes.adminPageContainer}>
-      <GymListContainer gymList={data} isGymLoading={loading} />
-    </div>
+    <>
+      <div className={classes.adminPageContainer}>
+        <GymListContainer gymList={data} isGymLoading={loading} />
+
+        <div>Search in </div>
+      </div>
+    </>
   )
 }
 
