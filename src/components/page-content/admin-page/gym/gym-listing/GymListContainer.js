@@ -4,6 +4,8 @@ import { ResponsiveCard } from './GymCardComponent';
 import { Typography } from '@mui/material';
 import Input from '@mui/material/Input';
 
+import { Link } from 'react-router-dom';
+import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import SearchIcon from '@mui/icons-material/Search';
 import InputAdornment from '@mui/material/InputAdornment';
@@ -12,6 +14,22 @@ import Chip from '@mui/material/Chip';
 import { SkeletonGymAdminPageCard } from '../../../../commons/skeleton/SkeletonGymAdminPageCard';
 
 const useStyles = makeStyles((theme) => ({
+  gymCardContainerWithCards: {
+    height: '400px',
+    overflow: 'scroll',
+    overflowX: 'hidden',
+    boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.1)" 
+  },
+  gymCardContainerWithButton: {
+    display: "flex",
+    alignContent: "center",
+    justifyContent: "center",
+    flexDirection: "column",
+    height: '400px',
+    overflow: 'none',
+    overflowX: 'hidden',
+    boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.1)" 
+  },
   gymListTopSection: {
     display: "flex",
     alignItems: "center",
@@ -36,11 +54,59 @@ const GymListContainer = ({ gymList, isGymLoading }) => {
   const handleGymSearchChange = (event) => {
     setSearchText(event.target.value)
     setFilteredGymList(gymList?.gyms.filter(gym => gym.addressString.includes(event.target.value)))
+  } 
+
+  const renderAdminPageOwnedGymsWhen = (isLoading, isThereAnyAddedGym, isBeingFiltered) => {
+    if (isLoading) {
+      console.log(isLoading)
+      return (
+        [0, 1, 2, 3].map(index =>
+          <SkeletonGymAdminPageCard />
+        ))
+    } else if (!isLoading && isThereAnyAddedGym) {
+      console.log('VMI GYM LESZ')
+      console.log(isBeingFiltered)
+      if (!isBeingFiltered) {
+        console.log('ami nem filtered')
+        return gymList?.gyms.map((gymItem) =>
+          <ResponsiveCard
+            imageUrl="https://picsum.photos/300/200"
+            title={gymItem.addressString}
+            description={gymItem.shortDescription}
+            button1Text="Trainers"
+            button1OnClick={() => console.log(gymItem.referenceCode)}
+            button2Text="Access management"
+            button2OnClick={() => console.log(gymItem.id)}
+            onEditClick={() => console.log(gymItem.id)}
+            onMediaUpdateClick={() => alert('valami')}
+          />
+        )
+      } else {
+        console.log('ami filtered')
+        return filteredGymList?.map((gymItem) =>
+          <ResponsiveCard
+            imageUrl="https://picsum.photos/300/200"
+            title={gymItem.addressString}
+            description={gymItem.shortDescription}
+            button1Text="Trainers"
+            button1OnClick={() => console.log(gymItem.referenceCode)}
+            button2Text="Access management"
+            button2OnClick={() => console.log(gymItem.id)}
+            onEditClick={() => console.log(gymItem.id)}
+            onMediaUpdateClick={() => alert('valami')}
+          />
+        )
+      }
+    } else if (!isLoading && !isThereAnyAddedGym) {
+      return (
+        <div style={{ textAlign: "center"}}>
+          <Typography variant="h6">You don't have any GYMs registered</Typography>
+          <Button size="large" variant="outlined" component={Link} to="/register/gym">Register your first GYM</Button>
+        </div>
+      )
+    }
   }
 
-  if (isGymLoading) {
-    <SkeletonGymAdminPageCard />
-  }
   return (
     <>
       <div className={classes.gymListTopSection}>
@@ -58,38 +124,8 @@ const GymListContainer = ({ gymList, isGymLoading }) => {
           }
         />
       </div>
-      <div style={{ height: '400px', overflow: 'scroll', overflowX: 'hidden', boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.1)" }}>
-        {isGymLoading ?
-          [0, 1, 2, 3].map(index =>
-            <SkeletonGymAdminPageCard />
-          ) :
-          searchText === '' ?
-            gymList?.gyms.map((gymItem) =>
-              <ResponsiveCard
-                imageUrl="https://picsum.photos/300/200"
-                title={gymItem.addressString}
-                description={gymItem.shortDescription}
-                button1Text="Trainers"
-                button1OnClick={() => console.log(gymItem.referenceCode)}
-                button2Text="Access management"
-                button2OnClick={() => console.log(gymItem.id)}
-                onEditClick={() => console.log(gymItem.id)}
-                onMediaUpdateClick={() => alert('valami')}
-              />
-            )
-            : filteredGymList?.map((gymItem) =>
-              <ResponsiveCard
-                imageUrl="https://picsum.photos/300/200"
-                title={gymItem.addressString}
-                description={gymItem.shortDescription}
-                button1Text="Trainers"
-                button1OnClick={() => console.log(gymItem.referenceCode)}
-                button2Text="Access management"
-                button2OnClick={() => console.log(gymItem.id)}
-                onEditClick={() => console.log(gymItem.id)}
-                onMediaUpdateClick={() => alert('valami')}
-              />
-            )}
+      <div className={!!gymList?.count ? classes.gymCardContainerWithCards : classes.gymCardContainerWithButton}>  
+        {renderAdminPageOwnedGymsWhen(isGymLoading, !!gymList?.count, searchText !== '')}
       </div>
     </>
   );

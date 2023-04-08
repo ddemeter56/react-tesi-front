@@ -66,7 +66,7 @@ function App() {
               <Result type="pt" />
             </Route>
             <Route path="/register/gym">
-              <GymRegisterPage shouldGuardPage={!userDetails.isLoggedIn} />
+              <GymRegisterPage userDetails={ userDetails} />
             </Route>
             <Route path="/register/trainer">
             </Route>

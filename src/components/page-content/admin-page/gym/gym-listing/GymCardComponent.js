@@ -20,11 +20,18 @@ const useStyles = makeStyles((theme) => ({
       height: '200px',
     },
   },
+  imgContainer: {
+    paddingBottom: "60%",
+    background:"#EEE",
+    height:0,
+    position:"relative",
+    marginBottom: 15,
+  },
   media: {
-    height: '100%',
-    width: '100%',
-    objectFit: 'cover',
-    padding: 7,
+    width:"100%",
+    height:"100%",
+    display:"block",
+    position:"absolute",
   },
   mediaButton: {
     position: 'absolute',
@@ -101,7 +108,9 @@ const ResponsiveCard = ({
   return (
     <Card className={classes.cardContainer}>
       <Box className={classes.mediaContainer}>
-        <CardMedia className={classes.media} component="img" image={imageUrl} title={title} />
+        <div className={classes.imgContainer}>
+          <CardMedia className={classes.media} component="img" image={imageUrl} title={title}/>
+        </div>
         <Button className={classes.mediaButton} variant="outlined" color="secondary" onClick={onMediaUpdateClick}>
           Manage images
         </Button>

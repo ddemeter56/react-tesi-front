@@ -21,9 +21,18 @@ const useStyles = makeStyles((theme) => ({
       height: '200px',
     },
   },
+  imgContainer: {
+    paddingBottom: "60%",
+    background:"#EEE",
+    height:0,
+    position:"relative",
+    marginBottom: 15,
+  },
   media: {
-    height: '100%',
-    width: '100%',
+    width:"100%",
+    height:"100%",
+    display:"block",
+    position:"absolute",
   },
   mediaButton: {
     position: 'absolute',
@@ -99,7 +108,8 @@ const SkeletonGymAdminPageCard = ({
   return (
     <Card className={classes.cardContainer}>
       <Box className={classes.mediaContainer}>
-        <Skeleton animation="wave" height={200} width="100%" className={classes.media}/>
+        <div className={classes.imgContainer}>
+        </div>
         <Skeleton animation="wave" height={55} width={90} className={classes.mediaButton}/>
       </Box>
       <CardContent className={classes.content}>

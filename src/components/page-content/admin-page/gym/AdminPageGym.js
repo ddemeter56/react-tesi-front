@@ -51,8 +51,6 @@ const AdminPageGym = ({ type, userDetails }) => {
     <>
       <div className={classes.adminPageContainer}>
         <GymListContainer gymList={data} isGymLoading={loading} />
-
-        <div>Search in </div>
       </div>
     </>
   )
