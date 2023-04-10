@@ -12,6 +12,7 @@ import InputAdornment from '@mui/material/InputAdornment';
 import Divider from '@mui/material/Divider';
 import Chip from '@mui/material/Chip';
 import { SkeletonGymAdminPageCard } from '../../../../commons/skeleton/SkeletonGymAdminPageCard';
+import ErrorPage from '../../../../commons/error/ErrorPage';
 
 const useStyles = makeStyles((theme) => ({
   gymCardContainerWithCards: {
@@ -37,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const GymListContainer = ({ gymList, isGymLoading }) => {
+const GymListContainer = ({ gymList, isGymLoading, gymLoadError }) => {
   console.log(gymList)
   const [searchText, setSearchText] = useState('');
   const [filteredGymList, setFilteredGymList] = useState(gymList)
@@ -97,11 +98,18 @@ const GymListContainer = ({ gymList, isGymLoading }) => {
           />
         )
       }
-    } else if (!isLoading && !isThereAnyAddedGym) {
+    } else if (!isLoading && !isThereAnyAddedGym && !gymLoadError) {
       return (
         <div style={{ textAlign: "center"}}>
           <Typography variant="h6">You don't have any GYMs registered</Typography>
-          <Button size="large" variant="outlined" component={Link} to="/register/gym">Register your first GYM</Button>
+          <Button size="large" className={`pulse`} variant="outlined" component={Link} to="/register/gym">Register your first GYM</Button>
+        </div>
+      )
+    } else if(gymLoadError) {
+      console.log(gymLoadError);
+      return (
+        <div style={{ textAlign: "center" }}>
+          <ErrorPage type="Error" message={gymLoadError}></ErrorPage>
         </div>
       )
     }

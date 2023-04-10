@@ -50,7 +50,7 @@ const AdminPageGym = ({ type, userDetails }) => {
   return (
     <>
       <div className={classes.adminPageContainer}>
-        <GymListContainer gymList={data} isGymLoading={loading} />
+        <GymListContainer gymList={data} isGymLoading={loading} gymLoadError={error} />
       </div>
     </>
   )
