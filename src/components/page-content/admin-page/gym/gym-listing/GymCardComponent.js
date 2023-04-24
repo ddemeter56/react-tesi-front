@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import { makeStyles } from '@mui/styles';
 import { Card, CardContent, Typography, Button, CardMedia, Box } from '@mui/material';
 import { Edit } from '@mui/icons-material';
+import { forwardRef } from 'react';
+import FileUploaderDialog from '../../../../commons/dialog/FileUploaderDialog';
 
 const useStyles = makeStyles((theme) => ({
   cardContainer: {
@@ -101,19 +103,33 @@ const ResponsiveCard = ({
   button2Text,
   button2OnClick,
   onEditClick,
-  onMediaUpdateClick
 }) => {
   const classes = useStyles();
+  const [fileUploadDialogOpen, setFileUploadDialogOOpen] = useState(false);
 
+
+  const handleFileUploadDialogOpen = () => {
+    setFileUploadDialogOOpen(true);
+  };
+
+  const handleFileUploadDialogClose = () => {
+    setFileUploadDialogOOpen(false);
+  };
+
+  const handleFileUpload = (file) => {
+    // call your backend API here to upload the file
+    console.log(file);
+  };
   return (
     <Card className={classes.cardContainer}>
       <Box className={classes.mediaContainer}>
         <div className={classes.imgContainer}>
           <CardMedia className={classes.media} component="img" image={imageUrl} title={title}/>
         </div>
-        <Button className={classes.mediaButton} variant="outlined" color="secondary" onClick={onMediaUpdateClick}>
+        <Button className={classes.mediaButton} variant="outlined" color="secondary" onClick={handleFileUploadDialogOpen}>
           Manage images
         </Button>
+        <FileUploaderDialog open={fileUploadDialogOpen} onClose={handleFileUploadDialogClose} onFileUpload={handleFileUpload} />
       </Box>
       <CardContent className={classes.content}>
         <Box className={classes.editButton}>
