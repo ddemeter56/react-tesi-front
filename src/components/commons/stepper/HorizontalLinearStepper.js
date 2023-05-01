@@ -15,6 +15,7 @@ import { fetchData } from '../../../utils/urlQuery';
 import AuthContext from '../../../context/auth.context';
 import Context from '../../../context/register.context';
 import CustomizedSnackbars from '../snackbar/CustomizedSnackbar';
+import { useHistory } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   stepperContainer: {
@@ -43,6 +44,7 @@ const HorizontalLinearStepper = ({ steps }) => {
   const [skipped, setSkipped] = useState(new Set());
   const { userDetails, setUserDetails } = useContext(AuthContext);
   const { state } = useContext(Context);
+  const history = useHistory();
 
   console.log(steps)
   const classes = useStyles();
@@ -64,6 +66,10 @@ const HorizontalLinearStepper = ({ steps }) => {
 
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
     setSkipped(newSkipped);
+  };
+
+  const redirectToAdminPage = () => {
+    history.push('/admin');
   };
 
   const handleFinish = () => {
@@ -88,7 +94,8 @@ const HorizontalLinearStepper = ({ steps }) => {
           const alertMessage = data.message.map(i => i)
           alert(alertMessage.join('\n'))
         } else if (data.message === 'Gym successfully registered') {
-          alert('Gym successfully registered')
+          alert('Gym successfully registered'); 
+          redirectToAdminPage();
         }
       })
       .catch((error) => {

@@ -78,19 +78,21 @@ const GymEntityPage = ({ data }) => {
   };
 
   const generatePriceTableRows = (array) => {
-    return (
-      array.map((row) => (
-        <TableRow key={row.ticketId}>
-          <TableCell >
-            {row.categoryType}
-          </TableCell>
-          <TableCell align="right">{row.ticketType}</TableCell>
-          <TableCell align="right">{row.validForDays}</TableCell>
-          <TableCell align="right">{row.amount}</TableCell>
-          <TableCell align="right">{row.currency}</TableCell>
-        </TableRow>
-      ))
-    )
+    if (array) {
+      return (
+        array.map((row) => (
+          <TableRow key={row.ticketId}>
+            <TableCell >
+              {row.categoryType}
+            </TableCell>
+            <TableCell align="right">{row.ticketType}</TableCell>
+            <TableCell align="right">{row.validForDays}</TableCell>
+            <TableCell align="right">{row.amount}</TableCell>
+            <TableCell align="right">{row.currency}</TableCell>
+          </TableRow>
+        ))
+      )
+    }
   }
 
   const generateFacilityTableRows = () => {

@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import RegisterPageContainer from '../../../commons/register/RegisterPageContainer';
+import { fetchData } from '../../../../utils/urlQuery';
+import { redirectToLogin } from '../../../../utils/auth';
 import ErrorPage from '../../../commons/error/ErrorPage';
 import SkeletonEntityPage from '../../../commons/skeleton/SkeletonEntityPage';
 import { useFetch } from '../../../../hooks/useFetch';
@@ -7,9 +9,35 @@ import { API_PATH } from '../../../../utils/apiPaths';
 import { GYM_BASIC_INFORMATION, GYM_OPENING_INFORMATION, GYM_PRICING_INFORMATION} from '../../../../constant-data/register-page-gym';
 import { Provider } from '../../../../context/register.context';
 
-const GymRegisterPage = ({shouldGuardPage}) => {
+const GymRegisterPage = ({userDetails}) => {
+  console.log(userDetails);
   const { loading, data, error } = useFetch(`${API_PATH.FACILITY_CODES}`);
-  if(shouldGuardPage) {
+  const [ responseData, setResponseData ] = useState({});
+  useEffect(() => {
+    console.log(responseData)
+    if(!userDetails.isLoggedIn) {
+      console.log('ADMIN PAGE USER NOT LOGGED IN')
+      // redirectToLogin();
+    } else {
+      fetchData('/user-management/role-check', {
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${userDetails.accessToken}` 
+        }
+      })
+        .then(data => {
+          console.log(data);
+          setResponseData(data);
+        })
+        .catch((error) => {
+          console.log(error)
+          setResponseData(JSON.stringify(error))
+        }); 
+
+    }  
+  }, [userDetails.isLoggedIn, setResponseData, userDetails.accessToken]);
+
+  if(!userDetails.isLoggedIn) {
     return <ErrorPage type="Unauthorized" message="You have to log in to reach this page"/>
   }
   if(loading) {

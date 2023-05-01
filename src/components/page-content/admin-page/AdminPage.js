@@ -38,14 +38,14 @@ const AdminPage = () => {
     if(rolesArray?.includes("gym_owner")) {
       return (
         //TODO UserDetails because of isRegistered 
-        <AdminPageGym type="owner" userDetails={rolesArray} />
+        <AdminPageGym type="owner" userDetails={userDetails} />
       )
     }
     
     if(rolesArray?.includes("personal_trainer")) {
       return (
         //TODO UserDetails because of isRegistered 
-        <AdminPagePt userDetails={rolesArray}/>
+        <AdminPagePt userDetails={userDetails}/>
       )
     }
     
@@ -73,7 +73,7 @@ const AdminPage = () => {
         })
         .catch((error) => {
           setResponseData(JSON.stringify(error))
-        });
+        }); 
 
     }  
   }, [userDetails.isLoggedIn, setResponseData, userDetails.accessToken]);
