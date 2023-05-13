@@ -3,7 +3,7 @@ import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { makeStyles } from '@mui/styles';
-import Autocomplete from '@mui/lab/Autocomplete';
+import { Autocomplete } from '@mui/material'
 import Collapse from '@mui/material/Collapse';
 import { useHistory } from 'react-router-dom';
 import { encodeQueryData, encodeMultipleQueryData } from '../../../../utils/urlQuery';
