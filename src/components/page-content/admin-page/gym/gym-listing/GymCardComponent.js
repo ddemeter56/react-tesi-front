@@ -1,9 +1,10 @@
-import React, { useRef, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { makeStyles } from '@mui/styles';
 import { Card, CardContent, Typography, Button, CardMedia, Box } from '@mui/material';
 import { Edit } from '@mui/icons-material';
-import { forwardRef } from 'react';
+import AuthContext from '../../../../../context/auth.context';
 import FileUploaderDialog from '../../../../commons/dialog/FileUploaderDialog';
+import { fetchData } from '../../../../../utils/urlQuery';
 
 const useStyles = makeStyles((theme) => ({
   cardContainer: {
@@ -94,7 +95,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const ResponsiveCard = ({
+const GymAdminCard = ({
+  id,
   imageUrl,
   title,
   description,
@@ -106,7 +108,8 @@ const ResponsiveCard = ({
 }) => {
   const classes = useStyles();
   const [fileUploadDialogOpen, setFileUploadDialogOOpen] = useState(false);
-
+  const { userDetails, setUserDetails } = useContext(AuthContext);
+  
 
   const handleFileUploadDialogOpen = () => {
     setFileUploadDialogOOpen(true);
@@ -116,9 +119,30 @@ const ResponsiveCard = ({
     setFileUploadDialogOOpen(false);
   };
 
-  const handleFileUpload = (file) => {
-    // call your backend API here to upload the file
+  const handleFileUpload = (file, resourceType = 'gym') => {
+    // call your backend API here to upload the file, can upload pics for facility as well, now just
+    // handle gym pic upload
     console.log(file);
+
+    const formData = new FormData();
+    formData.append("gymImage", file, "[PROXY]");
+
+    const requestOptions = {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${userDetails.accessToken}`
+      },
+      body: formData,
+      redirect: 'follow'
+    };
+    fetchData(`/image-manager/gym/${resourceType}/${id}`, requestOptions)
+      .then(data => {
+        console.log(data);
+      })
+      .catch((error) => {
+        console.log(error)
+      }); 
+
   };
   return (
     <Card className={classes.cardContainer}>
@@ -127,7 +151,7 @@ const ResponsiveCard = ({
           <CardMedia className={classes.media} component="img" image={imageUrl} title={title}/>
         </div>
         <Button className={classes.mediaButton} variant="outlined" color="secondary" onClick={handleFileUploadDialogOpen}>
-          Manage images
+          Manage images - GYM
         </Button>
         <FileUploaderDialog open={fileUploadDialogOpen} onClose={handleFileUploadDialogClose} onFileUpload={handleFileUpload} />
       </Box>
@@ -156,4 +180,4 @@ const ResponsiveCard = ({
   );
 };
 
-export { ResponsiveCard };
+export { GymAdminCard };

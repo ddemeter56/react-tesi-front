@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { makeStyles } from '@mui/styles';
-import { ResponsiveCard } from './GymCardComponent';
+import { GymAdminCard } from './GymCardComponent';
 import { Typography } from '@mui/material';
 import Input from '@mui/material/Input';
 
@@ -70,7 +70,8 @@ const GymListContainer = ({ gymList, isGymLoading, gymLoadError }) => {
       if (!isBeingFiltered) {
         console.log('ami nem filtered')
         return gymList?.gyms.map((gymItem) =>
-          <ResponsiveCard
+          <GymAdminCard
+            id={gymItem.id}
             imageUrl="https://picsum.photos/300/200"
             title={gymItem.addressString}
             description={gymItem.shortDescription}
@@ -85,7 +86,7 @@ const GymListContainer = ({ gymList, isGymLoading, gymLoadError }) => {
       } else {
         console.log('ami filtered')
         return filteredGymList?.map((gymItem) =>
-          <ResponsiveCard
+          <GymAdminCard
             imageUrl="https://picsum.photos/300/200"
             title={gymItem.addressString}
             description={gymItem.shortDescription}

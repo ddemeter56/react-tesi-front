@@ -1,4 +1,5 @@
 import React from 'react';
+/*
 import {
   XYPlot,
   XAxis,
@@ -80,5 +81,9 @@ const LineChart = ({ data }) => {
     </div>
   );
 }
+*/
 
+const LineChart = () => {
+  return <h1>Chart comes here</h1>
+}
 export default LineChart;
