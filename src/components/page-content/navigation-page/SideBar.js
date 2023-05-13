@@ -29,7 +29,7 @@ export default function TemporaryDrawer() {
     left: false,
   });
 
-  const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent)
+  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
 
   const toggleDrawer = (anchor, open) => (event) => {
     if (event && event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
@@ -51,8 +51,8 @@ export default function TemporaryDrawer() {
             open={state[anchor]}
             onClose={toggleDrawer(anchor, false)}
             onOpen={toggleDrawer(anchor, true)}
-            disableBackdropTransition={!iOS}
-            disableDiscovery={iOS}>
+            disableBackdropTransition={!isIOS}
+            disableDiscovery={isIOS}>
             <div className={classes.drawerHeader}>
               <IconButton onClick={toggleDrawer(anchor, false)}>
                 <CloseIcon />
