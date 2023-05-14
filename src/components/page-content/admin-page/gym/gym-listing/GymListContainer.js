@@ -77,10 +77,7 @@ const GymListContainer = ({ gymList, isGymLoading, gymLoadError }) => {
             description={gymItem.shortDescription}
             button1Text="Trainers"
             button1OnClick={() => console.log(gymItem.referenceCode)}
-            button2Text="Access management"
-            button2OnClick={() => console.log(gymItem.id)}
             onEditClick={() => console.log(gymItem.id)}
-            onMediaUpdateClick={() => alert('valami')}
           />
         )
       } else {
@@ -92,10 +89,7 @@ const GymListContainer = ({ gymList, isGymLoading, gymLoadError }) => {
             description={gymItem.shortDescription}
             button1Text="Trainers"
             button1OnClick={() => console.log(gymItem.referenceCode)}
-            button2Text="Access management"
-            button2OnClick={() => console.log(gymItem.id)}
             onEditClick={() => console.log(gymItem.id)}
-            onMediaUpdateClick={() => alert('valami')}
           />
         )
       }

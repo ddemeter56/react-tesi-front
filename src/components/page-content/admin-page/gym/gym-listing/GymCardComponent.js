@@ -4,6 +4,7 @@ import { Card, CardContent, Typography, Button, CardMedia, Box } from '@mui/mate
 import { Edit } from '@mui/icons-material';
 import AuthContext from '../../../../../context/auth.context';
 import FileUploaderDialog from '../../../../commons/dialog/FileUploaderDialog';
+import AccessManagementDialog from '../../../../commons/dialog/AccessManagementDialog';
 import { fetchData } from '../../../../../utils/urlQuery';
 
 const useStyles = makeStyles((theme) => ({
@@ -107,21 +108,30 @@ const GymAdminCard = ({
   onEditClick,
 }) => {
   const classes = useStyles();
-  const [fileUploadDialogOpen, setFileUploadDialogOOpen] = useState(false);
+  const [fileUploadDialogOpen, setFileUploadDialogOpen] = useState(false);
+  const [accessManagementDialogOpen, setAccessManagementDialogOpen] = useState(false);
   const { userDetails, setUserDetails } = useContext(AuthContext);
   
+  const handleAccessManagementDialogOpen = () => {
+    setAccessManagementDialogOpen(true);
+  };
+
+  const handleAccessManagementDialogClose = () => {
+    setAccessManagementDialogOpen(false);
+  };
 
   const handleFileUploadDialogOpen = () => {
-    setFileUploadDialogOOpen(true);
+    setFileUploadDialogOpen(true);
   };
 
   const handleFileUploadDialogClose = () => {
-    setFileUploadDialogOOpen(false);
+    setFileUploadDialogOpen(false);
   };
 
   const handleFileUpload = (file, resourceType = 'gym') => {
     // call your backend API here to upload the file, can upload pics for facility as well, now just
-    // handle gym pic upload
+    // handle gym pic upload, 
+    // TODO: consider multi pic upload, implement facility pics upload
     console.log(file);
 
     const formData = new FormData();
@@ -142,8 +152,29 @@ const GymAdminCard = ({
       .catch((error) => {
         console.log(error)
       }); 
-
   };
+
+  const handleAccessManagementSubmit = (values) => {
+    console.log(values);
+
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${userDetails.accessToken}`
+      },
+      body: JSON.stringify({ email: values.email, gymId: id })
+    };
+
+    fetchData(`/user-invite/${'GYM_MANAGER'}`, options)
+      .then(data => {
+        console.log(data);
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+  };
+
   return (
     <Card className={classes.cardContainer}>
       <Box className={classes.mediaContainer}>
@@ -171,9 +202,10 @@ const GymAdminCard = ({
           <Button className={classes.buttonMargin} variant="outlined" onClick={button1OnClick}>
             {button1Text}
           </Button>
-          <Button className={classes.buttonMargin} variant="outlined" onClick={button2OnClick}>
-            {button2Text}
+          <Button className={classes.buttonMargin} variant="outlined" onClick={handleAccessManagementDialogOpen}>
+            Access management!
           </Button>
+          <AccessManagementDialog open={accessManagementDialogOpen} onClose={handleAccessManagementDialogClose} onTextValueSubmit={handleAccessManagementSubmit} />
         </div>
       </CardContent>
     </Card>
