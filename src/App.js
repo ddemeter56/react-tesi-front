@@ -33,6 +33,8 @@ function Contact() {
 function App() {
   const authInit = processUrlParams();
 
+  console.log('I WAS BUILT')
+  console.log(theme)
   const initUserDetails = authInit ? authInit : {  
     isLoggedIn: false, // logged in or not
     accessToken: null, // keycloak token
