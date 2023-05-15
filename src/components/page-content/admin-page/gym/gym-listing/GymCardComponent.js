@@ -3,6 +3,7 @@ import { makeStyles } from '@mui/styles';
 import { Card, CardContent, Typography, Button, CardMedia, Box } from '@mui/material';
 import { Edit } from '@mui/icons-material';
 import AuthContext from '../../../../../context/auth.context';
+import {SnackbarContext} from '../../../../../context/snackbar.context';
 import FileUploaderDialog from '../../../../commons/dialog/FileUploaderDialog';
 import AccessManagementDialog from '../../../../commons/dialog/AccessManagementDialog';
 import { fetchData } from '../../../../../utils/urlQuery';
@@ -111,6 +112,7 @@ const GymAdminCard = ({
   const [fileUploadDialogOpen, setFileUploadDialogOpen] = useState(false);
   const [accessManagementDialogOpen, setAccessManagementDialogOpen] = useState(false);
   const { userDetails, setUserDetails } = useContext(AuthContext);
+  const { handleSnackbar } = useContext(SnackbarContext);
   
   const handleAccessManagementDialogOpen = () => {
     setAccessManagementDialogOpen(true);
@@ -157,6 +159,7 @@ const GymAdminCard = ({
   const handleAccessManagementSubmit = (values) => {
     console.log(values);
 
+    handleSnackbar('This is a Snackbar message', 'success');
     const options = {
       method: 'POST',
       headers: {
@@ -169,9 +172,12 @@ const GymAdminCard = ({
     fetchData(`/user-invite/${'GYM_MANAGER'}`, options)
       .then(data => {
         console.log(data);
+        
+        handleSnackbar('This is a Snackbar message', 'success');
       })
       .catch((error) => {
-        console.log(error)
+        console.log('ERROR' + error)
+        handleSnackbar('This is a Snackbar message', 'success');
       })
   };
 
@@ -199,7 +205,7 @@ const GymAdminCard = ({
           {description}
         </Typography>
         <div className={classes.buttonContainer}>
-          <Button className={classes.buttonMargin} variant="outlined" onClick={button1OnClick}>
+          <Button className={classes.buttonMargin} variant="outlined" onClick={() => handleSnackbar('This is a Snackbar message', 'success')}>
             {button1Text}
           </Button>
           <Button className={classes.buttonMargin} variant="outlined" onClick={handleAccessManagementDialogOpen}>
