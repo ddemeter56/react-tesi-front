@@ -16,6 +16,9 @@ import AuthContext from '../../../context/auth.context';
 import Context from '../../../context/register.context';
 import CustomizedSnackbars from '../snackbar/CustomizedSnackbar';
 import { useHistory } from 'react-router-dom';
+import { SnackbarContext } from '../../../context/snackbar.context';
+import { HTTP_ERROR_CODES } from '../../../utils/httpCodes';
+import { SpinnerContext } from '../../../context/spinner.context';
 
 const useStyles = makeStyles((theme) => ({
   stepperContainer: {
@@ -43,7 +46,10 @@ const HorizontalLinearStepper = ({ steps }) => {
   const [activeStep, setActiveStep] = useState(0);
   const [skipped, setSkipped] = useState(new Set());
   const { userDetails, setUserDetails } = useContext(AuthContext);
+  // TODO: refactor this terrible naming
   const { state } = useContext(Context);
+  const { handleSnackbar } = useContext(SnackbarContext);
+  const { setLoading } = useContext(SpinnerContext);
   const history = useHistory();
 
   console.log(steps)
@@ -73,6 +79,7 @@ const HorizontalLinearStepper = ({ steps }) => {
   };
 
   const handleFinish = () => {
+    setLoading(true);
     fetchData('/register/gym', {
       headers: {
         'Content-Type': 'application/json',
@@ -83,24 +90,24 @@ const HorizontalLinearStepper = ({ steps }) => {
     })
       .then(data => {
         console.log(data);
-        if(data.statusCode === 400) {
-          alert(data.message + '\n' + data.error)
-        }
-        if (data.statusCode === 403) {
-          alert(data.message + '\n' + data.error)
-        } else if (data.statusCode === 500) {
-          alert(data.message + '\n' + data.error)
-        } else if (data.statusCode === 400) {
-          const alertMessage = data.message.map(i => i)
-          alert(alertMessage.join('\n'))
+        if (HTTP_ERROR_CODES.includes(data.statusCode)) {
+          if (Array.isArray(data.message)) {
+            const alertMessage = data.message.map(i => i)
+            alert(alertMessage.join('\n'));
+            handleSnackbar(alertMessage, 'error');
+          };
+          handleSnackbar(data.message + ': ' + data.error, 'error')
         } else if (data.message === 'Gym successfully registered') {
-          alert('Gym successfully registered'); 
+          alert('Gym successfully registered');
+
+          handleSnackbar('Gym successfully registered', 'success');
           redirectToAdminPage();
         }
       })
       .catch((error) => {
         console.log(JSON.stringify(error))
       });
+    setLoading(false);
   }
 
   const handleBack = () => {
@@ -129,7 +136,7 @@ const HorizontalLinearStepper = ({ steps }) => {
 
   return (
     <Box className={classes.stepperContainer}>
-      <CustomizedSnackbars type="succes" open={true} message="asd"/>
+      <CustomizedSnackbars type="succes" open={true} message="asd" />
       <Stepper activeStep={activeStep}>
         {steps.map((step, index) => {
           const stepProps = {};

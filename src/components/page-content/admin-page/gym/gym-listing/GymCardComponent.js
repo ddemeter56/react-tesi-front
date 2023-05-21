@@ -3,10 +3,12 @@ import { makeStyles } from '@mui/styles';
 import { Card, CardContent, Typography, Button, CardMedia, Box } from '@mui/material';
 import { Edit } from '@mui/icons-material';
 import AuthContext from '../../../../../context/auth.context';
-import {SnackbarContext} from '../../../../../context/snackbar.context';
+import { SnackbarContext } from '../../../../../context/snackbar.context';
+import { SpinnerContext } from '../../../../../context/spinner.context';
 import FileUploaderDialog from '../../../../commons/dialog/FileUploaderDialog';
 import AccessManagementDialog from '../../../../commons/dialog/AccessManagementDialog';
 import { fetchData } from '../../../../../utils/urlQuery';
+import { HTTP_SUCCESS_CODES } from '../../../../../utils/httpCodes';
 
 const useStyles = makeStyles((theme) => ({
   cardContainer: {
@@ -27,16 +29,16 @@ const useStyles = makeStyles((theme) => ({
   },
   imgContainer: {
     paddingBottom: "60%",
-    background:"#EEE",
-    height:0,
-    position:"relative",
+    background: "#EEE",
+    height: 0,
+    position: "relative",
     marginBottom: 15,
   },
   media: {
-    width:"100%",
-    height:"100%",
-    display:"block",
-    position:"absolute",
+    width: "100%",
+    height: "100%",
+    display: "block",
+    position: "absolute",
   },
   mediaButton: {
     position: 'absolute',
@@ -111,9 +113,11 @@ const GymAdminCard = ({
   const classes = useStyles();
   const [fileUploadDialogOpen, setFileUploadDialogOpen] = useState(false);
   const [accessManagementDialogOpen, setAccessManagementDialogOpen] = useState(false);
+
   const { userDetails, setUserDetails } = useContext(AuthContext);
   const { handleSnackbar } = useContext(SnackbarContext);
-  
+  const { setLoading } = useContext(SpinnerContext)
+
   const handleAccessManagementDialogOpen = () => {
     setAccessManagementDialogOpen(true);
   };
@@ -135,7 +139,7 @@ const GymAdminCard = ({
     // handle gym pic upload, 
     // TODO: consider multi pic upload, implement facility pics upload
     console.log(file);
-
+    setLoading(true);
     const formData = new FormData();
     formData.append("gymImage", file, "[PROXY]");
 
@@ -150,16 +154,23 @@ const GymAdminCard = ({
     fetchData(`/image-manager/gym/${resourceType}/${id}`, requestOptions)
       .then(data => {
         console.log(data);
+        if (HTTP_SUCCESS_CODES.includes(data.statusCode)) {
+          handleSnackbar('Picture has been uploaded successfully', 'success');
+        } else {
+          handleSnackbar(data.message, 'error');
+        }
       })
       .catch((error) => {
         console.log(error)
-      }); 
+      });
+    setLoading(false);
+    handleFileUploadDialogClose();
   };
 
-  const handleAccessManagementSubmit = (values) => {
+  const handleAccessManagementSubmit = async (values) => {
     console.log(values);
-
-    handleSnackbar('This is a Snackbar message', 'success');
+    setLoading(true);
+    // handleSnackbar('This is a Snackbar message', 'success');
     const options = {
       method: 'POST',
       headers: {
@@ -169,23 +180,29 @@ const GymAdminCard = ({
       body: JSON.stringify({ email: values.email, gymId: id })
     };
 
-    fetchData(`/user-invite/${'GYM_MANAGER'}`, options)
-      .then(data => {
-        console.log(data);
-        
-        handleSnackbar('This is a Snackbar message', 'success');
-      })
-      .catch((error) => {
-        console.log('ERROR' + error)
-        handleSnackbar('This is a Snackbar message', 'success');
-      })
+    try {
+      await fetchData(`/user-invite/${'GYM_MANAGER'}`, options)
+        .then(data => {
+          console.log(data);
+          if (HTTP_SUCCESS_CODES.includes(data.statusCode)) {
+            handleSnackbar('This is a Snackbar message', 'success');
+          } else {
+            handleSnackbar(data.message, 'error');
+          }
+        })
+    } catch (error) {
+      console.log(error)
+      handleSnackbar("System error, please try again later", 'error');
+    }
+    setLoading(false);
+    handleAccessManagementDialogClose();
   };
 
   return (
     <Card className={classes.cardContainer}>
       <Box className={classes.mediaContainer}>
         <div className={classes.imgContainer}>
-          <CardMedia className={classes.media} component="img" image={imageUrl} title={title}/>
+          <CardMedia className={classes.media} component="img" image={imageUrl} title={title} />
         </div>
         <Button className={classes.mediaButton} variant="outlined" color="secondary" onClick={handleFileUploadDialogOpen}>
           Manage images - GYM

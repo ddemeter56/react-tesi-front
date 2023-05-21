@@ -1,1 +1,3 @@
-export const HTTP_SUCCESS_CODES = [200, 201, 202, 203, 204];
+export const HTTP_SUCCESS_CODES = [200, 201, 202, 203, 204, 205, 206, 207, 208];
+
+export const HTTP_ERROR_CODES = [400, 401, 403, 404, 500, 503, 504];

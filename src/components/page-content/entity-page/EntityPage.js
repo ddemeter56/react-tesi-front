@@ -29,7 +29,7 @@ const EntityPage = () => {
   
   if(error) {
     return(
-      <ErrorPage type="ERROR" message={error} />
+      <ErrorPage type="Error" message={error} />
     )
   }
   return(

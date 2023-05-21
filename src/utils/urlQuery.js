@@ -20,12 +20,11 @@ export const encodeMultipleQueryData = (array, keyName) => {
   return `&${keyName}=${encodeURIComponent(codeValues.join(','))}`;
 }
 
-
+// By design there is no error handling here, because we send back the exact error in response.json, if theres any
 export const fetchData = async (service, options) => {
   const response = await fetch(`${url}${service}`, {
     ...options,
     cache: 'no-cache',
   })
-  console.log(response);
   return response.json();
 }  

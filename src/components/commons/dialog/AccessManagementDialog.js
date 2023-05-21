@@ -21,7 +21,6 @@ export default function AccessManagementDialog(props) {
   const handleTextSubmit = () => {
     // handle text value submission logic here
     onTextValueSubmit({ email: textValue, role: selectedOption });
-    onClose();
   };
 
   const isValidEmail = (value) => {

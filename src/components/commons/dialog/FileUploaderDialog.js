@@ -17,7 +17,6 @@ export default function FileUploaderDialog(props) {
   const handleFileUpload = () => {
     // handle file upload logic here
     onFileUpload(selectedFile);
-    onClose();
   };
 
   return (

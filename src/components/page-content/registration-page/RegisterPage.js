@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -17,6 +17,7 @@ import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import { API_PATH } from '../../../utils/apiPaths';
 import { redirectToLogin } from '../../../utils/auth';
 import { HTTP_SUCCESS_CODES } from '../../../utils/httpCodes';
+import { SnackbarContext } from '../../../context/snackbar.context';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -40,30 +41,29 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const renderIcon = (responseData) => {
-  if(!responseData) return <LockOutlinedIcon />;
+  if (!responseData) return <LockOutlinedIcon />;
 
-  if(HTTP_SUCCESS_CODES.includes(responseData)) 
-  { return <CheckCircleIcon/> } else 
-  { return <HighlightOffIcon  />}
+  if (HTTP_SUCCESS_CODES.includes(responseData)) { return <CheckCircleIcon /> } else { return <HighlightOffIcon /> }
 }
 
 const renderText = (responseData) => {
-  if(!responseData) return (
+  if (!responseData) return (
     <Typography component="h1" variant="h5">
-      Sign up 
+      Sign up
     </Typography>
   );
 
-  
-  if(HTTP_SUCCESS_CODES.includes(responseData)) { 
+
+  if (HTTP_SUCCESS_CODES.includes(responseData)) {
     return (
       <Typography component="h1" variant="h5" style={{ color: "green" }}>
         Sikeres regisztráció
       </Typography>
-    )} else { 
+    )
+  } else {
     return (
       <Typography component="h1" variant="h5" style={{ color: "red" }}>
-        Hiba a regisztráció során 
+        Hiba a regisztráció során
       </Typography>
     )
   }
@@ -80,16 +80,17 @@ export default function RegisterPage({ type }) {
     password: ''
   });
   const [responseData, setResponse] = useState(null);
+  const { handleSnackbar } = useContext(SnackbarContext);
 
   const handleFormChange = (event) => {
     setFormValues({
       ...formValues,
-      [event.target.name]: event.target.value, 
+      [event.target.name]: event.target.value,
     })
   }
 
   const renderButton = (responseData) => {
-    if(!responseData) 
+    if (!responseData)
       return (
         <>
           <Button
@@ -99,7 +100,7 @@ export default function RegisterPage({ type }) {
             className={classes.submit}
             onClick={submitForm}
           >
-          Regisztrálás
+            Regisztrálás
           </Button>
           <Grid container justifyContent="center">
             <Grid item>
@@ -110,9 +111,9 @@ export default function RegisterPage({ type }) {
           </Grid>
         </>
       );
-  
-    
-    if(HTTP_SUCCESS_CODES.includes(responseData)) { 
+
+
+    if (HTTP_SUCCESS_CODES.includes(responseData)) {
       return (
         <Button
           fullWidth
@@ -123,8 +124,9 @@ export default function RegisterPage({ type }) {
         >
           Bejelentkezés
         </Button>
-      )} 
-    else { 
+      )
+    }
+    else {
       return (
         <>
           <Button
@@ -134,7 +136,7 @@ export default function RegisterPage({ type }) {
             className={classes.submit}
             onClick={submitForm}
           >
-          Regisztrálás
+            Regisztrálás
           </Button>
           <Grid container justifyContent="flex-end">
             <Grid item>
@@ -144,26 +146,34 @@ export default function RegisterPage({ type }) {
             </Grid>
           </Grid>
         </>
-      )}
-    
+      )
+    }
+
   }
   console.log(responseData);
   const submitForm = () => {
-    if(termsAccepted) {
+    if (termsAccepted) {
       fetch(`${getEnvironment()}${API_PATH.USER_REGISTER}${type}`, {
-        headers: new Headers({'content-type': 'application/json'}),
+        headers: new Headers({ 'content-type': 'application/json' }),
         method: "POST",
         body: JSON.stringify(formValues)
       })
-        .then(response => setResponse(response.status))
+        .then(response => {
+          setResponse(response.status);
+          if (HTTP_SUCCESS_CODES.includes(response.status)) {
+            handleSnackbar('Sikeres regisztráció', 'success');
+          } else {
+            handleSnackbar('Sikertelen regisztráció', 'error');
+          }
+        })
     } else {
       setShowAcceptError(true)
     }
   }
-  
+
   const handleTermAccept = () => {
     settermsAccepted(!termsAccepted);
-    if(!termsAccepted) {
+    if (!termsAccepted) {
       setShowAcceptError(false)
     }
   }
@@ -225,7 +235,7 @@ export default function RegisterPage({ type }) {
               <p style={{ color: showAcceptError ? "red" : "black" }}>A használati feltételeket elolvastam és elfogadom</p>
             </Grid>
           </Grid>
-          { 
+          {
             renderButton(responseData)
           }
         </form>
