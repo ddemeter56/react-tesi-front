@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
 
 const AdminPage = () => {
   const classes = useStyles();
-  const { userDetails, setUserDetails } = useContext(AuthContext);
+  const { userDetails } = useContext(AuthContext);
   const [ responseData, setResponseData ] = useState(''); 
 
   const renderAdminPage = (rolesArray) => {

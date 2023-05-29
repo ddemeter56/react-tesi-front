@@ -114,7 +114,7 @@ const GymAdminCard = ({
   const [fileUploadDialogOpen, setFileUploadDialogOpen] = useState(false);
   const [accessManagementDialogOpen, setAccessManagementDialogOpen] = useState(false);
 
-  const { userDetails, setUserDetails } = useContext(AuthContext);
+  const { userDetails } = useContext(AuthContext);
   const { handleSnackbar } = useContext(SnackbarContext);
   const { setLoading } = useContext(SpinnerContext)
 

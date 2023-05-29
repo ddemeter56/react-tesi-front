@@ -35,7 +35,7 @@ const LandingSpeech = ({ onSearchClick, onDetailsClick }) => {
         A mozgás közössége
       </Typography>
       <Divider />
-      <Typography display="inline" variant="h5" color="textSecondary" fontFamily="titilliumLight">
+      <Typography variant="h5" color="textSecondary" fontFamily="titilliumLight">
         <u>Találj</u> edzőt, vagy termet. <u>Foglalj</u> időpontot. <u>Kövesd a változást</u> - <u>Ingyen!</u>
       </Typography>
       <Typography variant="h6" color="textSecondary">

@@ -17,7 +17,7 @@ const GymRegisterPage = ({userDetails}) => {
     console.log(responseData)
     if(!userDetails.isLoggedIn) {
       console.log('ADMIN PAGE USER NOT LOGGED IN')
-      // redirectToLogin();
+      redirectToLogin();
     } else {
       fetchData('/user-management/role-check', {
         headers: {
@@ -35,6 +35,7 @@ const GymRegisterPage = ({userDetails}) => {
         }); 
 
     }  
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userDetails.isLoggedIn, setResponseData, userDetails.accessToken]);
 
   if(!userDetails.isLoggedIn) {

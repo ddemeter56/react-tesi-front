@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Button, Dialog, DialogActions, DialogContent, DialogTitle } from '@mui/material';
-import { Upload } from '@mui/icons-material';
 import FileUploader from '../file-uploader/FileUploader';
 
 export default function FileUploaderDialog(props) {

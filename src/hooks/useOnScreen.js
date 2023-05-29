@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 
 export default function useOnScreen(ref, msTimeOut = 0) {
@@ -23,6 +23,7 @@ export default function useOnScreen(ref, msTimeOut = 0) {
     observer.observe(ref.current)
     // Remove the observer as soon as the component is unmounted
     return () => { observer.disconnect() }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return isIntersecting

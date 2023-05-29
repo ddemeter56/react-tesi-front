@@ -42,7 +42,7 @@ export default function Navigation() {
   const classes = useStyles();
   const history = useHistory();
   const { t } = useTranslation();
-  const { userDetails, setUserDetails } = useContext(AuthContext);
+  const { userDetails } = useContext(AuthContext);
   
   console.log(userDetails);
 

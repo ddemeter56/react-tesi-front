@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -7,7 +7,7 @@ import {
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import AuthContext from './context/auth.context';
 import { SnackbarProvider } from './context/snackbar.context';
-import { SpinnerContext, SpinnerProvider } from './context/spinner.context';
+import { SpinnerProvider } from './context/spinner.context';
 import GlobalSnackbar from './components/commons/snackbar/GlobalSnackbar';
 import Navigation from "./components/Navigation";
 import Home from './components/Home';

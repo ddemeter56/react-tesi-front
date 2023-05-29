@@ -1,12 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { makeStyles } from '@mui/styles';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
 import TextField from "@mui/material/TextField";
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
@@ -41,11 +34,8 @@ const InputsWithTable = ({ formData, stateIdentifier, type = 'gymPrice' }) => {
   const classes = useStyles();
   const { state, handleInputsWithTable } = useContext(Context);
   const [inputCollection, setInputCollection] = useState(createInitCollection)
-  const [dataRow, setDataRow] = useState(state[stateIdentifier.state])
+  const [dataRow] = useState(state[stateIdentifier.state])
 
-  const formDataNames = formData.map(item => item.name)
-
-  
   function createInitCollection() {
     let objectWithFormKeys = {}
     formData.map(i => {
@@ -77,7 +67,6 @@ const InputsWithTable = ({ formData, stateIdentifier, type = 'gymPrice' }) => {
 
   function addToTableAndForm(openingObject) {
     if (!isDuplicate(inputCollection, state[stateIdentifier.state])) {
-      // setDataRow(dataRow => [...dataRow, inputCollection])
       handleInputsWithTable(stateIdentifier.reducer, [...state[stateIdentifier.state], convertFieldValuesOf(inputCollection)])
     } else {
       alert('Already existing')
@@ -85,7 +74,8 @@ const InputsWithTable = ({ formData, stateIdentifier, type = 'gymPrice' }) => {
   }
 
   useEffect(() => {
-    handleInputsWithTable(stateIdentifier.reducer, dataRow)
+    handleInputsWithTable(stateIdentifier.reducer, dataRow);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dataRow])
   
   function isDuplicate(act, arr) {
@@ -104,7 +94,6 @@ const InputsWithTable = ({ formData, stateIdentifier, type = 'gymPrice' }) => {
     } else {
       let listWithoutItems = state[stateIdentifier.state]
       rowsToDelete.map(rowToDelete => {
-        // setDataRow((current) => current.filter(row => (row.categoryType + row.ticketType) !== rowToDelete))
         listWithoutItems = listWithoutItems.filter(row => (row.categoryType + row.ticketType) !== rowToDelete)
       })
       handleInputsWithTable(stateIdentifier.reducer, listWithoutItems)

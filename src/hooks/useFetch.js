@@ -22,7 +22,8 @@ export function useFetch(uri, options = null) {
         setError(error)
         setLoading(false);
       });
-  }, [uri, env ]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [uri, env]);
   
   return {
     loading,

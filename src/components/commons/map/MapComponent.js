@@ -1,11 +1,8 @@
 import React from 'react';
 import {
   GoogleMap,
-  useLoadScript,
-  Marker,
-  InfoWindow,
+  useLoadScript
 } from "@react-google-maps/api";
-import LocationOnIcon from '@mui/icons-material/LocationOn';
 const libraries = ["places"];
 
 const mapContainerStyle = {

@@ -45,7 +45,7 @@ const generateStepContent = (step) => {
 const HorizontalLinearStepper = ({ steps }) => {
   const [activeStep, setActiveStep] = useState(0);
   const [skipped, setSkipped] = useState(new Set());
-  const { userDetails, setUserDetails } = useContext(AuthContext);
+  const { userDetails } = useContext(AuthContext);
   // TODO: refactor this terrible naming
   const { state } = useContext(Context);
   const { handleSnackbar } = useContext(SnackbarContext);

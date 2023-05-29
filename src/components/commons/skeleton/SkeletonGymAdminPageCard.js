@@ -1,7 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@mui/styles';
-import { Card, CardContent, Typography, Button, CardMedia, Box } from '@mui/material';
-import { Edit } from '@mui/icons-material';
+import { Card, CardContent, Box } from '@mui/material';
 import Skeleton from '@mui/lab/Skeleton';
 
 const useStyles = makeStyles((theme) => ({
@@ -93,16 +92,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const SkeletonGymAdminPageCard = ({
-  imageUrl,
-  title,
-  description,
-  button1Text,
-  button1OnClick,
-  button2Text,
-  button2OnClick,
-  onEditClick,
-}) => {
+const SkeletonGymAdminPageCard = () => {
   const classes = useStyles();
 
   return (

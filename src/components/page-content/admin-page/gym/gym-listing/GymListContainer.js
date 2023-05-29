@@ -6,11 +6,8 @@ import Input from '@mui/material/Input';
 
 import { Link } from 'react-router-dom';
 import Button from '@mui/material/Button';
-import TextField from '@mui/material/TextField';
 import SearchIcon from '@mui/icons-material/Search';
 import InputAdornment from '@mui/material/InputAdornment';
-import Divider from '@mui/material/Divider';
-import Chip from '@mui/material/Chip';
 import { SkeletonGymAdminPageCard } from '../../../../commons/skeleton/SkeletonGymAdminPageCard';
 import ErrorPage from '../../../../commons/error/ErrorPage';
 
@@ -42,14 +39,6 @@ const GymListContainer = ({ gymList, isGymLoading, gymLoadError }) => {
   console.log(gymList)
   const [searchText, setSearchText] = useState('');
   const [filteredGymList, setFilteredGymList] = useState(gymList)
-  const imageUrl = 'https://source.unsplash.com/random';
-  const title = 'Example Card';
-  const description =
-    'This is an example card. It has some text in the middle and two buttons under the text. some text in the middle and two buttons under the text. h some text in the middle and two buttons under the text. h some text in the middle and two buttons under the text. h some text in the middle and two buttons under the text. h has some text in the middle and two buttons under the text has some text in the middle and two buttons under the text This is an example card. It has some text in the middle and two buttons under the text.';
-  const button1Text = 'Button 1';
-  const button1OnClick = () => alert('Button 1 clicked');
-  const button2Text = 'Button 2';
-  const button2OnClick = () => alert('Button 2 clicked');
   const classes = useStyles();
 
   const handleGymSearchChange = (event) => {

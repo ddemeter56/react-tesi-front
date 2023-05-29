@@ -42,10 +42,10 @@ const DetailedCard = ({ icon, title, description, timeout }) => {
         {icon}
       </Grid>
       <Grid item>
-        <Typography inline variant="h5" fontFamily="titilliumBlack">{title}</Typography>
+        <Typography variant="h5" fontFamily="titilliumBlack">{title}</Typography>
       </Grid>
       <Grid item>
-        <Typography inline variant="subtitle1" style={{ textAlign: "center", padding: 15 }} >{description}</Typography>
+        <Typography variant="subtitle1" style={{ textAlign: "center", padding: 15 }} >{description}</Typography>
       </Grid>
     </Grid>
   )
@@ -61,7 +61,7 @@ const HomeDetailedCards = () => {
           isShowGym ?
             gymCards.map((item, index) => {
               return ( 
-                <Grow in={isShowGym}>
+                <Grow key={index} in={isShowGym}>
                   <Grid item xl={3}> 
                     <DetailedCard icon={item.icon} title={item.title} description={item.description} timeout={index * 500}/>
                   </Grid> 
@@ -71,7 +71,7 @@ const HomeDetailedCards = () => {
             :
             trainerCards.map((item, index) => {
               return ( 
-                <Grid item xl={3}> 
+                <Grid key={index} item xl={3}> 
                   <DetailedCard icon={item.icon} title={item.title} description={item.description} timeout={index * 500}/>
                 </Grid> 
               )

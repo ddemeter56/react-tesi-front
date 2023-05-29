@@ -1,6 +1,5 @@
 import { useState, forwardRef } from 'react';
 import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 
@@ -16,10 +15,6 @@ const Alert = forwardRef(function Alert(props, ref) {
  */
 export default function CustomizedSnackbars({ message, type, shoudOpen }) {
   const [open, setOpen] = useState(shoudOpen);
-
-  const handleClick = () => {
-    setOpen(true);
-  };
 
   const handleClose = (event, reason) => {
     if (reason === 'clickaway') {
