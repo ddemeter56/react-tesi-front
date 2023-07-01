@@ -74,7 +74,6 @@ const useStyles = makeStyles((theme) => ({
       position: 'static',
       display: 'block',
       textAlign: 'center',
-      display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
     },

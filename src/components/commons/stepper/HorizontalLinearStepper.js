@@ -13,7 +13,7 @@ import SelectorAndDetails from '../form/SelectorAndDetails';
 import InputsWithTable from '../form/InputsWithTable'
 import { fetchData } from '../../../utils/urlQuery';
 import AuthContext from '../../../context/auth.context';
-import Context from '../../../context/register.context';
+import Context from '../../../context/gym-register.context';
 import CustomizedSnackbars from '../snackbar/CustomizedSnackbar';
 import { useHistory } from 'react-router-dom';
 import { SnackbarContext } from '../../../context/snackbar.context';

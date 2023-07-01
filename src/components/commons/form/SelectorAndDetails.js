@@ -5,7 +5,7 @@ import Autocomplete from '@mui/material/Autocomplete';
 import changeObjectProperties from '../../../utils/changeObjectProperties';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-import Context from '../../../context/register.context';
+import Context from '../../../context/gym-register.context';
 
 const useStyles = makeStyles((theme) => ({
   selectorAndDetailsContainer: {

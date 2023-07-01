@@ -3,7 +3,7 @@ import { makeStyles } from '@mui/styles';
 import TextField from "@mui/material/TextField";
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
-import Context from '../../../context/register.context';
+import Context from '../../../context/gym-register.context';
 import EnhancedTable from '../enhanced-table/EnhancedTable';
 const useStyles = makeStyles((theme) => ({
   textField: {
@@ -38,7 +38,8 @@ const InputsWithTable = ({ formData, stateIdentifier, type = 'gymPrice' }) => {
 
   function createInitCollection() {
     let objectWithFormKeys = {}
-    formData.map(i => {
+
+    formData.forEach(i => {
       objectWithFormKeys = { ...objectWithFormKeys, [i.name]: defineTypeOfInputField(i) }
     })
     return objectWithFormKeys
@@ -93,7 +94,7 @@ const InputsWithTable = ({ formData, stateIdentifier, type = 'gymPrice' }) => {
       handleInputsWithTable(stateIdentifier.reducer, listWithoutItem)
     } else {
       let listWithoutItems = state[stateIdentifier.state]
-      rowsToDelete.map(rowToDelete => {
+      rowsToDelete.forEach(rowToDelete => {
         listWithoutItems = listWithoutItems.filter(row => (row.categoryType + row.ticketType) !== rowToDelete)
       })
       handleInputsWithTable(stateIdentifier.reducer, listWithoutItems)

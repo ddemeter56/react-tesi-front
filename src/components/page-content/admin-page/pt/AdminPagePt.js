@@ -36,12 +36,13 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const AdminPagePt = ({ userDetails }) => {
+const AdminPagePt = ({ type, userDetails }) => {
   const classes = useStyles();
   console.log(userDetails);
+  console.log("kutya" + type);
   return (
     <div className={classes.adminPageContainer}>
-      <DashboardHeader type={userDetails[0]} isRegistered={userDetails.isRegistered} />
+      <DashboardHeader type={type} isRegistered={userDetails.isRegistered} />
       <Grid container justifyContent="space-around" spacing={5}>
         <Grid item>
           <Grid container direction="column" spacing={4}>

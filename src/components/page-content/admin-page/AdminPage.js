@@ -45,7 +45,7 @@ const AdminPage = () => {
     if(rolesArray?.includes("personal_trainer")) {
       return (
         //TODO UserDetails because of isRegistered 
-        <AdminPagePt userDetails={userDetails}/>
+        <AdminPagePt type="personal_trainer" userDetails={userDetails}/>
       )
     }
     

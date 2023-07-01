@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { makeStyles } from '@mui/styles';
 import TextField from "@mui/material/TextField";
 import Grid from '@mui/material/Grid';
-import Context from '../../../context/register.context';
+import Context from '../../../context/gym-register.context';
 
 const useStyles = makeStyles((theme) => ({
   textField: {

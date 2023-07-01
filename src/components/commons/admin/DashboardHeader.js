@@ -19,12 +19,11 @@ const DashboardHeader = ({ type, isRegistered }) => {
   console.log(type);
   const redirectToRegisterPage = () => {
     let registerPage;
-    // if(type === 'personal_trainer') {
-    //   registerPage = 'trainer';
-    // }
-    //if (type === 'owner') {
-    registerPage = 'gym';
-    //}
+    if (type === 'personal_trainer') {
+      registerPage = 'trainer';
+    } else if (type === 'owner') {
+      registerPage = 'gym';
+    }
     history.push(`/register/${registerPage}`);
   };
   return (
@@ -36,9 +35,9 @@ const DashboardHeader = ({ type, isRegistered }) => {
         <SearchBox />
       </Grid>
       <Grid item>
-        { isRegistered ? 
-          <Button variant="outlined">Modify profile</Button> 
-          : 
+        {isRegistered ?
+          <Button variant="outlined">Modify profile</Button>
+          :
           <Button variant="outlined" className={`pulse`} onClick={redirectToRegisterPage}>Make your first register</Button>
         }
       </Grid>

@@ -7,7 +7,7 @@ import SkeletonEntityPage from '../../../commons/skeleton/SkeletonEntityPage';
 import { useFetch } from '../../../../hooks/useFetch';
 import { API_PATH } from '../../../../utils/apiPaths';
 import { GYM_BASIC_INFORMATION, GYM_OPENING_INFORMATION, GYM_PRICING_INFORMATION} from '../../../../constant-data/register-page-gym';
-import { Provider } from '../../../../context/register.context';
+import { GymRegisterProvider } from '../../../../context/gym-register.context';
 
 const GymRegisterPage = ({userDetails}) => {
   console.log(userDetails);
@@ -61,9 +61,9 @@ const GymRegisterPage = ({userDetails}) => {
   ]
 
   return (
-    <Provider>
+    <GymRegisterProvider>
       <RegisterPageContainer steps={steps} />
-    </Provider>
+    </GymRegisterProvider>
   )
 }
 

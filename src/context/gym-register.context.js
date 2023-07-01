@@ -91,7 +91,7 @@ const reducer = (state, action) => {
 
 const Context = React.createContext();
 
-export const Provider = ({ children }) => {
+export const GymRegisterProvider = ({ children }) => {
   const [ state, dispatch ] = React.useReducer(reducer, gymInitialState );
 
   const value = {

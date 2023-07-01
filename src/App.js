@@ -17,6 +17,7 @@ import EntityPage from './components/page-content/entity-page/EntityPage';
 import AdminPage from './components/page-content/admin-page/AdminPage';
 import { processUrlParams } from './utils/auth';
 import GymRegisterPage from './components/page-content/registration-page/gym/GymRegisterPage';
+import PtRegisterPage from './components/page-content/registration-page/pt/PtRegisterPage';
 
 const theme = createTheme({
   typography: {
@@ -75,6 +76,7 @@ function App() {
                   <GymRegisterPage userDetails={userDetails} />
                 </Route>
                 <Route path="/register/trainer">
+                  <PtRegisterPage />
                 </Route>
                 <Route path="/:entityPage">
                   <EntityPage />
