@@ -62,7 +62,7 @@ const GymRegisterPage = ({userDetails}) => {
 
   return (
     <GymRegisterProvider>
-      <RegisterPageContainer steps={steps} />
+      <RegisterPageContainer type="gym" steps={steps} />
     </GymRegisterProvider>
   )
 }

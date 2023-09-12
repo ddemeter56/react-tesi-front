@@ -76,7 +76,7 @@ function App() {
                   <GymRegisterPage userDetails={userDetails} />
                 </Route>
                 <Route path="/register/trainer">
-                  <PtRegisterPage />
+                  <PtRegisterPage userDetails={userDetails} />
                 </Route>
                 <Route path="/:entityPage">
                   <EntityPage />
