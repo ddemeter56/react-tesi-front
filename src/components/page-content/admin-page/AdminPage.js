@@ -1,4 +1,4 @@
-import React, { useContext,useState, useEffect } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import AuthContext from '../../../context/auth.context';
 import { redirectToLogin } from '../../../utils/auth';
 import { makeStyles } from '@mui/styles';
@@ -10,17 +10,17 @@ const useStyles = makeStyles((theme) => ({
   container: {
     padding: "15px",
     paddingTop: 70,
-    [theme.breakpoints.between('md', 'xl')] : {
+    [theme.breakpoints.between('md', 'xl')]: {
       width: "80%",
       margin: "0px auto"
     }
   },
   tableContainer: {
     maxHeight: 400,
-    [theme.breakpoints.between('md', 'xl')] : {
+    [theme.breakpoints.between('md', 'xl')]: {
       width: "100%",
     }
-  }, 
+  },
   chipContainer: {
     padding: 30
   }
@@ -30,26 +30,26 @@ const useStyles = makeStyles((theme) => ({
 const AdminPage = () => {
   const classes = useStyles();
   const { userDetails } = useContext(AuthContext);
-  const [ responseData, setResponseData ] = useState(''); 
+  const [responseData, setResponseData] = useState('');
 
   const renderAdminPage = (rolesArray) => {
     console.log(rolesArray)
 
-    if(rolesArray?.includes("gym_owner")) {
+    if (rolesArray?.includes("GYM_OWNER")) {
       return (
         //TODO UserDetails because of isRegistered 
-        <AdminPageGym type="owner" userDetails={userDetails} />
+        <AdminPageGym type="GYM_OWNER" userDetails={userDetails} />
       )
     }
-    
-    if(rolesArray?.includes("personal_trainer")) {
+
+    if (rolesArray?.includes("PERSONAL_TRAINER")) {
       return (
         //TODO UserDetails because of isRegistered 
-        <AdminPagePt type="personal_trainer" userDetails={userDetails}/>
+        <AdminPagePt type="PERSONAL_TRAINER" userDetails={userDetails} />
       )
     }
-    
-    if(rolesArray?.includes("gym_manager")) {
+
+    if (rolesArray?.includes("GYM_MANAGER")) {
       return (
         <AdminPageGym type="manager" />
       )
@@ -57,34 +57,26 @@ const AdminPage = () => {
   }
 
   useEffect(() => {
-    if(!userDetails.isLoggedIn) {
+    if (!userDetails.isLoggedIn) {
       console.log('ADMIN PAGE USER NOT LOGGED IN')
+
+      console.log(userDetails)
       redirectToLogin();
     } else {
-      fetchData('/user-management/role-check', {
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${userDetails.accessToken}` 
-        }
-      })
-        .then(data => {
-          console.log(data);
-          setResponseData(data);
-        })
-        .catch((error) => {
-          setResponseData(JSON.stringify(error))
-        }); 
 
-    }  
+      console.log(userDetails)
+      setResponseData({roles: userDetails.type})
+      console.log(responseData);
+    }
   }, [userDetails.isLoggedIn, setResponseData, userDetails.accessToken]);
-  
+
   return (
     <div className={classes.container}>
-      {responseData.statusCode === 403 ? 
+      {responseData.statusCode === 403 ?
         <>
           <code>{responseData.message}</code>
-        </> 
-        : 
+        </>
+        :
         <>
           {renderAdminPage(responseData.roles)}
         </>

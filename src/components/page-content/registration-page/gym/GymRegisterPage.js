@@ -22,7 +22,7 @@ const GymRegisterPage = ({userDetails}) => {
       fetchData('/user-management/role-check', {
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${userDetails.accessToken}` 
+          'Authorization': `Bearer ${userDetails.token}` 
         }
       })
         .then(data => {

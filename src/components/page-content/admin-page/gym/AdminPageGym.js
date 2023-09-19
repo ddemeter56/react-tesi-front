@@ -40,7 +40,7 @@ const AdminPageGym = ({ type, userDetails }) => {
     {
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${userDetails.accessToken}`
+        'Authorization': `Bearer ${userDetails.token}`
       }
     });
 

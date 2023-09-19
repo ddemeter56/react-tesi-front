@@ -13,6 +13,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import { PUBLIC_API_PATH } from '../../../utils/apiPaths';
 import { getEnvironment } from '../../../hooks/useFetch';
 import { SnackbarContext } from '../../../context/snackbar.context';
+import AuthContext from '../../../context/auth.context';
 
 const useStyles = makeStyles((theme) => ({
   dialogPaper: {
@@ -49,6 +50,7 @@ const LogInDialog = ({ open, onClose, title }) => {
   const [showSuccess, setShowSuccess] = useState(false);
   const { handleSnackbar } = useContext(SnackbarContext);
 
+  const { userDetails, setUserDetails } = useContext(AuthContext)
   const handleLogin = async () => {
     
     try {
@@ -69,8 +71,16 @@ const LogInDialog = ({ open, onClose, title }) => {
 
       if (response.ok) {
         // Successful login
+        const responseData = await response.json();
         console.log(response)
         handleSnackbar('Sikeres bejelentkezés', 'success');
+        setUserDetails({
+          isLoggedIn: true,
+          token: responseData.access_token,
+          expiresIn: 6000,
+          type: responseData.type
+        });
+        onClose();
       } else {
         // Handle authentication error or other response codes
         handleSnackbar('Sikertelen bejelentkezés', 'error');
