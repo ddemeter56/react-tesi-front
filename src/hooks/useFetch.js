@@ -33,6 +33,6 @@ export function useFetch(uri, options = null) {
 }
 
 /** if production fetch api */
-export function getEnvironment() {
-  return 'https://api.tesi.life/api/'; // if we had mock server
+export function getEnvironment(isPublicApi) {
+  return isPublicApi ? 'https://api.tesi.life/public-api/' : 'https://api.tesi.life/api/'; // if we had mock server
 }

@@ -14,7 +14,7 @@ import Container from '@mui/material/Container';
 import { getEnvironment } from '../../../hooks/useFetch';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
-import { API_PATH } from '../../../utils/apiPaths';
+import { PUBLIC_API_PATH } from '../../../utils/apiPaths';
 import { redirectToLogin } from '../../../utils/auth';
 import { HTTP_SUCCESS_CODES } from '../../../utils/httpCodes';
 import { SnackbarContext } from '../../../context/snackbar.context';
@@ -153,10 +153,10 @@ export default function RegisterPage({ type }) {
   console.log(responseData);
   const submitForm = () => {
     if (termsAccepted) {
-      fetch(`${getEnvironment()}${API_PATH.USER_REGISTER}${type}`, {
+      fetch(`${getEnvironment(true)}${PUBLIC_API_PATH.USER_REGISTER}`, {
         headers: new Headers({ 'content-type': 'application/json' }),
         method: "POST",
-        body: JSON.stringify(formValues)
+        body: JSON.stringify({...formValues, type: type.toUpperCase()})
       })
         .then(response => {
           setResponse(response.status);

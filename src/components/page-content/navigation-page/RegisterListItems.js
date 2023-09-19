@@ -81,13 +81,13 @@ export default function RegisterListItems() {
       </ListItem>
       <Collapse in={registerOpen} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
-          <ListItem button onClick={handleClickOpen('gym-owner')}>
+          <ListItem button onClick={handleClickOpen('GYM_OWNER')}>
             {t('registerGYM')}
           </ListItem>
-          <ListItem button onClick={handleClickOpen('pt')}>
+          <ListItem button onClick={handleClickOpen('PERSONAL_TRAINER')}>
             {t('registerPt')}
           </ListItem>
-          <ListItem button onClick={handleClickOpen('user')}>
+          <ListItem button onClick={handleClickOpen('VISITOR')}>
             {t('userRegister')}
           </ListItem>
         </List>

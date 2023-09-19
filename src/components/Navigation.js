@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import AuthContext from '../context/auth.context';
 import { makeStyles } from '@mui/styles';
 import AppBar from '@mui/material/AppBar';
@@ -12,6 +12,7 @@ import IconButton from '@mui/material/IconButton';
 import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
 import { redirectoToLogout, redirectToLogin } from '../utils/auth';
 import PersonIcon from '@mui/icons-material/Person';
+import LogInDialog from './commons/dialog/LogInDialog';
 
 import Badge from '@mui/material/Badge';
 
@@ -43,7 +44,15 @@ export default function Navigation() {
   const history = useHistory();
   const { t } = useTranslation();
   const { userDetails } = useContext(AuthContext);
-  
+  const [ isLogInDialogOpen, setIsLogInDialogOpen ] = useState(false);
+
+  const handleLogInDialogOpen = () => {
+    setIsLogInDialogOpen(true);
+  };
+
+  const handleLogInDialogClose = () => {
+    setIsLogInDialogOpen(false);
+  };
   console.log(userDetails);
 
   const redirectToAdminPage = () => {
@@ -72,12 +81,18 @@ export default function Navigation() {
               </IconButton>
             </>
             :
-            <Button onClick={redirectToLogin}>
+            <Button onClick={handleLogInDialogOpen}>
               {t("login")}
             </Button>
           }
         </Toolbar>
       </AppBar>
+      <LogInDialog 
+        open={isLogInDialogOpen}
+        onClose={handleLogInDialogClose}
+        title="Bejelentkezés"
+        actions={<Button onClick={handleLogInDialogClose}>Close</Button>}
+      />
     </div>
   );
 }
