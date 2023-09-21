@@ -83,7 +83,7 @@ const HorizontalLinearStepper = ({ steps }) => {
     fetchData('/register/gym', {
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${userDetails.accessToken}`
+        'Authorization': `Bearer ${userDetails.token}`
       },
       method: 'POST',
       body: JSON.stringify(state)

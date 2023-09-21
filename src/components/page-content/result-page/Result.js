@@ -36,7 +36,7 @@ const Result = ({ type }) => {
   const [ sortByMethod, setSortByMethod] = useState('ASC');
   const numberOfPages = useRef();
   const { searchParams } = useParams();
-  const { loading, data, error } = useFetch(`${API_PATH.RESULT_LIST}${type}?pageSize=${ITEM_PER_PAGE}&page=${actualPage}&sortByProperty=${sortByProperty}&sortByMethod=${sortByMethod}&${searchParams}`);
+  const { loading, data, error } = useFetch(`${API_PATH.RESULT_LIST}${type}?pageSize=${ITEM_PER_PAGE}&page=${actualPage}&sortByProperty=${sortByProperty}&sortByMethod=${sortByMethod}&${searchParams}`, null, true);
   const classes = useStyles();
 
   function handleSortProperty(value) {
@@ -97,7 +97,7 @@ const Result = ({ type }) => {
           <Pagination onChange={handlePagination} count={numberOfPages.current} variant="outlined" shape="rounded" />
         </Grid>
       } 
-      found={data?.gyms.length || data?.pts.length}
+      found={data?.gyms?.length || data?.pts?.length}
       handleSortProp={handleSortProperty}
       handleSortMethod={handleSortMethod}
       />

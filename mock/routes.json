@@ -1,7 +1,7 @@
 {
-  "/api/public/list/gym?*": "/gym",
-  "/api/public/list/pt?*": "/pt",
-  "/api/public/list/:referenceCode": "/ptPage",
+  "/public-api/list/gym?*": "/gym",
+  "/public-api/list/pt?*": "/pt",
+  "/public-api/list/:referenceCode": "/ptPage",
   "/api/user-registration/pt": "/userRegPt",
   "/api/user-registration/gym-owner": "/userRegGymOwner",
   "/api/user-registration/gym-manager": "/userRegGymManager"

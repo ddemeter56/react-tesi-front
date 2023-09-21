@@ -1,6 +1,6 @@
 export const API_PATH = {
-  RESULT_LIST: 'public/list/',
-  LIST_PAGE: 'public/list/',
+  RESULT_LIST: 'list/',
+  LIST_PAGE: 'list/',
   USER_REGISTER: 'user',
   FACILITY_CODES: 'public/codes/facility',
   ADMIN_OWNED_GYMS: 'admin/list-owned-gyms',

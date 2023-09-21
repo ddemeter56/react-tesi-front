@@ -68,7 +68,7 @@ const AdminPage = () => {
       setResponseData({roles: userDetails.type})
       console.log(responseData);
     }
-  }, [userDetails.isLoggedIn, setResponseData, userDetails.accessToken]);
+  }, [userDetails.isLoggedIn, setResponseData, userDetails.token]);
 
   return (
     <div className={classes.container}>

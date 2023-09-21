@@ -5,10 +5,18 @@ export function redirectToLogin() {
     `${url.keycloak}/auth/realms/Tesi/protocol/openid-connect/auth?response_type=token&client_id=browser-login&redirect_uri=${url.url}&login=true&scope=openid&nonce=${Date.now()}`;  
 }
 
-export function redirectoToLogout() {
+export function redirectToLogout(setUserDetails) {
+  setUserDetails({
+    isLoggedIn: false,
+    token: null,
+    expiresIn: 0,
+    type: null
+  });
+  /*
   window.localStorage.clear(); // Maybe we should only get rid of the neccessary items
   window.location.href =
   `${url.keycloak}/auth/realms/Tesi/protocol/openid-connect/logout?client_id=browser-login&redirect_uri=${url.url}`;
+  */
 }
 
 export function processUrlParams() {

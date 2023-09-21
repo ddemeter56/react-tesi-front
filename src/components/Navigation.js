@@ -10,7 +10,7 @@ import { Link, useHistory } from 'react-router-dom';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import IconButton from '@mui/material/IconButton';
 import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
-import { redirectoToLogout, redirectToLogin } from '../utils/auth';
+import { redirectToLogout, redirectToLogin } from '../utils/auth';
 import PersonIcon from '@mui/icons-material/Person';
 import LogInDialog from './commons/dialog/LogInDialog';
 
@@ -43,7 +43,7 @@ export default function Navigation() {
   const classes = useStyles();
   const history = useHistory();
   const { t } = useTranslation();
-  const { userDetails } = useContext(AuthContext);
+  const { userDetails, setUserDetails } = useContext(AuthContext);
   const [ isLogInDialogOpen, setIsLogInDialogOpen ] = useState(false);
 
   const handleLogInDialogOpen = () => {
@@ -76,7 +76,7 @@ export default function Navigation() {
               <IconButton onClick={redirectToAdminPage}>
                 <PersonIcon />
               </IconButton>
-              <IconButton onClick={redirectoToLogout}>
+              <IconButton onClick={() => redirectToLogout(setUserDetails)}>
                 <ExitToAppIcon />
               </IconButton>
             </>

@@ -5,13 +5,13 @@ import { redirectToLogin } from '../../../../utils/auth';
 import ErrorPage from '../../../commons/error/ErrorPage';
 import SkeletonEntityPage from '../../../commons/skeleton/SkeletonEntityPage';
 import { useFetch } from '../../../../hooks/useFetch';
-import { API_PATH } from '../../../../utils/apiPaths';
+import { API_PATH, PUBLIC_API_PATH } from '../../../../utils/apiPaths';
 import { GYM_BASIC_INFORMATION, GYM_OPENING_INFORMATION, GYM_PRICING_INFORMATION} from '../../../../constant-data/register-page-gym';
 import { GymRegisterProvider } from '../../../../context/gym-register.context';
 
 const GymRegisterPage = ({userDetails}) => {
   console.log(userDetails);
-  const { loading, data, error } = useFetch(`${API_PATH.FACILITY_CODES}`);
+  const { loading, data, error } = useFetch(`${API_PATH.FACILITY_CODES}`, null, true);
   const [ responseData, setResponseData ] = useState({});
   useEffect(() => {
     console.log(responseData)
@@ -36,7 +36,7 @@ const GymRegisterPage = ({userDetails}) => {
 
     }  
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [userDetails.isLoggedIn, setResponseData, userDetails.accessToken]);
+  }, [userDetails.isLoggedIn, setResponseData, userDetails.token]);
 
   if(!userDetails.isLoggedIn) {
     return <ErrorPage type="Unauthorized" message="You have to log in to reach this page"/>

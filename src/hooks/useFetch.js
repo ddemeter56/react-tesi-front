@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 
-export function useFetch(uri, options = null) {
+export function useFetch(uri, options = null, shouldUsePublicApi = false) {
   const [ data, setData ] = useState();
   const [ loading, setLoading ] = useState(true);
   const [ error, setError ] = useState(false);
 
-  const env = getEnvironment();
+  const env = getEnvironment(shouldUsePublicApi);
   
   useEffect(() => {
     if(!uri) return;

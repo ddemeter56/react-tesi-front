@@ -145,7 +145,7 @@ const GymAdminCard = ({
     const requestOptions = {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${userDetails.accessToken}`
+        'Authorization': `Bearer ${userDetails.token}`
       },
       body: formData,
       redirect: 'follow'
@@ -153,8 +153,9 @@ const GymAdminCard = ({
     fetchData(`/image-manager/gym/${resourceType}/${id}`, requestOptions)
       .then(data => {
         console.log(data);
-        if (HTTP_SUCCESS_CODES.includes(data.statusCode)) {
-          handleSnackbar('Picture has been uploaded successfully', 'success');
+        handleSnackbar(data.message, 'info')
+        if (data.message === 'Images successfully uploaded') {
+          handleSnackbar(data.message, 'success');
         } else {
           handleSnackbar(data.message, 'error');
         }
@@ -174,7 +175,7 @@ const GymAdminCard = ({
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${userDetails.accessToken}`
+        'Authorization': `Bearer ${userDetails.token}`
       },
       body: JSON.stringify({ email: values.email, gymId: id })
     };
